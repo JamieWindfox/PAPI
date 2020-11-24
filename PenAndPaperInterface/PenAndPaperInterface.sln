@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerPAPI", "PlayerPAPI\PlayerPAPI.csproj", "{8F49A5FA-6EC8-4C91-8684-3600C5A73EEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAPIClasses", "PAPIClasses\PAPIClasses.csproj", "{70BACA27-10D5-450A-A1D6-ED8F792227C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F49A5FA-6EC8-4C91-8684-3600C5A73EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F49A5FA-6EC8-4C91-8684-3600C5A73EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F49A5FA-6EC8-4C91-8684-3600C5A73EEC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8F49A5FA-6EC8-4C91-8684-3600C5A73EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F49A5FA-6EC8-4C91-8684-3600C5A73EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F49A5FA-6EC8-4C91-8684-3600C5A73EEC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{70BACA27-10D5-450A-A1D6-ED8F792227C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70BACA27-10D5-450A-A1D6-ED8F792227C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70BACA27-10D5-450A-A1D6-ED8F792227C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70BACA27-10D5-450A-A1D6-ED8F792227C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18B41629-EC63-449E-B292-28A2A62E5C6C}
+	EndGlobalSection
+EndGlobal
