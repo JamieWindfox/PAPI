@@ -1,6 +1,4 @@
-﻿using PAPIClasses;
-using System;
-using System.Runtime.Serialization;
+﻿using System;
 
 namespace PAPI.Exception
 {

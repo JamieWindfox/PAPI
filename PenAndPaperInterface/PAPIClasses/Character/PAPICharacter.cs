@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using PAPI.Character.Skill;
 using PAPI.DataTypes;
-using PAPIClasses;
 
 namespace PAPI.Character
 {
@@ -58,7 +57,7 @@ namespace PAPI.Character
 
 
         // ################################################# GETTER #################################################
-
+         
 
 
 

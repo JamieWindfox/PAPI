@@ -1,4 +1,4 @@
-﻿namespace PAPIClasses
+﻿namespace PAPI.Exception
 {
     public class PAPIException : System.Exception
     {

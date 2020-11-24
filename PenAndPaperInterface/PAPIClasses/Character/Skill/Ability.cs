@@ -1,6 +1,5 @@
 ﻿using PAPI.DataTypes;
 using PAPI.Settings;
-using PAPIClasses;
 using System.Collections.Generic;
 
 namespace PAPI.Character.Skill

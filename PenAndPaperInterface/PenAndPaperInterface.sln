@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerPAPI", "PlayerPAPI\PlayerPAPI.csproj", "{8F49A5FA-6EC8-4C91-8684-3600C5A73EEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAPIClasses", "PAPIClasses\PAPIClasses.csproj", "{70BACA27-10D5-450A-A1D6-ED8F792227C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAPIClasses", "PAPIClasses\PAPIClasses.csproj", "{70BACA27-10D5-450A-A1D6-ED8F792227C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameMasterPAPI", "GameMasterPAPI\GameMasterPAPI.csproj", "{5230926A-95B9-451C-8369-A8EF62D28CCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{70BACA27-10D5-450A-A1D6-ED8F792227C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70BACA27-10D5-450A-A1D6-ED8F792227C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70BACA27-10D5-450A-A1D6-ED8F792227C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5230926A-95B9-451C-8369-A8EF62D28CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5230926A-95B9-451C-8369-A8EF62D28CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5230926A-95B9-451C-8369-A8EF62D28CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5230926A-95B9-451C-8369-A8EF62D28CCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
