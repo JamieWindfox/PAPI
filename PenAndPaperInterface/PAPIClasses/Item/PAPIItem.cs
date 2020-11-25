@@ -1,12 +1,11 @@
 ﻿using PAPI.Settings;
-using PAPIClasses;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PAPI.Item
 {
-    class PAPIItem
+    public class PAPIItem
     {
         // The name of the item
         private string m_name;
@@ -29,7 +28,7 @@ namespace PAPI.Item
         // A List of the genres in which this item is available
         private List<GenreEnum> m_genres;
 
-
+        // ################################################# CTORS #################################################
         public PAPIItem(string name, uint basePrice, uint encumbrance, uint rarity, ItemConditionEnum condition, Dictionary<ItemQuality, uint> qualities, List<GenreEnum> genres)
         {
             m_name = name;
@@ -38,6 +37,7 @@ namespace PAPI.Item
             m_rarity = rarity;
             m_condition = condition;
             m_qualities = qualities;
+            m_genres = genres;
         }
 
         public PAPIItem(string name, uint basePrice, uint encumbrance, uint rarity, ItemConditionEnum condition, List<GenreEnum> genres) :
@@ -52,5 +52,17 @@ namespace PAPI.Item
             this(name, basePrice, encumbrance, rarity, ItemConditionEnum.NOT_DAMAGED, new Dictionary<ItemQuality, uint>(), genres)
         { }
 
+
+        // ################################################# GETTER #################################################
+        public string GetName() { return m_name; }
+        public uint GetBasePrice() { return m_basePrice; }
+        public uint GetEncumbrance() { return m_encumbrance; }
+        public uint GetRarity() { return m_rarity; }
+        public List<GenreEnum> GetGenres() { return m_genres; }
+        public ItemConditionEnum GetCondition() { return m_condition; }
+        public Dictionary<ItemQuality, uint> GetQualities() { return m_qualities; }
+
+
+        // ################################################# SETTER #################################################
     }
 }

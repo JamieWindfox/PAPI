@@ -1,6 +1,6 @@
 ﻿using PAPI.Logging;
 using PAPI.Character.Skill;
-using PAPIClasses;
+using PAPI.Exception;
 
 namespace PAPI.Character
 {

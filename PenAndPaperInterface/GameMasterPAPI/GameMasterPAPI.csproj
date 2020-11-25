@@ -46,29 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Views\GMStartScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\GMStartScreen.Designer.cs">
-      <DependentUpon>GMStartScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\PAPIForm.cs">
+    <Compile Include="Views\GMLoadingView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\PAPIForm.Designer.cs">
-      <DependentUpon>PAPIForm.cs</DependentUpon>
+    <Compile Include="Views\GMLoadingView.Designer.cs">
+      <DependentUpon>GMLoadingView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SettingsView.cs">
+    <Compile Include="Views\PAPIView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\SettingsView.Designer.cs">
-      <DependentUpon>SettingsView.cs</DependentUpon>
+    <Compile Include="Views\PAPIView.Designer.cs">
+      <DependentUpon>PAPIView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\GMStartScreen.resx">
-      <DependentUpon>GMStartScreen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -78,8 +69,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\PAPIForm.resx">
-      <DependentUpon>PAPIForm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\GMLoadingView.resx">
+      <DependentUpon>GMLoadingView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PAPIView.resx">
+      <DependentUpon>PAPIView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PAPIClasses\PAPIClasses.csproj">
+      <Project>{70baca27-10d5-450a-a1d6-ed8f792227c9}</Project>
+      <Name>PAPIClasses</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

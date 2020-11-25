@@ -1,7 +1,7 @@
 ﻿
 namespace GameMasterPAPI.Views
 {
-    partial class SettingsView
+    partial class PAPIView
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,17 @@ namespace GameMasterPAPI.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // PAPIView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "SettingsView";
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Name = "PAPIView";
+            this.Text = "PAPIView";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -1,4 +1,5 @@
-﻿using PAPI.Logging;
+﻿using PAPI.Item;
+using PAPI.Logging;
 using System.Collections.Generic;
 
 namespace PAPI.Character
@@ -9,7 +10,7 @@ namespace PAPI.Character
         private Armour m_armour;
 
         // The clothes that are equipped instead, under or over the equipped armour
-        private Clothing m_clothing;
+        private Armour m_clothing;
 
         // The equipped weapons, number depends on hands
         private List<Weapon> m_weapons;
@@ -28,6 +29,7 @@ namespace PAPI.Character
         // ################################################# GETTER #################################################
         public uint GetSoak() { return m_armour.GetSoak() + m_clothing.GetSoak(); }
         public uint GetDefense() { return m_armour.GetDefense() + m_clothing.GetDefense(); }
+        
 
 
         // ################################################# SETTER #################################################
@@ -37,15 +39,15 @@ namespace PAPI.Character
         {
             if (item is Armour && m_armour == null)
             {
-                m_armour = item;
+                m_armour = (Armour)item;
             }
-            else if(item is Clothing && m_clothing == null)
+            else if(item is Armour && m_clothing == null)
             {
-                m_clothing = item;
+                m_clothing = (Armour)item;
             }
-            else if((item is TwoHandWeapon && m_weapons.Count == 0) || (item is SingleHandWeapon && m_weapons.Count < 2))
+            else if((item is ITwoHandWeapon && m_weapons.Count == 0) || (item is ISingleHandWeapon && m_weapons.Count < 2))
             {
-                m_weapons.Add(item);
+                m_weapons.Add((Weapon)item);
             }
             else
             {
@@ -61,18 +63,18 @@ namespace PAPI.Character
             EquipmentItem itemToReturn;
             if(item == m_armour)
             {
-                itemToReturn = new Armour(item);
+                itemToReturn = new Armour((Armour)item);
                 m_armour = null;
             }
             else if(item == m_clothing)
             {
-                itemToReturn = new Clothing(item);
+                itemToReturn = new Armour((Armour)item);
                 m_clothing = null;
             }
-            else if(m_weapons.Contains(item))
+            else if(m_weapons.Contains((Weapon)item))
             {
-                itemToReturn = new Weapon(item);
-                m_weapons.Remove(item);
+                itemToReturn = new Weapon((Weapon)item);
+                m_weapons.Remove((Weapon)item);
             }
             else
             {

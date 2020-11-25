@@ -2,7 +2,6 @@
 
 using PAPI.Logging;
 using PAPI.Settings;
-using PAPIClasses;
 
 namespace PAPI.Character
 {

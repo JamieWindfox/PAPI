@@ -1,4 +1,5 @@
-﻿using PAPI.Logging;
+﻿using PAPI.Item;
+using PAPI.Logging;
 using System.Collections.Generic;
 
 namespace PAPI.Character
