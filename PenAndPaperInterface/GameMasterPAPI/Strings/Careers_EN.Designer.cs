@@ -22,14 +22,14 @@ namespace GameMasterPAPI.Strings {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class General_EN {
+    internal class Careers_EN {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal General_EN() {
+        internal Careers_EN() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace GameMasterPAPI.Strings {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GameMasterPAPI.Strings.General_EN", typeof(General_EN).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GameMasterPAPI.Strings.Careers_EN", typeof(Careers_EN).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,155 +61,155 @@ namespace GameMasterPAPI.Strings {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Return ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string _return {
+        internal static string career {
             get {
-                return ResourceManager.GetString("return", resourceCulture);
+                return ResourceManager.GetString("career", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Accept ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string accept {
+        internal static string druid {
             get {
-                return ResourceManager.GetString("accept", resourceCulture);
+                return ResourceManager.GetString("druid", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die available ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string available {
+        internal static string entertainer {
             get {
-                return ResourceManager.GetString("available", resourceCulture);
+                return ResourceManager.GetString("entertainer", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Check ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string check {
+        internal static string explorer {
             get {
-                return ResourceManager.GetString("check", resourceCulture);
+                return ResourceManager.GetString("explorer", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die current ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string current {
+        internal static string fighterPilot {
             get {
-                return ResourceManager.GetString("current", resourceCulture);
+                return ResourceManager.GetString("fighterPilot", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Design ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string design {
+        internal static string hacker {
             get {
-                return ResourceManager.GetString("design", resourceCulture);
+                return ResourceManager.GetString("hacker", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die English ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string english {
+        internal static string healer {
             get {
-                return ResourceManager.GetString("english", resourceCulture);
+                return ResourceManager.GetString("healer", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Genre ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string genre {
+        internal static string knight {
             get {
-                return ResourceManager.GetString("genre", resourceCulture);
+                return ResourceManager.GetString("knight", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Genres ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string genres {
+        internal static string leader {
             get {
-                return ResourceManager.GetString("genres", resourceCulture);
+                return ResourceManager.GetString("leader", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die German ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string german {
+        internal static string madScientist {
             get {
-                return ResourceManager.GetString("german", resourceCulture);
+                return ResourceManager.GetString("madScientist", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Language ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string language {
+        internal static string priest {
             get {
-                return ResourceManager.GetString("language", resourceCulture);
+                return ResourceManager.GetString("priest", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Medieval ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string medieval {
+        internal static string scoundrel {
             get {
-                return ResourceManager.GetString("medieval", resourceCulture);
+                return ResourceManager.GetString("scoundrel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Modern ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string modern {
+        internal static string socialite {
             get {
-                return ResourceManager.GetString("modern", resourceCulture);
+                return ResourceManager.GetString("socialite", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Name ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string name {
+        internal static string soldier {
             get {
-                return ResourceManager.GetString("name", resourceCulture);
+                return ResourceManager.GetString("soldier", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die page ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string page {
+        internal static string starshipCaptain {
             get {
-                return ResourceManager.GetString("page", resourceCulture);
+                return ResourceManager.GetString("starshipCaptain", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Rule Book ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string ruleBook {
+        internal static string tradesperson {
             get {
-                return ResourceManager.GetString("ruleBook", resourceCulture);
+                return ResourceManager.GetString("tradesperson", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Task ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string task {
+        internal static string wizard {
             get {
-                return ResourceManager.GetString("task", resourceCulture);
+                return ResourceManager.GetString("wizard", resourceCulture);
             }
         }
     }

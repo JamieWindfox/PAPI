@@ -117,55 +117,172 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="accept" xml:space="preserve">
-    <value>Accept</value>
+  <data name="alchemy" xml:space="preserve">
+    <value />
   </data>
-  <data name="available" xml:space="preserve">
-    <value>available</value>
+  <data name="arcaneMagic" xml:space="preserve">
+    <value />
   </data>
-  <data name="check" xml:space="preserve">
-    <value>Check</value>
+  <data name="astrocartography" xml:space="preserve">
+    <value />
   </data>
-  <data name="current" xml:space="preserve">
-    <value>current</value>
+  <data name="athletics" xml:space="preserve">
+    <value />
   </data>
-  <data name="design" xml:space="preserve">
-    <value>Design</value>
+  <data name="brawl" xml:space="preserve">
+    <value />
   </data>
-  <data name="english" xml:space="preserve">
-    <value>English</value>
+  <data name="careerSkill" xml:space="preserve">
+    <value />
   </data>
-  <data name="genre" xml:space="preserve">
-    <value>Genre</value>
+  <data name="charm" xml:space="preserve">
+    <value />
   </data>
-  <data name="genres" xml:space="preserve">
-    <value>Genres</value>
+  <data name="combatSkills" xml:space="preserve">
+    <value />
   </data>
-  <data name="german" xml:space="preserve">
-    <value>German</value>
+  <data name="computers" xml:space="preserve">
+    <value />
   </data>
-  <data name="language" xml:space="preserve">
-    <value>Language</value>
+  <data name="cool" xml:space="preserve">
+    <value />
   </data>
-  <data name="medieval" xml:space="preserve">
-    <value>Medieval</value>
+  <data name="coordination" xml:space="preserve">
+    <value />
   </data>
-  <data name="modern" xml:space="preserve">
-    <value>Modern</value>
+  <data name="corercion" xml:space="preserve">
+    <value />
   </data>
-  <data name="name" xml:space="preserve">
-    <value>Name</value>
+  <data name="customSkills" xml:space="preserve">
+    <value>Custom Skills</value>
   </data>
-  <data name="page" xml:space="preserve">
-    <value>page</value>
+  <data name="deception" xml:space="preserve">
+    <value />
   </data>
-  <data name="return" xml:space="preserve">
-    <value>Return</value>
+  <data name="discipline" xml:space="preserve">
+    <value>Discipline</value>
   </data>
-  <data name="ruleBook" xml:space="preserve">
-    <value>Rule Book</value>
+  <data name="divineMagic" xml:space="preserve">
+    <value>Divine Magic</value>
   </data>
-  <data name="task" xml:space="preserve">
-    <value>Task</value>
+  <data name="driving" xml:space="preserve">
+    <value />
+  </data>
+  <data name="generalSkills" xml:space="preserve">
+    <value>General Skills</value>
+  </data>
+  <data name="gunnery" xml:space="preserve">
+    <value />
+  </data>
+  <data name="knowledgeAdventuring" xml:space="preserve">
+    <value>Knowledge (Adventuring)</value>
+  </data>
+  <data name="knowledgeForbidden" xml:space="preserve">
+    <value>Knowledge (Forbidden)</value>
+  </data>
+  <data name="knowledgeGeography" xml:space="preserve">
+    <value />
+  </data>
+  <data name="knowledgeLore" xml:space="preserve">
+    <value />
+  </data>
+  <data name="knowledgeSkills" xml:space="preserve">
+    <value />
+  </data>
+  <data name="leadership" xml:space="preserve">
+    <value />
+  </data>
+  <data name="learn" xml:space="preserve">
+    <value />
+  </data>
+  <data name="magicSkills" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mechanics" xml:space="preserve">
+    <value />
+  </data>
+  <data name="medicine" xml:space="preserve">
+    <value />
+  </data>
+  <data name="melee" xml:space="preserve">
+    <value />
+  </data>
+  <data name="meleeHeavy" xml:space="preserve">
+    <value />
+  </data>
+  <data name="meleeLight" xml:space="preserve">
+    <value />
+  </data>
+  <data name="negotiation" xml:space="preserve">
+    <value />
+  </data>
+  <data name="operating" xml:space="preserve">
+    <value />
+  </data>
+  <data name="perception" xml:space="preserve">
+    <value />
+  </data>
+  <data name="piloting" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pilotingPlanetar" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pilotingSpace" xml:space="preserve">
+    <value />
+  </data>
+  <data name="primalMagic" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ranged" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rangedHeavy" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rangedLight" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rank" xml:space="preserve">
+    <value />
+  </data>
+  <data name="resilience" xml:space="preserve">
+    <value />
+  </data>
+  <data name="riding" xml:space="preserve">
+    <value />
+  </data>
+  <data name="runeMagic" xml:space="preserve">
+    <value />
+  </data>
+  <data name="skill" xml:space="preserve">
+    <value />
+  </data>
+  <data name="skills" xml:space="preserve">
+    <value />
+  </data>
+  <data name="skulduggery" xml:space="preserve">
+    <value />
+  </data>
+  <data name="socialSkills" xml:space="preserve">
+    <value />
+  </data>
+  <data name="stealth" xml:space="preserve">
+    <value />
+  </data>
+  <data name="streetwise" xml:space="preserve">
+    <value />
+  </data>
+  <data name="survival" xml:space="preserve">
+    <value />
+  </data>
+  <data name="train" xml:space="preserve">
+    <value />
+  </data>
+  <data name="verseMagic" xml:space="preserve">
+    <value />
+  </data>
+  <data name="vigilance" xml:space="preserve">
+    <value />
   </data>
 </root>

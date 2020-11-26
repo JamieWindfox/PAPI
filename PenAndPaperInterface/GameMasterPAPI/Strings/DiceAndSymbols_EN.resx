@@ -117,55 +117,109 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="accept" xml:space="preserve">
-    <value>Accept</value>
+  <data name="ability" xml:space="preserve">
+    <value>Ability</value>
   </data>
-  <data name="available" xml:space="preserve">
-    <value>available</value>
+  <data name="add" xml:space="preserve">
+    <value />
   </data>
-  <data name="check" xml:space="preserve">
-    <value>Check</value>
+  <data name="advantage" xml:space="preserve">
+    <value>Advantage</value>
   </data>
-  <data name="current" xml:space="preserve">
-    <value>current</value>
+  <data name="assistedCheck" xml:space="preserve">
+    <value />
   </data>
-  <data name="design" xml:space="preserve">
-    <value>Design</value>
+  <data name="boost" xml:space="preserve">
+    <value>Boost</value>
   </data>
-  <data name="english" xml:space="preserve">
-    <value>English</value>
+  <data name="challenge" xml:space="preserve">
+    <value>Challenge</value>
   </data>
-  <data name="genre" xml:space="preserve">
-    <value>Genre</value>
+  <data name="competitiveCheck" xml:space="preserve">
+    <value />
   </data>
-  <data name="genres" xml:space="preserve">
-    <value>Genres</value>
+  <data name="descrease" xml:space="preserve">
+    <value />
   </data>
-  <data name="german" xml:space="preserve">
-    <value>German</value>
+  <data name="despair" xml:space="preserve">
+    <value>Despair</value>
   </data>
-  <data name="language" xml:space="preserve">
-    <value>Language</value>
+  <data name="dice" xml:space="preserve">
+    <value>Dice</value>
   </data>
-  <data name="medieval" xml:space="preserve">
-    <value>Medieval</value>
+  <data name="die" xml:space="preserve">
+    <value>Die</value>
   </data>
-  <data name="modern" xml:space="preserve">
-    <value>Modern</value>
+  <data name="difficulty" xml:space="preserve">
+    <value>Difficulty</value>
   </data>
-  <data name="name" xml:space="preserve">
-    <value>Name</value>
+  <data name="difficulty1" xml:space="preserve">
+    <value />
   </data>
-  <data name="page" xml:space="preserve">
-    <value>page</value>
+  <data name="difficultyAverage" xml:space="preserve">
+    <value />
   </data>
-  <data name="return" xml:space="preserve">
-    <value>Return</value>
+  <data name="difficultyDaunting" xml:space="preserve">
+    <value />
   </data>
-  <data name="ruleBook" xml:space="preserve">
-    <value>Rule Book</value>
+  <data name="difficultyEasy" xml:space="preserve">
+    <value />
   </data>
-  <data name="task" xml:space="preserve">
-    <value>Task</value>
+  <data name="difficultyFormidable" xml:space="preserve">
+    <value />
+  </data>
+  <data name="difficultyHard" xml:space="preserve">
+    <value />
+  </data>
+  <data name="difficultyImpossible" xml:space="preserve">
+    <value />
+  </data>
+  <data name="difficultySimple" xml:space="preserve">
+    <value />
+  </data>
+  <data name="downgrade" xml:space="preserve">
+    <value />
+  </data>
+  <data name="failure" xml:space="preserve">
+    <value>Failure</value>
+  </data>
+  <data name="gmPool" xml:space="preserve">
+    <value>GM Pool</value>
+  </data>
+  <data name="increase" xml:space="preserve">
+    <value />
+  </data>
+  <data name="opposedCheck" xml:space="preserve">
+    <value />
+  </data>
+  <data name="playerPool" xml:space="preserve">
+    <value>Player Pool</value>
+  </data>
+  <data name="profiency" xml:space="preserve">
+    <value>Profiency</value>
+  </data>
+  <data name="result" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="setback" xml:space="preserve">
+    <value>Setback</value>
+  </data>
+  <data name="storyPoint" xml:space="preserve">
+    <value>Story Point</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="symbol" xml:space="preserve">
+    <value>Symbol</value>
+  </data>
+  <data name="threat" xml:space="preserve">
+    <value>Threat</value>
+  </data>
+  <data name="triumph" xml:space="preserve">
+    <value>Triumph</value>
+  </data>
+  <data name="upgrade" xml:space="preserve">
+    <value />
   </data>
 </root>

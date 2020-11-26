@@ -22,14 +22,14 @@ namespace GameMasterPAPI.Strings {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class General_EN {
+    internal class Colors_EN {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal General_EN() {
+        internal Colors_EN() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace GameMasterPAPI.Strings {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GameMasterPAPI.Strings.General_EN", typeof(General_EN).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GameMasterPAPI.Strings.Colors_EN", typeof(Colors_EN).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,155 +61,146 @@ namespace GameMasterPAPI.Strings {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Return ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string _return {
+        internal static string black {
             get {
-                return ResourceManager.GetString("return", resourceCulture);
+                return ResourceManager.GetString("black", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Accept ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string accept {
+        internal static string blonde {
             get {
-                return ResourceManager.GetString("accept", resourceCulture);
+                return ResourceManager.GetString("blonde", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die available ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string available {
+        internal static string blue {
             get {
-                return ResourceManager.GetString("available", resourceCulture);
+                return ResourceManager.GetString("blue", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Check ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string check {
+        internal static string brown {
             get {
-                return ResourceManager.GetString("check", resourceCulture);
+                return ResourceManager.GetString("brown", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die current ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string current {
+        internal static string brunette {
             get {
-                return ResourceManager.GetString("current", resourceCulture);
+                return ResourceManager.GetString("brunette", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Design ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string design {
+        internal static string golden {
             get {
-                return ResourceManager.GetString("design", resourceCulture);
+                return ResourceManager.GetString("golden", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die English ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string english {
+        internal static string green {
             get {
-                return ResourceManager.GetString("english", resourceCulture);
+                return ResourceManager.GetString("green", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Genre ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string genre {
+        internal static string grey {
             get {
-                return ResourceManager.GetString("genre", resourceCulture);
+                return ResourceManager.GetString("grey", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Genres ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string genres {
+        internal static string lightBlue {
             get {
-                return ResourceManager.GetString("genres", resourceCulture);
+                return ResourceManager.GetString("lightBlue", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die German ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string german {
+        internal static string orange {
             get {
-                return ResourceManager.GetString("german", resourceCulture);
+                return ResourceManager.GetString("orange", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Language ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string language {
+        internal static string pink {
             get {
-                return ResourceManager.GetString("language", resourceCulture);
+                return ResourceManager.GetString("pink", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Medieval ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string medieval {
+        internal static string purple {
             get {
-                return ResourceManager.GetString("medieval", resourceCulture);
+                return ResourceManager.GetString("purple", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Modern ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string modern {
+        internal static string red {
             get {
-                return ResourceManager.GetString("modern", resourceCulture);
+                return ResourceManager.GetString("red", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Name ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string name {
+        internal static string silver {
             get {
-                return ResourceManager.GetString("name", resourceCulture);
+                return ResourceManager.GetString("silver", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die page ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string page {
+        internal static string white {
             get {
-                return ResourceManager.GetString("page", resourceCulture);
+                return ResourceManager.GetString("white", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Rule Book ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string ruleBook {
+        internal static string yellow {
             get {
-                return ResourceManager.GetString("ruleBook", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Task ähnelt.
-        /// </summary>
-        internal static string task {
-            get {
-                return ResourceManager.GetString("task", resourceCulture);
+                return ResourceManager.GetString("yellow", resourceCulture);
             }
         }
     }

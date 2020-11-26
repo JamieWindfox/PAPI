@@ -117,55 +117,151 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="accept" xml:space="preserve">
-    <value>Accept</value>
+  <data name="armour" xml:space="preserve">
+    <value />
   </data>
-  <data name="available" xml:space="preserve">
-    <value>available</value>
+  <data name="backpack" xml:space="preserve">
+    <value />
   </data>
-  <data name="check" xml:space="preserve">
-    <value>Check</value>
+  <data name="backpackDescription" xml:space="preserve">
+    <value />
   </data>
-  <data name="current" xml:space="preserve">
-    <value>current</value>
+  <data name="baseDamage" xml:space="preserve">
+    <value />
   </data>
-  <data name="design" xml:space="preserve">
-    <value>Design</value>
+  <data name="baseDamageShort" xml:space="preserve">
+    <value>Dam</value>
   </data>
-  <data name="english" xml:space="preserve">
-    <value>English</value>
+  <data name="buy" xml:space="preserve">
+    <value />
   </data>
-  <data name="genre" xml:space="preserve">
-    <value>Genre</value>
+  <data name="condition" xml:space="preserve">
+    <value />
   </data>
-  <data name="genres" xml:space="preserve">
-    <value>Genres</value>
+  <data name="cost" xml:space="preserve">
+    <value />
   </data>
-  <data name="german" xml:space="preserve">
-    <value>German</value>
+  <data name="criticalRating" xml:space="preserve">
+    <value />
   </data>
-  <data name="language" xml:space="preserve">
-    <value>Language</value>
+  <data name="criticalRatingShort" xml:space="preserve">
+    <value>Crit</value>
   </data>
-  <data name="medieval" xml:space="preserve">
-    <value>Medieval</value>
+  <data name="defense" xml:space="preserve">
+    <value />
   </data>
-  <data name="modern" xml:space="preserve">
-    <value>Modern</value>
+  <data name="encumbrance" xml:space="preserve">
+    <value />
   </data>
-  <data name="name" xml:space="preserve">
-    <value>Name</value>
+  <data name="encumbranceShort" xml:space="preserve">
+    <value>Encum</value>
   </data>
-  <data name="page" xml:space="preserve">
-    <value>page</value>
+  <data name="engaged" xml:space="preserve">
+    <value />
   </data>
-  <data name="return" xml:space="preserve">
-    <value>Return</value>
+  <data name="gear" xml:space="preserve">
+    <value />
   </data>
-  <data name="ruleBook" xml:space="preserve">
-    <value>Rule Book</value>
+  <data name="heavyJacket" xml:space="preserve">
+    <value />
   </data>
-  <data name="task" xml:space="preserve">
-    <value>Task</value>
+  <data name="heavyJacketDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="knife" xml:space="preserve">
+    <value />
+  </data>
+  <data name="knifeDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="long" xml:space="preserve">
+    <value />
+  </data>
+  <data name="majorDamage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="medium" xml:space="preserve">
+    <value />
+  </data>
+  <data name="minorDamage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="moderateDamage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="painkiller" xml:space="preserve">
+    <value />
+  </data>
+  <data name="painkillerDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="price" xml:space="preserve">
+    <value />
+  </data>
+  <data name="range" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rarity" xml:space="preserve">
+    <value />
+  </data>
+  <data name="repair" xml:space="preserve">
+    <value />
+  </data>
+  <data name="requiredSkill" xml:space="preserve">
+    <value />
+  </data>
+  <data name="revolver" xml:space="preserve">
+    <value />
+  </data>
+  <data name="revolverDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rope" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ropeDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="sell" xml:space="preserve">
+    <value />
+  </data>
+  <data name="shop" xml:space="preserve">
+    <value />
+  </data>
+  <data name="short" xml:space="preserve">
+    <value />
+  </data>
+  <data name="soak" xml:space="preserve">
+    <value />
+  </data>
+  <data name="special" xml:space="preserve">
+    <value />
+  </data>
+  <data name="stimpack" xml:space="preserve">
+    <value />
+  </data>
+  <data name="stimpackDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tool" xml:space="preserve">
+    <value />
+  </data>
+  <data name="torchlight" xml:space="preserve">
+    <value />
+  </data>
+  <data name="torchlightDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="trading" xml:space="preserve">
+    <value />
+  </data>
+  <data name="unusable" xml:space="preserve">
+    <value />
+  </data>
+  <data name="veryLong" xml:space="preserve">
+    <value />
+  </data>
+  <data name="weapon" xml:space="preserve">
+    <value />
   </data>
 </root>

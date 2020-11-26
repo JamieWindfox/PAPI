@@ -117,55 +117,112 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="accept" xml:space="preserve">
-    <value>Accept</value>
+  <data name="age" xml:space="preserve">
+    <value />
   </data>
-  <data name="available" xml:space="preserve">
-    <value>available</value>
+  <data name="average" xml:space="preserve">
+    <value>Average</value>
   </data>
-  <data name="check" xml:space="preserve">
-    <value>Check</value>
+  <data name="averageHeightHeavy" xml:space="preserve">
+    <value>Average height, heavyset</value>
   </data>
-  <data name="current" xml:space="preserve">
-    <value>current</value>
+  <data name="averageHeightThin" xml:space="preserve">
+    <value>Average height, thin</value>
   </data>
-  <data name="design" xml:space="preserve">
-    <value>Design</value>
+  <data name="bodyBuild" xml:space="preserve">
+    <value />
   </data>
-  <data name="english" xml:space="preserve">
-    <value>English</value>
+  <data name="characterDescription" xml:space="preserve">
+    <value />
   </data>
-  <data name="genre" xml:space="preserve">
-    <value>Genre</value>
+  <data name="defense" xml:space="preserve">
+    <value />
   </data>
-  <data name="genres" xml:space="preserve">
-    <value>Genres</value>
+  <data name="defenseMelee" xml:space="preserve">
+    <value />
   </data>
-  <data name="german" xml:space="preserve">
-    <value>German</value>
+  <data name="defenseRanged" xml:space="preserve">
+    <value />
   </data>
-  <data name="language" xml:space="preserve">
-    <value>Language</value>
+  <data name="equipment" xml:space="preserve">
+    <value />
   </data>
-  <data name="medieval" xml:space="preserve">
-    <value>Medieval</value>
+  <data name="experiencePoints" xml:space="preserve">
+    <value />
   </data>
-  <data name="modern" xml:space="preserve">
-    <value>Modern</value>
+  <data name="female" xml:space="preserve">
+    <value />
   </data>
-  <data name="name" xml:space="preserve">
-    <value>Name</value>
+  <data name="gender" xml:space="preserve">
+    <value />
   </data>
-  <data name="page" xml:space="preserve">
-    <value>page</value>
+  <data name="hairBald" xml:space="preserve">
+    <value />
   </data>
-  <data name="return" xml:space="preserve">
-    <value>Return</value>
+  <data name="hairColor" xml:space="preserve">
+    <value />
   </data>
-  <data name="ruleBook" xml:space="preserve">
-    <value>Rule Book</value>
+  <data name="hairLong" xml:space="preserve">
+    <value />
   </data>
-  <data name="task" xml:space="preserve">
-    <value>Task</value>
+  <data name="hairMedium" xml:space="preserve">
+    <value />
+  </data>
+  <data name="hairShort" xml:space="preserve">
+    <value />
+  </data>
+  <data name="hairStyle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="height" xml:space="preserve">
+    <value />
+  </data>
+  <data name="male" xml:space="preserve">
+    <value />
+  </data>
+  <data name="money" xml:space="preserve">
+    <value>Money</value>
+  </data>
+  <data name="notableFeatures" xml:space="preserve">
+    <value>Notable Features</value>
+  </data>
+  <data name="otherGender" xml:space="preserve">
+    <value>Other gender</value>
+  </data>
+  <data name="personality" xml:space="preserve">
+    <value />
+  </data>
+  <data name="playerName" xml:space="preserve">
+    <value>Player Name</value>
+  </data>
+  <data name="shortAverageWeight" xml:space="preserve">
+    <value />
+  </data>
+  <data name="shortHeavy" xml:space="preserve">
+    <value />
+  </data>
+  <data name="shortThin" xml:space="preserve">
+    <value />
+  </data>
+  <data name="soak" xml:space="preserve">
+    <value>Soak</value>
+  </data>
+  <data name="strain" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tallAverageWeight" xml:space="preserve">
+    <value>Tall, average weight</value>
+  </data>
+  <data name="tallBig" xml:space="preserve">
+    <value>Tall and big</value>
+  </data>
+  <data name="tallThin" xml:space="preserve">
+    <value>Tall and thin</value>
+  </data>
+  <data name="threshold" xml:space="preserve">
+    <value />
+  </data>
+  <data name="wounds" xml:space="preserve">
+    <value />
   </data>
 </root>

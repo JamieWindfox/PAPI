@@ -117,55 +117,65 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="accept" xml:space="preserve">
-    <value>Accept</value>
+  <data name="abilities" xml:space="preserve">
+    <value />
   </data>
-  <data name="available" xml:space="preserve">
-    <value>available</value>
+  <data name="ability" xml:space="preserve">
+    <value />
   </data>
-  <data name="check" xml:space="preserve">
-    <value>Check</value>
+  <data name="acquire" xml:space="preserve">
+    <value />
   </data>
-  <data name="current" xml:space="preserve">
-    <value>current</value>
+  <data name="boughtInfo" xml:space="preserve">
+    <value />
+    <comment>all talents and descriptions found in core rule book pp. 72</comment>
   </data>
-  <data name="design" xml:space="preserve">
-    <value>Design</value>
+  <data name="boughtInfoDescription" xml:space="preserve">
+    <value />
   </data>
-  <data name="english" xml:space="preserve">
-    <value>English</value>
+  <data name="brilliant" xml:space="preserve">
+    <value />
   </data>
-  <data name="genre" xml:space="preserve">
-    <value>Genre</value>
+  <data name="brilliantDescription" xml:space="preserve">
+    <value />
   </data>
-  <data name="genres" xml:space="preserve">
-    <value>Genres</value>
+  <data name="cleverRetort" xml:space="preserve">
+    <value />
   </data>
-  <data name="german" xml:space="preserve">
-    <value>German</value>
+  <data name="cleverRetortDescription" xml:space="preserve">
+    <value />
   </data>
-  <data name="language" xml:space="preserve">
-    <value>Language</value>
+  <data name="forcefulPersonality" xml:space="preserve">
+    <value />
   </data>
-  <data name="medieval" xml:space="preserve">
-    <value>Medieval</value>
+  <data name="forcefulPersonalityDescription" xml:space="preserve">
+    <value />
   </data>
-  <data name="modern" xml:space="preserve">
-    <value>Modern</value>
+  <data name="readyForAnything" xml:space="preserve">
+    <value>Ready for Anything</value>
   </data>
-  <data name="name" xml:space="preserve">
-    <value>Name</value>
+  <data name="readyForAnythingDescription" xml:space="preserve">
+    <value>Once per session as an out-of-turn incidental, you may move one Story Point from the GM's pool to the Players' Pool</value>
   </data>
-  <data name="page" xml:space="preserve">
-    <value>page</value>
+  <data name="special" xml:space="preserve">
+    <value />
   </data>
-  <data name="return" xml:space="preserve">
-    <value>Return</value>
+  <data name="talent" xml:space="preserve">
+    <value />
   </data>
-  <data name="ruleBook" xml:space="preserve">
-    <value>Rule Book</value>
+  <data name="talents" xml:space="preserve">
+    <value />
   </data>
-  <data name="task" xml:space="preserve">
-    <value>Task</value>
+  <data name="talentsAndSpecialAbilities" xml:space="preserve">
+    <value>Talents and Special Abilities</value>
+  </data>
+  <data name="tier" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toughAsNails" xml:space="preserve">
+    <value>Tough as Nails</value>
+  </data>
+  <data name="toughAsNailsDescription" xml:space="preserve">
+    <value>Once per session, your character may spend a Story Point as an out-of-turn incidental immediately after suffering a Critical Injury and determining the result. If they do so, they count the result rolles as '01'</value>
   </data>
 </root>

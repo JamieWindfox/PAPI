@@ -117,55 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="accept" xml:space="preserve">
-    <value>Accept</value>
+  <data name="agility" xml:space="preserve">
+    <value>Agility</value>
   </data>
-  <data name="available" xml:space="preserve">
-    <value>available</value>
+  <data name="agilityShort" xml:space="preserve">
+    <value>AG</value>
   </data>
-  <data name="check" xml:space="preserve">
-    <value>Check</value>
+  <data name="brawn" xml:space="preserve">
+    <value>Brawn</value>
   </data>
-  <data name="current" xml:space="preserve">
-    <value>current</value>
+  <data name="brawnShort" xml:space="preserve">
+    <value>BR</value>
   </data>
-  <data name="design" xml:space="preserve">
-    <value>Design</value>
+  <data name="characteristic" xml:space="preserve">
+    <value>Characteristic</value>
   </data>
-  <data name="english" xml:space="preserve">
-    <value>English</value>
+  <data name="characteristics" xml:space="preserve">
+    <value>Characteristics</value>
   </data>
-  <data name="genre" xml:space="preserve">
-    <value>Genre</value>
+  <data name="cunning" xml:space="preserve">
+    <value>Cunning</value>
   </data>
-  <data name="genres" xml:space="preserve">
-    <value>Genres</value>
+  <data name="cunningShort" xml:space="preserve">
+    <value>CU</value>
   </data>
-  <data name="german" xml:space="preserve">
-    <value>German</value>
+  <data name="improve" xml:space="preserve">
+    <value />
   </data>
-  <data name="language" xml:space="preserve">
-    <value>Language</value>
+  <data name="intellect" xml:space="preserve">
+    <value>Intellect</value>
   </data>
-  <data name="medieval" xml:space="preserve">
-    <value>Medieval</value>
+  <data name="intellectShort" xml:space="preserve">
+    <value>IN</value>
   </data>
-  <data name="modern" xml:space="preserve">
-    <value>Modern</value>
+  <data name="presence" xml:space="preserve">
+    <value>Presence</value>
   </data>
-  <data name="name" xml:space="preserve">
-    <value>Name</value>
+  <data name="presenceShort" xml:space="preserve">
+    <value>PR</value>
   </data>
-  <data name="page" xml:space="preserve">
-    <value>page</value>
+  <data name="willpower" xml:space="preserve">
+    <value>Willpower</value>
   </data>
-  <data name="return" xml:space="preserve">
-    <value>Return</value>
-  </data>
-  <data name="ruleBook" xml:space="preserve">
-    <value>Rule Book</value>
-  </data>
-  <data name="task" xml:space="preserve">
-    <value>Task</value>
+  <data name="willpowerShort" xml:space="preserve">
+    <value>WI</value>
   </data>
 </root>
