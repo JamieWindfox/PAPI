@@ -13,11 +13,19 @@ namespace GameMasterPAPI.Views
 {
     public partial class PAPIView : Form
     {
+        protected PAPIView m_caller;
         public PAPIView()
         {
             InitializeComponent();
             SetDesign();
-            
+            m_caller = null;
+        }
+
+        public PAPIView(PAPIView caller)
+        {
+            InitializeComponent();
+            SetDesign();
+            m_caller = caller;
         }
 
         protected void SetDesign()
@@ -41,6 +49,13 @@ namespace GameMasterPAPI.Views
                     break;
             }
             Size = new Size(800, 600);
+            FormBorderStyle = FormBorderStyle.None;
+            StartPosition = FormStartPosition.WindowsDefaultBounds;
+            WindowState = FormWindowState.Maximized;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            ShowIcon = false;
+            ShowInTaskbar = false;
         }
 
         protected void SetButtonDesign(List<Button> buttons)
@@ -50,7 +65,6 @@ namespace GameMasterPAPI.Views
                 button.BackColor = BackColor;
                 button.ForeColor = ForeColor;
                 button.FlatStyle = FlatStyle.Flat;
-                
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿
 namespace GameMasterPAPI.Views
 {
-    partial class PAPIView
+    partial class GMStartMenuView
     {
         /// <summary>
         /// Required designer variable.
@@ -29,28 +29,35 @@ namespace GameMasterPAPI.Views
         /// </summary>
         private void InitializeComponent()
         {
+            this.welcomeText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // PAPIView
+            // welcomeText
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.welcomeText.AutoSize = true;
+            this.welcomeText.Dock = System.Windows.Forms.DockStyle.Top;
+            this.welcomeText.Location = new System.Drawing.Point(0, 0);
+            this.welcomeText.Name = "welcomeText";
+            this.welcomeText.Size = new System.Drawing.Size(108, 19);
+            this.welcomeText.TabIndex = 0;
+            this.welcomeText.Text = "welcomeText";
+            // 
+            // GMStartMenuView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.ControlBox = false;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "PAPIView";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PAPIView";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.welcomeText);
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Name = "GMStartMenuView";
+            this.Text = "GMStartMenuView";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label welcomeText;
     }
 }

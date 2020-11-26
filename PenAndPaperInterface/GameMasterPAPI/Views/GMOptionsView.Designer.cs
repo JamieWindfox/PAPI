@@ -1,7 +1,7 @@
 ﻿
 namespace GameMasterPAPI.Views
 {
-    partial class GMLoadingView
+    partial class GMOptionsView
     {
         /// <summary>
         /// Required designer variable.
@@ -125,8 +125,9 @@ namespace GameMasterPAPI.Views
             this.acceptButton.TabIndex = 7;
             this.acceptButton.Text = "accept";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
-            // GMLoadingView
+            // GMFirstStartView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,7 +137,7 @@ namespace GameMasterPAPI.Views
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(9);
-            this.Name = "GMLoadingView";
+            this.Name = "GMFirstStartView";
             this.Text = "GMLoadingView";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

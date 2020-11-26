@@ -12,24 +12,22 @@ using System.Resources;
 
 namespace GameMasterPAPI.Views
 {
-    public partial class GMLoadingView : PAPIView
+    public partial class GMOptionsView : PAPIView
     {
-        PAPIView m_caller;
+        private Language m_activeLanguage = Language.ENGLISH;
 
-        public GMLoadingView(PAPIView caller) : this()
+        public GMOptionsView(PAPIView caller) : this()
         {
-            m_caller = caller;
             returnButton.Visible = true;
             returnButton.Dock = DockStyle.Bottom | DockStyle.Left;
             SetButtonDesign(new List<Button>() { returnButton, acceptButton});
         }
-        public GMLoadingView() : base()
+        public GMOptionsView() : base()
         {
             InitializeComponent();
             SetTextToActiveLanguage();
             languageText.Dock = DockStyle.Top | DockStyle.Left;
             designText.Dock = DockStyle.Top | DockStyle.Left;
-            m_caller = null;
             returnButton.Visible = false;
 
             acceptButton.Dock = DockStyle.Bottom;
@@ -39,16 +37,22 @@ namespace GameMasterPAPI.Views
 
         private void SetTextToActiveLanguage()
         {
+            if(m_activeLanguage == GameSettings.GetLanguage())
+            {
+                return;
+            }
             string resFile;
 
             switch (GameSettings.GetLanguage())
             {
                 case Language.GERMAN:
                     resFile = @".\Strings\\General_DE.resx";
+                    m_activeLanguage = Language.GERMAN;
                     break;
                 case Language.ENGLISH:
                 default:
                     resFile = @".\Strings\\General_EN.resx";
+                    m_activeLanguage = Language.ENGLISH;
                     break;
             }
             using (ResXResourceSet resSet = new ResXResourceSet(resFile))
@@ -97,6 +101,14 @@ namespace GameMasterPAPI.Views
             }
             SetDesign();
             SetButtonDesign(new List<Button>() { acceptButton, returnButton });
+        }
+
+        private void acceptButton_Click(object sender, EventArgs e)
+        {
+            GMStartMenuView startMenu = new GMStartMenuView(this);
+            
+            startMenu.Show();
+            Hide();
         }
     }
 }
