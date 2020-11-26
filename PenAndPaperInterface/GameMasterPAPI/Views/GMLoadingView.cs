@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace GameMasterPAPI.Views
 {
@@ -31,43 +32,50 @@ namespace GameMasterPAPI.Views
             m_caller = null;
             returnButton.Visible = false;
 
-            acceptButton.Dock = DockStyle.Right;
+            acceptButton.Dock = DockStyle.Bottom;
+            SetDesign();
             SetButtonDesign(new List<Button>() { acceptButton });
         }
 
         private void SetTextToActiveLanguage()
         {
-            switch(GameSettings.GetLanguage())
+            string resFile;
+
+            switch (GameSettings.GetLanguage())
             {
                 case Language.GERMAN:
-                    languageText.Text = "Sprache";
-                    designText.Text = "Design";
-                    designDropdown.Items[0] = "Mittelalterlich";
-                    designDropdown.Items[1] = "Modern";
-                    returnButton.Text = "Zurück";
-                    acceptButton.Text = "Weiter";
+                    resFile = @".\Strings\\General_DE.resx";
                     break;
                 case Language.ENGLISH:
                 default:
-                    languageText.Text = "Language";
-                    designText.Text = "Design";
-                    designDropdown.Items[0] = "Medieval";
-                    designDropdown.Items[1] = "Modern";
-                    returnButton.Text = "Return";
-                    acceptButton.Text = "Accept";
+                    resFile = @".\Strings\\General_EN.resx";
                     break;
+            }
+            using (ResXResourceSet resSet = new ResXResourceSet(resFile))
+            {
+                languageText.Text = resSet.GetString("language");
+                designText.Text = resSet.GetString("design");
+                designDropdown.Items[0] = resSet.GetString("medieval");
+                designDropdown.Items[1] = resSet.GetString("modern");
+                languageDropdown.Items[0] = resSet.GetString("english");
+                languageDropdown.Items[1] = resSet.GetString("german");
+                returnButton.Text = resSet.GetString("return");
+                acceptButton.Text = resSet.GetString("accept");
             }
         }
 
         private void languageDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(languageDropdown.SelectedItem.ToString())
+            switch(languageDropdown.SelectedIndex)
             {
-                case "English": GameSettings.SetActiveLanguage(Language.ENGLISH);
+                case 0:
+                    GameSettings.SetActiveLanguage(Language.ENGLISH);
                     break;
-                case "Deutsch": GameSettings.SetActiveLanguage(Language.GERMAN);
+                case 1:
+                    GameSettings.SetActiveLanguage(Language.GERMAN);
                     break;
-                default: GameSettings.SetActiveLanguage(Language.ENGLISH);
+                default:
+                    GameSettings.SetActiveLanguage(Language.ENGLISH);
                     break;
             }
             SetTextToActiveLanguage();
@@ -88,6 +96,7 @@ namespace GameMasterPAPI.Views
                     break;
             }
             SetDesign();
+            SetButtonDesign(new List<Button>() { acceptButton, returnButton });
         }
     }
 }

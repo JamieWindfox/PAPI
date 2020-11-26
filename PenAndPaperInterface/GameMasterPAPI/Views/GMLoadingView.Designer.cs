@@ -73,9 +73,9 @@ namespace GameMasterPAPI.Views
             this.languageText.Location = new System.Drawing.Point(4, 0);
             this.languageText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.languageText.Name = "languageText";
-            this.languageText.Size = new System.Drawing.Size(63, 19);
+            this.languageText.Size = new System.Drawing.Size(81, 19);
             this.languageText.TabIndex = 2;
-            this.languageText.Text = "label1";
+            this.languageText.Text = "language";
             // 
             // designText
             // 
@@ -85,7 +85,7 @@ namespace GameMasterPAPI.Views
             this.designText.Name = "designText";
             this.designText.Size = new System.Drawing.Size(63, 19);
             this.designText.TabIndex = 3;
-            this.designText.Text = "label2";
+            this.designText.Text = "design";
             // 
             // panel1
             // 
@@ -123,7 +123,7 @@ namespace GameMasterPAPI.Views
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(89, 34);
             this.acceptButton.TabIndex = 7;
-            this.acceptButton.Text = "button1";
+            this.acceptButton.Text = "accept";
             this.acceptButton.UseVisualStyleBackColor = true;
             // 
             // GMLoadingView

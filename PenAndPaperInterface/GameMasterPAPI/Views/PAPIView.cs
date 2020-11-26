@@ -50,6 +50,7 @@ namespace GameMasterPAPI.Views
                 button.BackColor = BackColor;
                 button.ForeColor = ForeColor;
                 button.FlatStyle = FlatStyle.Flat;
+                
             }
         }
     }
