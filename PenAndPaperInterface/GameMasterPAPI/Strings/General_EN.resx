@@ -144,6 +144,9 @@
   <data name="german" xml:space="preserve">
     <value>German</value>
   </data>
+  <data name="gmName" xml:space="preserve">
+    <value>Name of Game Master</value>
+  </data>
   <data name="language" xml:space="preserve">
     <value>Language</value>
   </data>
@@ -156,8 +159,14 @@
   <data name="name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="options" xml:space="preserve">
+    <value>Options</value>
+  </data>
   <data name="page" xml:space="preserve">
     <value>page</value>
+  </data>
+  <data name="quit" xml:space="preserve">
+    <value>Quit</value>
   </data>
   <data name="return" xml:space="preserve">
     <value>Return</value>
@@ -165,7 +174,13 @@
   <data name="ruleBook" xml:space="preserve">
     <value>Rule Book</value>
   </data>
+  <data name="startGame" xml:space="preserve">
+    <value>Start Game</value>
+  </data>
   <data name="task" xml:space="preserve">
     <value>Task</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Welcome</value>
   </data>
 </root>

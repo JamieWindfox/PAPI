@@ -144,17 +144,18 @@
     <Compile Include="Views\GMStartMenuView.Designer.cs">
       <DependentUpon>GMStartMenuView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\GMStartView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GMStartView.Designer.cs">
+      <DependentUpon>GMStartView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IPAPIView.cs" />
     <Compile Include="Views\PAPIView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\PAPIView.Designer.cs">
       <DependentUpon>PAPIView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ViewContainer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ViewContainer.Designer.cs">
-      <DependentUpon>ViewContainer.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -241,11 +242,11 @@
     <EmbeddedResource Include="Views\GMStartMenuView.resx">
       <DependentUpon>GMStartMenuView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\GMStartView.resx">
+      <DependentUpon>GMStartView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\PAPIView.resx">
       <DependentUpon>PAPIView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ViewContainer.resx">
-      <DependentUpon>ViewContainer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

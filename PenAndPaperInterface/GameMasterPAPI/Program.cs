@@ -16,7 +16,7 @@ namespace GameMasterPAPI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ViewContainer());
+            Application.Run(new GMStartView());
         }
     }
 }

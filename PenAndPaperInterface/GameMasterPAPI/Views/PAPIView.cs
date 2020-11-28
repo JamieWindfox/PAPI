@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAPI.Logging;
 using PAPI.Settings;
 
 namespace GameMasterPAPI.Views
@@ -14,22 +15,32 @@ namespace GameMasterPAPI.Views
     public partial class PAPIView : Form
     {
         protected PAPIView m_caller;
+        protected Language m_activeLanguage = Language.ENGLISH;
+        protected bool m_isOpen = false;
+
         public PAPIView()
         {
-            InitializeComponent();
-            SetDesign();
+            InitBase();
             m_caller = null;
         }
 
         public PAPIView(PAPIView caller)
         {
+            InitBase();
+            m_caller = caller;
+            this.Location = caller.Location;
+            this.Size = caller.Size;
+        }
+
+        public void InitBase()
+        {
             InitializeComponent();
             SetDesign();
-            m_caller = caller;
         }
 
         protected void SetDesign()
         {
+            if (m_caller == null) m_caller = this;
             switch(GameSettings.GetDesign())
             {
                 case DesignEnum.MEDIEVAL:
@@ -48,14 +59,17 @@ namespace GameMasterPAPI.Views
                     Font = new Font("Calibri", 12);
                     break;
             }
-            Size = new Size(800, 600);
-            FormBorderStyle = FormBorderStyle.None;
-            StartPosition = FormStartPosition.WindowsDefaultBounds;
-            WindowState = FormWindowState.Maximized;
-            MaximizeBox = false;
-            MinimizeBox = false;
+            FormBorderStyle = FormBorderStyle.Sizable;
+            StartPosition = FormStartPosition.Manual;
+            Location = m_caller.Location;
+            Size = m_caller.Size;
+            WindowState = FormWindowState.Normal;
+            MaximizeBox = true;
+            MinimizeBox = true;
             ShowIcon = false;
-            ShowInTaskbar = false;
+            ShowInTaskbar = true;
+            AutoScaleMode = AutoScaleMode.None;
+            ControlBox = true;
         }
 
         protected void SetButtonDesign(List<Button> buttons)
@@ -65,7 +79,21 @@ namespace GameMasterPAPI.Views
                 button.BackColor = BackColor;
                 button.ForeColor = ForeColor;
                 button.FlatStyle = FlatStyle.Flat;
+                button.Size = new Size(120, 40);
             }
+        }
+
+        public void Open()
+        {
+            SetDesign();
+            SetTextToActiveLanguage();
+        }
+
+        private void SetTextToActiveLanguage()
+        {
+            string excMsg = "Tried to set language of non-existing form, there must not be a super class PAPIView!";
+            WfGLogger.Log(this.GetType() + ".SetTextToActiveLanguage()", LogLevel.FATAL, excMsg);
+            throw new NotImplementedException(excMsg);
         }
     }
 }

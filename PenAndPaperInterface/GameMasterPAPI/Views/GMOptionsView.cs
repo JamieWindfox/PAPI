@@ -12,32 +12,30 @@ using System.Resources;
 
 namespace GameMasterPAPI.Views
 {
-    public partial class GMOptionsView : PAPIView
+    public partial class GMOptionsView : PAPIView, IPAPIView
     {
-        private Language m_activeLanguage = Language.ENGLISH;
 
-        public GMOptionsView(PAPIView caller) : this()
+        public GMOptionsView(PAPIView caller)
         {
-            returnButton.Visible = true;
-            returnButton.Dock = DockStyle.Bottom | DockStyle.Left;
-            SetButtonDesign(new List<Button>() { returnButton, acceptButton});
+            m_caller = caller;
+            Init();
         }
-        public GMOptionsView() : base()
+
+        public void Init()
         {
             InitializeComponent();
             SetTextToActiveLanguage();
-            languageText.Dock = DockStyle.Top | DockStyle.Left;
-            designText.Dock = DockStyle.Top | DockStyle.Left;
-            returnButton.Visible = false;
-
-            acceptButton.Dock = DockStyle.Bottom;
             SetDesign();
-            SetButtonDesign(new List<Button>() { acceptButton });
+            returnButton.Visible = true;
+            SetButtonDesign(new List<Button>() { returnButton });
+            m_isOpen = true;
         }
 
-        private void SetTextToActiveLanguage()
+
+
+        public void SetTextToActiveLanguage()
         {
-            if(m_activeLanguage == GameSettings.GetLanguage())
+            if(m_activeLanguage == GameSettings.GetLanguage() && m_isOpen)
             {
                 return;
             }
@@ -64,7 +62,7 @@ namespace GameMasterPAPI.Views
                 languageDropdown.Items[0] = resSet.GetString("english");
                 languageDropdown.Items[1] = resSet.GetString("german");
                 returnButton.Text = resSet.GetString("return");
-                acceptButton.Text = resSet.GetString("accept");
+                gmName.Text = resSet.GetString("gmName");
             }
         }
 
@@ -100,7 +98,7 @@ namespace GameMasterPAPI.Views
                     break;
             }
             SetDesign();
-            SetButtonDesign(new List<Button>() { acceptButton, returnButton });
+            SetButtonDesign(new List<Button>() { returnButton });
         }
 
         private void acceptButton_Click(object sender, EventArgs e)
@@ -109,6 +107,17 @@ namespace GameMasterPAPI.Views
             
             startMenu.Show();
             Hide();
+        }
+
+        private void gmNameInputField_TextChanged(object sender, EventArgs e)
+        {
+            GameSettings.SetGmName(gmNameInputField.Text);
+        }
+
+        private void returnButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            m_caller.Show();
         }
     }
 }

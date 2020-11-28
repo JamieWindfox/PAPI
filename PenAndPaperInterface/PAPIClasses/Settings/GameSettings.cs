@@ -19,6 +19,9 @@ namespace PAPI.Settings
         // Is a sessions running at the moment?
         private static bool isSessionRunning = false;
 
+        // Name of the current GM
+        private static string m_gmName = "GAME MASTER";
+
 
         // ################################################# GETTER #################################################
         public static List<GenreEnum> GetAllGenres()
@@ -39,6 +42,7 @@ namespace PAPI.Settings
         public static GenreEnum GetGenre() { return activeGenre; }
         public static DesignEnum GetDesign() { return activeDesign; }
         public static Language GetLanguage() { return activeLanguage; }
+        public static string GetGmName() { return m_gmName; }
 
         // ################################################# SETTER #################################################
 
@@ -61,11 +65,15 @@ namespace PAPI.Settings
             }
         }
 
-
         public static void SetActiveLanguage(Language language)
         {
             activeLanguage = language;
             WfGLogger.Log("GameSettings.SetActiveLanguage(Language)", LogLevel.DEBUG, "Set active language to " + language);
+        }
+
+        public static void SetGmName(string name)
+        {
+            m_gmName = name;
         }
 
     }

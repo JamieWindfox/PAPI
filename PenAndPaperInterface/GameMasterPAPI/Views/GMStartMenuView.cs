@@ -10,22 +10,25 @@ using System.Windows.Forms;
 
 namespace GameMasterPAPI.Views
 {
-    public partial class GMStartMenuView : PAPIView
+    public partial class GMStartMenuView : PAPIView, IPAPIView
     {
         
         public GMStartMenuView(PAPIView caller) : base(caller)
         {
-            MdiParent = caller.MdiParent;
-            InitializeComponent();
-            test();
+            Init();
         }
 
-        public void test()
+        public void Init()
         {
-            welcomeText.Text = "Hello World";
-            welcomeText.Visible = true;
-            welcomeText.ForeColor = System.Drawing.Color.White;
+            InitializeComponent();
         }
+
+        public void SetTextToActiveLanguage()
+        {
+            throw new NotImplementedException();
+        }
+
+
 
     }
 }
