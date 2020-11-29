@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace GameMasterPAPI.Views
 {
+    // The start view shows a welcome message with the Game masters' name, a "Quit" button, a "Start Game" button and an "Options" Button
+    // This is where every session starts
+
     public partial class GMStartView : PAPIView
     {
         private string m_gmName;
@@ -21,7 +24,7 @@ namespace GameMasterPAPI.Views
             Open();
         }
 
-
+        // Set all text in this view to the given language
         public override void SetTextToActiveLanguage()
         {
             
@@ -53,17 +56,20 @@ namespace GameMasterPAPI.Views
             }
         }
 
+        // Shuts down the application
         private void quitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        // Opens the options view
         private void optionsButton_Click(object sender, EventArgs e)
         {
             GMOptionsView optionsView = new GMOptionsView(this);
             optionsView.Open(this);
         }
 
+        // Opens the Game Overview
         private void startGameButton_Click(object sender, EventArgs e)
         {
             CreateGameView createGameView = new CreateGameView(this);
