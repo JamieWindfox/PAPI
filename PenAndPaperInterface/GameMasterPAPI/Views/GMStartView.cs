@@ -12,26 +12,24 @@ using System.Windows.Forms;
 
 namespace GameMasterPAPI.Views
 {
-    public partial class GMStartView : PAPIView, IPAPIView
+    public partial class GMStartView : PAPIView
     {
-        public GMStartView()
-        {
-            Init();
-        }
-
-        public void Init()
+        private string m_gmName;
+        public GMStartView() : base(null)
         {
             InitializeComponent();
-            SetTextToActiveLanguage();
-            m_isOpen = true;
+            Open();
         }
 
-        public void SetTextToActiveLanguage()
+
+        public override void SetTextToActiveLanguage()
         {
-            if (m_activeLanguage == GameSettings.GetLanguage() && m_isOpen)
+            
+            if (m_activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGmName())
             {
                 return;
             }
+            m_gmName = GameSettings.GetGmName();
             string resFile;
 
             switch (GameSettings.GetLanguage())
@@ -48,7 +46,7 @@ namespace GameMasterPAPI.Views
             }
             using (ResXResourceSet resSet = new ResXResourceSet(resFile))
             {
-                welcomeText.Text = resSet.GetString("welcome") + ", " + GameSettings.GetGmName();
+                welcomeText.Text = resSet.GetString("welcome") + ", " + m_gmName;
                 quitButton.Text = resSet.GetString("quit");
                 startGameButton.Text = resSet.GetString("startGame");
                 optionsButton.Text = resSet.GetString("options");
@@ -63,11 +61,13 @@ namespace GameMasterPAPI.Views
         private void optionsButton_Click(object sender, EventArgs e)
         {
             GMOptionsView optionsView = new GMOptionsView(this);
-            Hide();
-            m_isOpen = false;
-            optionsView.Open();
+            optionsView.Open(this);
         }
 
-        
+        private void startGameButton_Click(object sender, EventArgs e)
+        {
+            CreateGameView createGameView = new CreateGameView(this);
+            createGameView.Open(this);
+        }
     }
 }

@@ -12,33 +12,25 @@ using System.Resources;
 
 namespace GameMasterPAPI.Views
 {
-    public partial class GMOptionsView : PAPIView, IPAPIView
+    public partial class GMOptionsView : PAPIView
     {
-
-        public GMOptionsView(PAPIView caller)
-        {
-            m_caller = caller;
-            Init();
-        }
-
-        public void Init()
+        private string m_gmName;
+        public GMOptionsView(PAPIView caller) : base(caller)
         {
             InitializeComponent();
-            SetTextToActiveLanguage();
-            SetDesign();
-            returnButton.Visible = true;
-            SetButtonDesign(new List<Button>() { returnButton });
-            m_isOpen = true;
+            m_buttons.Add(returnButton);
+            SetButtonDesign();
         }
 
 
-
-        public void SetTextToActiveLanguage()
+        public override void SetTextToActiveLanguage()
         {
-            if(m_activeLanguage == GameSettings.GetLanguage() && m_isOpen)
+            if(m_activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGmName())
             {
                 return;
             }
+            m_gmName = GameSettings.GetGmName();
+            gmNameInputField.Text = m_gmName;
             string resFile;
 
             switch (GameSettings.GetLanguage())
@@ -98,15 +90,7 @@ namespace GameMasterPAPI.Views
                     break;
             }
             SetDesign();
-            SetButtonDesign(new List<Button>() { returnButton });
-        }
-
-        private void acceptButton_Click(object sender, EventArgs e)
-        {
-            GMStartMenuView startMenu = new GMStartMenuView(this);
-            
-            startMenu.Show();
-            Hide();
+            SetButtonDesign();
         }
 
         private void gmNameInputField_TextChanged(object sender, EventArgs e)
@@ -116,8 +100,7 @@ namespace GameMasterPAPI.Views
 
         private void returnButton_Click(object sender, EventArgs e)
         {
-            Hide();
-            m_caller.Show();
+            m_caller.Open(this);
         }
     }
 }

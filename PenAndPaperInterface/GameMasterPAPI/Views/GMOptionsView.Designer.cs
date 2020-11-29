@@ -170,7 +170,7 @@ namespace GameMasterPAPI.Views
             this.Controls.Add(this.tableLayoutPanel);
             this.Margin = new System.Windows.Forms.Padding(9);
             this.Name = "GMOptionsView";
-            this.Text = "GMLoadingView";
+            this.Text = "GMOptionsView";
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

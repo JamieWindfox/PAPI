@@ -1,7 +1,7 @@
 ﻿
 namespace GameMasterPAPI.Views
 {
-    partial class GMStartMenuView
+    partial class CreateGameView
     {
         /// <summary>
         /// Required designer variable.
@@ -29,34 +29,12 @@ namespace GameMasterPAPI.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.welcomeText = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // welcomeText
-            // 
-            this.welcomeText.AutoSize = true;
-            this.welcomeText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.welcomeText.Location = new System.Drawing.Point(0, 0);
-            this.welcomeText.Name = "welcomeText";
-            this.welcomeText.Size = new System.Drawing.Size(108, 19);
-            this.welcomeText.TabIndex = 0;
-            this.welcomeText.Text = "welcomeText";
-            // 
-            // GMStartMenuView
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.welcomeText);
-            this.Name = "GMStartMenuView";
-            this.Text = "GMStartMenuView";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            this.Text = "CreateGameView";
         }
 
         #endregion
-
-        private System.Windows.Forms.Label welcomeText;
     }
 }

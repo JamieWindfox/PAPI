@@ -3,6 +3,7 @@
     public enum Language
     {
         ENGLISH,
-        GERMAN
+        GERMAN,
+        NOT_VALID
     }
 }

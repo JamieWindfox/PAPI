@@ -10,24 +10,17 @@ using System.Windows.Forms;
 
 namespace GameMasterPAPI.Views
 {
-    public partial class GMStartMenuView : PAPIView, IPAPIView
+    public partial class CreateGameView : PAPIView, ITranslatableView
     {
-        
-        public GMStartMenuView(PAPIView caller) : base(caller)
-        {
-            Init();
-        }
-
-        public void Init()
+        public CreateGameView()
         {
             InitializeComponent();
         }
 
-        public void SetTextToActiveLanguage()
+        public CreateGameView(PAPIView caller) : base(caller)
         {
-            throw new NotImplementedException();
+            InitializeComponent();
         }
-
 
 
     }

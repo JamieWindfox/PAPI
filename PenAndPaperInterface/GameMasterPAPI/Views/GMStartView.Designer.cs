@@ -82,6 +82,7 @@ namespace GameMasterPAPI.Views
             this.startGameButton.TabIndex = 1;
             this.startGameButton.Text = "start";
             this.startGameButton.UseVisualStyleBackColor = true;
+            this.startGameButton.Click += new System.EventHandler(this.startGameButton_Click);
             // 
             // quitButton
             // 

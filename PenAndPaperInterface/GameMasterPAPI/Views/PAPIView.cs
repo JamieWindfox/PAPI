@@ -1,47 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PAPI.Logging;
 using PAPI.Settings;
+using Microsoft.CodeAnalysis;
+using PAPI.Exception;
 
 namespace GameMasterPAPI.Views
 {
-    public partial class PAPIView : Form
+    public partial class PAPIView : Form, ITranslatableView
     {
-        protected PAPIView m_caller;
-        protected Language m_activeLanguage = Language.ENGLISH;
-        protected bool m_isOpen = false;
+        public PAPIView m_caller { get; protected set; }
+        public Language m_activeLanguage { get; protected set; } = Language.NOT_VALID;
+        public List<Button> m_buttons { get; protected set; }
 
-        public PAPIView()
-        {
-            InitBase();
-            m_caller = null;
-        }
+        public PAPIView() : this(null)
+        { }
 
         public PAPIView(PAPIView caller)
         {
-            InitBase();
+            InitializeComponent();
             m_caller = caller;
-            this.Location = caller.Location;
-            this.Size = caller.Size;
+            if (m_caller != null)
+            {
+                this.Location = m_caller.Location;
+                this.Size = m_caller.Size;
+            }
+            m_buttons = new List<Button>();
         }
 
-        public void InitBase()
+        protected void SetButtonDesign()
         {
-            InitializeComponent();
+            foreach(Button button in m_buttons)
+            {
+                button.BackColor = BackColor;
+                button.ForeColor = ForeColor;
+                button.FlatStyle = FlatStyle.Flat;
+                button.Size = new Size(120, 40);
+            }
+        }
+
+        public void Open(PAPIView caller)
+        {
+            if (caller != null)
+            {
+                m_caller = caller;
+                caller.Hide();
+            }
             SetDesign();
+            SetButtonDesign();
+            SetTextToActiveLanguage();
+            Show();
+        }
+        public void Open()
+        {
+            Open(null);
         }
 
         protected void SetDesign()
         {
-            if (m_caller == null) m_caller = this;
-            switch(GameSettings.GetDesign())
+            switch (GameSettings.GetDesign())
             {
                 case DesignEnum.MEDIEVAL:
                     BackColor = System.Drawing.Color.AntiqueWhite;
@@ -61,8 +80,16 @@ namespace GameMasterPAPI.Views
             }
             FormBorderStyle = FormBorderStyle.Sizable;
             StartPosition = FormStartPosition.Manual;
-            Location = m_caller.Location;
-            Size = m_caller.Size;
+            if (m_caller != null)
+            {
+                Location = m_caller.Location;
+                Size = m_caller.Size;
+            }
+            else
+            {
+                Location = new Point(0, 0);
+                Size = new Size(800, 600);
+            }
             WindowState = FormWindowState.Normal;
             MaximizeBox = true;
             MinimizeBox = true;
@@ -70,30 +97,14 @@ namespace GameMasterPAPI.Views
             ShowInTaskbar = true;
             AutoScaleMode = AutoScaleMode.None;
             ControlBox = true;
+            SetButtonDesign();
         }
 
-        protected void SetButtonDesign(List<Button> buttons)
+        public virtual void SetTextToActiveLanguage()
         {
-            foreach(Button button in buttons)
-            {
-                button.BackColor = BackColor;
-                button.ForeColor = ForeColor;
-                button.FlatStyle = FlatStyle.Flat;
-                button.Size = new Size(120, 40);
-            }
-        }
-
-        public void Open()
-        {
-            SetDesign();
-            SetTextToActiveLanguage();
-        }
-
-        private void SetTextToActiveLanguage()
-        {
-            string excMsg = "Tried to set language of non-existing form, there must not be a super class PAPIView!";
-            WfGLogger.Log(this.GetType() + ".SetTextToActiveLanguage()", LogLevel.FATAL, excMsg);
-            throw new NotImplementedException(excMsg);
+            string excMsg = "Not implemented for PAPIView";
+            WfGLogger.Log(this.GetType() + ".SetTextToActiveLanguage()", LogLevel.ERROR, excMsg);
+            throw new PAPIException(excMsg);
         }
     }
 }
