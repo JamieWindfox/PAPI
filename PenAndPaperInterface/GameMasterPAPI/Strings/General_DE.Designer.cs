@@ -160,6 +160,15 @@ namespace GameMasterPAPI.Strings {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Gespeicherte Spiele ähnelt.
+        /// </summary>
+        internal static string savedGames {
+            get {
+                return ResourceManager.GetString("savedGames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Starten ähnelt.
         /// </summary>
         internal static string startGame {

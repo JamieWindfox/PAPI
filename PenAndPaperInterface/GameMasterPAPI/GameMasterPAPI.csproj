@@ -163,11 +163,11 @@
       <DependentUpon>ArchetypesAndSpecies_EN.resx</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Views\CreateGameView.cs">
+    <Compile Include="Views\SelectGameView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CreateGameView.Designer.cs">
-      <DependentUpon>CreateGameView.cs</DependentUpon>
+    <Compile Include="Views\SelectGameView.Designer.cs">
+      <DependentUpon>SelectGameView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\GMOptionsView.cs">
       <SubType>Form</SubType>
@@ -276,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PAPIView.resx">
       <DependentUpon>PAPIView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SelectGameView.resx">
+      <DependentUpon>SelectGameView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

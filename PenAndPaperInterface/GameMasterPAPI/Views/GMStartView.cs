@@ -72,7 +72,7 @@ namespace GameMasterPAPI.Views
         // Opens the Game Overview
         private void startGameButton_Click(object sender, EventArgs e)
         {
-            CreateGameView createGameView = new CreateGameView(this);
+            SelectGameView createGameView = new SelectGameView(this);
             createGameView.Open(this);
         }
     }

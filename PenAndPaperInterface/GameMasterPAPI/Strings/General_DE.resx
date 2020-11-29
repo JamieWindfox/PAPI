@@ -150,6 +150,9 @@
   <data name="return" xml:space="preserve">
     <value>Zurück</value>
   </data>
+  <data name="savedGames" xml:space="preserve">
+    <value>Gespeicherte Spiele</value>
+  </data>
   <data name="startGame" xml:space="preserve">
     <value>Starten</value>
   </data>
