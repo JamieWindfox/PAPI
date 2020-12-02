@@ -163,11 +163,23 @@
       <DependentUpon>ArchetypesAndSpecies_EN.resx</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Views\CreateGameView.cs">
+    <Compile Include="Views\CreateNewGameView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CreateGameView.Designer.cs">
-      <DependentUpon>CreateGameView.cs</DependentUpon>
+    <Compile Include="Views\CreateNewGameView.Designer.cs">
+      <DependentUpon>CreateNewGameView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PAPIPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PAPIPopup.Designer.cs">
+      <DependentUpon>PAPIPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectGameView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SelectGameView.Designer.cs">
+      <DependentUpon>SelectGameView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\GMOptionsView.cs">
       <SubType>Form</SubType>
@@ -188,6 +200,12 @@
     </Compile>
     <Compile Include="Views\PAPIView.Designer.cs">
       <DependentUpon>PAPIView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowGamePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShowGamePopup.Designer.cs">
+      <DependentUpon>ShowGamePopup.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -276,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PAPIView.resx">
       <DependentUpon>PAPIView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SelectGameView.resx">
+      <DependentUpon>SelectGameView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

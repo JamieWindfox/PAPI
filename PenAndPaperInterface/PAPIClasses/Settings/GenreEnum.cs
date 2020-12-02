@@ -4,7 +4,7 @@
     {
         MAGICAL_WORLD,
         MEDIEVAL_FANTASY,
-        POSTNUKLEAR_FALLOUT,
+        NUCLEAR_FALLOUT,
         SPACE_OPERA
     }
 }

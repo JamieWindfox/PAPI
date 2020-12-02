@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace GameMasterPAPI.Views
 {
-    public partial class CreateGameView : PAPIView, ITranslatableView
+    public partial class ShowGamePopup : PAPIPopup, ITranslatableView
     {
-        public CreateGameView()
+        public ShowGamePopup()
         {
             InitializeComponent();
         }
 
-        public CreateGameView(PAPIView caller) : base(caller)
+        public override void SetTextToActiveLanguage()
         {
-            InitializeComponent();
+            // TODO
         }
 
-
+        
     }
 }

@@ -169,11 +169,38 @@ namespace GameMasterPAPI.Strings {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Last Save ähnelt.
+        /// </summary>
+        internal static string lastSave {
+            get {
+                return ResourceManager.GetString("lastSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Magical World ähnelt.
+        /// </summary>
+        internal static string magicalWorld {
+            get {
+                return ResourceManager.GetString("magicalWorld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Medieval ähnelt.
         /// </summary>
         internal static string medieval {
             get {
                 return ResourceManager.GetString("medieval", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Medieval Fantasy ähnelt.
+        /// </summary>
+        internal static string medievalFantasy {
+            get {
+                return ResourceManager.GetString("medievalFantasy", resourceCulture);
             }
         }
         
@@ -192,6 +219,33 @@ namespace GameMasterPAPI.Strings {
         internal static string name {
             get {
                 return ResourceManager.GetString("name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die New Game ähnelt.
+        /// </summary>
+        internal static string newGame {
+            get {
+                return ResourceManager.GetString("newGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die NOT VALID ähnelt.
+        /// </summary>
+        internal static string NOT_VALID {
+            get {
+                return ResourceManager.GetString("NOT_VALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Nuclear Fallout ähnelt.
+        /// </summary>
+        internal static string nuclearFallout {
+            get {
+                return ResourceManager.GetString("nuclearFallout", resourceCulture);
             }
         }
         
@@ -228,6 +282,33 @@ namespace GameMasterPAPI.Strings {
         internal static string ruleBook {
             get {
                 return ResourceManager.GetString("ruleBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Saved Games ähnelt.
+        /// </summary>
+        internal static string savedGames {
+            get {
+                return ResourceManager.GetString("savedGames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Show ähnelt.
+        /// </summary>
+        internal static string show {
+            get {
+                return ResourceManager.GetString("show", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Space Opera ähnelt.
+        /// </summary>
+        internal static string spaceOpera {
+            get {
+                return ResourceManager.GetString("spaceOpera", resourceCulture);
             }
         }
         

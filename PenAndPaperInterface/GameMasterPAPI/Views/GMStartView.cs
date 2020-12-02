@@ -18,7 +18,7 @@ namespace GameMasterPAPI.Views
     public partial class GMStartView : PAPIView
     {
         private string m_gmName;
-        public GMStartView() : base(null)
+        public GMStartView() : base()
         {
             InitializeComponent();
             Open();
@@ -72,7 +72,7 @@ namespace GameMasterPAPI.Views
         // Opens the Game Overview
         private void startGameButton_Click(object sender, EventArgs e)
         {
-            CreateGameView createGameView = new CreateGameView(this);
+            SelectGameView createGameView = new SelectGameView();
             createGameView.Open(this);
         }
     }
