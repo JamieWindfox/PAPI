@@ -1,10 +1,12 @@
-﻿using PAPI.Settings;
+﻿using PAPI.Logging;
+using PAPI.Settings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,20 +15,17 @@ namespace GameMasterPAPI.Views
 {
     public partial class SelectGameView : PAPIView, ITranslatableView
     {
-        // List of games for test, remove when permanent save games are implementes
-        private static List<Game> savedGames = new List<Game>() { { new Game(GenreEnum.POSTNUKLEAR_FALLOUT) } };
+        // List of games for test, remove when permanent save games are implemented
+        private static List<Game> savedGames = new List<Game>() { 
+            { new Game(GenreEnum.NUCLEAR_FALLOUT) },
+            { new Game(GenreEnum.MAGICAL_WORLD) },
+            { new Game(GenreEnum.SPACE_OPERA)},
+            { new Game(GenreEnum.MEDIEVAL_FANTASY)}
+            };
 
-        private uint m_page = 1;
-        private static uint m_numberOfGames = 3;
-        private const uint GAMES_PER_PAGE = 8;
-        private List<TableLayoutPanel> m_sessionRows;
+        private Dictionary<int, Button> m_gameButtons = new Dictionary<int, Button>();
+
         public SelectGameView()
-        {
-            InitializeComponent();
-            AddComponents();
-        }
-
-        public SelectGameView(PAPIView caller) : base(caller)
         {
             InitializeComponent();
             AddComponents();
@@ -34,61 +33,112 @@ namespace GameMasterPAPI.Views
 
         private void AddComponents()
         {
-            m_sessionRows = new List<TableLayoutPanel>();
-            for(int i = 0; i < m_numberOfGames; ++i)
+            gameTable.AutoSize = true;
+            gameTable.ColumnCount = 3;
+            gameTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            gameTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
+            gameTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 144F));
+            gameTable.Controls.Add(sessionGenreText, 0, 0);
+            gameTable.Controls.Add(dateText, 1, 0);
+            gameTable.RowCount = 1;
+
+
+            gameTable.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
+
+            int rowNr = 1;
+            foreach(Game game in savedGames)
             {
-                m_sessionRows.Add(new TableLayoutPanel());
-                m_sessionRows[i].ColumnCount = 4;
-                m_sessionRows[i].RowCount = 1;
-                m_sessionRows[i].ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20f));
-                m_sessionRows[i].ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60f));
-                m_sessionRows[i].ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20f));
-                m_sessionRows[i].ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100f));
-                m_sessionRows[i].RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-                m_sessionRows[i].Controls.Add(new Label() { Text = savedGames[i].m_genre.ToString() }, 1, i+1);
-                m_sessionRows[i].Controls.Add(new Label() { Text = savedGames[i].partyToString() }, 2, i+1);
-                m_sessionRows[i].Controls.Add(new Label() { Text = savedGames[i].m_lastSession.ToString()}, 3, i+1);
+                WfGLogger.Log(this.GetType() + ".AddComponents()", LogLevel.DEBUG, "Added game to list of saved games: " 
+                    + game.m_genre + ", " + game.m_lastSession.Date.ToString());
+               gameTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
+                gameTable.RowCount++;
+                /*gameTable.Controls.Add(new Label() { 
+                    Text = GameSettings.ToString(game.m_genre), 
+                    Anchor = AnchorStyles.Left | AnchorStyles.Top,
+                    Width = 200}, 0, rowNr);*/
+                gameTable.Controls.Add(new Label() { 
+                    Text = game.m_lastSession.ToString(),
+                    Anchor = AnchorStyles.Left | AnchorStyles.Top,
+                    Width = 200}, 1, rowNr);
                 Button button = new Button()
                 {
-                    Text = "startSession",
+                    Text = "showGame",
                     FlatStyle = FlatStyle.Flat,
-                    Dock = DockStyle.Fill,
+                    Anchor = AnchorStyles.Right | AnchorStyles.Top,
+                    Size = new Size(140, 40),
+                    Name = "showGameButton" + rowNr
                 };
-                m_sessionRows[i].Controls.Add(button, 4, 0);
+                bottomButtonPanel.Controls.Add(button, 3, rowNr);
+                m_gameButtons.Add(rowNr, button);
+                gameTable.Controls.Add(button, 2, rowNr++);
+            }
+            foreach(RowStyle rowStyle in gameTable.RowStyles)
+            {
+                rowStyle.SizeType = SizeType.Absolute;
+                rowStyle.Height = 44;
             }
 
             m_buttons.Add(returnButton);
             m_buttons.Add(newGameButton);
-            m_buttons.Add(previousPageButton);
-            m_buttons.Add(nextPageButton);
-
-            
-
-            
-            SetButtonVisibility();
             SetButtonDesign();
+            foreach (KeyValuePair<int, Button> button in m_gameButtons)
+            {
+                button.Value.Click += GameButton_Click;
+            }
         }
 
-        private void SetButtonVisibility()
+        private void GameButton_Click(object sender, EventArgs e)
         {
-            if (m_numberOfGames <= GAMES_PER_PAGE)
-            {
-                previousPageButton.Visible = false;
-                nextPageButton.Visible = false;
-            }
-            else if (m_page == m_numberOfGames / GAMES_PER_PAGE)
-            {
-                nextPageButton.Visible = false;
-            }
-            else if (m_page == 1)
-            {
-                previousPageButton.Visible = false;
-            }
+            int id = Int32.Parse(((Button)sender).Name.Remove(0, 14));
+            WfGLogger.Log(this.GetType() + ".GameButtonClick(object, EventArgs)", LogLevel.DEBUG, "Button number " + id + " was clicked, open Popup");
+            PAPIPopup showGamePopup = new ShowGamePopup();
+            showGamePopup.Popup(this);
         }
+
 
         public override void SetTextToActiveLanguage()
         {
-            
+            if (m_activeLanguage == GameSettings.GetLanguage())
+            {
+                return;
+            }
+            string resFile;
+
+            switch (GameSettings.GetLanguage())
+            {
+                case Language.GERMAN:
+                    resFile = @".\Strings\\General_DE.resx";
+                    m_activeLanguage = Language.GERMAN;
+                    break;
+                case Language.ENGLISH:
+                default:
+                    resFile = @".\Strings\\General_EN.resx";
+                    m_activeLanguage = Language.ENGLISH;
+                    break;
+            }
+            using (ResXResourceSet resSet = new ResXResourceSet(resFile))
+            {
+                for (int row = 0; row < savedGames.Count; ++row)
+                {
+                    gameTable.Controls.Add(new Label()
+                    {
+                        Text = resSet.GetString(GameSettings.ToString(savedGames[row].m_genre)),
+                        Anchor = AnchorStyles.Left | AnchorStyles.Top,
+                        Width = 200
+                    }, 0, row + 1);
+
+                }
+                foreach (KeyValuePair<int, Button> buttonId in m_gameButtons)
+                {
+                    buttonId.Value.Text = resSet.GetString("show");
+                }
+                savedGamesText.Text = resSet.GetString("savedGames");
+                sessionGenreText.Text = resSet.GetString("genre");
+                dateText.Text = resSet.GetString("lastSave");
+                returnButton.Text = resSet.GetString("return");
+                newGameButton.Text = resSet.GetString("newGame");
+                
+            }
         }
 
         private void returnButton_Click(object sender, EventArgs e)
@@ -96,14 +146,11 @@ namespace GameMasterPAPI.Views
             m_caller.Open(this);
         }
 
-        private void previousPageButton_Click(object sender, EventArgs e)
+        private void newGameButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException("This should show the previous page of saved games");
-        }
-
-        private void nextPageButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException("This should show the next page of saved games");
+            WfGLogger.Log(this.GetType() + ".newGameButton_Click(object, EventArgs)", LogLevel.DEBUG, "The Create new Game Button was clicked, open CreateNewGameView");
+            PAPIView newGameView = new CreateNewGameView();
+            newGameView.Open(this);
         }
     }
 }
