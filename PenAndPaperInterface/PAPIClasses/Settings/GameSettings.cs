@@ -20,7 +20,7 @@ namespace PAPI.Settings
         private static bool isSessionRunning = false;
 
         // Name of the current GM
-        private static string m_gmName = "GAME MASTER";
+        private static GameMaster m_gm = new GameMaster("GAME MASTER");
 
 
         // ################################################# GETTER #################################################
@@ -54,7 +54,7 @@ namespace PAPI.Settings
         }
         public static DesignEnum GetDesign() { return activeDesign; }
         public static Language GetLanguage() { return activeLanguage; }
-        public static string GetGmName() { return m_gmName; }
+        public static GameMaster GetGm() { return m_gm; }
 
         // ################################################# SETTER #################################################
 
@@ -85,7 +85,7 @@ namespace PAPI.Settings
 
         public static void SetGmName(string name)
         {
-            m_gmName = name;
+            m_gm.SetName(name);
         }
 
     }

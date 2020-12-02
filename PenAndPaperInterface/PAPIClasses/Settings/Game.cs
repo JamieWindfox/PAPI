@@ -8,6 +8,7 @@ namespace PAPI.Settings
     public class Game
     {
         public GenreEnum m_genre { get; private set; }
+        public GameMaster m_gameMaster { get; private set; }
         public Dictionary<Player, PlayerCharacter> m_party { get; private set; }
         public DateTime m_dateOfCreation { get; private set; }
         public DateTime m_lastSession { get; private set; }
@@ -18,6 +19,7 @@ namespace PAPI.Settings
             m_party = new Dictionary<Player, PlayerCharacter>();
             m_dateOfCreation = DateTime.Now;
             m_lastSession = DateTime.Now;
+            m_gameMaster = GameSettings.GetGm();
         }
 
         public string partyToString()

@@ -68,9 +68,10 @@ namespace GameMasterPAPI.Views
                     Size = new Size(140, 40),
                     Name = "showGameButton" + rowNr
                 };
-                bottomButtonPanel.Controls.Add(button, 3, rowNr);
+                gameTable.Controls.Add(button, 3, rowNr);
                 m_gameButtons.Add(rowNr, button);
                 gameTable.Controls.Add(button, 2, rowNr++);
+                m_buttons.Add(button);
             }
             foreach(RowStyle rowStyle in gameTable.RowStyles)
             {
@@ -124,7 +125,7 @@ namespace GameMasterPAPI.Views
                     {
                         Text = resSet.GetString(GameSettings.ToString(savedGames[row].m_genre)),
                         Anchor = AnchorStyles.Left | AnchorStyles.Top,
-                        Width = 200
+                        Width = 250
                     }, 0, row + 1);
 
                 }
@@ -137,7 +138,6 @@ namespace GameMasterPAPI.Views
                 dateText.Text = resSet.GetString("lastSave");
                 returnButton.Text = resSet.GetString("return");
                 newGameButton.Text = resSet.GetString("newGame");
-                
             }
         }
 

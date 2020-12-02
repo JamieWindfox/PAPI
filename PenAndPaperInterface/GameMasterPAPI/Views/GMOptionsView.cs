@@ -25,11 +25,11 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if(m_activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGmName())
+            if(m_activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGm().m_name)
             {
                 return;
             }
-            m_gmName = GameSettings.GetGmName();
+            m_gmName = GameSettings.GetGm().m_name;
             gmNameInputField.Text = m_gmName;
             string resFile;
 
