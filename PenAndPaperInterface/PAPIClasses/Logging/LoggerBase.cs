@@ -15,7 +15,7 @@
         protected LogLevel m_logLevel;
 
         protected readonly object lockObject = new object();
-        public abstract void Log(string type, LogLevel logLevel, string message);
+        public abstract void Log(object obj, LogLevel logLevel, string message);
 
         protected string m_lastLog;
 

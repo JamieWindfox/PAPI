@@ -35,7 +35,7 @@ namespace PAPI.Character
             m_willpower = new Characteristic(CharacteristicEnum.WILLPOWER, wi);
             m_presence = new Characteristic(CharacteristicEnum.PRESENCE, pr);
 
-            WfGLogger.Log(this.GetType() + ".CTOR", LogLevel.INFO, "Constructed CharacterisitcSet (" +
+            WfLogger.Log(this.GetType() + ".CTOR", LogLevel.INFO, "Constructed CharacterisitcSet (" +
                 "BR = " + m_brawn.GetBaseValue() +
                 "AG = " + m_agility.GetBaseValue() +
                 "IN = " + m_intellect.GetBaseValue() +
@@ -61,7 +61,7 @@ namespace PAPI.Character
                 case CharacteristicEnum.PRESENCE: return m_presence;
                 default:
                     string excMsg = "The Characteristic Enum value " + characteristic.ToString() + " doesn't exist.";
-                    WfGLogger.Log(this.GetType() + " Get(" + characteristic + ")", LogLevel.FATAL, excMsg);
+                    WfLogger.Log(this.GetType() + " Get(" + characteristic + ")", LogLevel.FATAL, excMsg);
                     throw new EnumNotFoundException(excMsg);
             }
         }

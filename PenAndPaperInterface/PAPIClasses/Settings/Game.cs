@@ -1,4 +1,5 @@
 ﻿using PAPI.Character;
+using PAPI.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,6 +23,15 @@ namespace PAPI.Settings
             m_gameMaster = GameSettings.GetGm();
         }
 
+        public Game()
+        {
+            m_genre = GenreEnum.NOT_VALID;
+            m_party = new Dictionary<Player, PlayerCharacter>();
+            m_dateOfCreation = DateTime.Now;
+            m_lastSession = DateTime.Now;
+            m_gameMaster = GameSettings.GetGm();
+        }
+
         public string partyToString()
         {
             string output = "";
@@ -33,6 +43,17 @@ namespace PAPI.Settings
                 output += player.Key.m_name + "(" + player.Value.GetName() + ")";
             }
             return output;
+        }
+
+        public void AddPlayer(Player player)
+        {
+            if(m_party.ContainsKey(player))
+            {
+                WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.WARNING, "Couldn't add player, because they already are in this game");
+                return;
+            }
+            m_party.Add(player, new PlayerCharacter());
+            WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.DEBUG, "Added Player '" + player.m_name + "' to Party");
         }
     }
 }

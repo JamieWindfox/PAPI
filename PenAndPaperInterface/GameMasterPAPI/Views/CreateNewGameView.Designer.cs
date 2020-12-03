@@ -134,6 +134,7 @@ namespace GameMasterPAPI.Views
             this.createGameButton.TabIndex = 1;
             this.createGameButton.Text = "create";
             this.createGameButton.UseVisualStyleBackColor = true;
+            this.createGameButton.Click += new System.EventHandler(this.createGameButton_Click);
             // 
             // cancelButton
             // 
@@ -188,6 +189,7 @@ namespace GameMasterPAPI.Views
             this.genreDropdown.Name = "genreDropdown";
             this.genreDropdown.Size = new System.Drawing.Size(200, 27);
             this.genreDropdown.TabIndex = 3;
+            this.genreDropdown.SelectedIndexChanged += new System.EventHandler(this.genreDropdown_SelectedIndexChanged);
             // 
             // addPlayerButton
             // 

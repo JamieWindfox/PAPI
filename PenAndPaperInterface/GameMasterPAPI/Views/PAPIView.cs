@@ -21,6 +21,8 @@ namespace GameMasterPAPI.Views
         public PAPIView(PAPIView caller)
         {
             InitializeComponent();
+            WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
+
             m_caller = caller;
             if (m_caller != null)
             {
@@ -28,6 +30,7 @@ namespace GameMasterPAPI.Views
                 this.Size = m_caller.Size;
             }
             m_buttons = new List<Button>();
+            WfLogger.Log(this, LogLevel.DEBUG, "Created new View from " + m_caller.GetType());
         }
 
         protected void SetButtonDesign()
@@ -39,6 +42,7 @@ namespace GameMasterPAPI.Views
                 button.FlatStyle = FlatStyle.Flat;
                 button.Size = new Size(120, 40);
             }
+            WfLogger.Log(this, LogLevel.DEBUG, "Button design was set to " + GameSettings.GetDesign());
         }
 
         public void Open(PAPIView caller)
@@ -52,6 +56,7 @@ namespace GameMasterPAPI.Views
             SetButtonDesign();
             SetTextToActiveLanguage();
             Show();
+            WfLogger.Log(this, LogLevel.DEBUG, "Opened View and closed caller (" + m_caller.GetType() + ")");
         }
         public void Open()
         {
@@ -97,14 +102,13 @@ namespace GameMasterPAPI.Views
             ShowInTaskbar = true;
             AutoScaleMode = AutoScaleMode.None;
             ControlBox = true;
+            WfLogger.Log(this, LogLevel.DEBUG, "Design was set to " + GameSettings.GetDesign());
             SetButtonDesign();
         }
 
         public virtual void SetTextToActiveLanguage()
         {
-            string excMsg = "Not implemented for PAPIView";
-            WfGLogger.Log(this.GetType() + ".SetTextToActiveLanguage()", LogLevel.ERROR, excMsg);
-            throw new PAPIException(excMsg);
+            WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
         }
     }
 }

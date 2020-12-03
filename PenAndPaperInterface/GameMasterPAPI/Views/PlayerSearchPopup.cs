@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PAPI.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,13 @@ namespace GameMasterPAPI.Views
         public PlayerSearchPopup()
         {
             InitializeComponent();
+            WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
         }
 
         public override void SetTextToActiveLanguage()
         {
             // TODO
+            WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
         }
     }
 }

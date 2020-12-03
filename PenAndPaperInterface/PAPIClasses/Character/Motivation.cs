@@ -37,7 +37,7 @@ namespace PAPI.Character
             else
             {
                 string msg = "Can't add description (" + description + "); There already is a description for " + m_name + " in " + language;
-                WfGLogger.Log(this.GetType() + ".AddDescription(Language, string)", LogLevel.WARNING, msg);
+                WfLogger.Log(this.GetType() + ".AddDescription(Language, string)", LogLevel.WARNING, msg);
             }
         }
     }

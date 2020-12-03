@@ -20,10 +20,14 @@ namespace GameMasterPAPI.Views
 
         private static bool allComponentsAdded = false;
 
+        private static GenreEnum selectedGenre = GenreEnum.NOT_VALID;
+
         public CreateNewGameView()
         {
             InitializeComponent();
+            WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
             AddComponents();
+            createGameButton.Enabled = false;
         }
 
 
@@ -31,7 +35,7 @@ namespace GameMasterPAPI.Views
         {
             if(allComponentsAdded)
             {
-                WfGLogger.Log(this.GetType() + ".AddComponents()", LogLevel.WARNING, "Stopped creating table, because it already was created");
+                WfLogger.Log(this, LogLevel.WARNING, "Stopped creating table, because it already has been created before");
                 return;
             }
             playerListPanel.AutoSize = true;
@@ -49,6 +53,7 @@ namespace GameMasterPAPI.Views
             m_buttons.Add(addPlayerButton);
             SetButtonDesign();
             allComponentsAdded = true;
+            WfLogger.Log(this, LogLevel.DEBUG, "Added all components");
         }
 
         public void AddPlayer(Player player)
@@ -57,11 +62,11 @@ namespace GameMasterPAPI.Views
             {
                 if(playerButton.Key.m_name == player.m_name)
                 {
-                    WfGLogger.Log(this.GetType() + ".AddComponents()", LogLevel.WARNING, "Add player " + player.m_name + " not possible, there already is a player with the given name");
+                    WfLogger.Log(this, LogLevel.WARNING, "Add player " + player.m_name + " not possible, there already is a player with this name");
                     return;
                 }
             }
-            WfGLogger.Log(this.GetType() + ".AddComponents()", LogLevel.DEBUG, "Add player " + player.m_name + " to list of players");
+            WfLogger.Log(this, LogLevel.DEBUG, "Add player " + player.m_name + " to list of players");
 
             playerListPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
             playerListPanel.RowCount++;
@@ -74,7 +79,7 @@ namespace GameMasterPAPI.Views
                 Width = 200
             }, 0, removePlayerButtons.Count+1);
 
-            // Create formatted button
+            // Create formatted button and its functionality
             Button button = new Button()
             {
                 Text = "remove",
@@ -90,12 +95,13 @@ namespace GameMasterPAPI.Views
 
             removePlayerButtons.Add(player, button);
 
+            // Set all rows to same size
             foreach (RowStyle rowStyle in playerListPanel.RowStyles)
             {
                 rowStyle.SizeType = SizeType.Absolute;
                 rowStyle.Height = 44;
             }
-
+            WfLogger.Log(this, LogLevel.DEBUG, "Added player " + player.m_name);
             SetButtonDesign();
         }
 
@@ -112,35 +118,78 @@ namespace GameMasterPAPI.Views
             }
             if (playerToRemove != null)
             {
-                WfGLogger.Log(this.GetType() + ".GameButtonClick(object, EventArgs)", LogLevel.DEBUG, "Remove Player " + playerToRemove.m_name);
+                WfLogger.Log(this, LogLevel.DEBUG, "Remove Player " + playerToRemove.m_name);
             }
             else
             {
-                WfGLogger.Log(this.GetType() + ".GameButtonClick(object, EventArgs)", LogLevel.WARNING, "For the given Button no player was found, who could be removed");
+                WfLogger.Log(this, LogLevel.WARNING, "For the given Button no player was found, who could be removed");
             }
             
         }
 
-        
-
         public override void SetTextToActiveLanguage()
         {
             // TODO
+            WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
             // Caller = always Game Selection, their caller = always GM Start View
+            WfLogger.Log(this, LogLevel.DEBUG, "Cancel Button was clicked, return to GMStartView");
             m_caller.m_caller.Open(this);
         }
 
         private void addPlayerButton_Click(object sender, EventArgs e)
         {
+            WfLogger.Log(this, LogLevel.DEBUG, "Add new Player Button was clicked, open the Player Search Popup");
             PAPIPopup playerSearchPopup = new PlayerSearchPopup();
             playerSearchPopup.Popup(this);
 
             // TEST
             AddPlayer(new Player("Rainemof"));
+        }
+
+        private void genreDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (genreDropdown.SelectedIndex)
+            {
+                case 0:
+                    selectedGenre = GenreEnum.NUCLEAR_FALLOUT;
+                    break;
+                case 1:
+                    selectedGenre = GenreEnum.MEDIEVAL_FANTASY;
+                    break;
+                case 2:
+                    selectedGenre = GenreEnum.MAGICAL_WORLD;
+                    break;
+                case 3:
+                    selectedGenre = GenreEnum.SPACE_OPERA;
+                    break;
+                default:
+                    selectedGenre = GenreEnum.NOT_VALID;
+                    break;
+            }
+            if(selectedGenre != GenreEnum.NOT_VALID)
+            {
+                createGameButton.Enabled = true;
+            }
+            WfLogger.Log(this, LogLevel.DEBUG, "Genre " + selectedGenre + " was selected in dropdown");
+            SetTextToActiveLanguage();
+        }
+
+        private void createGameButton_Click(object sender, EventArgs e)
+        {
+            if (selectedGenre != GenreEnum.NOT_VALID)
+            {
+                RunningGame.StartGame(new Game(selectedGenre));
+                WfLogger.Log(this, LogLevel.DEBUG, "Create Game Button clicked, created a new Game (" + selectedGenre + ")");
+                foreach(KeyValuePair<Player, Button> playerButton in removePlayerButtons)
+                {
+                    RunningGame.game.AddPlayer(playerButton.Key);
+                }
+                
+            }
         }
     }
 }

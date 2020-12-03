@@ -22,6 +22,8 @@ namespace PAPI.Settings
         // Name of the current GM
         private static GameMaster m_gm = new GameMaster("GAME MASTER");
 
+        
+
 
         // ################################################# GETTER #################################################
         public static List<GenreEnum> GetAllGenres()
@@ -41,6 +43,7 @@ namespace PAPI.Settings
 
         public static GenreEnum GetGenre() { return activeGenre; }
 
+        // Converts the gieven GenreEnum to a string
         public static string ToString(GenreEnum genre)
         {
             switch(genre)
@@ -61,7 +64,7 @@ namespace PAPI.Settings
         public static void SetActiveDesign(DesignEnum design)
         {
             activeDesign = design;
-            WfGLogger.Log("GameSettings.SetActiveDesign(DesignEnum)", LogLevel.DEBUG, "Set active design to " + design);
+            WfLogger.Log("GameSettings.SetActiveDesign(DesignEnum)", LogLevel.DEBUG, "Set active design to " + design);
         }
 
         public static void SetActiveGenre(GenreEnum genre)
@@ -69,24 +72,23 @@ namespace PAPI.Settings
             if(!isSessionRunning)
             {
                 activeGenre = genre;
-                WfGLogger.Log("GameSettings.SetActiveGenre(GenreEnum)", LogLevel.DEBUG, "Set active genre to " + genre);
+                WfLogger.Log("GameSettings.SetActiveGenre(GenreEnum)", LogLevel.DEBUG, "Set active genre to " + genre);
             }
             else
             {
-                WfGLogger.Log("GameSettings.SetActiveGenre(GenreEnum)", LogLevel.WARNING, "Couldn't set active genre to " + genre + ", becuase there is a session running");
+                WfLogger.Log("GameSettings.SetActiveGenre(GenreEnum)", LogLevel.WARNING, "Couldn't set active genre to " + genre + ", becuase there is a session running");
             }
         }
 
         public static void SetActiveLanguage(Language language)
         {
             activeLanguage = language;
-            WfGLogger.Log("GameSettings.SetActiveLanguage(Language)", LogLevel.DEBUG, "Set active language to " + language);
+            WfLogger.Log("GameSettings.SetActiveLanguage(Language)", LogLevel.DEBUG, "Set active language to " + language);
         }
 
         public static void SetGmName(string name)
         {
             m_gm.SetName(name);
         }
-
     }
 }

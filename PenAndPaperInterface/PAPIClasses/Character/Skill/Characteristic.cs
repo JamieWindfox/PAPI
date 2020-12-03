@@ -26,7 +26,7 @@ namespace PAPI.Character.Skill
                 m_value = value;
             else
             {
-                WfGLogger.Log(this.GetType() + ".CTOR", LogLevel.WARNING, "Tried to set value of " + characterisitc + " to " + value
+                WfLogger.Log(this.GetType() + ".CTOR", LogLevel.WARNING, "Tried to set value of " + characterisitc + " to " + value
                     + ", but value must be between " + MIN_VALUE + " and " + MAX_VALUE + ", so it was set to 1");
                 m_value = 1;
             }

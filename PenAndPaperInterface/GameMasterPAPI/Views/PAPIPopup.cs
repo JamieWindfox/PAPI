@@ -16,18 +16,17 @@ namespace GameMasterPAPI.Views
         public PAPIPopup()
         {
             InitializeComponent();
-
+            WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
         }
 
         public override void SetTextToActiveLanguage()
         {
-            string excMsg = "Only for inherited classes of PAPIPopp";
-            WfGLogger.Log(this.GetType() + "SetTextToActiveLanguage()", LogLevel.ERROR, excMsg);
-            throw new NotImplementedException(excMsg);
+            WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
         }
 
         public void Popup(PAPIView parent)
         {
+            WfLogger.Log(this, LogLevel.DEBUG, "Open Popup from parent " + parent.GetType());
             if (parent != null)
             {
                 m_caller = parent;
@@ -35,6 +34,7 @@ namespace GameMasterPAPI.Views
             SetDesign();
             SetButtonDesign();
             SetTextToActiveLanguage();
+            Size = new Size((int)((double)Width * 0.8), (int)((double)Height * 0.8));
             Show();
         }
     }

@@ -29,7 +29,7 @@ namespace PAPI.DataTypes
         {
             m_value = value;
             m_wearoff = wearoff;
-            WfGLogger.Log(this.GetType() + ".CTOR", LogLevel.DEBUG, "Constructed Modification (Value = " + m_value + ", Wearoff = " + m_wearoff);
+            WfLogger.Log(this.GetType() + ".CTOR", LogLevel.DEBUG, "Constructed Modification (Value = " + m_value + ", Wearoff = " + m_wearoff);
         }
 
         // ################################################# GETTER #################################################

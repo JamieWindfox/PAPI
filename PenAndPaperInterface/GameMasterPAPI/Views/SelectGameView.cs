@@ -28,6 +28,7 @@ namespace GameMasterPAPI.Views
         public SelectGameView()
         {
             InitializeComponent();
+            WfLogger.Log(this, LogLevel.DEBUG, "Initialized SelectGameView");
             AddComponents();
         }
 
@@ -42,24 +43,21 @@ namespace GameMasterPAPI.Views
             gameTable.Controls.Add(dateText, 1, 0);
             gameTable.RowCount = 1;
 
-
             gameTable.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
 
+            // Show all saved Games
             int rowNr = 1;
             foreach(Game game in savedGames)
             {
-                WfGLogger.Log(this.GetType() + ".AddComponents()", LogLevel.DEBUG, "Added game to list of saved games: " 
-                    + game.m_genre + ", " + game.m_lastSession.Date.ToString());
+                WfLogger.Log(this, LogLevel.DEBUG, "Added game to list of saved games: " + game.m_genre + ", " + game.m_lastSession.ToString());
                gameTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
                 gameTable.RowCount++;
-                /*gameTable.Controls.Add(new Label() { 
-                    Text = GameSettings.ToString(game.m_genre), 
-                    Anchor = AnchorStyles.Left | AnchorStyles.Top,
-                    Width = 200}, 0, rowNr);*/
                 gameTable.Controls.Add(new Label() { 
                     Text = game.m_lastSession.ToString(),
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
                     Width = 200}, 1, rowNr);
+
+                // Add show Game Button to current row
                 Button button = new Button()
                 {
                     Text = "showGame",
@@ -73,6 +71,8 @@ namespace GameMasterPAPI.Views
                 gameTable.Controls.Add(button, 2, rowNr++);
                 m_buttons.Add(button);
             }
+
+            // Set size of each row to same
             foreach(RowStyle rowStyle in gameTable.RowStyles)
             {
                 rowStyle.SizeType = SizeType.Absolute;
@@ -82,16 +82,19 @@ namespace GameMasterPAPI.Views
             m_buttons.Add(returnButton);
             m_buttons.Add(newGameButton);
             SetButtonDesign();
+
+            // Add eventhandler for click on every show game button
             foreach (KeyValuePair<int, Button> button in m_gameButtons)
             {
                 button.Value.Click += GameButton_Click;
             }
+            WfLogger.Log(this, LogLevel.DEBUG, "Added all components");
         }
 
         private void GameButton_Click(object sender, EventArgs e)
         {
             int id = Int32.Parse(((Button)sender).Name.Remove(0, 14));
-            WfGLogger.Log(this.GetType() + ".GameButtonClick(object, EventArgs)", LogLevel.DEBUG, "Button number " + id + " was clicked, open Popup");
+            WfLogger.Log(this, LogLevel.DEBUG, "Button number " + id + " was clicked, open Popup");
             PAPIPopup showGamePopup = new ShowGamePopup();
             showGamePopup.Popup(this);
         }
@@ -139,16 +142,18 @@ namespace GameMasterPAPI.Views
                 returnButton.Text = resSet.GetString("return");
                 newGameButton.Text = resSet.GetString("newGame");
             }
+            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings.GetLanguage());
         }
 
         private void returnButton_Click(object sender, EventArgs e)
         {
+            WfLogger.Log(this, LogLevel.DEBUG, "Return Button was clicked, return to " + m_caller.GetType());
             m_caller.Open(this);
         }
 
         private void newGameButton_Click(object sender, EventArgs e)
         {
-            WfGLogger.Log(this.GetType() + ".newGameButton_Click(object, EventArgs)", LogLevel.DEBUG, "The Create new Game Button was clicked, open CreateNewGameView");
+            WfLogger.Log(this, LogLevel.DEBUG, "The Create new Game Button was clicked, open CreateNewGameView");
             PAPIView newGameView = new CreateNewGameView();
             newGameView.Open(this);
         }

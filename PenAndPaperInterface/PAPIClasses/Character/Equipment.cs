@@ -23,7 +23,7 @@ namespace PAPI.Character
             m_armour = null;
             m_clothing = null;
             m_weapons = null;
-            WfGLogger.Log(this.GetType() + ".CTOR", LogLevel.INFO, "Constructed empty Equipment");
+            WfLogger.Log(this.GetType() + ".CTOR", LogLevel.INFO, "Constructed empty Equipment");
         }
 
         // ################################################# GETTER #################################################
@@ -51,10 +51,10 @@ namespace PAPI.Character
             }
             else
             {
-                WfGLogger.Log(this.GetType() + ".Equip(EquipmentItem)", LogLevel.WARNING, item.GetName() + " couln't be equipped");
+                WfLogger.Log(this.GetType() + ".Equip(EquipmentItem)", LogLevel.WARNING, item.GetName() + " couln't be equipped");
                 return;
             }
-            WfGLogger.Log(this.GetType() + ".Equip(EquipmentItem)", LogLevel.INFO, "Equipped" + item.GetName());
+            WfLogger.Log(this.GetType() + ".Equip(EquipmentItem)", LogLevel.INFO, "Equipped" + item.GetName());
         }
 
         // Renoves the given item from Equipment if possible
@@ -78,10 +78,10 @@ namespace PAPI.Character
             }
             else
             {
-                WfGLogger.Log(this.GetType() + ".Unequip(EquipmentItem)", LogLevel.WARNING, item.GetName() + " couln't be unequipped because it never has been equipped");
+                WfLogger.Log(this.GetType() + ".Unequip(EquipmentItem)", LogLevel.WARNING, item.GetName() + " couln't be unequipped because it never has been equipped");
                 return null;
             }
-            WfGLogger.Log(this.GetType() + ".Unequip(EquipmentItem)", LogLevel.INFO, itemToReturn.GetName() + " got unequipped");
+            WfLogger.Log(this.GetType() + ".Unequip(EquipmentItem)", LogLevel.INFO, itemToReturn.GetName() + " got unequipped");
             return itemToReturn;
         }
 
