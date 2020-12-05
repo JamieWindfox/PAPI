@@ -22,7 +22,7 @@ namespace PAPI.Character
             throw new NotImplementedException();
         }
 
-        public void SetMotivation(MotivationTypeEnum type, Motivation motivation)
+        public void SetMotivation(Motivation motivation)
         {
             throw new NotImplementedException();
         }

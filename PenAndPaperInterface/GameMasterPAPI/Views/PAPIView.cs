@@ -30,7 +30,8 @@ namespace GameMasterPAPI.Views
                 this.Size = m_caller.Size;
             }
             m_buttons = new List<Button>();
-            WfLogger.Log(this, LogLevel.DEBUG, "Created new View from " + m_caller.GetType());
+            
+            WfLogger.Log(this, LogLevel.DEBUG, "Created new View" + ((m_caller != null) ? (" from " + m_caller.GetType()) : ""));
         }
 
         protected void SetButtonDesign()
@@ -56,7 +57,7 @@ namespace GameMasterPAPI.Views
             SetButtonDesign();
             SetTextToActiveLanguage();
             Show();
-            WfLogger.Log(this, LogLevel.DEBUG, "Opened View and closed caller (" + m_caller.GetType() + ")");
+            WfLogger.Log(this, LogLevel.DEBUG, "Opened View" + ((m_caller != null) ? (" and closed caller " + m_caller.GetType()) : ""));
         }
         public void Open()
         {

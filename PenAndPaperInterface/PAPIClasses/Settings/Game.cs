@@ -40,7 +40,7 @@ namespace PAPI.Settings
             {
                 if (!first) output += ", ";
                 else first = false;
-                output += player.Key.m_name + "(" + player.Value.GetName() + ")";
+                output += player.Key.m_name + "(" + player.Value.name + ")";
             }
             return output;
         }

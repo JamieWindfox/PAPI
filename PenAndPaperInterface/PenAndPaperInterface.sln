@@ -7,6 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAPIClasses", "PAPIClasses\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameMasterPAPI", "GameMasterPAPI\GameMasterPAPI.csproj", "{5230926A-95B9-451C-8369-A8EF62D28CCD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClient", "TextClient\TestClient.csproj", "{23238476-4227-482A-AD44-7E33BEEC862F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{70BACA27-10D5-450A-A1D6-ED8F792227C9} = {70BACA27-10D5-450A-A1D6-ED8F792227C9}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +26,10 @@ Global
 		{5230926A-95B9-451C-8369-A8EF62D28CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5230926A-95B9-451C-8369-A8EF62D28CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5230926A-95B9-451C-8369-A8EF62D28CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23238476-4227-482A-AD44-7E33BEEC862F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23238476-4227-482A-AD44-7E33BEEC862F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23238476-4227-482A-AD44-7E33BEEC862F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23238476-4227-482A-AD44-7E33BEEC862F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

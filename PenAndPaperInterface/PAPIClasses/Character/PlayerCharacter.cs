@@ -6,24 +6,29 @@ namespace PAPI.Character
 {
     public class PlayerCharacter : PAPICharacter, IUniqueCharacter
     {
-        private MotivationSet m_motivations;
-        private string m_name;
-
-
-         // ################################################# CTOR #################################################
+        public MotivationSet motivationSet { get; private set; }
+        public string name { get; private set; }
 
 
 
-        // ################################################# GETTER #################################################
-        public MotivationSet GetMotivations() { return m_motivations; }
+        // ################################################# CTOR #################################################
 
-        public string GetName() { return m_name; }
+
+
+        public PlayerCharacter(string name)
+        {
+            this.name = name;
+            motivationSet = new MotivationSet();
+        }
+
+
+        public PlayerCharacter() : this("NOT_VALID") { }
 
 
         // ################################################# SETTER #################################################
-        public void SetMotivation(MotivationTypeEnum type, Motivation motivation)
+        public void SetMotivation(Motivation motivation)
         {
-            throw new NotImplementedException();
+            motivationSet.AddMotivation(motivation);
         }
 
         public void SetMotivationSet(MotivationSet motivationsSet)
@@ -31,9 +36,11 @@ namespace PAPI.Character
             throw new NotImplementedException();
         }
 
-       
+        public override string ToString()
+        {
+            return name + ", Motivations: " + motivationSet.ToString();
+        }
 
 
-        
     }
 }

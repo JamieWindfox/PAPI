@@ -13,6 +13,17 @@
             }
             initialized = true;
         }
+        public static void Log(string nameOfObject, LogLevel logLevel, string message)
+        {
+            if (!initialized)
+            {
+                InitLogger(logLevel);
+            }
+            if (LogLevelLowerOrEqualTo(logLevel))
+            {
+                logger.Log(nameOfObject, logLevel, message);
+            }
+        }
 
         public static void Log(object obj, LogLevel logLevel, string message)
         {
