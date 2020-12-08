@@ -8,7 +8,7 @@ namespace PAPI.Settings
     {
         public string name { get; private set; }
 
-
+        // Attribute needed to send Players through the NET API
         [JsonConstructor]
         public Player(string name)
         {

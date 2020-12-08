@@ -317,6 +317,9 @@
     <EmbeddedResource Include="Views\PAPIView.resx">
       <DependentUpon>PAPIView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\PlayerSearchPopup.resx">
+      <DependentUpon>PlayerSearchPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SelectGameView.resx">
       <DependentUpon>SelectGameView.cs</DependentUpon>
     </EmbeddedResource>

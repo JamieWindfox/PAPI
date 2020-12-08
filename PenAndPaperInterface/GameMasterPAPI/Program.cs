@@ -17,9 +17,6 @@ namespace GameMasterPAPI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            PAPIServer.Start();
-
             Application.Run(new GMStartView());
         }
     }

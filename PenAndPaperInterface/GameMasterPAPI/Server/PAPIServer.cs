@@ -12,6 +12,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using PAPI.Settings;
 using System.Runtime.Serialization;
+using GameMasterPAPI.Views;
 
 namespace GameMasterPAPI.Server
 {
@@ -48,14 +49,15 @@ namespace GameMasterPAPI.Server
 
                     WfLogger.Log("GameMasterPAPI.Server.PAPIServer", LogLevel.DEBUG, "Received a TCP connection from " + sender.GetType() + " (Message = " + message + ")");
 
-
                     // Save the data sent by the client;  
                     Player player = JsonSerializer.Deserialize<Player>(message); // Deserialize  
 
-                    byte[] bytes = System.Text.Encoding.Unicode.GetBytes("Message received: " + message);
+                    byte[] bytes = System.Text.Encoding.Unicode.GetBytes("Added Player " + player.name + " to game");
                     sender.GetStream().Write(bytes, 0, bytes.Length); // Send the response  
 
-                    WfLogger.Log("GameMasterPAPI.Server.PAPIServer", LogLevel.DEBUG, "Received Player: " + player.name); 
+                    WfLogger.Log("GameMasterPAPI.Server.PAPIServer", LogLevel.DEBUG, "Received Player: " + player.name);
+                    PlayerSearchPopup playerPopup = new PlayerSearchPopup();
+                    playerPopup.Popup(null);
                 }
             });
             thread.Start();

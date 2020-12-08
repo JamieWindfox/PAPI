@@ -13,6 +13,8 @@ namespace GameMasterPAPI.Views
 {
     public partial class PlayerSearchPopup : PAPIPopup, ITranslatableView
     {
+        private PlayerSearchPopup foundPlayer;
+
         public PlayerSearchPopup()
         {
             InitializeComponent();
@@ -23,6 +25,21 @@ namespace GameMasterPAPI.Views
         {
             // TODO
             WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
+        }
+
+        private void searchPlayerButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addPlayerButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

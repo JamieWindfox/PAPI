@@ -26,10 +26,11 @@ namespace GameMasterPAPI.Views
 
         public void Popup(PAPIView parent)
         {
-            WfLogger.Log(this, LogLevel.DEBUG, "Open Popup from parent " + parent.GetType());
+            
             if (parent != null)
             {
                 m_caller = parent;
+                WfLogger.Log(this, LogLevel.DEBUG, "Open Popup from parent " + parent.GetType());
             }
             SetDesign();
             SetButtonDesign();

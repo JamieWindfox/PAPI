@@ -39,8 +39,14 @@ namespace TestClient
 
                 messageBytes = new byte[bytesize]; // Clear the message   
 
+                // String to store the response ASCII representation.
+                String responseData = String.Empty;
+
                 // Receive the stream of bytes  
-                stream.Read(messageBytes, 0, messageBytes.Length);
+                Int32 bytes = stream.Read(messageBytes, 0, messageBytes.Length);
+                responseData = System.Text.Encoding.ASCII.GetString(messageBytes, 0, bytes);
+
+                WfLogger.Log("PAPI Client", LogLevel.DEBUG, "Received: " + responseData);
 
                 // Clean up  
                 stream.Dispose();

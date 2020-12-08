@@ -1,4 +1,5 @@
-﻿using PAPI.Settings;
+﻿using GameMasterPAPI.Server;
+using PAPI.Settings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,7 @@ namespace GameMasterPAPI.Views
         {
             InitializeComponent();
             Open();
+            PAPIServer.Start();
         }
 
         // Set all text in this view to the given language
