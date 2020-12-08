@@ -56,8 +56,7 @@ namespace GameMasterPAPI.Server
                     sender.GetStream().Write(bytes, 0, bytes.Length); // Send the response  
 
                     WfLogger.Log("GameMasterPAPI.Server.PAPIServer", LogLevel.DEBUG, "Received Player: " + player.name);
-                    PlayerSearchPopup playerPopup = new PlayerSearchPopup();
-                    playerPopup.Popup(null);
+
                 }
             });
             thread.Start();

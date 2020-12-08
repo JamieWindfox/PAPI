@@ -1,7 +1,7 @@
 ﻿
 namespace GameMasterPAPI.Views
 {
-    partial class CreateNewGameView
+    partial class GameCreationView
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace GameMasterPAPI.Views
             this.bottomButtonPanel = new System.Windows.Forms.TableLayoutPanel();
             this.createGameButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.genreText = new System.Windows.Forms.Label();
             this.genreDropdown = new System.Windows.Forms.ComboBox();
             this.addPlayerButton = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@ namespace GameMasterPAPI.Views
             this.createGamePanel.SuspendLayout();
             this.gmInfoPanel.SuspendLayout();
             this.bottomButtonPanel.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel.SuspendLayout();
             this.playerListPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@ namespace GameMasterPAPI.Views
             this.createGamePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.createGamePanel.Controls.Add(this.gmInfoPanel, 1, 1);
             this.createGamePanel.Controls.Add(this.bottomButtonPanel, 1, 4);
-            this.createGamePanel.Controls.Add(this.tableLayoutPanel1, 1, 2);
+            this.createGamePanel.Controls.Add(this.tableLayoutPanel, 1, 2);
             this.createGamePanel.Controls.Add(this.playerListPanel, 1, 3);
             this.createGamePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.createGamePanel.Location = new System.Drawing.Point(0, 0);
@@ -150,21 +150,21 @@ namespace GameMasterPAPI.Views
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel1.Controls.Add(this.genreText, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.genreDropdown, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.addPlayerButton, 2, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 63);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(754, 74);
-            this.tableLayoutPanel1.TabIndex = 5;
+            this.tableLayoutPanel.ColumnCount = 3;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel.Controls.Add(this.genreText, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.genreDropdown, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.addPlayerButton, 2, 0);
+            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel.Location = new System.Drawing.Point(23, 63);
+            this.tableLayoutPanel.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel.RowCount = 2;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(754, 74);
+            this.tableLayoutPanel.TabIndex = 5;
             // 
             // genreText
             // 
@@ -240,8 +240,8 @@ namespace GameMasterPAPI.Views
             this.gmInfoPanel.ResumeLayout(false);
             this.gmInfoPanel.PerformLayout();
             this.bottomButtonPanel.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel.ResumeLayout(false);
+            this.tableLayoutPanel.PerformLayout();
             this.playerListPanel.ResumeLayout(false);
             this.playerListPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -258,7 +258,7 @@ namespace GameMasterPAPI.Views
         private System.Windows.Forms.TableLayoutPanel bottomButtonPanel;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button createGameButton;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.ComboBox genreDropdown;
         private System.Windows.Forms.Button addPlayerButton;
         private System.Windows.Forms.TableLayoutPanel playerListPanel;

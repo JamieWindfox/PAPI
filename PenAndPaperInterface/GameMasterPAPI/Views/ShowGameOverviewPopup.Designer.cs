@@ -1,7 +1,7 @@
 ﻿
 namespace GameMasterPAPI.Views
 {
-    partial class ShowGamePopup
+    partial class ShowGameOverviewPopup
     {
         /// <summary>
         /// Required designer variable.

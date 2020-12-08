@@ -13,16 +13,16 @@ using System.Windows.Forms;
 
 namespace GameMasterPAPI.Views
 {
-    public partial class CreateNewGameView : PAPIView, ITranslatableView
+    public partial class GameCreationView : PAPIView, ITranslatableView
     {
         // Players only added for Test, remove in release!!!!!
-        private static Dictionary<Player, Button> removePlayerButtons = new Dictionary<Player, Button>();
+        private static Dictionary<Player, Button> players_removeButtons = new Dictionary<Player, Button>();
 
         private static bool allComponentsAdded = false;
 
         private static GenreEnum selectedGenre = GenreEnum.NOT_VALID;
 
-        public CreateNewGameView()
+        public GameCreationView()
         {
             InitializeComponent();
             WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
@@ -58,7 +58,7 @@ namespace GameMasterPAPI.Views
 
         public void AddPlayer(Player player)
         {
-            foreach(KeyValuePair<Player, Button> playerButton in removePlayerButtons)
+            foreach(KeyValuePair<Player, Button> playerButton in players_removeButtons)
             {
                 if(playerButton.Key.name == player.name)
                 {
@@ -77,7 +77,7 @@ namespace GameMasterPAPI.Views
                 Text = player.name,
                 Anchor = AnchorStyles.Left | AnchorStyles.Top,
                 Width = 200
-            }, 0, removePlayerButtons.Count+1);
+            }, 0, players_removeButtons.Count+1);
 
             // Create formatted button and its functionality
             Button button = new Button()
@@ -86,14 +86,14 @@ namespace GameMasterPAPI.Views
                 FlatStyle = FlatStyle.Flat,
                 Anchor = AnchorStyles.Right | AnchorStyles.Top,
                 Size = new Size(140, 40),
-                Name = "removePlayerButton" + (removePlayerButtons.Count + 1)
+                Name = "removePlayerButton" + (players_removeButtons.Count + 1)
             };
 
-            playerListPanel.Controls.Add(button, 1, removePlayerButtons.Count + 1);
+            playerListPanel.Controls.Add(button, 1, players_removeButtons.Count + 1);
             m_buttons.Add(button);
             button.Click += RemovePlayerButton_Click;
 
-            removePlayerButtons.Add(player, button);
+            players_removeButtons.Add(player, button);
 
             // Set all rows to same size
             foreach (RowStyle rowStyle in playerListPanel.RowStyles)
@@ -101,7 +101,7 @@ namespace GameMasterPAPI.Views
                 rowStyle.SizeType = SizeType.Absolute;
                 rowStyle.Height = 44;
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "Added player " + player.name);
+            WfLogger.Log(this, LogLevel.DEBUG, "Added player " + player.name + " to List");
             SetButtonDesign();
         }
 
@@ -109,22 +109,35 @@ namespace GameMasterPAPI.Views
         {
             string value = ((Button)sender).Name;
             Player playerToRemove = null;
-            foreach(KeyValuePair<Player, Button> playerButton in removePlayerButtons)
+            foreach(KeyValuePair<Player, Button> playerButton in players_removeButtons)
             {
                 if(playerButton.Value == (Button)sender)
                 {
                     playerToRemove = playerButton.Key;
+                    break;
                 }
             }
             if (playerToRemove != null)
             {
-                WfLogger.Log(this, LogLevel.DEBUG, "Remove Player " + playerToRemove.name);
+                int rowNumber = -1;
+                foreach(Control control in playerListPanel.Controls)
+                {
+                    if(control.Text == playerToRemove.name)
+                    {
+                        rowNumber = playerListPanel.GetRow(control);
+                        break;
+                    }
+                }
+                
+                WfLogger.Log(this, LogLevel.DEBUG, "Remove Player " + playerToRemove.name + " from List (Number " + rowNumber + ")");
+                players_removeButtons.Remove(playerToRemove);
+
+                TableLayoutHelper.RemoveRowNumber(playerListPanel, rowNumber);
             }
             else
             {
                 WfLogger.Log(this, LogLevel.WARNING, "For the given Button no player was found, who could be removed");
             }
-            
         }
 
         public override void SetTextToActiveLanguage()
@@ -133,18 +146,12 @@ namespace GameMasterPAPI.Views
             WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            // Caller = always Game Selection, their caller = always GM Start View
-            WfLogger.Log(this, LogLevel.DEBUG, "Cancel Button was clicked, return to GMStartView");
-            m_caller.m_caller.Open(this);
-        }
+        
 
         private void addPlayerButton_Click(object sender, EventArgs e)
         {
             WfLogger.Log(this, LogLevel.DEBUG, "Add new Player Button was clicked, open the Player Search Popup");
-            PAPIPopup playerSearchPopup = new PlayerSearchPopup();
-            playerSearchPopup.Popup(this);
+            ViewController.playerSearchPopup.Popup(this);
 
             // TEST
             AddPlayer(new Player("Rainemof"));
@@ -175,7 +182,7 @@ namespace GameMasterPAPI.Views
                 createGameButton.Enabled = true;
             }
             WfLogger.Log(this, LogLevel.DEBUG, "Genre " + selectedGenre + " was selected in dropdown");
-            SetTextToActiveLanguage();
+            //SetTextToActiveLanguage();
         }
 
         private void createGameButton_Click(object sender, EventArgs e)
@@ -184,12 +191,17 @@ namespace GameMasterPAPI.Views
             {
                 RunningGame.StartGame(new Game(selectedGenre));
                 WfLogger.Log(this, LogLevel.DEBUG, "Create Game Button clicked, created a new Game (" + selectedGenre + ")");
-                foreach(KeyValuePair<Player, Button> playerButton in removePlayerButtons)
+                foreach(KeyValuePair<Player, Button> playerButton in players_removeButtons)
                 {
                     RunningGame.game.AddPlayer(playerButton.Key);
                 }
-                
             }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            WfLogger.Log(this, LogLevel.DEBUG, "Cancel Button was clicked, return to GMStartView");
+            ViewController.startView.Open(this);
         }
     }
 }

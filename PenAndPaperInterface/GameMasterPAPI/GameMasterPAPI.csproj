@@ -176,11 +176,11 @@
       <DependentUpon>ArchetypesAndSpecies_EN.resx</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Views\CreateNewGameView.cs">
+    <Compile Include="Views\GameCreationView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CreateNewGameView.Designer.cs">
-      <DependentUpon>CreateNewGameView.cs</DependentUpon>
+    <Compile Include="Views\GameCreationView.Designer.cs">
+      <DependentUpon>GameCreationView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\PAPIPopup.cs">
       <SubType>Form</SubType>
@@ -194,11 +194,11 @@
     <Compile Include="Views\PlayerSearchPopup.Designer.cs">
       <DependentUpon>PlayerSearchPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SelectGameView.cs">
+    <Compile Include="Views\GameSelectionView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\SelectGameView.Designer.cs">
-      <DependentUpon>SelectGameView.cs</DependentUpon>
+    <Compile Include="Views\GameSelectionView.Designer.cs">
+      <DependentUpon>GameSelectionView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\GMOptionsView.cs">
       <SubType>Form</SubType>
@@ -220,12 +220,14 @@
     <Compile Include="Views\PAPIView.Designer.cs">
       <DependentUpon>PAPIView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ShowGamePopup.cs">
+    <Compile Include="Views\ShowGameOverviewPopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ShowGamePopup.Designer.cs">
-      <DependentUpon>ShowGamePopup.cs</DependentUpon>
+    <Compile Include="Views\ShowGameOverviewPopup.Designer.cs">
+      <DependentUpon>ShowGameOverviewPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\TableLayoutHelper.cs" />
+    <Compile Include="Views\ViewController.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -305,8 +307,8 @@
       <LastGenOutput>ArchetypesAndSpecies_EN.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CreateNewGameView.resx">
-      <DependentUpon>CreateNewGameView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\GameCreationView.resx">
+      <DependentUpon>GameCreationView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\GMOptionsView.resx">
       <DependentUpon>GMOptionsView.cs</DependentUpon>
@@ -320,8 +322,8 @@
     <EmbeddedResource Include="Views\PlayerSearchPopup.resx">
       <DependentUpon>PlayerSearchPopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SelectGameView.resx">
-      <DependentUpon>SelectGameView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\GameSelectionView.resx">
+      <DependentUpon>GameSelectionView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

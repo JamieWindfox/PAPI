@@ -1,7 +1,7 @@
 ﻿
 namespace GameMasterPAPI.Views
 {
-    partial class SelectGameView
+    partial class GameSelectionView
     {
         /// <summary>
         /// Required designer variable.

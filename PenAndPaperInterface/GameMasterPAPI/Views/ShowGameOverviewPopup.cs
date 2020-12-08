@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace GameMasterPAPI.Views
 {
-    public partial class ShowGamePopup : PAPIPopup, ITranslatableView
+    public partial class ShowGameOverviewPopup : PAPIPopup, ITranslatableView
     {
-        public ShowGamePopup()
+        public ShowGameOverviewPopup()
         {
             InitializeComponent();
             WfLogger.Log(this, LogLevel.DEBUG, "Initialized ShowGamePopup");

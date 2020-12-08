@@ -13,8 +13,6 @@ namespace GameMasterPAPI.Views
 {
     public partial class PlayerSearchPopup : PAPIPopup, ITranslatableView
     {
-        private PlayerSearchPopup foundPlayer;
-
         public PlayerSearchPopup()
         {
             InitializeComponent();
@@ -39,7 +37,8 @@ namespace GameMasterPAPI.Views
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-
+            WfLogger.Log(this, LogLevel.DEBUG, "Cancel Button was clicked, Popup closes");
+            this.Hide();
         }
     }
 }

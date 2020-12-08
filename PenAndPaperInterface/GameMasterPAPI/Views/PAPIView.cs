@@ -11,27 +11,18 @@ namespace GameMasterPAPI.Views
 {
     public partial class PAPIView : Form, ITranslatableView
     {
-        public PAPIView m_caller { get; protected set; }
-        public Language m_activeLanguage { get; protected set; } = Language.NOT_VALID;
+        public Language activeLanguage { get; protected set; } = Language.NOT_VALID;
         public List<Button> m_buttons { get; protected set; }
 
-        public PAPIView() : this(null)
-        { }
 
-        public PAPIView(PAPIView caller)
+        public PAPIView()
         {
             InitializeComponent();
             WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
 
-            m_caller = caller;
-            if (m_caller != null)
-            {
-                this.Location = m_caller.Location;
-                this.Size = m_caller.Size;
-            }
             m_buttons = new List<Button>();
             
-            WfLogger.Log(this, LogLevel.DEBUG, "Created new View" + ((m_caller != null) ? (" from " + m_caller.GetType()) : ""));
+            WfLogger.Log(this, LogLevel.DEBUG, "Created new View");
         }
 
         protected void SetButtonDesign()
@@ -48,21 +39,23 @@ namespace GameMasterPAPI.Views
 
         public void Open(PAPIView caller)
         {
+            ViewController.lastView = caller;
+            ViewController.curentlyOpenView = this;
             if (caller != null)
             {
-                m_caller = caller;
                 caller.Hide();
+                this.Location = caller.Location;
+                this.Size = caller.Size;
             }
+
             SetDesign();
             SetButtonDesign();
             SetTextToActiveLanguage();
             Show();
-            WfLogger.Log(this, LogLevel.DEBUG, "Opened View" + ((m_caller != null) ? (" and closed caller " + m_caller.GetType()) : ""));
+            WfLogger.Log(this, LogLevel.DEBUG, "Opened View" + this.GetType().ToString());
         }
-        public void Open()
-        {
-            Open(null);
-        }
+
+
 
         protected void SetDesign()
         {
@@ -86,10 +79,10 @@ namespace GameMasterPAPI.Views
             }
             FormBorderStyle = FormBorderStyle.Sizable;
             StartPosition = FormStartPosition.Manual;
-            if (m_caller != null)
+            if (ViewController.lastView != null)
             {
-                Location = m_caller.Location;
-                Size = m_caller.Size;
+                Location = ViewController.lastView.Location;
+                Size = ViewController.lastView.Size;
             }
             else
             {

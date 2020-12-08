@@ -30,7 +30,7 @@ namespace GameMasterPAPI.Views
         public override void SetTextToActiveLanguage()
         {
             
-            if (m_activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGm().name)
+            if (activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGm().name)
             {
                 return;
             }
@@ -41,12 +41,12 @@ namespace GameMasterPAPI.Views
             {
                 case Language.GERMAN:
                     resFile = @".\Strings\\General_DE.resx";
-                    m_activeLanguage = Language.GERMAN;
+                    activeLanguage = Language.GERMAN;
                     break;
                 case Language.ENGLISH:
                 default:
                     resFile = @".\Strings\\General_EN.resx";
-                    m_activeLanguage = Language.ENGLISH;
+                    activeLanguage = Language.ENGLISH;
                     break;
             }
             using (ResXResourceSet resSet = new ResXResourceSet(resFile))
@@ -67,15 +67,20 @@ namespace GameMasterPAPI.Views
         // Opens the options view
         private void optionsButton_Click(object sender, EventArgs e)
         {
-            GMOptionsView optionsView = new GMOptionsView(this);
+            GMOptionsView optionsView = new GMOptionsView();
             optionsView.Open(this);
         }
 
         // Opens the Game Overview
         private void startGameButton_Click(object sender, EventArgs e)
         {
-            SelectGameView createGameView = new SelectGameView();
+            GameSelectionView createGameView = new GameSelectionView();
             createGameView.Open(this);
+        }
+
+        public void Open()
+        {
+            base.Open(null);
         }
     }
 }

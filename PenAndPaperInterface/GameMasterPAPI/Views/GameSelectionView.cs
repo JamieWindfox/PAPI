@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace GameMasterPAPI.Views
 {
-    public partial class SelectGameView : PAPIView, ITranslatableView
+    public partial class GameSelectionView : PAPIView, ITranslatableView
     {
         // List of games for test, remove when permanent save games are implemented
         private static List<Game> savedGames = new List<Game>() { 
@@ -25,7 +25,7 @@ namespace GameMasterPAPI.Views
 
         private Dictionary<int, Button> m_gameButtons = new Dictionary<int, Button>();
 
-        public SelectGameView()
+        public GameSelectionView()
         {
             InitializeComponent();
             WfLogger.Log(this, LogLevel.DEBUG, "Initialized SelectGameView");
@@ -49,11 +49,11 @@ namespace GameMasterPAPI.Views
             int rowNr = 1;
             foreach(Game game in savedGames)
             {
-                WfLogger.Log(this, LogLevel.DEBUG, "Added game to list of saved games: " + game.m_genre + ", " + game.m_lastSession.ToString());
+                WfLogger.Log(this, LogLevel.DEBUG, "Added game to list of saved games: " + game.genre + ", " + game.lastSession.ToString());
                gameTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
                 gameTable.RowCount++;
                 gameTable.Controls.Add(new Label() { 
-                    Text = game.m_lastSession.ToString(),
+                    Text = game.lastSession.ToString(),
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
                     Width = 200}, 1, rowNr);
 
@@ -95,14 +95,14 @@ namespace GameMasterPAPI.Views
         {
             int id = Int32.Parse(((Button)sender).Name.Remove(0, 14));
             WfLogger.Log(this, LogLevel.DEBUG, "Button number " + id + " was clicked, open Popup");
-            PAPIPopup showGamePopup = new ShowGamePopup();
+            PAPIPopup showGamePopup = new ShowGameOverviewPopup();
             showGamePopup.Popup(this);
         }
 
 
         public override void SetTextToActiveLanguage()
         {
-            if (m_activeLanguage == GameSettings.GetLanguage())
+            if (activeLanguage == GameSettings.GetLanguage())
             {
                 return;
             }
@@ -112,12 +112,12 @@ namespace GameMasterPAPI.Views
             {
                 case Language.GERMAN:
                     resFile = @".\Strings\\General_DE.resx";
-                    m_activeLanguage = Language.GERMAN;
+                    activeLanguage = Language.GERMAN;
                     break;
                 case Language.ENGLISH:
                 default:
                     resFile = @".\Strings\\General_EN.resx";
-                    m_activeLanguage = Language.ENGLISH;
+                    activeLanguage = Language.ENGLISH;
                     break;
             }
             using (ResXResourceSet resSet = new ResXResourceSet(resFile))
@@ -126,7 +126,7 @@ namespace GameMasterPAPI.Views
                 {
                     gameTable.Controls.Add(new Label()
                     {
-                        Text = resSet.GetString(GameSettings.ToString(savedGames[row].m_genre)),
+                        Text = resSet.GetString(GameSettings.ToString(savedGames[row].genre)),
                         Anchor = AnchorStyles.Left | AnchorStyles.Top,
                         Width = 250
                     }, 0, row + 1);
@@ -147,15 +147,14 @@ namespace GameMasterPAPI.Views
 
         private void returnButton_Click(object sender, EventArgs e)
         {
-            WfLogger.Log(this, LogLevel.DEBUG, "Return Button was clicked, return to " + m_caller.GetType());
-            m_caller.Open(this);
+            WfLogger.Log(this, LogLevel.DEBUG, "Return Button was clicked, return to " + ViewController.lastView.GetType());
+            ViewController.startView.Open(this);
         }
 
         private void newGameButton_Click(object sender, EventArgs e)
         {
             WfLogger.Log(this, LogLevel.DEBUG, "The Create new Game Button was clicked, open CreateNewGameView");
-            PAPIView newGameView = new CreateNewGameView();
-            newGameView.Open(this);
+            ViewController.gameCreationView.Open(this);
         }
     }
 }

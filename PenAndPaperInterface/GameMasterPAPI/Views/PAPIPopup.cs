@@ -26,10 +26,9 @@ namespace GameMasterPAPI.Views
 
         public void Popup(PAPIView parent)
         {
-            
             if (parent != null)
             {
-                m_caller = parent;
+                ViewController.lastView = parent;
                 WfLogger.Log(this, LogLevel.DEBUG, "Open Popup from parent " + parent.GetType());
             }
             SetDesign();
@@ -37,6 +36,11 @@ namespace GameMasterPAPI.Views
             SetTextToActiveLanguage();
             Size = new Size((int)((double)Width * 0.8), (int)((double)Height * 0.8));
             Show();
+        }
+
+        public void Open()
+        {
+            throw new NotImplementedException("Method 'Open()' is not valid for a Popup, use 'Popup(this)' instead!");
         }
     }
 }
