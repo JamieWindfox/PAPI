@@ -1,7 +1,8 @@
 ﻿
+using GameMasterPAPI.Server;
 using GameMasterPAPI.Views;
 using System;
-
+using System.Threading;
 using System.Windows.Forms;
 
 namespace GameMasterPAPI
@@ -17,7 +18,6 @@ namespace GameMasterPAPI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new GMStartView());
-
         }
     }
 }

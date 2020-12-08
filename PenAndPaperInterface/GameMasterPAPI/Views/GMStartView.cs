@@ -1,4 +1,5 @@
-﻿using PAPI.Settings;
+﻿using GameMasterPAPI.Server;
+using PAPI.Settings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,17 +23,18 @@ namespace GameMasterPAPI.Views
         {
             InitializeComponent();
             Open();
+            PAPIServer.Start();
         }
 
         // Set all text in this view to the given language
         public override void SetTextToActiveLanguage()
         {
             
-            if (m_activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGmName())
+            if (m_activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGm().name)
             {
                 return;
             }
-            m_gmName = GameSettings.GetGmName();
+            m_gmName = GameSettings.GetGm().name;
             string resFile;
 
             switch (GameSettings.GetLanguage())

@@ -22,7 +22,7 @@ namespace PAPI.Character
         {
             m_name = name;
             m_possibleGenres = genres;
-            WfGLogger.Log(this.GetType() + ".CTOR", LogLevel.INFO, "Constructed Species '" + m_name + "'");
+            WfLogger.Log(this.GetType() + ".CTOR", LogLevel.INFO, "Constructed Species '" + m_name + "'");
         }
 
         // ################################################# GETTER #################################################

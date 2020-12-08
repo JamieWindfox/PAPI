@@ -20,12 +20,12 @@ namespace PAPI.Character
             if (newRelationshipLevel >= -100 && newRelationshipLevel <= 100)
             {
                 m_relationshipToParty = newRelationshipLevel;
-                WfGLogger.Log(this.GetType() + ".SetRelationshipToParty(int)", LogLevel.DEBUG, "Set relationship level towars player party to: " + m_relationshipToParty);
+                WfLogger.Log(this.GetType() + ".SetRelationshipToParty(int)", LogLevel.DEBUG, "Set relationship level towars player party to: " + m_relationshipToParty);
             }
             else
             {
                 string excMsg = "Couldn't set relationship level topward player party to " + newRelationshipLevel + ", must be a value from -100 to +100";
-                WfGLogger.Log(this.GetType() + ".SetRelationshipToParty(int)", LogLevel.WARNING, excMsg);
+                WfLogger.Log(this.GetType() + ".SetRelationshipToParty(int)", LogLevel.WARNING, excMsg);
                 throw new OutOfRangeException(excMsg);
             }
         }

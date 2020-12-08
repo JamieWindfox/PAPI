@@ -5,50 +5,64 @@ namespace PAPI.Logging
 {
     class FileLogger : LoggerBase
     {
-        private const String BASE_PATH = @"C:\Users\Windfuchs\OneDrive\Dokumente\Game_Develoment\Byothrea\Logs\";
-        private string m_filePath;
-        private bool m_writeLogToConsoleToo = true;
-        private FileSystemInfo m_fileInfo;
+        private String basePath = System.IO.Directory.GetCurrentDirectory();
+        private string directoryPath;
+        private string filePath;
+        private bool writeLogToConsoleToo = true;
 
         public FileLogger(LogLevel logLevel)
         {
-            m_filePath = BASE_PATH + "ByothreaLog_" + (GetHighestLogFileID() + 1) % 10 + ".txt";
-            if(File.Exists(m_filePath))
+            directoryPath = GetFilePath();
+            filePath = directoryPath + "Log_" + (GetHighestLogFileID() + 1) % 10 + ".txt";
+
+            if (File.Exists(filePath))
             {
-                m_filePath = GetNameOfOldestLogFile();
+                filePath = GetNameOfOldestLogFile();
             }
             m_logLevel = logLevel;
-            StreamWriter streamWriter = new System.IO.StreamWriter(m_filePath);
-            m_lastLog = "BYOTHREA LOGGER - " + DateTime.Now.ToString();
+            StreamWriter streamWriter = new System.IO.StreamWriter(filePath);
+            m_lastLog = "LOGGER - " + DateTime.Now.ToString();
             streamWriter.WriteLine(m_lastLog);
             streamWriter.Close();
+        }
+
+        private string GetFilePath()
+        {
+            string path = System.IO.Directory.GetCurrentDirectory();
+            string papiPath = "PenAndPaperInterface";
+            int startIndexOfRemoval = path.IndexOf(papiPath);
+            return path.Remove(startIndexOfRemoval + papiPath.Length) + "\\Logs\\";
         }
 
         /**
          * Logs a message to the Logfile if its LogLevel is lower or equal than the Loggers LogLevel
          */
-        public override void Log(string type, LogLevel logLevel, string message)
+        public override void Log(string nameOfObj, LogLevel logLevel, string message)
         {
             lock (lockObject)
             {
-                m_lastLog = (GetTimeAsString() + " " + type + " " + logLevel + ": " + message);
+                m_lastLog = (GetTimeAsString() + " " + nameOfObj + " " + logLevel + ": " + message);
 
-                if (m_writeLogToConsoleToo)
+                if (writeLogToConsoleToo)
                 {
                     Console.WriteLine(m_lastLog);
                 }
-                File.AppendAllText(m_filePath, m_lastLog + Environment.NewLine);
+                File.AppendAllText(filePath, m_lastLog + Environment.NewLine);
             }
         }
 
-        public override void Log(LogLevel logLevel, string message)
+        public override void Log(object obj, LogLevel logLevel, string message)
         {
-            Log("", logLevel, message);
-        }
+            lock (lockObject)
+            {
+                m_lastLog = (GetTimeAsString() + " " + obj.GetType() + " " + logLevel + ": " + message);
 
-        public override void Log(string message)
-        {
-            Log(LogLevel.DEBUG, message);
+                if (writeLogToConsoleToo)
+                {
+                    Console.WriteLine(m_lastLog);
+                }
+                File.AppendAllText(filePath, m_lastLog + Environment.NewLine);
+            }
         }
 
         private string GetTimeAsString()
@@ -80,14 +94,22 @@ namespace PAPI.Logging
         // Returns the number of the last written LogFile; If this is the first one, return -1
         private int GetHighestLogFileID()
         {
-            String[] files = Directory.GetFiles(BASE_PATH);
+            String[] files = { };
+            try
+            {
+                files = Directory.GetFiles(directoryPath);
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
             int highestnumber = -1;
 
             foreach(String fileName in files)
             {
                 String ending = ".txt";
-                String file = "ByothreaLog_";
-                String trimmedFileName = fileName.Trim(BASE_PATH.ToCharArray());
+                String file = "Log_";
+                String trimmedFileName = fileName.Trim(directoryPath.ToCharArray());
                 trimmedFileName = trimmedFileName.Trim(file.ToCharArray());
                 trimmedFileName = trimmedFileName.Trim(ending.ToCharArray());
                 int currentNumber = Int16.Parse(trimmedFileName);
@@ -101,7 +123,7 @@ namespace PAPI.Logging
 
         private String GetNameOfOldestLogFile()
         {
-            String[] files = Directory.GetFiles(BASE_PATH);
+            String[] files = Directory.GetFiles(directoryPath);
             String oldest = null;
 
             foreach (String fileName in files)

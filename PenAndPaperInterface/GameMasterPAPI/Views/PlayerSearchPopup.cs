@@ -11,9 +11,11 @@ using System.Windows.Forms;
 
 namespace GameMasterPAPI.Views
 {
-    public partial class PAPIPopup : PAPIView
+    public partial class PlayerSearchPopup : PAPIPopup, ITranslatableView
     {
-        public PAPIPopup()
+        private PlayerSearchPopup foundPlayer;
+
+        public PlayerSearchPopup()
         {
             InitializeComponent();
             WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
@@ -21,22 +23,23 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
+            // TODO
             WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
         }
 
-        public void Popup(PAPIView parent)
+        private void searchPlayerButton_Click(object sender, EventArgs e)
         {
-            
-            if (parent != null)
-            {
-                m_caller = parent;
-                WfLogger.Log(this, LogLevel.DEBUG, "Open Popup from parent " + parent.GetType());
-            }
-            SetDesign();
-            SetButtonDesign();
-            SetTextToActiveLanguage();
-            Size = new Size((int)((double)Width * 0.8), (int)((double)Height * 0.8));
-            Show();
+
+        }
+
+        private void addPlayerButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

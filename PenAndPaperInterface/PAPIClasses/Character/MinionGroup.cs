@@ -28,7 +28,7 @@ namespace PAPI.Character
             else
             {
                 string excMsg = "Couldn't set the group size to " + newSize + " (The group size of a minion group must be between 1 and 10)";
-                WfGLogger.Log(this.GetType() + ".SetGroupSize(uint)", LogLevel.ERROR, excMsg);
+                WfLogger.Log(this.GetType() + ".SetGroupSize(uint)", LogLevel.ERROR, excMsg);
                 throw new OutOfRangeException(excMsg);
             }
         }

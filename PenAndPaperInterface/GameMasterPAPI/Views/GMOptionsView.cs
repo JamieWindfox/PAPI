@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Resources;
+using PAPI.Logging;
 
 namespace GameMasterPAPI.Views
 {
@@ -18,6 +19,7 @@ namespace GameMasterPAPI.Views
         public GMOptionsView(PAPIView caller) : base(caller)
         {
             InitializeComponent();
+            WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
             m_buttons.Add(returnButton);
             SetButtonDesign();
         }
@@ -25,11 +27,11 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if(m_activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGmName())
+            if(m_activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGm().name)
             {
                 return;
             }
-            m_gmName = GameSettings.GetGmName();
+            m_gmName = GameSettings.GetGm().name;
             gmNameInputField.Text = m_gmName;
             string resFile;
 
@@ -56,6 +58,7 @@ namespace GameMasterPAPI.Views
                 returnButton.Text = resSet.GetString("return");
                 gmName.Text = resSet.GetString("gmName");
             }
+            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings.GetLanguage());
         }
 
         private void languageDropdown_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,6 +75,7 @@ namespace GameMasterPAPI.Views
                     GameSettings.SetActiveLanguage(Language.ENGLISH);
                     break;
             }
+            WfLogger.Log(this, LogLevel.DEBUG, "Set language to " + GameSettings.GetLanguage() + " in dropdown");
             SetTextToActiveLanguage();
         }
 
@@ -89,6 +93,7 @@ namespace GameMasterPAPI.Views
                     GameSettings.SetActiveDesign(DesignEnum.MODERN);
                     break;
             }
+            WfLogger.Log(this, LogLevel.DEBUG, "Set design to " + GameSettings.GetDesign() + " in dropdown");
             SetDesign();
             SetButtonDesign();
         }
@@ -96,10 +101,12 @@ namespace GameMasterPAPI.Views
         private void gmNameInputField_TextChanged(object sender, EventArgs e)
         {
             GameSettings.SetGmName(gmNameInputField.Text);
+            WfLogger.Log(this, LogLevel.DEBUG, "Set game master name to " + GameSettings.GetGm().name);
         }
 
         private void returnButton_Click(object sender, EventArgs e)
         {
+            WfLogger.Log(this, LogLevel.DEBUG, "Return button was clicked, and view changes to " + m_caller.GetType());
             m_caller.Open(this);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using PAPI.Character;
+using PAPI.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +9,7 @@ namespace PAPI.Settings
     public class Game
     {
         public GenreEnum m_genre { get; private set; }
+        public GameMaster m_gameMaster { get; private set; }
         public Dictionary<Player, PlayerCharacter> m_party { get; private set; }
         public DateTime m_dateOfCreation { get; private set; }
         public DateTime m_lastSession { get; private set; }
@@ -18,6 +20,16 @@ namespace PAPI.Settings
             m_party = new Dictionary<Player, PlayerCharacter>();
             m_dateOfCreation = DateTime.Now;
             m_lastSession = DateTime.Now;
+            m_gameMaster = GameSettings.GetGm();
+        }
+
+        public Game()
+        {
+            m_genre = GenreEnum.NOT_VALID;
+            m_party = new Dictionary<Player, PlayerCharacter>();
+            m_dateOfCreation = DateTime.Now;
+            m_lastSession = DateTime.Now;
+            m_gameMaster = GameSettings.GetGm();
         }
 
         public string partyToString()
@@ -28,9 +40,20 @@ namespace PAPI.Settings
             {
                 if (!first) output += ", ";
                 else first = false;
-                output += player.Key.m_name + "(" + player.Value.GetName() + ")";
+                output += player.Key.name + "(" + player.Value.name + ")";
             }
             return output;
+        }
+
+        public void AddPlayer(Player player)
+        {
+            if(m_party.ContainsKey(player))
+            {
+                WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.WARNING, "Couldn't add player, because they already are in this game");
+                return;
+            }
+            m_party.Add(player, new PlayerCharacter());
+            WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.DEBUG, "Added Player '" + player.name + "' to Party");
         }
     }
 }

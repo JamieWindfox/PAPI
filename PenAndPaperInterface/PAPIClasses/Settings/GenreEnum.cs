@@ -5,6 +5,7 @@
         MAGICAL_WORLD,
         MEDIEVAL_FANTASY,
         NUCLEAR_FALLOUT,
-        SPACE_OPERA
+        SPACE_OPERA,
+        NOT_VALID
     }
 }

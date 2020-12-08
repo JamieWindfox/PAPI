@@ -20,6 +20,14 @@ namespace PAPI.Character
             m_availableGenres = genres;
         }
 
+        public Motivation(MotivationTypeEnum type, string name, Dictionary<Language, string> descriptions)
+        {
+            m_type = type;
+            m_name = name;
+            m_descriptions = descriptions;
+            m_availableGenres = GameSettings.GetAllGenres();
+        }
+
         // ################################################# GETTER #################################################
         public MotivationTypeEnum GetMotivationType() { return m_type; }
         public string GetName() { return m_name; }
@@ -37,7 +45,7 @@ namespace PAPI.Character
             else
             {
                 string msg = "Can't add description (" + description + "); There already is a description for " + m_name + " in " + language;
-                WfGLogger.Log(this.GetType() + ".AddDescription(Language, string)", LogLevel.WARNING, msg);
+                WfLogger.Log(this.GetType() + ".AddDescription(Language, string)", LogLevel.WARNING, msg);
             }
         }
     }
