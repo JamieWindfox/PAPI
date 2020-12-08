@@ -40,7 +40,7 @@ namespace PAPI.Settings
             {
                 if (!first) output += ", ";
                 else first = false;
-                output += player.Key.m_name + "(" + player.Value.name + ")";
+                output += player.Key.name + "(" + player.Value.name + ")";
             }
             return output;
         }
@@ -53,7 +53,7 @@ namespace PAPI.Settings
                 return;
             }
             m_party.Add(player, new PlayerCharacter());
-            WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.DEBUG, "Added Player '" + player.m_name + "' to Party");
+            WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.DEBUG, "Added Player '" + player.name + "' to Party");
         }
     }
 }

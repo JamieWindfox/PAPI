@@ -13,5 +13,6 @@ namespace PAPI.Settings
         {
             m_ipAdress = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
         }
+
     }
 }

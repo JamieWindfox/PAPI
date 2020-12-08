@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using PAPI.Settings;
 
 namespace TestClient
 {
@@ -16,18 +17,9 @@ namespace TestClient
     {
         static void Main(string[] args)
         {
-            PlayerCharacter pc = new PlayerCharacter("Rakanosh");
+            Player player = new Player("Jamie");
 
-            pc.SetMotivation(new Motivation(MotivationTypeEnum.STRENGTH, "TestStrength",
-                new Dictionary<PAPI.Settings.Language, string>()));
-            pc.SetMotivation(new Motivation(MotivationTypeEnum.FLAW, "TestFlaw",
-                new Dictionary<PAPI.Settings.Language, string>()));
-            pc.SetMotivation(new Motivation(MotivationTypeEnum.DESIRE, "TestDesire",
-                new Dictionary<PAPI.Settings.Language, string>()));
-            pc.SetMotivation(new Motivation(MotivationTypeEnum.FEAR, "TestFear",
-                new Dictionary<PAPI.Settings.Language, string>()));
-
-            byte[] bytes = sendMessage(System.Text.Encoding.Unicode.GetBytes(JsonSerializer.Serialize(pc)));
+            byte[] bytes = sendMessage(System.Text.Encoding.Unicode.GetBytes(JsonSerializer.Serialize(player)));
 
         }
 

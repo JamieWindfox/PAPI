@@ -10,7 +10,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-
+using PAPI.Settings;
+using System.Runtime.Serialization;
 
 namespace GameMasterPAPI.Server
 {
@@ -26,8 +27,6 @@ namespace GameMasterPAPI.Server
             WfLogger.Log("GameMasterPAPI.Server.PAPIServer", LogLevel.DEBUG, "PAPI Server started. Listening for requests on " + ep.Address + ":" + ep.Port +  " ...");
 
             ListenForRequests();
-            
-
         }
 
         private static void ListenForRequests()
@@ -49,14 +48,14 @@ namespace GameMasterPAPI.Server
 
                     WfLogger.Log("GameMasterPAPI.Server.PAPIServer", LogLevel.DEBUG, "Received a TCP connection from " + sender.GetType() + " (Message = " + message + ")");
 
-                    // Save the data sent by the client;  
-                    PlayerCharacter pc = JsonSerializer.Deserialize<PlayerCharacter>(message); // Deserialize  
-                    
 
-                    byte[] bytes = System.Text.Encoding.Unicode.GetBytes("Message received: " + pc.name);
+                    // Save the data sent by the client;  
+                    Player player = JsonSerializer.Deserialize<Player>(message); // Deserialize  
+
+                    byte[] bytes = System.Text.Encoding.Unicode.GetBytes("Message received: " + message);
                     sender.GetStream().Write(bytes, 0, bytes.Length); // Send the response  
 
-                    WfLogger.Log("GameMasterPAPI.Server.PAPIServer", LogLevel.DEBUG, "Received Player Character: " + pc.ToString()); 
+                    WfLogger.Log("GameMasterPAPI.Server.PAPIServer", LogLevel.DEBUG, "Received Player: " + player.name); 
                 }
             });
             thread.Start();

@@ -60,13 +60,13 @@ namespace GameMasterPAPI.Views
         {
             foreach(KeyValuePair<Player, Button> playerButton in removePlayerButtons)
             {
-                if(playerButton.Key.m_name == player.m_name)
+                if(playerButton.Key.name == player.name)
                 {
-                    WfLogger.Log(this, LogLevel.WARNING, "Add player " + player.m_name + " not possible, there already is a player with this name");
+                    WfLogger.Log(this, LogLevel.WARNING, "Add player " + player.name + " not possible, there already is a player with this name");
                     return;
                 }
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "Add player " + player.m_name + " to list of players");
+            WfLogger.Log(this, LogLevel.DEBUG, "Add player " + player.name + " to list of players");
 
             playerListPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
             playerListPanel.RowCount++;
@@ -74,7 +74,7 @@ namespace GameMasterPAPI.Views
             // Show name of player and put it into list
             playerListPanel.Controls.Add(new Label()
             {
-                Text = player.m_name,
+                Text = player.name,
                 Anchor = AnchorStyles.Left | AnchorStyles.Top,
                 Width = 200
             }, 0, removePlayerButtons.Count+1);
@@ -101,7 +101,7 @@ namespace GameMasterPAPI.Views
                 rowStyle.SizeType = SizeType.Absolute;
                 rowStyle.Height = 44;
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "Added player " + player.m_name);
+            WfLogger.Log(this, LogLevel.DEBUG, "Added player " + player.name);
             SetButtonDesign();
         }
 
@@ -118,7 +118,7 @@ namespace GameMasterPAPI.Views
             }
             if (playerToRemove != null)
             {
-                WfLogger.Log(this, LogLevel.DEBUG, "Remove Player " + playerToRemove.m_name);
+                WfLogger.Log(this, LogLevel.DEBUG, "Remove Player " + playerToRemove.name);
             }
             else
             {

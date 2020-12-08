@@ -1,19 +1,26 @@
-﻿namespace PAPI.Settings
+﻿using System;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace PAPI.Settings
 {
     public class Player
     {
-        public string m_name { get; private set; }
+        public string name { get; private set; }
 
+
+        [JsonConstructor]
         public Player(string name)
         {
-            m_name = name;
+            this.name = name;
         }
 
-        public Player() : this("NOT VALID") { }
+        public Player() 
+            : this("NOT A VALID PLAYER NAME") { }
 
         public void SetName(string name)
         {
-            m_name = name;
+            this.name = name;
         }
     }
 }

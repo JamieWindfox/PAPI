@@ -28,11 +28,11 @@ namespace GameMasterPAPI.Views
         public override void SetTextToActiveLanguage()
         {
             
-            if (m_activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGm().m_name)
+            if (m_activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGm().name)
             {
                 return;
             }
-            m_gmName = GameSettings.GetGm().m_name;
+            m_gmName = GameSettings.GetGm().name;
             string resFile;
 
             switch (GameSettings.GetLanguage())
