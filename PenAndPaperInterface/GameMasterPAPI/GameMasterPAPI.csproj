@@ -92,6 +92,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server\PAPIServer.cs" />
+    <Compile Include="Server\PendingMessages.cs" />
     <Compile Include="Strings\AbilitiesAndTalents_EN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

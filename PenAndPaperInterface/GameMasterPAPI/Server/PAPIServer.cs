@@ -51,8 +51,9 @@ namespace GameMasterPAPI.Server
 
                     // Save the data sent by the client;  
                     Player player = JsonSerializer.Deserialize<Player>(message); // Deserialize  
+                    PendingMessages.waitingPlayers.Add(player);
 
-                    byte[] bytes = System.Text.Encoding.Unicode.GetBytes("Added Player " + player.name + " to game");
+                    byte[] bytes = System.Text.Encoding.Unicode.GetBytes("Added Player " + player.name + " to list of waiting players");
                     sender.GetStream().Write(bytes, 0, bytes.Length); // Send the response  
 
                     WfLogger.Log("GameMasterPAPI.Server.PAPIServer", LogLevel.DEBUG, "Received Player: " + player.name);

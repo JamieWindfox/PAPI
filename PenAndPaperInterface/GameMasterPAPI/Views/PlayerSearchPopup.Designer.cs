@@ -33,7 +33,7 @@ namespace GameMasterPAPI.Views
             this.searchPlayerButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.addPlayerButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.foundPlayerName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.foundPlayerNameLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -100,17 +100,17 @@ namespace GameMasterPAPI.Views
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(3, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 26);
-            this.textBox1.TabIndex = 3;
+            this.foundPlayerName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.foundPlayerName.Location = new System.Drawing.Point(3, 87);
+            this.foundPlayerName.Name = "textBox1";
+            this.foundPlayerName.Size = new System.Drawing.Size(288, 26);
+            this.foundPlayerName.TabIndex = 3;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.foundPlayerName, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.foundPlayerNameLabel, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(153, 23);
@@ -154,7 +154,7 @@ namespace GameMasterPAPI.Views
         private System.Windows.Forms.Button searchPlayerButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button addPlayerButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox foundPlayerName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label foundPlayerNameLabel;
     }

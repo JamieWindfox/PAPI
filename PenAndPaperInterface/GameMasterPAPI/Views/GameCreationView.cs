@@ -153,8 +153,6 @@ namespace GameMasterPAPI.Views
             WfLogger.Log(this, LogLevel.DEBUG, "Add new Player Button was clicked, open the Player Search Popup");
             ViewController.playerSearchPopup.Popup(this);
 
-            // TEST
-            AddPlayer(new Player("Rainemof"));
         }
 
         private void genreDropdown_SelectedIndexChanged(object sender, EventArgs e)
