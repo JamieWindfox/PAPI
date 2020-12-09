@@ -29,7 +29,7 @@ namespace GameMasterPAPI.Views
         // Set all text in this view to the given language
         public override void SetTextToActiveLanguage()
         {
-            
+            //Translate(ref new List<Control>)
             if (activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGm().name)
             {
                 return;
@@ -81,6 +81,51 @@ namespace GameMasterPAPI.Views
         public void Open()
         {
             base.Open(null);
+        }
+
+
+        public override void Translate(ref List<Control> controls, bool translateIfLanguageNotChanged)
+        {
+            if (activeLanguage == GameSettings.GetLanguage() && !translateIfLanguageNotChanged)
+            {
+                return;
+            }
+            string resFile;
+
+            switch (GameSettings.GetLanguage())
+            {
+                case Language.GERMAN:
+                    resFile = @".\Strings\\General_DE.resx";
+                    activeLanguage = Language.GERMAN;
+                    break;
+                case Language.ENGLISH:
+                default:
+                    resFile = @".\Strings\\General_EN.resx";
+                    activeLanguage = Language.ENGLISH;
+                    break;
+            }
+            using (ResXResourceSet resSet = new ResXResourceSet(resFile))
+            {
+                foreach (Control control in controls)
+                {
+                    try
+                    {
+                        string newText = resSet.GetString(control.Name);
+                        if (newText == "")
+                        {
+                            throw new KeyNotFoundException("There is no translation for '" + control.Name + "' in " + resFile);
+                        }
+                        control.Text = String.Empty;
+                        control.Text = newText;
+                    }
+                    catch (KeyNotFoundException)
+                    {
+                        control.Text = String.Empty;
+                        control.Text = control.Name;
+                    }
+
+                }
+            }
         }
     }
 }

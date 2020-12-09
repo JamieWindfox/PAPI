@@ -1,30 +1,16 @@
-﻿using PAPI.Character;
-using PAPI.Logging;
+﻿using PAPI.Logging;
+using PAPI.Network;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json.Serialization;
 using System.Text.Json;
-using PAPI.Settings;
-using PAPI.Network;
 
-namespace TestClient
+namespace PAPI.Client
 {
-    class Program
+    public static class PAPIClient
     {
-        static void Main(string[] args)
-        {
-            Player player = new Player("Raine");
-            PlayerJoinRequest request = new PlayerJoinRequest("PlayerJoinRequest", player);
-            byte[] bytes = sendMessage(System.Text.Encoding.Unicode.GetBytes(JsonSerializer.Serialize(request)));
-
-        }
-
-        private static byte[] sendMessage(byte[] messageBytes)
+        public static byte[] SendMessage(byte[] messageBytes)
         {
             const int bytesize = 1024 * 1024;
             try // Try connecting and send the message bytes  
@@ -48,7 +34,7 @@ namespace TestClient
                 stream.Dispose();
                 client.Close();
             }
-            catch (Exception e) // Catch exceptions  
+            catch (SocketException e) // Catch exceptions  
             {
                 Console.WriteLine(e.Message);
             }
@@ -61,7 +47,7 @@ namespace TestClient
             string responseData = System.Text.Encoding.Unicode.GetString(messageBytes, 0, bytes);
             WfLogger.Log("PAPI Client", LogLevel.DEBUG, "Received Response: " + responseData + " from Server");
 
-            if(responseData.Contains("PlayerJoinResponse"))
+            if (responseData.Contains("PlayerJoinResponse"))
             {
                 PlayerJoinResponse response = JsonSerializer.Deserialize<PlayerJoinResponse>(responseData);
                 Console.WriteLine("Added to Party: " + response.addedPlayerName);
@@ -72,6 +58,4 @@ namespace TestClient
             }
         }
     }
-
-
 }

@@ -104,5 +104,10 @@ namespace GameMasterPAPI.Views
         {
             WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
         }
+
+        public virtual void Translate(ref List<Control> controls, bool translatewSameLanguage)
+        {
+            WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
+        }
     }
 }
