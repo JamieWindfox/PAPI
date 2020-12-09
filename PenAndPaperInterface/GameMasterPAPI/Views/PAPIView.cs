@@ -6,6 +6,7 @@ using PAPI.Logging;
 using PAPI.Settings;
 using Microsoft.CodeAnalysis;
 using PAPI.Exception;
+using System.Resources;
 
 namespace GameMasterPAPI.Views
 {
@@ -55,8 +56,6 @@ namespace GameMasterPAPI.Views
             WfLogger.Log(this, LogLevel.DEBUG, "Opened View" + this.GetType().ToString());
         }
 
-
-
         protected void SetDesign()
         {
             switch (GameSettings.GetDesign())
@@ -103,6 +102,71 @@ namespace GameMasterPAPI.Views
         public virtual void SetTextToActiveLanguage()
         {
             WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
+        }
+
+        /*public virtual void Translate(ResXResourceSet resSet, Control control)
+        {
+            WfLogger.Log(this, LogLevel.WARNING, "Translate not implemented");
+        }*/
+
+        public string GetResourceFile()
+        {
+            string resFile;
+
+            switch (GameSettings.GetLanguage())
+            {
+                case Language.GERMAN:
+                    resFile = @".\Strings\\General_DE.resx";
+                    activeLanguage = Language.GERMAN;
+                    break;
+                case Language.ENGLISH:
+                default:
+                    resFile = @".\Strings\\General_EN.resx";
+                    activeLanguage = Language.ENGLISH;
+                    break;
+            }
+            return resFile;
+        }
+
+        public void Translate(ResXResourceSet resSet, Control control)
+        {
+            string text = resSet.GetString(control.Name);
+            if (text != null)
+            {
+                control.Text = resSet.GetString(control.Name);
+            }
+            else
+            {
+                control.Text = control.Name;
+            }
+        }
+
+        public string TranslatedString(ResXResourceSet resSet, string key)
+        {
+            string text = resSet.GetString(key);
+            if (text != null)
+            {
+                return text;
+            }
+            else
+            {
+                return key;
+            }
+        }
+
+        public string RemoveNumbers(string text)
+        {
+            string output = text.Replace("0", "");
+            output = output.Replace("1", "");
+            output = output.Replace("2", "");
+            output = output.Replace("3", "");
+            output = output.Replace("4", "");
+            output = output.Replace("5", "");
+            output = output.Replace("6", "");
+            output = output.Replace("7", "");
+            output = output.Replace("8", "");
+            output = output.Replace("9", "");
+            return output;
         }
     }
 }

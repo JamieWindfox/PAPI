@@ -30,8 +30,8 @@ namespace GameMasterPAPI.Views
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.welcomeText = new System.Windows.Forms.Label();
-            this.startGameButton = new System.Windows.Forms.Button();
+            this.welcomeLabel = new System.Windows.Forms.Label();
+            this.startButton = new System.Windows.Forms.Button();
             this.quitButton = new System.Windows.Forms.Button();
             this.optionsButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -45,8 +45,8 @@ namespace GameMasterPAPI.Views
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
-            this.tableLayoutPanel1.Controls.Add(this.welcomeText, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.startGameButton, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.welcomeLabel, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.startButton, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.quitButton, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.optionsButton, 3, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -61,28 +61,28 @@ namespace GameMasterPAPI.Views
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // welcomeText
+            // welcomeLabel
             // 
-            this.welcomeText.AutoSize = true;
-            this.welcomeText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.welcomeText.Location = new System.Drawing.Point(272, 191);
-            this.welcomeText.Name = "welcomeText";
-            this.welcomeText.Size = new System.Drawing.Size(253, 19);
-            this.welcomeText.TabIndex = 0;
-            this.welcomeText.Text = "welcomeText";
-            this.welcomeText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.welcomeLabel.Location = new System.Drawing.Point(272, 191);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(253, 19);
+            this.welcomeLabel.TabIndex = 0;
+            this.welcomeLabel.Text = "welcomeText";
+            this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // startGameButton
+            // startButton
             // 
-            this.startGameButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.startGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startGameButton.Location = new System.Drawing.Point(338, 396);
-            this.startGameButton.Name = "startGameButton";
-            this.startGameButton.Size = new System.Drawing.Size(120, 40);
-            this.startGameButton.TabIndex = 1;
-            this.startGameButton.Text = "start";
-            this.startGameButton.UseVisualStyleBackColor = true;
-            this.startGameButton.Click += new System.EventHandler(this.startGameButton_Click);
+            this.startButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButton.Location = new System.Drawing.Point(338, 396);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(120, 40);
+            this.startButton.TabIndex = 1;
+            this.startButton.Text = "start";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // quitButton
             // 
@@ -125,8 +125,8 @@ namespace GameMasterPAPI.Views
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label welcomeText;
-        private System.Windows.Forms.Button startGameButton;
+        private System.Windows.Forms.Label welcomeLabel;
+        private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button quitButton;
         private System.Windows.Forms.Button optionsButton;
     }

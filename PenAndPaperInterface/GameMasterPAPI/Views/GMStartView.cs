@@ -29,32 +29,19 @@ namespace GameMasterPAPI.Views
         // Set all text in this view to the given language
         public override void SetTextToActiveLanguage()
         {
-            
             if (activeLanguage == GameSettings.GetLanguage() && m_gmName == GameSettings.GetGm().name)
             {
                 return;
             }
             m_gmName = GameSettings.GetGm().name;
-            string resFile;
 
-            switch (GameSettings.GetLanguage())
+            using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
             {
-                case Language.GERMAN:
-                    resFile = @".\Strings\\General_DE.resx";
-                    activeLanguage = Language.GERMAN;
-                    break;
-                case Language.ENGLISH:
-                default:
-                    resFile = @".\Strings\\General_EN.resx";
-                    activeLanguage = Language.ENGLISH;
-                    break;
-            }
-            using (ResXResourceSet resSet = new ResXResourceSet(resFile))
-            {
-                welcomeText.Text = resSet.GetString("welcome") + ", " + m_gmName;
-                quitButton.Text = resSet.GetString("quit");
-                startGameButton.Text = resSet.GetString("startGame");
-                optionsButton.Text = resSet.GetString("options");
+                Translate(resSet, welcomeLabel);
+                welcomeLabel.Text += ", " + m_gmName;
+                Translate(resSet, quitButton);
+                Translate(resSet, startButton);
+                Translate(resSet, optionsButton);
             }
         }
 
@@ -72,7 +59,7 @@ namespace GameMasterPAPI.Views
         }
 
         // Opens the Game Overview
-        private void startGameButton_Click(object sender, EventArgs e)
+        private void startButton_Click(object sender, EventArgs e)
         {
             GameSelectionView createGameView = new GameSelectionView();
             createGameView.Open(this);

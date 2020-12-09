@@ -117,73 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="accept" xml:space="preserve">
-    <value>Annehmen</value>
+  <data name="dateLabel" xml:space="preserve">
+    <value>Datum</value>
   </data>
-  <data name="design" xml:space="preserve">
+  <data name="designLabel" xml:space="preserve">
     <value>Design</value>
   </data>
-  <data name="english" xml:space="preserve">
-    <value>Englisch</value>
+  <data name="designMedieval" xml:space="preserve">
+    <value>Antik</value>
   </data>
-  <data name="genre" xml:space="preserve">
-    <value>Genre</value>
-  </data>
-  <data name="german" xml:space="preserve">
-    <value>Deutsch</value>
-  </data>
-  <data name="gmName" xml:space="preserve">
-    <value>Name (Game Master)</value>
-  </data>
-  <data name="language" xml:space="preserve">
-    <value>Sprache</value>
-  </data>
-  <data name="lastSave" xml:space="preserve">
-    <value>Letztes Speicherdatum</value>
-  </data>
-  <data name="magicalWorld" xml:space="preserve">
-    <value>Magische Welt</value>
-  </data>
-  <data name="medieval" xml:space="preserve">
-    <value>Mittelalterlich</value>
-  </data>
-  <data name="medievalFantasy" xml:space="preserve">
-    <value>Mittelalter Fantasy</value>
-  </data>
-  <data name="modern" xml:space="preserve">
+  <data name="designModern" xml:space="preserve">
     <value>Modern</value>
   </data>
-  <data name="newGame" xml:space="preserve">
-    <value>Neues Spiel</value>
+  <data name="genreLabel" xml:space="preserve">
+    <value>Genre</value>
   </data>
-  <data name="NOT_VALID" xml:space="preserve">
-    <value>NICHT GÜLTIG</value>
+  <data name="genre_magicalWorld" xml:space="preserve">
+    <value>Magische Moderne</value>
   </data>
-  <data name="nuclearFallout" xml:space="preserve">
+  <data name="genre_medievalFantasy" xml:space="preserve">
+    <value>Mittelalter Fantasy</value>
+  </data>
+  <data name="genre_nuclearFallout" xml:space="preserve">
     <value>Nuklearer Fallout</value>
   </data>
-  <data name="options" xml:space="preserve">
+  <data name="genre_spaceOpera" xml:space="preserve">
+    <value>Space Opera</value>
+  </data>
+  <data name="gmNameLabel" xml:space="preserve">
+    <value>Game Master Name</value>
+  </data>
+  <data name="languageEnglish" xml:space="preserve">
+    <value>Englisch</value>
+  </data>
+  <data name="languageGerman" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="languageLabel" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="newGameButton" xml:space="preserve">
+    <value>Neues Spiel</value>
+  </data>
+  <data name="optionsButton" xml:space="preserve">
     <value>Optionen</value>
   </data>
-  <data name="quit" xml:space="preserve">
+  <data name="quitButton" xml:space="preserve">
     <value>Beenden</value>
   </data>
-  <data name="return" xml:space="preserve">
+  <data name="returnButton" xml:space="preserve">
     <value>Zurück</value>
   </data>
-  <data name="savedGames" xml:space="preserve">
+  <data name="savedGamesLabel" xml:space="preserve">
     <value>Gespeicherte Spiele</value>
   </data>
-  <data name="show" xml:space="preserve">
-    <value>Anzeigen</value>
+  <data name="showButton" xml:space="preserve">
+    <value>Ansehen</value>
   </data>
-  <data name="spaceOpera" xml:space="preserve">
-    <value>Weltall Seifenoper</value>
-  </data>
-  <data name="startGame" xml:space="preserve">
+  <data name="startButton" xml:space="preserve">
     <value>Starten</value>
   </data>
-  <data name="welcome" xml:space="preserve">
+  <data name="welcomeLabel" xml:space="preserve">
     <value>Willkommen</value>
   </data>
 </root>

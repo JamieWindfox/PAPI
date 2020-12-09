@@ -27,36 +27,24 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if(activeLanguage == GameSettings.GetLanguage() && cachedGmName == GameSettings.GetGm().name)
+            if (activeLanguage == GameSettings.GetLanguage() && cachedGmName == GameSettings.GetGm().name)
             {
                 return;
             }
             cachedGmName = GameSettings.GetGm().name;
-            gmNameInputField.Text = cachedGmName;
-            string resFile;
 
-            switch (GameSettings.GetLanguage())
+            using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
             {
-                case Language.GERMAN:
-                    resFile = @".\Strings\\General_DE.resx";
-                    activeLanguage = Language.GERMAN;
-                    break;
-                case Language.ENGLISH:
-                default:
-                    resFile = @".\Strings\\General_EN.resx";
-                    activeLanguage = Language.ENGLISH;
-                    break;
-            }
-            using (ResXResourceSet resSet = new ResXResourceSet(resFile))
-            {
-                languageText.Text = resSet.GetString("language");
-                designText.Text = resSet.GetString("design");
-                designDropdown.Items[0] = resSet.GetString("medieval");
-                designDropdown.Items[1] = resSet.GetString("modern");
-                languageDropdown.Items[0] = resSet.GetString("english");
-                languageDropdown.Items[1] = resSet.GetString("german");
-                returnButton.Text = resSet.GetString("return");
-                gmName.Text = resSet.GetString("gmName");
+                Translate(resSet, languageLabel);
+                Translate(resSet, designLabel);
+                Translate(resSet, returnButton);
+                Translate(resSet, gmNameLabel);
+                gmNameInputField.Text = cachedGmName;
+                designDropdown.Items[0] = TranslatedString(resSet, "designMedieval");
+                designDropdown.Items[1] = TranslatedString(resSet, "designModern");
+                languageDropdown.Items[0] = TranslatedString(resSet, "languageEnglish");
+                languageDropdown.Items[1] = TranslatedString(resSet, "languageGerman");
+
             }
             WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings.GetLanguage());
         }

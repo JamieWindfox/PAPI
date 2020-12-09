@@ -39,23 +39,32 @@ namespace GameMasterPAPI.Views
             gameTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             gameTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
             gameTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 144F));
-            gameTable.Controls.Add(sessionGenreText, 0, 0);
-            gameTable.Controls.Add(dateText, 1, 0);
+            gameTable.Controls.Add(genreLabel, 0, 0);
+            gameTable.Controls.Add(dateLabel, 1, 0);
             gameTable.RowCount = 1;
 
             gameTable.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
 
+            ShowSavedGames();
+            
+            WfLogger.Log(this, LogLevel.DEBUG, "Added all components");
+        }
+
+        private void ShowSavedGames()
+        {
             // Show all saved Games
             int rowNr = 1;
-            foreach(Game game in savedGames)
+            foreach (Game game in savedGames)
             {
                 WfLogger.Log(this, LogLevel.DEBUG, "Added game to list of saved games: " + game.genre + ", " + game.lastSession.ToString());
-               gameTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
+                gameTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
                 gameTable.RowCount++;
-                gameTable.Controls.Add(new Label() { 
+                gameTable.Controls.Add(new Label()
+                {
                     Text = game.lastSession.ToString(),
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
-                    Width = 200}, 1, rowNr);
+                    Width = 200
+                }, 1, rowNr);
 
                 // Add show Game Button to current row
                 Button button = new Button()
@@ -64,7 +73,7 @@ namespace GameMasterPAPI.Views
                     FlatStyle = FlatStyle.Flat,
                     Anchor = AnchorStyles.Right | AnchorStyles.Top,
                     Size = new Size(140, 40),
-                    Name = "showGameButton" + rowNr
+                    Name = "showButton" + rowNr
                 };
                 gameTable.Controls.Add(button, 3, rowNr);
                 m_gameButtons.Add(rowNr, button);
@@ -73,7 +82,7 @@ namespace GameMasterPAPI.Views
             }
 
             // Set size of each row to same
-            foreach(RowStyle rowStyle in gameTable.RowStyles)
+            foreach (RowStyle rowStyle in gameTable.RowStyles)
             {
                 rowStyle.SizeType = SizeType.Absolute;
                 rowStyle.Height = 44;
@@ -88,7 +97,6 @@ namespace GameMasterPAPI.Views
             {
                 button.Value.Click += GameButton_Click;
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "Added all components");
         }
 
         private void GameButton_Click(object sender, EventArgs e)
@@ -106,42 +114,31 @@ namespace GameMasterPAPI.Views
             {
                 return;
             }
-            string resFile;
 
-            switch (GameSettings.GetLanguage())
+            using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
             {
-                case Language.GERMAN:
-                    resFile = @".\Strings\\General_DE.resx";
-                    activeLanguage = Language.GERMAN;
-                    break;
-                case Language.ENGLISH:
-                default:
-                    resFile = @".\Strings\\General_EN.resx";
-                    activeLanguage = Language.ENGLISH;
-                    break;
-            }
-            using (ResXResourceSet resSet = new ResXResourceSet(resFile))
-            {
+                Translate(resSet, savedGamesLabel);
+                Translate(resSet, returnButton);
+                Translate(resSet, startButton);
+                Translate(resSet, newGameButton);
+                Translate(resSet, dateLabel);
+                Translate(resSet, genreLabel);
+                
                 for (int row = 0; row < savedGames.Count; ++row)
                 {
                     gameTable.Controls.Add(new Label()
                     {
-                        Text = resSet.GetString(GameSettings.ToString(savedGames[row].genre)),
+                        Text = TranslatedString(resSet, "genre_" + (GameSettings.ToString(savedGames[row].genre).ToString())),
                         Anchor = AnchorStyles.Left | AnchorStyles.Top,
                         Width = 250
                     }, 0, row + 1);
-
                 }
                 foreach (KeyValuePair<int, Button> buttonId in m_gameButtons)
                 {
-                    buttonId.Value.Text = resSet.GetString("show");
+                    Translate(resSet, buttonId.Value);
                 }
-                savedGamesText.Text = resSet.GetString("savedGames");
-                sessionGenreText.Text = resSet.GetString("genre");
-                dateText.Text = resSet.GetString("lastSave");
-                returnButton.Text = resSet.GetString("return");
-                newGameButton.Text = resSet.GetString("newGame");
             }
+ 
             WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings.GetLanguage());
         }
 

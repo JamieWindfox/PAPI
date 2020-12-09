@@ -61,281 +61,191 @@ namespace GameMasterPAPI.Strings {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Return ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Date ähnelt.
         /// </summary>
-        internal static string _return {
+        internal static string dateLabel {
             get {
-                return ResourceManager.GetString("return", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Accept ähnelt.
-        /// </summary>
-        internal static string accept {
-            get {
-                return ResourceManager.GetString("accept", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die available ähnelt.
-        /// </summary>
-        internal static string available {
-            get {
-                return ResourceManager.GetString("available", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Check ähnelt.
-        /// </summary>
-        internal static string check {
-            get {
-                return ResourceManager.GetString("check", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die current ähnelt.
-        /// </summary>
-        internal static string current {
-            get {
-                return ResourceManager.GetString("current", resourceCulture);
+                return ResourceManager.GetString("dateLabel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Design ähnelt.
         /// </summary>
-        internal static string design {
+        internal static string designLabel {
             get {
-                return ResourceManager.GetString("design", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die English ähnelt.
-        /// </summary>
-        internal static string english {
-            get {
-                return ResourceManager.GetString("english", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Genre ähnelt.
-        /// </summary>
-        internal static string genre {
-            get {
-                return ResourceManager.GetString("genre", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Genres ähnelt.
-        /// </summary>
-        internal static string genres {
-            get {
-                return ResourceManager.GetString("genres", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die German ähnelt.
-        /// </summary>
-        internal static string german {
-            get {
-                return ResourceManager.GetString("german", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Name of Game Master ähnelt.
-        /// </summary>
-        internal static string gmName {
-            get {
-                return ResourceManager.GetString("gmName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Language ähnelt.
-        /// </summary>
-        internal static string language {
-            get {
-                return ResourceManager.GetString("language", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Last Save ähnelt.
-        /// </summary>
-        internal static string lastSave {
-            get {
-                return ResourceManager.GetString("lastSave", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Magical World ähnelt.
-        /// </summary>
-        internal static string magicalWorld {
-            get {
-                return ResourceManager.GetString("magicalWorld", resourceCulture);
+                return ResourceManager.GetString("designLabel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Medieval ähnelt.
         /// </summary>
-        internal static string medieval {
+        internal static string designMedieval {
             get {
-                return ResourceManager.GetString("medieval", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Medieval Fantasy ähnelt.
-        /// </summary>
-        internal static string medievalFantasy {
-            get {
-                return ResourceManager.GetString("medievalFantasy", resourceCulture);
+                return ResourceManager.GetString("designMedieval", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Modern ähnelt.
         /// </summary>
-        internal static string modern {
+        internal static string designModern {
             get {
-                return ResourceManager.GetString("modern", resourceCulture);
+                return ResourceManager.GetString("designModern", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Name ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Magical World ähnelt.
         /// </summary>
-        internal static string name {
+        internal static string genre_magicalWorld {
             get {
-                return ResourceManager.GetString("name", resourceCulture);
+                return ResourceManager.GetString("genre_magicalWorld", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die New Game ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Medieval Fantasy ähnelt.
         /// </summary>
-        internal static string newGame {
+        internal static string genre_medievalFantasy {
             get {
-                return ResourceManager.GetString("newGame", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die NOT VALID ähnelt.
-        /// </summary>
-        internal static string NOT_VALID {
-            get {
-                return ResourceManager.GetString("NOT_VALID", resourceCulture);
+                return ResourceManager.GetString("genre_medievalFantasy", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Nuclear Fallout ähnelt.
         /// </summary>
-        internal static string nuclearFallout {
+        internal static string genre_nuclearFallout {
             get {
-                return ResourceManager.GetString("nuclearFallout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Options ähnelt.
-        /// </summary>
-        internal static string options {
-            get {
-                return ResourceManager.GetString("options", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die page ähnelt.
-        /// </summary>
-        internal static string page {
-            get {
-                return ResourceManager.GetString("page", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Quit ähnelt.
-        /// </summary>
-        internal static string quit {
-            get {
-                return ResourceManager.GetString("quit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Rule Book ähnelt.
-        /// </summary>
-        internal static string ruleBook {
-            get {
-                return ResourceManager.GetString("ruleBook", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Saved Games ähnelt.
-        /// </summary>
-        internal static string savedGames {
-            get {
-                return ResourceManager.GetString("savedGames", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Show ähnelt.
-        /// </summary>
-        internal static string show {
-            get {
-                return ResourceManager.GetString("show", resourceCulture);
+                return ResourceManager.GetString("genre_nuclearFallout", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Space Opera ähnelt.
         /// </summary>
-        internal static string spaceOpera {
+        internal static string genre_spaceOpera {
             get {
-                return ResourceManager.GetString("spaceOpera", resourceCulture);
+                return ResourceManager.GetString("genre_spaceOpera", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Start Game ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Genre ähnelt.
         /// </summary>
-        internal static string startGame {
+        internal static string genreLabel {
             get {
-                return ResourceManager.GetString("startGame", resourceCulture);
+                return ResourceManager.GetString("genreLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Task ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Game Master Name ähnelt.
         /// </summary>
-        internal static string task {
+        internal static string gmNameLabel {
             get {
-                return ResourceManager.GetString("task", resourceCulture);
+                return ResourceManager.GetString("gmNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die English ähnelt.
+        /// </summary>
+        internal static string languageEnglish {
+            get {
+                return ResourceManager.GetString("languageEnglish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die German ähnelt.
+        /// </summary>
+        internal static string languageGerman {
+            get {
+                return ResourceManager.GetString("languageGerman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Language ähnelt.
+        /// </summary>
+        internal static string languageLabel {
+            get {
+                return ResourceManager.GetString("languageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die New Game ähnelt.
+        /// </summary>
+        internal static string newGameButton {
+            get {
+                return ResourceManager.GetString("newGameButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Options ähnelt.
+        /// </summary>
+        internal static string optionsButton {
+            get {
+                return ResourceManager.GetString("optionsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Quit ähnelt.
+        /// </summary>
+        internal static string quitButton {
+            get {
+                return ResourceManager.GetString("quitButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Return ähnelt.
+        /// </summary>
+        internal static string returnButton {
+            get {
+                return ResourceManager.GetString("returnButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Saved Games ähnelt.
+        /// </summary>
+        internal static string savedGamesLabel {
+            get {
+                return ResourceManager.GetString("savedGamesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Show ähnelt.
+        /// </summary>
+        internal static string showButton {
+            get {
+                return ResourceManager.GetString("showButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Start ähnelt.
+        /// </summary>
+        internal static string startButton {
+            get {
+                return ResourceManager.GetString("startButton", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Welcome ähnelt.
         /// </summary>
-        internal static string welcome {
+        internal static string welcomeLabel {
             get {
-                return ResourceManager.GetString("welcome", resourceCulture);
+                return ResourceManager.GetString("welcomeLabel", resourceCulture);
             }
         }
     }

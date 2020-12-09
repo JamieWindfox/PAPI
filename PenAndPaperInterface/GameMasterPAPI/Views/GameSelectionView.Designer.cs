@@ -30,14 +30,14 @@ namespace GameMasterPAPI.Views
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.savedGamesText = new System.Windows.Forms.Label();
+            this.savedGamesLabel = new System.Windows.Forms.Label();
             this.bottomButtonPanel = new System.Windows.Forms.TableLayoutPanel();
             this.returnButton = new System.Windows.Forms.Button();
             this.newGameButton = new System.Windows.Forms.Button();
             this.gameTable = new System.Windows.Forms.TableLayoutPanel();
-            this.sessionGenreText = new System.Windows.Forms.Label();
-            this.dateText = new System.Windows.Forms.Label();
-            this.startSessionButton = new System.Windows.Forms.Button();
+            this.genreLabel = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.startButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.bottomButtonPanel.SuspendLayout();
             this.gameTable.SuspendLayout();
@@ -49,7 +49,7 @@ namespace GameMasterPAPI.Views
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.savedGamesText, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.savedGamesLabel, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.bottomButtonPanel, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.gameTable, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -59,20 +59,20 @@ namespace GameMasterPAPI.Views
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // savedGamesText
+            // savedGamesLabel
             // 
-            this.savedGamesText.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.savedGamesText.AutoSize = true;
-            this.savedGamesText.Location = new System.Drawing.Point(23, 30);
-            this.savedGamesText.Name = "savedGamesText";
-            this.savedGamesText.Size = new System.Drawing.Size(99, 19);
-            this.savedGamesText.TabIndex = 0;
-            this.savedGamesText.Text = "savedGames";
+            this.savedGamesLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.savedGamesLabel.AutoSize = true;
+            this.savedGamesLabel.Location = new System.Drawing.Point(23, 30);
+            this.savedGamesLabel.Name = "savedGamesLabel";
+            this.savedGamesLabel.Size = new System.Drawing.Size(99, 19);
+            this.savedGamesLabel.TabIndex = 0;
+            this.savedGamesLabel.Text = "savedGames";
             // 
             // bottomButtonPanel
             // 
@@ -84,11 +84,11 @@ namespace GameMasterPAPI.Views
             this.bottomButtonPanel.Controls.Add(this.returnButton, 0, 0);
             this.bottomButtonPanel.Controls.Add(this.newGameButton, 3, 0);
             this.bottomButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bottomButtonPanel.Location = new System.Drawing.Point(23, 388);
+            this.bottomButtonPanel.Location = new System.Drawing.Point(23, 383);
             this.bottomButtonPanel.Name = "bottomButtonPanel";
             this.bottomButtonPanel.RowCount = 1;
             this.bottomButtonPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.bottomButtonPanel.Size = new System.Drawing.Size(754, 39);
+            this.bottomButtonPanel.Size = new System.Drawing.Size(754, 44);
             this.bottomButtonPanel.TabIndex = 1;
             // 
             // returnButton
@@ -97,7 +97,7 @@ namespace GameMasterPAPI.Views
             this.returnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.returnButton.Location = new System.Drawing.Point(3, 3);
             this.returnButton.Name = "returnButton";
-            this.returnButton.Size = new System.Drawing.Size(120, 33);
+            this.returnButton.Size = new System.Drawing.Size(120, 38);
             this.returnButton.TabIndex = 0;
             this.returnButton.Text = "return";
             this.returnButton.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@ namespace GameMasterPAPI.Views
             this.newGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newGameButton.Location = new System.Drawing.Point(631, 3);
             this.newGameButton.Name = "newGameButton";
-            this.newGameButton.Size = new System.Drawing.Size(120, 33);
+            this.newGameButton.Size = new System.Drawing.Size(120, 38);
             this.newGameButton.TabIndex = 1;
             this.newGameButton.Text = "newGame";
             this.newGameButton.UseVisualStyleBackColor = true;
@@ -122,9 +122,9 @@ namespace GameMasterPAPI.Views
             this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.56234F));
             this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.27851F));
             this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.gameTable.Controls.Add(this.sessionGenreText, 0, 0);
-            this.gameTable.Controls.Add(this.dateText, 1, 0);
-            this.gameTable.Controls.Add(this.startSessionButton, 2, 0);
+            this.gameTable.Controls.Add(this.genreLabel, 0, 0);
+            this.gameTable.Controls.Add(this.dateLabel, 1, 0);
+            this.gameTable.Controls.Add(this.startButton, 2, 0);
             this.gameTable.Dock = System.Windows.Forms.DockStyle.Top;
             this.gameTable.Location = new System.Drawing.Point(23, 63);
             this.gameTable.Name = "gameTable";
@@ -133,45 +133,45 @@ namespace GameMasterPAPI.Views
             this.gameTable.Size = new System.Drawing.Size(754, 44);
             this.gameTable.TabIndex = 2;
             // 
-            // sessionGenreText
+            // genreLabel
             // 
-            this.sessionGenreText.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.sessionGenreText.AutoSize = true;
-            this.sessionGenreText.Location = new System.Drawing.Point(3, 12);
-            this.sessionGenreText.Name = "sessionGenreText";
-            this.sessionGenreText.Size = new System.Drawing.Size(117, 19);
-            this.sessionGenreText.TabIndex = 1;
-            this.sessionGenreText.Text = "sessionGenre";
+            this.genreLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.genreLabel.AutoSize = true;
+            this.genreLabel.Location = new System.Drawing.Point(3, 12);
+            this.genreLabel.Name = "genreLabel";
+            this.genreLabel.Size = new System.Drawing.Size(117, 19);
+            this.genreLabel.TabIndex = 1;
+            this.genreLabel.Text = "sessionGenre";
             // 
-            // dateText
+            // dateLabel
             // 
-            this.dateText.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateText.AutoSize = true;
-            this.dateText.Location = new System.Drawing.Point(339, 12);
-            this.dateText.Name = "dateText";
-            this.dateText.Size = new System.Drawing.Size(81, 19);
-            this.dateText.TabIndex = 3;
-            this.dateText.Text = "dateText";
+            this.dateLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Location = new System.Drawing.Point(339, 12);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(81, 19);
+            this.dateLabel.TabIndex = 3;
+            this.dateLabel.Text = "dateText";
             // 
-            // startSessionButton
+            // startButton
             // 
-            this.startSessionButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.startSessionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startSessionButton.Location = new System.Drawing.Point(611, 3);
-            this.startSessionButton.Name = "startSessionButton";
-            this.startSessionButton.Size = new System.Drawing.Size(140, 38);
-            this.startSessionButton.TabIndex = 0;
-            this.startSessionButton.Text = "startSession";
-            this.startSessionButton.UseVisualStyleBackColor = true;
-            this.startSessionButton.Visible = false;
+            this.startButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButton.Location = new System.Drawing.Point(611, 3);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(140, 38);
+            this.startButton.TabIndex = 0;
+            this.startButton.Text = "startSession";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Visible = false;
             // 
-            // SelectGameView
+            // GameSelectionView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "SelectGameView";
+            this.Name = "GameSelectionView";
             this.Text = "CreateGameView";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -185,13 +185,13 @@ namespace GameMasterPAPI.Views
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label savedGamesText;
+        private System.Windows.Forms.Label savedGamesLabel;
         private System.Windows.Forms.TableLayoutPanel bottomButtonPanel;
         private System.Windows.Forms.Button returnButton;
         private System.Windows.Forms.Button newGameButton;
         private System.Windows.Forms.TableLayoutPanel gameTable;
-        private System.Windows.Forms.Button startSessionButton;
-        private System.Windows.Forms.Label sessionGenreText;
-        private System.Windows.Forms.Label dateText;
+        private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Label genreLabel;
+        private System.Windows.Forms.Label dateLabel;
     }
 }
