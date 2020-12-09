@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using PAPI.Settings;
+using PAPI.Network;
 
 namespace TestClient
 {
@@ -18,8 +19,8 @@ namespace TestClient
         static void Main(string[] args)
         {
             Player player = new Player("Jamie");
-
-            byte[] bytes = sendMessage(System.Text.Encoding.Unicode.GetBytes(JsonSerializer.Serialize(player)));
+            PlayerJoinRequest request = new PlayerJoinRequest("PlayerJoinRequest", player);
+            byte[] bytes = sendMessage(System.Text.Encoding.Unicode.GetBytes(JsonSerializer.Serialize(request)));
 
         }
 
@@ -39,14 +40,9 @@ namespace TestClient
 
                 messageBytes = new byte[bytesize]; // Clear the message   
 
-                // String to store the response ASCII representation.
-                String responseData = String.Empty;
-
                 // Receive the stream of bytes  
                 Int32 bytes = stream.Read(messageBytes, 0, messageBytes.Length);
-                responseData = System.Text.Encoding.ASCII.GetString(messageBytes, 0, bytes);
-
-                WfLogger.Log("PAPI Client", LogLevel.DEBUG, "Received: " + responseData);
+                HandleResponse(ref messageBytes, bytes);
 
                 // Clean up  
                 stream.Dispose();
@@ -58,6 +54,22 @@ namespace TestClient
             }
 
             return messageBytes; // Return response  
+        }
+
+        private static void HandleResponse(ref byte[] messageBytes, int bytes)
+        {
+            string responseData = System.Text.Encoding.Unicode.GetString(messageBytes, 0, bytes);
+            WfLogger.Log("PAPI Client", LogLevel.DEBUG, "Received Response: " + responseData + " from Server");
+
+            if(responseData.Contains("PlayerJoinResponse"))
+            {
+                PlayerJoinResponse response = JsonSerializer.Deserialize<PlayerJoinResponse>(responseData);
+                Console.WriteLine("Added to Party: " + response.addedPlayerName);
+            }
+            else
+            {
+
+            }
         }
     }
 

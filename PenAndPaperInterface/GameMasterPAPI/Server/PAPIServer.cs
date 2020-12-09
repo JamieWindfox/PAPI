@@ -13,6 +13,7 @@ using System.Text.Json.Serialization;
 using PAPI.Settings;
 using System.Runtime.Serialization;
 using GameMasterPAPI.Views;
+using PAPI.Network;
 
 namespace GameMasterPAPI.Server
 {
@@ -36,7 +37,7 @@ namespace GameMasterPAPI.Server
             {
                 while (true)
                 {
-                    const int bytesize = 1024 * 1024;
+                    const int bytesize = 1024;
 
                     string message = null;
                     byte[] buffer = new byte[bytesize];
@@ -50,17 +51,31 @@ namespace GameMasterPAPI.Server
                     WfLogger.Log("GameMasterPAPI.Server.PAPIServer", LogLevel.DEBUG, "Received a TCP connection from " + sender.GetType() + " (Message = " + message + ")");
 
                     // Save the data sent by the client;  
-                    Player player = JsonSerializer.Deserialize<Player>(message); // Deserialize  
-                    PendingMessages.waitingPlayers.Add(player);
+                    // Deserialize
 
-                    byte[] bytes = System.Text.Encoding.Unicode.GetBytes("Added Player " + player.name + " to list of waiting players");
-                    sender.GetStream().Write(bytes, 0, bytes.Length); // Send the response  
+                    byte[] response = HandleRequest(message);
+                    sender.GetStream().Write(response, 0, response.Length); // Send the response  
 
-                    WfLogger.Log("GameMasterPAPI.Server.PAPIServer", LogLevel.DEBUG, "Received Player: " + player.name);
-
-                }
+                 }
             });
             thread.Start();
+        }
+
+        private static byte[] HandleRequest(string message)
+        {
+            PAPIResponse response;
+            if(message.Contains("\"requestType\":\"PAPI.Network.PlayerJoinRequest\"") || message.Contains("\"requestType\":\"PlayerJoinRequest\""))
+            {
+                PlayerJoinRequest request = JsonSerializer.Deserialize<PlayerJoinRequest>(message);
+                PendingMessages.waitingPlayers.Add(request.playerToJoin);
+                response = new PlayerJoinResponse("PlayerJoinResponse", HttpStatusCode.OK, request.playerToJoin.name); 
+            }
+            else
+            {
+                response = new UnspecifiedResponse();
+            }
+            WfLogger.Log("PAPIServer", LogLevel.DEBUG, "Response: Added Player '" + ((PlayerJoinResponse)response).addedPlayerName + "', Status: " + response.statusCode);
+            return System.Text.Encoding.Unicode.GetBytes(JsonSerializer.Serialize((PlayerJoinResponse)response));
         }
 
         // Pass byte array as parameter  
