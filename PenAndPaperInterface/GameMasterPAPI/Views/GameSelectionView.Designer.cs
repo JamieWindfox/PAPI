@@ -157,11 +157,10 @@ namespace GameMasterPAPI.Views
             // 
             this.startButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startButton.Location = new System.Drawing.Point(611, 3);
+            this.startButton.Location = new System.Drawing.Point(711, 3);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(140, 38);
+            this.startButton.Size = new System.Drawing.Size(40, 38);
             this.startButton.TabIndex = 0;
-            this.startButton.Text = "startSession";
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Visible = false;
             // 

@@ -33,7 +33,14 @@ namespace GameMasterPAPI.Views
                 button.BackColor = BackColor;
                 button.ForeColor = ForeColor;
                 button.FlatStyle = FlatStyle.Flat;
-                button.Size = new Size(120, 40);
+                if(button.Text != "")
+                {
+                    button.Size = new Size(120, 40);
+                }
+                else
+                {
+                    button.Size = new Size(40, 40);
+                }
             }
             WfLogger.Log(this, LogLevel.DEBUG, "Button design was set to " + GameSettings.GetDesign());
         }

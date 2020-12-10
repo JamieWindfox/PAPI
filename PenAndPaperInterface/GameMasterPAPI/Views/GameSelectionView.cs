@@ -48,6 +48,7 @@ namespace GameMasterPAPI.Views
             ShowSavedGames();
             
             WfLogger.Log(this, LogLevel.DEBUG, "Added all components");
+            SetTextToActiveLanguage();
         }
 
         private void ShowSavedGames()
@@ -66,15 +67,19 @@ namespace GameMasterPAPI.Views
                     Width = 200
                 }, 1, rowNr);
 
+             
                 // Add show Game Button to current row
                 Button button = new Button()
                 {
-                    Text = "showGame",
+                    Text = "",
                     FlatStyle = FlatStyle.Flat,
                     Anchor = AnchorStyles.Right | AnchorStyles.Top,
-                    Size = new Size(140, 40),
+                    Size = new Size(40, 40),
                     Name = "showButton" + rowNr
                 };
+                string imagePath = GameDirectory.GetFilePath_Images(GameSettings.GetDesign()) + "\\show.bmp";
+                Image image = Image.FromFile(imagePath);
+                button.Image = (Image)(new Bitmap(image, new Size(40, 40)));
                 gameTable.Controls.Add(button, 3, rowNr);
                 m_gameButtons.Add(rowNr, button);
                 gameTable.Controls.Add(button, 2, rowNr++);
@@ -101,8 +106,7 @@ namespace GameMasterPAPI.Views
 
         private void GameButton_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(((Button)sender).Name.Remove(0, 14));
-            WfLogger.Log(this, LogLevel.DEBUG, "Button number " + id + " was clicked, open Popup");
+            WfLogger.Log(this, LogLevel.DEBUG, "Button 'Show' was clicked, open Popup");
             PAPIPopup showGamePopup = new ShowGameOverviewPopup();
             showGamePopup.Popup(this);
         }
@@ -132,11 +136,9 @@ namespace GameMasterPAPI.Views
                         Anchor = AnchorStyles.Left | AnchorStyles.Top,
                         Width = 250
                     }, 0, row + 1);
+                    
                 }
-                foreach (KeyValuePair<int, Button> buttonId in m_gameButtons)
-                {
-                    Translate(resSet, buttonId.Value);
-                }
+                
             }
  
             WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings.GetLanguage());
