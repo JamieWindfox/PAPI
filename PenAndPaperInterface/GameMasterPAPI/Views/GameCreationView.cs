@@ -79,15 +79,20 @@ namespace GameMasterPAPI.Views
                 Width = 200
             }, 0, players_removeButtons.Count+1);
 
+
             // Create formatted button and its functionality
             Button button = new Button()
             {
-                Text = "remove",
+                Text = "",
                 FlatStyle = FlatStyle.Flat,
                 Anchor = AnchorStyles.Right | AnchorStyles.Top,
-                Size = new Size(140, 40),
+                Size = new Size(40, 40),
                 Name = "removePlayerButton" + (players_removeButtons.Count + 1)
             };
+
+            string imagePath = GameDirectory.GetFilePath_Images(GameSettings.GetDesign()) + "\\cancel.bmp";
+            Image image = Image.FromFile(imagePath);
+            button.Image = (Image)(new Bitmap(image, new Size(40, 40)));
 
             playerListPanel.Controls.Add(button, 1, players_removeButtons.Count + 1);
             m_buttons.Add(button);

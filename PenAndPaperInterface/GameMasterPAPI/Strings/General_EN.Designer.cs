@@ -259,6 +259,15 @@ namespace GameMasterPAPI.Strings {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Remove ähnelt.
+        /// </summary>
+        internal static string removeButton {
+            get {
+                return ResourceManager.GetString("removeButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Return ähnelt.
         /// </summary>
         internal static string returnButton {

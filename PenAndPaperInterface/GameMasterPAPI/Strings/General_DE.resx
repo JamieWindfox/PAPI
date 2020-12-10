@@ -183,6 +183,9 @@
   <data name="quitButton" xml:space="preserve">
     <value>Beenden</value>
   </data>
+  <data name="removeButton" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
   <data name="returnButton" xml:space="preserve">
     <value>Zurück</value>
   </data>
