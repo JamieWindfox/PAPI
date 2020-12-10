@@ -31,17 +31,17 @@ namespace GameMasterPAPI.Views
         {
             this.createGamePanel = new System.Windows.Forms.TableLayoutPanel();
             this.gmInfoPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.gameMasterName = new System.Windows.Forms.Label();
-            this.gameMasterIP = new System.Windows.Forms.Label();
+            this.gmNameLabel = new System.Windows.Forms.Label();
+            this.gmIPLabel = new System.Windows.Forms.Label();
             this.bottomButtonPanel = new System.Windows.Forms.TableLayoutPanel();
             this.createGameButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.genreText = new System.Windows.Forms.Label();
+            this.genreLabel = new System.Windows.Forms.Label();
             this.genreDropdown = new System.Windows.Forms.ComboBox();
             this.addPlayerButton = new System.Windows.Forms.Button();
             this.playerListPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.playerNameText = new System.Windows.Forms.Label();
+            this.playerNameLabel = new System.Windows.Forms.Label();
             this.createGamePanel.SuspendLayout();
             this.gmInfoPanel.SuspendLayout();
             this.bottomButtonPanel.SuspendLayout();
@@ -77,8 +77,8 @@ namespace GameMasterPAPI.Views
             this.gmInfoPanel.ColumnCount = 2;
             this.gmInfoPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.gmInfoPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.gmInfoPanel.Controls.Add(this.gameMasterName, 0, 0);
-            this.gmInfoPanel.Controls.Add(this.gameMasterIP, 1, 0);
+            this.gmInfoPanel.Controls.Add(this.gmNameLabel, 0, 0);
+            this.gmInfoPanel.Controls.Add(this.gmIPLabel, 1, 0);
             this.gmInfoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gmInfoPanel.Location = new System.Drawing.Point(23, 23);
             this.gmInfoPanel.Name = "gmInfoPanel";
@@ -87,27 +87,27 @@ namespace GameMasterPAPI.Views
             this.gmInfoPanel.Size = new System.Drawing.Size(754, 34);
             this.gmInfoPanel.TabIndex = 3;
             // 
-            // gameMasterName
+            // gmNameLabel
             // 
-            this.gameMasterName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.gameMasterName.AutoSize = true;
-            this.gameMasterName.Location = new System.Drawing.Point(3, 7);
-            this.gameMasterName.Name = "gameMasterName";
-            this.gameMasterName.Size = new System.Drawing.Size(135, 19);
-            this.gameMasterName.TabIndex = 0;
-            this.gameMasterName.Text = "gameMasterName";
-            this.gameMasterName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gmNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.gmNameLabel.AutoSize = true;
+            this.gmNameLabel.Location = new System.Drawing.Point(3, 7);
+            this.gmNameLabel.Name = "gmNameLabel";
+            this.gmNameLabel.Size = new System.Drawing.Size(135, 19);
+            this.gmNameLabel.TabIndex = 0;
+            this.gmNameLabel.Text = "gmName";
+            this.gmNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gameMasterIP
+            // gmIPLabel
             // 
-            this.gameMasterIP.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.gameMasterIP.AutoSize = true;
-            this.gameMasterIP.Location = new System.Drawing.Point(380, 7);
-            this.gameMasterIP.Name = "gameMasterIP";
-            this.gameMasterIP.Size = new System.Drawing.Size(117, 19);
-            this.gameMasterIP.TabIndex = 1;
-            this.gameMasterIP.Text = "gameMasterIP";
-            this.gameMasterIP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gmIPLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.gmIPLabel.AutoSize = true;
+            this.gmIPLabel.Location = new System.Drawing.Point(380, 7);
+            this.gmIPLabel.Name = "gmIPLabel";
+            this.gmIPLabel.Size = new System.Drawing.Size(117, 19);
+            this.gmIPLabel.TabIndex = 1;
+            this.gmIPLabel.Text = "gameMasterIP";
+            this.gmIPLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bottomButtonPanel
             // 
@@ -148,33 +148,33 @@ namespace GameMasterPAPI.Views
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel
             // 
             this.tableLayoutPanel.ColumnCount = 3;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel.Controls.Add(this.genreText, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.genreLabel, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.genreDropdown, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.addPlayerButton, 2, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(23, 63);
-            this.tableLayoutPanel.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 2;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(754, 74);
             this.tableLayoutPanel.TabIndex = 5;
             // 
-            // genreText
+            // genreLabel
             // 
-            this.genreText.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.genreText.AutoSize = true;
-            this.genreText.Location = new System.Drawing.Point(3, 10);
-            this.genreText.Name = "genreText";
-            this.genreText.Size = new System.Drawing.Size(54, 19);
-            this.genreText.TabIndex = 2;
-            this.genreText.Text = "genre";
+            this.genreLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.genreLabel.AutoSize = true;
+            this.genreLabel.Location = new System.Drawing.Point(3, 10);
+            this.genreLabel.Name = "genreLabel";
+            this.genreLabel.Size = new System.Drawing.Size(54, 19);
+            this.genreLabel.TabIndex = 2;
+            this.genreLabel.Text = "genre";
             // 
             // genreDropdown
             // 
@@ -185,7 +185,7 @@ namespace GameMasterPAPI.Views
             "medievalFantasy",
             "magicWorld",
             "spaceOpera"});
-            this.genreDropdown.Location = new System.Drawing.Point(133, 9);
+            this.genreDropdown.Location = new System.Drawing.Point(133, 6);
             this.genreDropdown.Name = "genreDropdown";
             this.genreDropdown.Size = new System.Drawing.Size(200, 27);
             this.genreDropdown.TabIndex = 3;
@@ -210,7 +210,7 @@ namespace GameMasterPAPI.Views
             this.playerListPanel.ColumnCount = 2;
             this.playerListPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.playerListPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.playerListPanel.Controls.Add(this.playerNameText, 0, 0);
+            this.playerListPanel.Controls.Add(this.playerNameLabel, 0, 0);
             this.playerListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.playerListPanel.Location = new System.Drawing.Point(23, 143);
             this.playerListPanel.Name = "playerListPanel";
@@ -219,22 +219,22 @@ namespace GameMasterPAPI.Views
             this.playerListPanel.Size = new System.Drawing.Size(754, 234);
             this.playerListPanel.TabIndex = 6;
             // 
-            // playerNameText
+            // playerNameLabel
             // 
-            this.playerNameText.AutoSize = true;
-            this.playerNameText.Location = new System.Drawing.Point(3, 0);
-            this.playerNameText.Name = "playerNameText";
-            this.playerNameText.Size = new System.Drawing.Size(99, 19);
-            this.playerNameText.TabIndex = 0;
-            this.playerNameText.Text = "playerName";
+            this.playerNameLabel.AutoSize = true;
+            this.playerNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.playerNameLabel.Name = "playerNameLabel";
+            this.playerNameLabel.Size = new System.Drawing.Size(99, 19);
+            this.playerNameLabel.TabIndex = 0;
+            this.playerNameLabel.Text = "playerName";
             // 
-            // CreateNewGameView
+            // GameCreationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.createGamePanel);
-            this.Name = "CreateNewGameView";
+            this.Name = "GameCreationView";
             this.Text = "CreateNewGameView";
             this.createGamePanel.ResumeLayout(false);
             this.gmInfoPanel.ResumeLayout(false);
@@ -251,10 +251,10 @@ namespace GameMasterPAPI.Views
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel createGamePanel;
-        private System.Windows.Forms.Label genreText;
+        private System.Windows.Forms.Label genreLabel;
         private System.Windows.Forms.TableLayoutPanel gmInfoPanel;
-        private System.Windows.Forms.Label gameMasterName;
-        private System.Windows.Forms.Label gameMasterIP;
+        private System.Windows.Forms.Label gmNameLabel;
+        private System.Windows.Forms.Label gmIPLabel;
         private System.Windows.Forms.TableLayoutPanel bottomButtonPanel;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button createGameButton;
@@ -262,6 +262,6 @@ namespace GameMasterPAPI.Views
         private System.Windows.Forms.ComboBox genreDropdown;
         private System.Windows.Forms.Button addPlayerButton;
         private System.Windows.Forms.TableLayoutPanel playerListPanel;
-        private System.Windows.Forms.Label playerNameText;
+        private System.Windows.Forms.Label playerNameLabel;
     }
 }

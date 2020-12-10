@@ -42,7 +42,7 @@ namespace GameMasterPAPI.Views
             playerListPanel.ColumnCount = 2;
             playerListPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             playerListPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 130F));
-            playerListPanel.Controls.Add(playerNameText, 0, 0);
+            playerListPanel.Controls.Add(playerNameLabel, 0, 0);
             playerListPanel.RowCount = 1;
 
             playerListPanel.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
@@ -142,11 +142,29 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            // TODO
-            WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
+            if (activeLanguage == GameSettings.GetLanguage())
+            {
+                return;
+            }
+            
+            using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
+            {
+                Translate(resSet, gmNameLabel);
+                Translate(resSet, gmIPLabel);
+                gmNameLabel.Text += ": " + CurrentPlayer.player.name;
+                gmIPLabel.Text += ": " + CurrentPlayer.player.ip;
+                Translate(resSet, cancelButton);
+                Translate(resSet, addPlayerButton);
+                Translate(resSet, createGameButton);
+                Translate(resSet, genreLabel);
+                Translate(resSet, playerNameLabel);
+                genreDropdown.Items[0] = TranslatedString(resSet, "genre_nuclearFallout");
+                genreDropdown.Items[1] = TranslatedString(resSet, "genre_medievalFantasy");
+                genreDropdown.Items[2] = TranslatedString(resSet, "genre_magicalWorld");
+                genreDropdown.Items[3] = TranslatedString(resSet, "genre_spaceOpera");
+            }
         }
 
-        
 
         private void addPlayerButton_Click(object sender, EventArgs e)
         {

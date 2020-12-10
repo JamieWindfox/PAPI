@@ -9,7 +9,7 @@ namespace PAPI.Settings
     public class Game
     {
         public GenreEnum genre { get; private set; }
-        public GameMaster gameMaster { get; private set; }
+        public Player gameMaster { get; private set; }
         public Dictionary<Player, PlayerCharacter> playerParty { get; private set; }
         public DateTime dateOfCreation { get; private set; }
         public DateTime lastSession { get; private set; }
@@ -20,7 +20,7 @@ namespace PAPI.Settings
             playerParty = new Dictionary<Player, PlayerCharacter>();
             dateOfCreation = DateTime.Now;
             lastSession = DateTime.Now;
-            gameMaster = GameSettings.GetGm();
+            gameMaster = CurrentPlayer.player;
         }
 
         public Game()
@@ -29,7 +29,7 @@ namespace PAPI.Settings
             playerParty = new Dictionary<Player, PlayerCharacter>();
             dateOfCreation = DateTime.Now;
             lastSession = DateTime.Now;
-            gameMaster = GameSettings.GetGm();
+            gameMaster = CurrentPlayer.player;
         }
 
         public string partyToString()

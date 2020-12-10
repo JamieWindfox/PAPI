@@ -1,22 +1,15 @@
-﻿using System;
+﻿using PAPI.Exception;
+using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Net;
 using System.Net.Sockets;
-using PAPI.Exception;
-using System.Text.Json.Serialization;
+using System.Text;
 
 namespace PAPI.Settings
 {
-    public class GameMaster : Player
+    public static class CurrentPlayer
     {
-        public string m_ipAdress { get; private set; }
-
-        [JsonConstructor]
-        public GameMaster(string name) : base(name)
-        {
-            m_ipAdress = GetLocalIPAddress();
-        }
+        public static Player player = new Player("NO VALID NAME", GetLocalIPAddress());
 
         public static string GetLocalIPAddress()
         {
@@ -30,6 +23,7 @@ namespace PAPI.Settings
             }
             throw new NetworkException("No network adapters with an IPv4 address in the system!");
         }
-
     }
+
+
 }

@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="addPlayerButton" xml:space="preserve">
+    <value>Add Player</value>
+  </data>
+  <data name="cancelButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="createGameButton" xml:space="preserve">
+    <value>Create</value>
+  </data>
   <data name="dateLabel" xml:space="preserve">
     <value>Date</value>
   </data>
@@ -128,6 +137,9 @@
   </data>
   <data name="designModern" xml:space="preserve">
     <value>Modern</value>
+  </data>
+  <data name="foundPlayerNameLabel" xml:space="preserve">
+    <value>Found Player:</value>
   </data>
   <data name="genreLabel" xml:space="preserve">
     <value>Genre</value>
@@ -143,6 +155,9 @@
   </data>
   <data name="genre_spaceOpera" xml:space="preserve">
     <value>Space Opera</value>
+  </data>
+  <data name="gmIPLabel" xml:space="preserve">
+    <value>IP</value>
   </data>
   <data name="gmNameLabel" xml:space="preserve">
     <value>Game Master Name</value>
@@ -162,6 +177,9 @@
   <data name="optionsButton" xml:space="preserve">
     <value>Options</value>
   </data>
+  <data name="playerNameLabel" xml:space="preserve">
+    <value>Player Name</value>
+  </data>
   <data name="quitButton" xml:space="preserve">
     <value>Quit</value>
   </data>
@@ -170,6 +188,9 @@
   </data>
   <data name="savedGamesLabel" xml:space="preserve">
     <value>Saved Games</value>
+  </data>
+  <data name="searchPlayerButton" xml:space="preserve">
+    <value>Search</value>
   </data>
   <data name="showButton" xml:space="preserve">
     <value>Show</value>

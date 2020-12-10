@@ -19,7 +19,7 @@ namespace TestClient
     {
         static void Main(string[] args)
         {
-            Player player = new Player("Raine");
+            Player player = new Player("Raine", CurrentPlayer.GetLocalIPAddress());
             PlayerJoinRequest request = new PlayerJoinRequest("PlayerJoinRequest", player);
             byte[] bytes = PAPIClient.SendMessage(System.Text.Encoding.Unicode.GetBytes(JsonSerializer.Serialize(request)));
 

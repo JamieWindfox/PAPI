@@ -27,11 +27,11 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings.GetLanguage() && cachedGmName == GameSettings.GetGm().name)
+            if (activeLanguage == GameSettings.GetLanguage() && cachedGmName == CurrentPlayer.player.name)
             {
                 return;
             }
-            cachedGmName = GameSettings.GetGm().name;
+            cachedGmName = CurrentPlayer.player.name;
 
             using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
             {
@@ -92,8 +92,8 @@ namespace GameMasterPAPI.Views
 
         private void gmNameInputField_TextChanged(object sender, EventArgs e)
         {
-            GameSettings.SetGmName(gmNameInputField.Text);
-            WfLogger.Log(this, LogLevel.DEBUG, "Set game master name to " + GameSettings.GetGm().name);
+            CurrentPlayer.player.SetName(gmNameInputField.Text);
+            WfLogger.Log(this, LogLevel.DEBUG, "Set game master name to " + CurrentPlayer.player.name);
         }
 
         private void returnButton_Click(object sender, EventArgs e)

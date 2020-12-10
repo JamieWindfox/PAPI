@@ -61,6 +61,33 @@ namespace GameMasterPAPI.Strings {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Add Player ähnelt.
+        /// </summary>
+        internal static string addPlayerButton {
+            get {
+                return ResourceManager.GetString("addPlayerButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Cancel ähnelt.
+        /// </summary>
+        internal static string cancelButton {
+            get {
+                return ResourceManager.GetString("cancelButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Create ähnelt.
+        /// </summary>
+        internal static string createGameButton {
+            get {
+                return ResourceManager.GetString("createGameButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Date ähnelt.
         /// </summary>
         internal static string dateLabel {
@@ -93,6 +120,15 @@ namespace GameMasterPAPI.Strings {
         internal static string designModern {
             get {
                 return ResourceManager.GetString("designModern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Found Player: ähnelt.
+        /// </summary>
+        internal static string foundPlayerNameLabel {
+            get {
+                return ResourceManager.GetString("foundPlayerNameLabel", resourceCulture);
             }
         }
         
@@ -138,6 +174,15 @@ namespace GameMasterPAPI.Strings {
         internal static string genreLabel {
             get {
                 return ResourceManager.GetString("genreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die IP ähnelt.
+        /// </summary>
+        internal static string gmIPLabel {
+            get {
+                return ResourceManager.GetString("gmIPLabel", resourceCulture);
             }
         }
         
@@ -196,6 +241,15 @@ namespace GameMasterPAPI.Strings {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Player Name ähnelt.
+        /// </summary>
+        internal static string playerNameLabel {
+            get {
+                return ResourceManager.GetString("playerNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Quit ähnelt.
         /// </summary>
         internal static string quitButton {
@@ -219,6 +273,15 @@ namespace GameMasterPAPI.Strings {
         internal static string savedGamesLabel {
             get {
                 return ResourceManager.GetString("savedGamesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Search ähnelt.
+        /// </summary>
+        internal static string searchPlayerButton {
+            get {
+                return ResourceManager.GetString("searchPlayerButton", resourceCulture);
             }
         }
         
