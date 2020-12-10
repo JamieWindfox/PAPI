@@ -13,6 +13,7 @@ namespace GameMasterPAPI.Views
         public static PAPIView optionsView { get; } = new GMOptionsView();
         public static PAPIView gameSelectionView { get; } = new GameSelectionView();
         public static PAPIView gameCreationView { get; } = new GameCreationView();
+        public static PAPIView gameView { get; } = new GameView();
 
         // Popups
         static public PAPIPopup playerSearchPopup { get; } = new PlayerSearchPopup();

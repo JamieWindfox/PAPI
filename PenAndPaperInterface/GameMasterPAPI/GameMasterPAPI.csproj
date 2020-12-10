@@ -111,6 +111,12 @@
     <Compile Include="Views\GameCreationView.Designer.cs">
       <DependentUpon>GameCreationView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\GameView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GameView.Designer.cs">
+      <DependentUpon>GameView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\PAPIPopup.cs">
       <SubType>Form</SubType>
     </Compile>

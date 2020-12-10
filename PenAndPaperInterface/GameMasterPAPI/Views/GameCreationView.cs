@@ -203,7 +203,6 @@ namespace GameMasterPAPI.Views
                 createGameButton.Enabled = true;
             }
             WfLogger.Log(this, LogLevel.DEBUG, "Genre " + selectedGenre + " was selected in dropdown");
-            //SetTextToActiveLanguage();
         }
 
         private void createGameButton_Click(object sender, EventArgs e)
@@ -216,6 +215,7 @@ namespace GameMasterPAPI.Views
                 {
                     RunningGame.game.AddPlayer(playerButton.Key);
                 }
+                ViewController.gameView.Open(this);
             }
         }
 
