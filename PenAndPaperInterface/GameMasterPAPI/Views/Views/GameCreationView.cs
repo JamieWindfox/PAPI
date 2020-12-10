@@ -163,10 +163,10 @@ namespace GameMasterPAPI.Views
                 Translate(resSet, createGameButton);
                 Translate(resSet, genreLabel);
                 Translate(resSet, playerNameLabel);
-                genreDropdown.Items[0] = TranslatedString(resSet, "genre_nuclearFallout");
-                genreDropdown.Items[1] = TranslatedString(resSet, "genre_medievalFantasy");
-                genreDropdown.Items[2] = TranslatedString(resSet, "genre_magicalWorld");
-                genreDropdown.Items[3] = TranslatedString(resSet, "genre_spaceOpera");
+                genreDropdown.Items[0] = TranslatedString(resSet, "genre_nuclear_fallout");
+                genreDropdown.Items[1] = TranslatedString(resSet, "genre_medieval_fantasy");
+                genreDropdown.Items[2] = TranslatedString(resSet, "genre_magical_world");
+                genreDropdown.Items[3] = TranslatedString(resSet, "genre_space_opera");
             }
         }
 

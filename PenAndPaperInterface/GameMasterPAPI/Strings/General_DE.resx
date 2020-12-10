@@ -126,8 +126,14 @@
   <data name="createGameButton" xml:space="preserve">
     <value>Erstellen</value>
   </data>
+  <data name="creationDateLabel" xml:space="preserve">
+    <value>Erstellt</value>
+  </data>
   <data name="dateLabel" xml:space="preserve">
     <value>Datum</value>
+  </data>
+  <data name="deleteGameQuestionLabel" xml:space="preserve">
+    <value>Wirklich das gespeicherte Spiel löschen?</value>
   </data>
   <data name="designLabel" xml:space="preserve">
     <value>Design</value>
@@ -144,16 +150,16 @@
   <data name="genreLabel" xml:space="preserve">
     <value>Genre</value>
   </data>
-  <data name="genre_magicalWorld" xml:space="preserve">
+  <data name="genre_magical_world" xml:space="preserve">
     <value>Magische Moderne</value>
   </data>
-  <data name="genre_medievalFantasy" xml:space="preserve">
+  <data name="genre_medieval_fantasy" xml:space="preserve">
     <value>Mittelalter Fantasy</value>
   </data>
-  <data name="genre_nuclearFallout" xml:space="preserve">
+  <data name="genre_nuclear_fallout" xml:space="preserve">
     <value>Nuklearer Fallout</value>
   </data>
-  <data name="genre_spaceOpera" xml:space="preserve">
+  <data name="genre_space_opera" xml:space="preserve">
     <value>Space Opera</value>
   </data>
   <data name="gmIPLabel" xml:space="preserve">
@@ -171,8 +177,14 @@
   <data name="languageLabel" xml:space="preserve">
     <value>Sprache</value>
   </data>
+  <data name="lastSaveLabel" xml:space="preserve">
+    <value>Zuletz gespeichert</value>
+  </data>
   <data name="newGameButton" xml:space="preserve">
     <value>Neues Spiel</value>
+  </data>
+  <data name="noButton" xml:space="preserve">
+    <value>Nein</value>
   </data>
   <data name="optionsButton" xml:space="preserve">
     <value>Optionen</value>
@@ -203,5 +215,8 @@
   </data>
   <data name="welcomeLabel" xml:space="preserve">
     <value>Willkommen</value>
+  </data>
+  <data name="yesButton" xml:space="preserve">
+    <value>Ja</value>
   </data>
 </root>

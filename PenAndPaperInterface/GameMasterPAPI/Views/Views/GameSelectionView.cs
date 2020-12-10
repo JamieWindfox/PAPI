@@ -10,6 +10,8 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAPI.Exception;
+using System.Threading;
 
 namespace GameMasterPAPI.Views
 {
@@ -23,7 +25,7 @@ namespace GameMasterPAPI.Views
             { new Game(GenreEnum.MEDIEVAL_FANTASY)}
             };
 
-        private Dictionary<int, Button> m_gameButtons = new Dictionary<int, Button>();
+        private Dictionary<Game, Button> m_gameButtons = new Dictionary<Game, Button>();
 
         public GameSelectionView()
         {
@@ -81,7 +83,7 @@ namespace GameMasterPAPI.Views
                 Image image = Image.FromFile(imagePath);
                 button.Image = (Image)(new Bitmap(image, new Size(40, 40)));
                 gameTable.Controls.Add(button, 3, rowNr);
-                m_gameButtons.Add(rowNr, button);
+                m_gameButtons.Add(game, button);
                 gameTable.Controls.Add(button, 2, rowNr++);
                 m_buttons.Add(button);
             }
@@ -98,7 +100,7 @@ namespace GameMasterPAPI.Views
             SetButtonDesign();
 
             // Add eventhandler for click on every show game button
-            foreach (KeyValuePair<int, Button> button in m_gameButtons)
+            foreach (KeyValuePair<Game, Button> button in m_gameButtons)
             {
                 button.Value.Click += GameButton_Click;
             }
@@ -106,9 +108,21 @@ namespace GameMasterPAPI.Views
 
         private void GameButton_Click(object sender, EventArgs e)
         {
+            Game selectedGame = null;
+            foreach(KeyValuePair<Game, Button> gameButton in m_gameButtons)
+            {
+                if(gameButton.Value == (Button)sender)
+                {
+                    selectedGame = gameButton.Key;
+                    break;
+                }
+            }
+            if(selectedGame == null)
+            {
+                throw new GameNotFoundException("There is no game for the clicked button");
+            }
             WfLogger.Log(this, LogLevel.DEBUG, "Button 'Show' was clicked, open Popup");
-            PAPIPopup showGamePopup = new ShowGameOverviewPopup();
-            showGamePopup.Popup(this);
+            ((ShowGameOverviewPopup)ViewController.showGameOverviewPopup).Popup(this, selectedGame);
         }
 
 
@@ -132,15 +146,12 @@ namespace GameMasterPAPI.Views
                 {
                     gameTable.Controls.Add(new Label()
                     {
-                        Text = TranslatedString(resSet, "genre_" + (GameSettings.ToString(savedGames[row].genre).ToString())),
+                        Text = TranslatedString(resSet, "genre_" + savedGames[row].genre.ToString().ToLower()),
                         Anchor = AnchorStyles.Left | AnchorStyles.Top,
                         Width = 250
                     }, 0, row + 1);
-                    
                 }
-                
             }
- 
             WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings.GetLanguage());
         }
 
@@ -154,6 +165,38 @@ namespace GameMasterPAPI.Views
         {
             WfLogger.Log(this, LogLevel.DEBUG, "The Create new Game Button was clicked, open CreateNewGameView");
             ViewController.gameCreationView.Open(this);
+        }
+
+        public void DeleteGame(Game game)
+        {
+            if (game != null)
+            {
+                int rowNumber = -1;
+                foreach (Control control in gameTable.Controls)
+                {
+                    if (control.Text == game.dateOfCreation.ToString())
+                    {
+                        rowNumber = gameTable.GetRow(control);
+                        break;
+                    }
+                }
+
+                WfLogger.Log(this, LogLevel.DEBUG, "Remove Game " + game.genre + ", "  + game.dateOfCreation 
+                    + " from List (Number " + rowNumber + ")");
+                savedGames.Remove(game);
+
+                TableLayoutHelper.RemoveRowNumber(gameTable, rowNumber);
+                GameSelectionView_Load(null, EventArgs.Empty);
+            }
+            else
+            {
+                WfLogger.Log(this, LogLevel.WARNING, "No Game was found, which could be removed");
+            }
+        }
+
+        private void GameSelectionView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

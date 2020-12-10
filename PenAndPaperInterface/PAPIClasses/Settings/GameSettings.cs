@@ -39,18 +39,7 @@ namespace PAPI.Settings
 
         public static GenreEnum GetGenre() { return activeGenre; }
 
-        // Converts the gieven GenreEnum to a string
-        public static string ToString(GenreEnum genre)
-        {
-            switch(genre)
-            {
-                case GenreEnum.MAGICAL_WORLD: return "magicalWorld";
-                case GenreEnum.MEDIEVAL_FANTASY: return "medievalFantasy";
-                case GenreEnum.NUCLEAR_FALLOUT: return "nuclearFallout";
-                case GenreEnum.SPACE_OPERA: return "spaceOpera";
-                default: return "NOT_VALID";
-            }
-        }
+
         public static DesignEnum GetDesign() { return activeDesign; }
         public static Language GetLanguage() { return activeLanguage; }
 

@@ -29,7 +29,7 @@ namespace GameMasterPAPI.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.gameSelectionPanel = new System.Windows.Forms.TableLayoutPanel();
             this.savedGamesLabel = new System.Windows.Forms.Label();
             this.bottomButtonPanel = new System.Windows.Forms.TableLayoutPanel();
             this.returnButton = new System.Windows.Forms.Button();
@@ -38,31 +38,31 @@ namespace GameMasterPAPI.Views
             this.genreLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.gameSelectionPanel.SuspendLayout();
             this.bottomButtonPanel.SuspendLayout();
             this.gameTable.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // gameSelectionPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.savedGamesLabel, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.bottomButtonPanel, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.gameTable, 1, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.gameSelectionPanel.ColumnCount = 3;
+            this.gameSelectionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.gameSelectionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.gameSelectionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.gameSelectionPanel.Controls.Add(this.savedGamesLabel, 1, 1);
+            this.gameSelectionPanel.Controls.Add(this.bottomButtonPanel, 1, 3);
+            this.gameSelectionPanel.Controls.Add(this.gameTable, 1, 2);
+            this.gameSelectionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gameSelectionPanel.Location = new System.Drawing.Point(0, 0);
+            this.gameSelectionPanel.Name = "gameSelectionPanel";
+            this.gameSelectionPanel.RowCount = 5;
+            this.gameSelectionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.gameSelectionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.gameSelectionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.gameSelectionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.gameSelectionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.gameSelectionPanel.Size = new System.Drawing.Size(803, 453);
+            this.gameSelectionPanel.TabIndex = 0;
             // 
             // savedGamesLabel
             // 
@@ -84,11 +84,11 @@ namespace GameMasterPAPI.Views
             this.bottomButtonPanel.Controls.Add(this.returnButton, 0, 0);
             this.bottomButtonPanel.Controls.Add(this.newGameButton, 3, 0);
             this.bottomButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bottomButtonPanel.Location = new System.Drawing.Point(23, 383);
+            this.bottomButtonPanel.Location = new System.Drawing.Point(23, 386);
             this.bottomButtonPanel.Name = "bottomButtonPanel";
             this.bottomButtonPanel.RowCount = 1;
             this.bottomButtonPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.bottomButtonPanel.Size = new System.Drawing.Size(754, 44);
+            this.bottomButtonPanel.Size = new System.Drawing.Size(757, 44);
             this.bottomButtonPanel.TabIndex = 1;
             // 
             // returnButton
@@ -107,7 +107,7 @@ namespace GameMasterPAPI.Views
             // 
             this.newGameButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.newGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newGameButton.Location = new System.Drawing.Point(631, 3);
+            this.newGameButton.Location = new System.Drawing.Point(634, 3);
             this.newGameButton.Name = "newGameButton";
             this.newGameButton.Size = new System.Drawing.Size(120, 38);
             this.newGameButton.TabIndex = 1;
@@ -130,7 +130,7 @@ namespace GameMasterPAPI.Views
             this.gameTable.Name = "gameTable";
             this.gameTable.RowCount = 1;
             this.gameTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.gameTable.Size = new System.Drawing.Size(754, 44);
+            this.gameTable.Size = new System.Drawing.Size(757, 44);
             this.gameTable.TabIndex = 2;
             // 
             // genreLabel
@@ -147,7 +147,7 @@ namespace GameMasterPAPI.Views
             // 
             this.dateLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateLabel.AutoSize = true;
-            this.dateLabel.Location = new System.Drawing.Point(339, 12);
+            this.dateLabel.Location = new System.Drawing.Point(340, 12);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(81, 19);
             this.dateLabel.TabIndex = 3;
@@ -157,7 +157,7 @@ namespace GameMasterPAPI.Views
             // 
             this.startButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startButton.Location = new System.Drawing.Point(711, 3);
+            this.startButton.Location = new System.Drawing.Point(714, 3);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(40, 38);
             this.startButton.TabIndex = 0;
@@ -168,12 +168,13 @@ namespace GameMasterPAPI.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(803, 453);
+            this.Controls.Add(this.gameSelectionPanel);
             this.Name = "GameSelectionView";
             this.Text = "CreateGameView";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.Load += new System.EventHandler(this.GameSelectionView_Load);
+            this.gameSelectionPanel.ResumeLayout(false);
+            this.gameSelectionPanel.PerformLayout();
             this.bottomButtonPanel.ResumeLayout(false);
             this.gameTable.ResumeLayout(false);
             this.gameTable.PerformLayout();
@@ -183,7 +184,7 @@ namespace GameMasterPAPI.Views
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel gameSelectionPanel;
         private System.Windows.Forms.Label savedGamesLabel;
         private System.Windows.Forms.TableLayoutPanel bottomButtonPanel;
         private System.Windows.Forms.Button returnButton;

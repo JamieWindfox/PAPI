@@ -93,7 +93,7 @@ namespace GameMasterPAPI.Views
             this.gmNameLabel.AutoSize = true;
             this.gmNameLabel.Location = new System.Drawing.Point(3, 7);
             this.gmNameLabel.Name = "gmNameLabel";
-            this.gmNameLabel.Size = new System.Drawing.Size(135, 19);
+            this.gmNameLabel.Size = new System.Drawing.Size(63, 19);
             this.gmNameLabel.TabIndex = 0;
             this.gmNameLabel.Text = "gmName";
             this.gmNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -185,7 +185,7 @@ namespace GameMasterPAPI.Views
             "medievalFantasy",
             "magicWorld",
             "spaceOpera"});
-            this.genreDropdown.Location = new System.Drawing.Point(133, 6);
+            this.genreDropdown.Location = new System.Drawing.Point(133, 9);
             this.genreDropdown.Name = "genreDropdown";
             this.genreDropdown.Size = new System.Drawing.Size(200, 27);
             this.genreDropdown.TabIndex = 3;

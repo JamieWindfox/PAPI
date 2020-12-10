@@ -15,8 +15,7 @@ namespace GameMasterPAPI.Views
     {
         public PAPIPopup()
         {
-            InitializeComponent();
-            WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
+            //WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
         }
 
         public override void SetTextToActiveLanguage()
@@ -26,6 +25,7 @@ namespace GameMasterPAPI.Views
 
         public void Popup(PAPIView parent)
         {
+            InitializeComponent();
             if (parent != null)
             {
                 ViewController.lastView = parent;
@@ -35,7 +35,7 @@ namespace GameMasterPAPI.Views
             SetButtonDesign();
             SetTextToActiveLanguage();
             Size = new Size((int)((double)Width * 0.8), (int)((double)Height * 0.8));
-            Show();
+            ShowDialog();
         }
 
         public void Open()
