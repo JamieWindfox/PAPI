@@ -12,5 +12,10 @@ namespace PAPI.Settings
         {
             game = newGame;
         }
+
+        public static void ClearGame()
+        {
+            game = null;
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace PAPI.Character
         private string m_type;
 
         // The species or race of the character, e.g. Human, Bear, Troll, Witch, etc.
-        private Species m_species;
+        public Species species { get; private set; }
 
         // The value of each hit that gets absorbed by the skin without damagin the character
         private uint m_soak;

@@ -161,11 +161,11 @@
     <Compile Include="Views\PAPIView.Designer.cs">
       <DependentUpon>PAPIView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Popups\ShowGameOverviewPopup.cs">
+    <Compile Include="Views\Views\ShowGameOverviewView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Popups\ShowGameOverviewPopup.Designer.cs">
-      <DependentUpon>ShowGameOverviewPopup.cs</DependentUpon>
+    <Compile Include="Views\Views\ShowGameOverviewView.Designer.cs">
+      <DependentUpon>ShowGameOverviewView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\TableLayoutHelper.cs" />
     <Compile Include="Views\ViewController.cs" />
@@ -193,8 +193,8 @@
     <EmbeddedResource Include="Views\Popups\DeleteGamePromptPopup.resx">
       <DependentUpon>DeleteGamePromptPopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Popups\ShowGameOverviewPopup.resx">
-      <DependentUpon>ShowGameOverviewPopup.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Views\ShowGameOverviewView.resx">
+      <DependentUpon>ShowGameOverviewView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Views\GameCreationView.resx">
       <DependentUpon>GameCreationView.cs</DependentUpon>

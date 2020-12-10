@@ -48,9 +48,10 @@ namespace GameMasterPAPI.Views
         private void yesButton_Click(object sender, EventArgs e)
         {
             WfLogger.Log(this, LogLevel.DEBUG, "'Yes' Button was clicked, game is being deleted");
-            ((GameSelectionView)(ViewController.gameSelectionView)).DeleteGame(((ShowGameOverviewPopup)ViewController
-                .showGameOverviewPopup).game);
-            ViewController.showGameOverviewPopup.Hide();
+            ((GameSelectionView)(ViewController.gameSelectionView)).DeleteGame(RunningGame.game);
+            RunningGame.ClearGame();
+            ViewController.showGameOverviewView.Hide();
+            ViewController.gameSelectionView.Open(ViewController.startView);
             Hide();
         }
 
@@ -62,6 +63,7 @@ namespace GameMasterPAPI.Views
         private void noButton_Click(object sender, EventArgs e)
         {
             WfLogger.Log(this, LogLevel.DEBUG, "'No' Button was clicked, game remains saved");
+            ViewController.gameSelectionView.Open(ViewController.startView);
             Hide();
         }
     }

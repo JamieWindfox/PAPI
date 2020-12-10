@@ -6,10 +6,11 @@ namespace PAPI.Character
 {
     public class PlayerCharacter : PAPICharacter, IUniqueCharacter
     {
+
         public MotivationSet motivationSet { get; private set; }
         public string name { get; private set; }
 
-
+        public Career career { get; private set; }
 
         // ################################################# CTOR #################################################
 

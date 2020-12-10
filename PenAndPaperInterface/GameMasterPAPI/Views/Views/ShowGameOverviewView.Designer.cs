@@ -1,7 +1,7 @@
 ﻿
 namespace GameMasterPAPI.Views
 {
-    partial class ShowGameOverviewPopup
+    partial class ShowGameOverviewView
     {
         /// <summary>
         /// Required designer variable.
@@ -38,9 +38,15 @@ namespace GameMasterPAPI.Views
             this.cancelButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
+            this.playerCharacterPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.playerNameLabel = new System.Windows.Forms.Label();
+            this.characterNameLabel = new System.Windows.Forms.Label();
+            this.speciesLabel = new System.Windows.Forms.Label();
+            this.careerLabel = new System.Windows.Forms.Label();
             this.showGamePanel.SuspendLayout();
             this.gameInfoPanel.SuspendLayout();
             this.buttonPanel.SuspendLayout();
+            this.playerCharacterPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // showGamePanel
@@ -51,6 +57,7 @@ namespace GameMasterPAPI.Views
             this.showGamePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.showGamePanel.Controls.Add(this.gameInfoPanel, 1, 1);
             this.showGamePanel.Controls.Add(this.buttonPanel, 1, 3);
+            this.showGamePanel.Controls.Add(this.playerCharacterPanel, 1, 2);
             this.showGamePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.showGamePanel.Location = new System.Drawing.Point(0, 0);
             this.showGamePanel.Name = "showGamePanel";
@@ -159,18 +166,77 @@ namespace GameMasterPAPI.Views
             this.startButton.Text = "start";
             this.startButton.UseVisualStyleBackColor = true;
             // 
-            // ShowGameOverviewPopup
+            // playerCharacterPanel
+            // 
+            this.playerCharacterPanel.AutoScroll = true;
+            this.playerCharacterPanel.ColumnCount = 4;
+            this.playerCharacterPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.playerCharacterPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.playerCharacterPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.playerCharacterPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.playerCharacterPanel.Controls.Add(this.playerNameLabel, 0, 0);
+            this.playerCharacterPanel.Controls.Add(this.characterNameLabel, 1, 0);
+            this.playerCharacterPanel.Controls.Add(this.speciesLabel, 2, 0);
+            this.playerCharacterPanel.Controls.Add(this.careerLabel, 3, 0);
+            this.playerCharacterPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.playerCharacterPanel.Location = new System.Drawing.Point(23, 123);
+            this.playerCharacterPanel.Name = "playerCharacterPanel";
+            this.playerCharacterPanel.RowCount = 2;
+            this.playerCharacterPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.playerCharacterPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.playerCharacterPanel.Size = new System.Drawing.Size(754, 100);
+            this.playerCharacterPanel.TabIndex = 2;
+            // 
+            // playerNameLabel
+            // 
+            this.playerNameLabel.AutoSize = true;
+            this.playerNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.playerNameLabel.Name = "playerNameLabel";
+            this.playerNameLabel.Size = new System.Drawing.Size(99, 19);
+            this.playerNameLabel.TabIndex = 0;
+            this.playerNameLabel.Text = "playerName";
+            // 
+            // characterNameLabel
+            // 
+            this.characterNameLabel.AutoSize = true;
+            this.characterNameLabel.Location = new System.Drawing.Point(191, 0);
+            this.characterNameLabel.Name = "characterNameLabel";
+            this.characterNameLabel.Size = new System.Drawing.Size(126, 19);
+            this.characterNameLabel.TabIndex = 1;
+            this.characterNameLabel.Text = "characterName";
+            // 
+            // speciesLabel
+            // 
+            this.speciesLabel.AutoSize = true;
+            this.speciesLabel.Location = new System.Drawing.Point(379, 0);
+            this.speciesLabel.Name = "speciesLabel";
+            this.speciesLabel.Size = new System.Drawing.Size(72, 19);
+            this.speciesLabel.TabIndex = 2;
+            this.speciesLabel.Text = "species";
+            // 
+            // careerLabel
+            // 
+            this.careerLabel.AutoSize = true;
+            this.careerLabel.Location = new System.Drawing.Point(567, 0);
+            this.careerLabel.Name = "careerLabel";
+            this.careerLabel.Size = new System.Drawing.Size(63, 19);
+            this.careerLabel.TabIndex = 3;
+            this.careerLabel.Text = "career";
+            // 
+            // ShowGameOverviewView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.showGamePanel);
-            this.Name = "ShowGameOverviewPopup";
+            this.Name = "ShowGameOverviewView";
             this.Text = "ShowGamePopup";
             this.showGamePanel.ResumeLayout(false);
             this.gameInfoPanel.ResumeLayout(false);
             this.gameInfoPanel.PerformLayout();
             this.buttonPanel.ResumeLayout(false);
+            this.playerCharacterPanel.ResumeLayout(false);
+            this.playerCharacterPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -186,5 +252,10 @@ namespace GameMasterPAPI.Views
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.TableLayoutPanel playerCharacterPanel;
+        private System.Windows.Forms.Label playerNameLabel;
+        private System.Windows.Forms.Label characterNameLabel;
+        private System.Windows.Forms.Label speciesLabel;
+        private System.Windows.Forms.Label careerLabel;
     }
 }

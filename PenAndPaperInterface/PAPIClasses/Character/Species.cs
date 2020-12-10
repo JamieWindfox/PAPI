@@ -8,7 +8,7 @@ namespace PAPI.Character
     public class Species
     {
         // The name of the species or race
-        private string m_name;
+        public string name { get; private set; }
 
         // A List of all settings, in which this species is available
         private List<GenreEnum> m_possibleGenres;
@@ -20,14 +20,14 @@ namespace PAPI.Character
 
         public Species(string name, List<GenreEnum> genres)
         {
-            m_name = name;
+            this.name = name;
             m_possibleGenres = genres;
-            WfLogger.Log(this.GetType() + ".CTOR", LogLevel.INFO, "Constructed Species '" + m_name + "'");
+            WfLogger.Log(this.GetType() + ".CTOR", LogLevel.INFO, "Constructed Species '" + this.name + "'");
         }
 
         // ################################################# GETTER #################################################
 
-        public string GetName() { return m_name; }
+        public string GetName() { return name; }
         public List<GenreEnum> GetGenres() { return m_possibleGenres; }
 
         public bool AvailableForGenre(GenreEnum genre)

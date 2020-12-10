@@ -122,7 +122,8 @@ namespace GameMasterPAPI.Views
                 throw new GameNotFoundException("There is no game for the clicked button");
             }
             WfLogger.Log(this, LogLevel.DEBUG, "Button 'Show' was clicked, open Popup");
-            ((ShowGameOverviewPopup)ViewController.showGameOverviewPopup).Popup(this, selectedGame);
+            RunningGame.StartGame(selectedGame);
+            ((ShowGameOverviewView)ViewController.showGameOverviewView).Open(this);
         }
 
 
@@ -186,7 +187,6 @@ namespace GameMasterPAPI.Views
                 savedGames.Remove(game);
 
                 TableLayoutHelper.RemoveRowNumber(gameTable, rowNumber);
-                GameSelectionView_Load(null, EventArgs.Empty);
             }
             else
             {
@@ -196,7 +196,7 @@ namespace GameMasterPAPI.Views
 
         private void GameSelectionView_Load(object sender, EventArgs e)
         {
-
+            // do nothing
         }
     }
 }
