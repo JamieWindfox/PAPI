@@ -8,35 +8,35 @@ namespace PAPI.Settings
 {
     public class Game
     {
-        public GenreEnum m_genre { get; private set; }
-        public GameMaster m_gameMaster { get; private set; }
-        public Dictionary<Player, PlayerCharacter> m_party { get; private set; }
-        public DateTime m_dateOfCreation { get; private set; }
-        public DateTime m_lastSession { get; private set; }
+        public GenreEnum genre { get; private set; }
+        public Player gameMaster { get; private set; }
+        public Dictionary<Player, PlayerCharacter> playerParty { get; private set; }
+        public DateTime dateOfCreation { get; private set; }
+        public DateTime lastSession { get; private set; }
 
         public Game(GenreEnum genre)
         {
-            m_genre = genre;
-            m_party = new Dictionary<Player, PlayerCharacter>();
-            m_dateOfCreation = DateTime.Now;
-            m_lastSession = DateTime.Now;
-            m_gameMaster = GameSettings.GetGm();
+            this.genre = genre;
+            playerParty = new Dictionary<Player, PlayerCharacter>();
+            dateOfCreation = DateTime.Now;
+            lastSession = DateTime.Now;
+            gameMaster = CurrentPlayer.player;
         }
 
         public Game()
         {
-            m_genre = GenreEnum.NOT_VALID;
-            m_party = new Dictionary<Player, PlayerCharacter>();
-            m_dateOfCreation = DateTime.Now;
-            m_lastSession = DateTime.Now;
-            m_gameMaster = GameSettings.GetGm();
+            genre = GenreEnum.NOT_VALID;
+            playerParty = new Dictionary<Player, PlayerCharacter>();
+            dateOfCreation = DateTime.Now;
+            lastSession = DateTime.Now;
+            gameMaster = CurrentPlayer.player;
         }
 
         public string partyToString()
         {
             string output = "";
             bool first = true;
-            foreach(KeyValuePair<Player, PlayerCharacter> player in m_party)
+            foreach(KeyValuePair<Player, PlayerCharacter> player in playerParty)
             {
                 if (!first) output += ", ";
                 else first = false;
@@ -47,12 +47,12 @@ namespace PAPI.Settings
 
         public void AddPlayer(Player player)
         {
-            if(m_party.ContainsKey(player))
+            if(playerParty.ContainsKey(player))
             {
                 WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.WARNING, "Couldn't add player, because they already are in this game");
                 return;
             }
-            m_party.Add(player, new PlayerCharacter());
+            playerParty.Add(player, new PlayerCharacter());
             WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.DEBUG, "Added Player '" + player.name + "' to Party");
         }
     }

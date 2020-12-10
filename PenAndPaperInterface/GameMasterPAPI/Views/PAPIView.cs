@@ -6,32 +6,24 @@ using PAPI.Logging;
 using PAPI.Settings;
 using Microsoft.CodeAnalysis;
 using PAPI.Exception;
+using System.Resources;
 
 namespace GameMasterPAPI.Views
 {
     public partial class PAPIView : Form, ITranslatableView
     {
-        public PAPIView m_caller { get; protected set; }
-        public Language m_activeLanguage { get; protected set; } = Language.NOT_VALID;
+        public Language activeLanguage { get; protected set; } = Language.NOT_VALID;
         public List<Button> m_buttons { get; protected set; }
 
-        public PAPIView() : this(null)
-        { }
 
-        public PAPIView(PAPIView caller)
+        public PAPIView()
         {
             InitializeComponent();
             WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
 
-            m_caller = caller;
-            if (m_caller != null)
-            {
-                this.Location = m_caller.Location;
-                this.Size = m_caller.Size;
-            }
             m_buttons = new List<Button>();
             
-            WfLogger.Log(this, LogLevel.DEBUG, "Created new View" + ((m_caller != null) ? (" from " + m_caller.GetType()) : ""));
+            WfLogger.Log(this, LogLevel.DEBUG, "Created new View");
         }
 
         protected void SetButtonDesign()
@@ -41,27 +33,34 @@ namespace GameMasterPAPI.Views
                 button.BackColor = BackColor;
                 button.ForeColor = ForeColor;
                 button.FlatStyle = FlatStyle.Flat;
-                button.Size = new Size(120, 40);
+                if(button.Text != "")
+                {
+                    button.Size = new Size(120, 40);
+                }
+                else
+                {
+                    button.Size = new Size(40, 40);
+                }
             }
             WfLogger.Log(this, LogLevel.DEBUG, "Button design was set to " + GameSettings.GetDesign());
         }
 
         public void Open(PAPIView caller)
         {
+            ViewController.lastView = caller;
+            ViewController.curentlyOpenView = this;
             if (caller != null)
             {
-                m_caller = caller;
                 caller.Hide();
+                this.Location = caller.Location;
+                this.Size = caller.Size;
             }
+
             SetDesign();
             SetButtonDesign();
             SetTextToActiveLanguage();
             Show();
-            WfLogger.Log(this, LogLevel.DEBUG, "Opened View" + ((m_caller != null) ? (" and closed caller " + m_caller.GetType()) : ""));
-        }
-        public void Open()
-        {
-            Open(null);
+            WfLogger.Log(this, LogLevel.DEBUG, "Opened View" + this.GetType().ToString());
         }
 
         protected void SetDesign()
@@ -86,10 +85,10 @@ namespace GameMasterPAPI.Views
             }
             FormBorderStyle = FormBorderStyle.Sizable;
             StartPosition = FormStartPosition.Manual;
-            if (m_caller != null)
+            if (ViewController.lastView != null)
             {
-                Location = m_caller.Location;
-                Size = m_caller.Size;
+                Location = ViewController.lastView.Location;
+                Size = ViewController.lastView.Size;
             }
             else
             {
@@ -110,6 +109,71 @@ namespace GameMasterPAPI.Views
         public virtual void SetTextToActiveLanguage()
         {
             WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
+        }
+
+        /*public virtual void Translate(ResXResourceSet resSet, Control control)
+        {
+            WfLogger.Log(this, LogLevel.WARNING, "Translate not implemented");
+        }*/
+
+        public string GetResourceFile()
+        {
+            string resFile;
+
+            switch (GameSettings.GetLanguage())
+            {
+                case Language.GERMAN:
+                    resFile = @".\Strings\\General_DE.resx";
+                    activeLanguage = Language.GERMAN;
+                    break;
+                case Language.ENGLISH:
+                default:
+                    resFile = @".\Strings\\General_EN.resx";
+                    activeLanguage = Language.ENGLISH;
+                    break;
+            }
+            return resFile;
+        }
+
+        public void Translate(ResXResourceSet resSet, Control control)
+        {
+            string text = resSet.GetString(control.Name);
+            if (text != null)
+            {
+                control.Text = resSet.GetString(control.Name);
+            }
+            else
+            {
+                control.Text = control.Name;
+            }
+        }
+
+        public string TranslatedString(ResXResourceSet resSet, string key)
+        {
+            string text = resSet.GetString(key);
+            if (text != null)
+            {
+                return text;
+            }
+            else
+            {
+                return key;
+            }
+        }
+
+        public string RemoveNumbers(string text)
+        {
+            string output = text.Replace("0", "");
+            output = output.Replace("1", "");
+            output = output.Replace("2", "");
+            output = output.Replace("3", "");
+            output = output.Replace("4", "");
+            output = output.Replace("5", "");
+            output = output.Replace("6", "");
+            output = output.Replace("7", "");
+            output = output.Replace("8", "");
+            output = output.Replace("9", "");
+            return output;
         }
     }
 }

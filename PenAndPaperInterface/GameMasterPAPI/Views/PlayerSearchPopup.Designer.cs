@@ -31,10 +31,10 @@ namespace GameMasterPAPI.Views
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.searchPlayerButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.addPlayerButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.foundPlayerNameTextbox = new System.Windows.Forms.TextBox();
             this.foundPlayerNameLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -75,17 +75,6 @@ namespace GameMasterPAPI.Views
             this.searchPlayerButton.UseVisualStyleBackColor = true;
             this.searchPlayerButton.Click += new System.EventHandler(this.searchPlayerButton_Click);
             // 
-            // cancelButton
-            // 
-            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelButton.Location = new System.Drawing.Point(23, 233);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(120, 40);
-            this.cancelButton.TabIndex = 1;
-            this.cancelButton.Text = "cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
             // addPlayerButton
             // 
             this.addPlayerButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -98,19 +87,22 @@ namespace GameMasterPAPI.Views
             this.addPlayerButton.UseVisualStyleBackColor = true;
             this.addPlayerButton.Click += new System.EventHandler(this.addPlayerButton_Click);
             // 
-            // textBox1
+            // cancelButton
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(3, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 26);
-            this.textBox1.TabIndex = 3;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelButton.Location = new System.Drawing.Point(23, 233);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(120, 40);
+            this.cancelButton.TabIndex = 1;
+            this.cancelButton.Text = "cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.foundPlayerNameTextbox, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.foundPlayerNameLabel, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(153, 23);
@@ -122,11 +114,19 @@ namespace GameMasterPAPI.Views
             this.tableLayoutPanel2.Size = new System.Drawing.Size(294, 204);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
+            // foundPlayerNameTextbox
+            // 
+            this.foundPlayerNameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.foundPlayerNameTextbox.Location = new System.Drawing.Point(3, 89);
+            this.foundPlayerNameTextbox.Name = "foundPlayerNameTextbox";
+            this.foundPlayerNameTextbox.Size = new System.Drawing.Size(288, 26);
+            this.foundPlayerNameTextbox.TabIndex = 3;
+            // 
             // foundPlayerNameLabel
             // 
             this.foundPlayerNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.foundPlayerNameLabel.AutoSize = true;
-            this.foundPlayerNameLabel.Location = new System.Drawing.Point(3, 48);
+            this.foundPlayerNameLabel.Location = new System.Drawing.Point(3, 49);
             this.foundPlayerNameLabel.Name = "foundPlayerNameLabel";
             this.foundPlayerNameLabel.Size = new System.Drawing.Size(144, 19);
             this.foundPlayerNameLabel.TabIndex = 4;
@@ -154,7 +154,7 @@ namespace GameMasterPAPI.Views
         private System.Windows.Forms.Button searchPlayerButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button addPlayerButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox foundPlayerNameTextbox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label foundPlayerNameLabel;
     }

@@ -18,10 +18,6 @@ namespace PAPI.Settings
 
         // Is a sessions running at the moment?
         private static bool isSessionRunning = false;
-
-        // Name of the current GM
-        private static GameMaster m_gm = new GameMaster("GAME MASTER");
-
         
 
 
@@ -57,7 +53,6 @@ namespace PAPI.Settings
         }
         public static DesignEnum GetDesign() { return activeDesign; }
         public static Language GetLanguage() { return activeLanguage; }
-        public static GameMaster GetGm() { return m_gm; }
 
         // ################################################# SETTER #################################################
 
@@ -86,9 +81,5 @@ namespace PAPI.Settings
             WfLogger.Log("GameSettings.SetActiveLanguage(Language)", LogLevel.DEBUG, "Set active language to " + language);
         }
 
-        public static void SetGmName(string name)
-        {
-            m_gm.SetName(name);
-        }
     }
 }
