@@ -7,23 +7,22 @@ namespace PAPI.Item
 {
     class Weapon : EquipmentItem
     {
+        // TODO: Add weapon specific traits
 
-
-
-        // ################################################# CTORS #################################################
-        public Weapon(string name, uint basePrice, uint encumbrance, uint rarity, List<GenreEnum> genres)
-            : base(name, basePrice, encumbrance, rarity, genres)
+        // --------------------------------------------------------------------------------------------------------------------------------
+        public Weapon(string _name, uint _basePrice, uint _encumbrance, uint _rarity, ItemConditionEnum _condition,
+            Dictionary<ItemQuality, uint> _qualities, List<GenreEnum> _availableGenres, Dictionary<Language, string> _description)
+            : base(_name, _basePrice, _encumbrance, _rarity, _condition, _qualities, _availableGenres, _description)
         { }
 
-        public Weapon(Weapon other)
-            : this(other.GetName(), other.GetBasePrice(), other.GetEncumbrance(), other.GetRarity(), other.GetGenres())
-        { }
+        public Weapon(Weapon other) : base(other._name, other._basePrice, other._encumbrance, other._rarity, other._condition,
+           other._qualities, other._availableGenres, other._description)
+        {
+            
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
 
 
-        // ################################################# GETTER #################################################
-
-
-
-        // ################################################# SETTER #################################################
     }
 }

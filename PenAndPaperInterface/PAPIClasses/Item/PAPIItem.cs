@@ -1,68 +1,100 @@
-﻿using PAPI.Settings;
+﻿using PAPI.Logging;
+using PAPI.Settings;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PAPI.Item
 {
     public class PAPIItem
     {
-        // The name of the item
-        private string m_name;
+        public string _name { get; private set; }
+        public uint _basePrice { get; private set; }
 
-        // Base price in the worlds currency
-        private uint m_basePrice;
+        /// <summary>
+        /// The weight of the item in a custom measure (Examples: 0 = One pack of medicine, 1 = a dagger, 2 = a short sword, ...)
+        /// </summary>
+        public uint _encumbrance { get; private set; }
 
-        // The encumbrance/weight of the item
-        private uint m_encumbrance;
+        /// <summary>
+        /// The rarity of the item (scale 0 = very common, 5 = only on specific blackmarkets)
+        /// </summary>
+        public uint _rarity { get; private set; }
 
-        // The rarity of the item (scale 0 = very common, 5 = only on specific blackmarkets)
-        private uint m_rarity;
+        /// <summary>
+        /// In what condition is the item? Broken? not damaged at all?
+        /// </summary>
+        public ItemConditionEnum _condition { get; private set; }
 
-        // In what condition is the item? Broken? not damaged at all?
-        private ItemConditionEnum m_condition;
+        /// <summary>
+        /// A Dictionay of all (special) qualities of the item with their rank (if any)
+        /// </summary>
+        public Dictionary<ItemQuality, uint> _qualities { get; private set; }
 
-        // A List of all (special) qualities of the item
-        private Dictionary<ItemQuality, uint> m_qualities;
+        /// <summary>
+        /// A List of the genres in which this item is available
+        /// </summary>
+        public List<GenreEnum> _availableGenres { get; private set; }
 
-        // A List of the genres in which this item is available
-        private List<GenreEnum> m_genres;
+        /// <summary>
+        /// A dictionary with the description of the item in different languages
+        /// </summary>
+        public Dictionary<Language, string> _description { get; private set; }
 
-        // ################################################# CTORS #################################################
-        public PAPIItem(string name, uint basePrice, uint encumbrance, uint rarity, ItemConditionEnum condition, Dictionary<ItemQuality, uint> qualities, List<GenreEnum> genres)
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// The JSON Constructor must contain all possible traits of an item; restrictions for the values: 
+        /// _name: if null or empty, the item is not valid, 
+        /// _rarity: a value from 0 to 5, otherwise the item is not valid
+        /// _condition: if null, the item is in perfect condition
+        /// _qualities: if null or empty, the item has no special qualities
+        /// _availableGenres: if null or empty, the item is available in all settings
+        /// _description: if null or empty, the item does not have, or doesn't even need a description
+        /// </summary>
+        /// <param name="_name"></param>
+        /// <param name="_basePrice"></param>
+        /// <param name="encumbrance"></param>
+        /// <param name="rarity"></param>
+        /// <param name="condition"></param>
+        /// <param name="qualities"></param>
+        /// <param name="genres"></param>
+        [JsonConstructor]
+        public PAPIItem(string _name, uint _basePrice, uint _encumbrance, uint _rarity, ItemConditionEnum _condition, Dictionary<ItemQuality, uint> _qualities, 
+            List<GenreEnum> _availableGenres, Dictionary<Language, string> _description)
         {
-            m_name = name;
-            m_basePrice = basePrice;
-            m_encumbrance = encumbrance;
-            m_rarity = rarity;
-            m_condition = condition;
-            m_qualities = qualities;
-            m_genres = genres;
+            if(_name == null || _name == "" || _rarity > 5)
+            {
+                this._name = "INVALID ITEM";
+                this._basePrice = 0;
+                this._encumbrance = 0;
+                this._rarity = 0;
+                this._condition = ItemConditionEnum.BROKEN_BEYOND_REPAIR;
+                this._qualities = new Dictionary<ItemQuality, uint>();
+                this._availableGenres = new List<GenreEnum>();
+                this._description = new Dictionary<Language, string>();
+                WfLogger.Log(this, LogLevel.WARNING, "A invalid item was created (either the name or the rarity were invalid values)");
+                return;
+            }
+
+            this._name = _name;
+            this._basePrice = _basePrice;
+            this._encumbrance = _encumbrance;
+            this._rarity = _rarity;
+            this._condition = _condition;
+            this._qualities = (_qualities == null) ? new Dictionary<ItemQuality, uint>() : _qualities;
+            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
+                new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
+            this._description = (_description == null) ? new Dictionary<Language, string>() : _description;
+            WfLogger.Log(this, LogLevel.DETAILED, "Item '" + this._name + "' was created");
         }
 
-        public PAPIItem(string name, uint basePrice, uint encumbrance, uint rarity, ItemConditionEnum condition, List<GenreEnum> genres) :
-            this(name, basePrice, encumbrance, rarity, condition, new Dictionary<ItemQuality, uint>(), genres)
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public PAPIItem(PAPIItem other) : this(other._name, other._basePrice, other._encumbrance, other._rarity, other._condition,
+            other._qualities, other._availableGenres, other._description)
         { }
-
-        public PAPIItem(string name, uint basePrice, uint encumbrance, uint rarity, Dictionary<ItemQuality, uint> qualities, List<GenreEnum> genres) :
-            this(name, basePrice, encumbrance, rarity, ItemConditionEnum.NOT_DAMAGED, qualities, genres)
-        { }
-
-        public PAPIItem(string name, uint basePrice, uint encumbrance, uint rarity, List<GenreEnum> genres) :
-            this(name, basePrice, encumbrance, rarity, ItemConditionEnum.NOT_DAMAGED, new Dictionary<ItemQuality, uint>(), genres)
-        { }
-
-
-        // ################################################# GETTER #################################################
-        public string GetName() { return m_name; }
-        public uint GetBasePrice() { return m_basePrice; }
-        public uint GetEncumbrance() { return m_encumbrance; }
-        public uint GetRarity() { return m_rarity; }
-        public List<GenreEnum> GetGenres() { return m_genres; }
-        public ItemConditionEnum GetCondition() { return m_condition; }
-        public Dictionary<ItemQuality, uint> GetQualities() { return m_qualities; }
-
-
-        // ################################################# SETTER #################################################
     }
 }

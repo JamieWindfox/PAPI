@@ -35,8 +35,8 @@ namespace PAPI.Character
             {
                 m_inventory.Add(item, 1);
             }
-            m_encumbrance += item.GetEncumbrance();
-            WfLogger.Log(this.GetType() + ".Add(Item)", LogLevel.INFO, "Added one " + item.GetName() + " to inventory (new quantity: " 
+            m_encumbrance += item._encumbrance;
+            WfLogger.Log(this.GetType() + ".Add(Item)", LogLevel.INFO, "Added one " + item._name + " to inventory (new quantity: " 
                 + m_inventory[item] + ")");
         }
 
@@ -45,13 +45,13 @@ namespace PAPI.Character
             if (m_inventory.ContainsKey(item) && m_inventory[item] > 0)
             {
                 m_inventory[item]--;
-                m_encumbrance -= item.GetEncumbrance();
+                m_encumbrance -= item._encumbrance;
             }
             else
             {
                 return null;
             }
-            WfLogger.Log(this.GetType() + ".Take(Item)", LogLevel.INFO, "Removed one " + item.GetName() + " from inventory (new quantity: "
+            WfLogger.Log(this.GetType() + ".Take(Item)", LogLevel.INFO, "Removed one " + item._name + " from inventory (new quantity: "
                + m_inventory[item] + ")");
             return item;
         }

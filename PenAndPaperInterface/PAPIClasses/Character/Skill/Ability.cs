@@ -1,4 +1,5 @@
 ﻿using PAPI.DataTypes;
+using PAPI.Logging;
 using PAPI.Settings;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -58,7 +59,17 @@ namespace PAPI.Character.Skill
         public Ability(string _name, bool _isActive, Dictionary<Language, string> _descriptions, List<GenreEnum> _availableGenres,
             GameTimeInterval _gameTimeInterval, RuleBook _ruleBookOfDescription, uint _pageOfDescription, bool _isUsed)
         {
-            this._name = (_name == null || _name == "") ? "INVALID ABILITY" : _name;
+            if(_name == null || _name == "")
+            {
+                this._name = "INVALID ABILITY";
+                this._descriptions = new Dictionary<Language, string>();
+                this._availableGenres = new List<GenreEnum>();
+                this._gameTimeInterval = GameTimeInterval.NOT_VALID;
+                this._pageOfDescription = 0;
+                WfLogger.Log(this, LogLevel.WARNING, "An invalid Ability was created (_name was null or empty)");
+                return;
+            }
+            this._name =  _name;
             this._isActive = _isActive;
             this._descriptions = (_descriptions == null) ? new Dictionary<Language, string>() : _descriptions;
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
@@ -67,6 +78,7 @@ namespace PAPI.Character.Skill
             this._ruleBookOfDescription = _ruleBookOfDescription;
             this._pageOfDescription = _pageOfDescription;
             this._isUsed = _isUsed;
+            WfLogger.Log(this, LogLevel.DETAILED, "Ability '" + this._name + "' was created");
         }
         // --------------------------------------------------------------------------------------------------------------------------------
 

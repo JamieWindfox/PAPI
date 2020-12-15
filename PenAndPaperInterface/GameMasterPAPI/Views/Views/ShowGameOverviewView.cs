@@ -80,7 +80,7 @@ namespace GameMasterPAPI.Views
                 }, 2, rowNr);
                 playerCharacterPanel.Controls.Add(new Label()
                 {
-                    Text = player.Value.career.name,
+                    Text = player.Value.career._name,
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
                 }, 3, rowNr);
 

@@ -1,4 +1,5 @@
 ﻿using PAPI.DataTypes;
+using PAPI.Logging;
 using PAPI.Settings;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -79,6 +80,12 @@ namespace PAPI.Character.Skill
         {
             if(_skillEnum == SkillEnum.NOT_VALID)
             {
+                // set _skillEnum and _name to invalid valued, so that the the next if recognizes the object as invalid
+                _skillEnum = SkillEnum.CUSTOM;
+                _name = "";
+            }
+            if(_skillEnum == SkillEnum.CUSTOM && (_name == null || _name == ""))
+            {
                 this._name = "INVALID SKILL";
                 this._skillEnum = SkillEnum.NOT_VALID;
                 this._skillTypeEnum = SkillTypeEnum.CUSTOM;
@@ -86,10 +93,12 @@ namespace PAPI.Character.Skill
                 this._characteristicEnum = CharacteristicEnum.BRAWN;
                 this._availableGenres = new List<GenreEnum>();
                 this._modification = new Modification(0, GameTimeInterval.NOT_VALID);
+                WfLogger.Log(this, LogLevel.WARNING, 
+                    "An invalid skill was created (either because the skillEnum, or the name wasn't valid)");
                 return;
             }
             this._skillEnum = _skillEnum;
-            this._name = (_skillEnum == SkillEnum.CUSTOM) ? ((_name == null || _name == "") ? "NOT VALID" : EnumToString(_skillEnum)) : _name;
+            this._name = (_skillEnum != SkillEnum.CUSTOM) ? EnumToString(_skillEnum) : _name;
             this._skillTypeEnum = _skillTypeEnum;
             this._value = (_value < MIN_VALUE || _value > MAX_VALUE)? this._value = 0 : this._value = _value;
             this._characteristicEnum = this._characteristicEnum;
@@ -97,6 +106,8 @@ namespace PAPI.Character.Skill
                 new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
             this._modification = (_modification == null) ? new Modification(0, GameTimeInterval.NOT_VALID) : _modification;
             this._isCareer = _isCareer;
+            WfLogger.Log(this, LogLevel.DETAILED,
+                    "Skill '" + this._name + "' was created");
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -107,7 +118,7 @@ namespace PAPI.Character.Skill
         /// </summary>
         /// <param name="skill"></param>
         /// <returns></returns>
-        private string EnumToString(SkillEnum skill)
+        private static string EnumToString(SkillEnum skill)
         {
             string enumString = skill.ToString().ToLower();
             string concatenatedString = enumString[0].ToString().ToUpper();
@@ -117,13 +128,13 @@ namespace PAPI.Character.Skill
                 {
                     concatenatedString += ' ';
                 }
-
                 else
                 {
                     concatenatedString += (i > 1 && enumString[i - 1] == '_') ?
                         enumString[i].ToString().ToUpper() : concatenatedString += enumString[i].ToString().ToLower();
                 }
             }
+            WfLogger.Log("PAPISkill.EnumToString(string)", LogLevel.DETAILED, "Parsed SkillEnum '" + skill + "' to string '" + concatenatedString + "'");
             return concatenatedString;
         }
     }
