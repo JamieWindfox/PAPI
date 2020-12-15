@@ -1,54 +1,76 @@
 ﻿using PAPI.DataTypes;
 using PAPI.Settings;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace PAPI.Character.Skill
 {
+    /// <summary>
+    /// A character can gain different abilities; Those abilities can be very unique; therefore only
+    /// some vital traits of them are saved - the rest must be read in their description
+    /// </summary>
     public class Ability
     {
-        // All genres for which this ability is available
-        private List<GenreEnum> m_genres;
+        public string _name { get; private set; }
+        public bool _isActive { get; private set; }
+        public Dictionary<Language, string> _descriptions { get; private set; }
 
-        // The timestamp hoe often the ability can be used
-        private GameTimeInterval m_interval;
+        /// <summary>
+        /// A list of all genres for which this ability is available
+        /// </summary>
+        public List<GenreEnum> _availableGenres { get; private set; }
 
-        // The name of the ability
-        private string m_name;
+        /// <summary>
+        /// The interval of how often the ability can be used
+        /// </summary>
+        public GameTimeInterval _gameTimeInterval { get; private set; }
 
-        // Does the ability have to be activated?
-        private bool m_isActive;
-
-        // Descriptions in the available languages
-        private Dictionary<Language, string> m_descriptions;
-
-        // Where to find the reference?
-        private uint m_page;
-        private RuleBook m_ruleBook;
-
-        // Did the character already use the ability in the set time interval?
-        private bool m_used;
+        /// <summary>
+        /// The rule book and page, where a more detailed description can be found
+        /// </summary>
+        public RuleBook _ruleBookOfDescription { get; private set; }
+        public uint _pageOfDescription { get; private set; }
 
 
-        // ################################################# CTORS #################################################
-        public Ability(string name, GameTimeInterval interval, bool active, Dictionary<Language, string> descriptions, RuleBook book, uint page, List<GenreEnum> genres)
+        /// <summary>
+        /// Did the character already use the ability in the set time interval?
+        /// </summary>
+        public bool _isUsed { get; private set; }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// The JSON Constructor must contain all possible parameters for the ability
+        /// _name: must not be null or an empty string
+        /// _descriptions: if null, an empty Dictionary is created
+        /// _availableGenres: if null or empty, the ability is available for all settings
+        /// _isUsed: Should always be false in a newly created/learnt ability
+        /// </summary>
+        /// <param name="_name"></param>
+        /// <param name="_isActive"></param>
+        /// <param name="_descriptions"></param>
+        /// <param name="_availableGenres"></param>
+        /// <param name="_gameTimeInterval"></param>
+        /// <param name="_ruleBookOfDescription"></param>
+        /// <param name="_pageOfDescription"></param>
+        /// <param name="_isUsed"></param>
+        [JsonConstructor]
+        public Ability(string _name, bool _isActive, Dictionary<Language, string> _descriptions, List<GenreEnum> _availableGenres,
+            GameTimeInterval _gameTimeInterval, RuleBook _ruleBookOfDescription, uint _pageOfDescription, bool _isUsed)
         {
-            m_genres = genres;
-            m_interval = interval;
-            m_name = name;
-            m_isActive = active;
-            m_descriptions = descriptions;
-            m_page = page;
-            m_ruleBook = book;
-            m_used = false;
+            this._name = (_name == null || _name == "") ? "INVALID ABILITY" : _name;
+            this._isActive = _isActive;
+            this._descriptions = (_descriptions == null) ? new Dictionary<Language, string>() : _descriptions;
+            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
+                this._availableGenres = new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
+            this._gameTimeInterval = _gameTimeInterval;
+            this._ruleBookOfDescription = _ruleBookOfDescription;
+            this._pageOfDescription = _pageOfDescription;
+            this._isUsed = _isUsed;
         }
-
-        public Ability(string name, GameTimeInterval interval, bool active, Dictionary<Language, string> descriptions, RuleBook book, uint page)
-            : this(name, interval, active, descriptions, book, page, new List<GenreEnum>(GameSettings.GetAllGenres()))
-        { }
-
-        // ################################################# GETTER #################################################
+        // --------------------------------------------------------------------------------------------------------------------------------
 
 
-        // ################################################# SETTER #################################################
+
     }
 }

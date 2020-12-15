@@ -1,60 +1,131 @@
 ﻿using PAPI.DataTypes;
 using PAPI.Settings;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace PAPI.Character.Skill
 {
+    /// <summary>
+    /// A skill is a specific trait of a character; Characters can learn and train many of them; their values ranges from 0 to 5
+    /// </summary>
     public class PAPISkill
     {
-        // The name of the skill; as there are specific skills that reoccur in many genres, it is an enum
-        private SkillEnum m_enum;
+        /// <summary>
+        /// The name of the skill; Usually is set by the skill enum, but if it is a custom skill, it gets a different (custom) name
+        /// </summary>
+        public string _name { get; private set; }
 
-        // The type of the skill; e.g. General, Knowledge, Social, and others
-        private SkillTypeEnum m_typeEnum;
+        /// <summary>
+        /// The enum associated with the skill
+        /// </summary>
+        public SkillEnum _skillEnum { get; private set; }
 
-        // The trained value of the skill
-        private uint m_value;
+        /// <summary>
+        /// The type of the skill; Can be General, Knowledge, Social, Magic, Combat or Custom
+        /// </summary>
+        public SkillTypeEnum _skillTypeEnum { get; private set; }
 
-        // The needed characteristic for the skill
-        private CharacteristicEnum m_characteristic;
+        /// <summary>
+        /// The value of a Skill can range from 0 to 5
+        /// </summary>
+        public uint _value { get; private set; }
 
-        // A list of all genres in which the skill is available
-        private List<GenreEnum> m_availableGenres;
+        /// <summary>
+        /// This is the characteristic which the skill is associated with
+        /// </summary>
+        public CharacteristicEnum _characteristicEnum { get; private set; }
 
-        // The Modification on the value of the skill
-        private Modification m_modification;
+        /// <summary>
+        /// A List of all genres in which this skill applies
+        /// </summary>
+        public List<GenreEnum> _availableGenres { get; private set; }
 
-        // Marker if the skills is a careerskill of this character
-        private bool m_isCareer;
+        /// <summary>
+        /// The Modification of the skill at the current time
+        /// </summary>
+        public Modification _modification { get; private set; }
 
-        // Min and max for value
+        /// <summary>
+        /// Flag, if the skill is a career skill, and therefore cheaper to train for the character
+        /// </summary>
+        public bool _isCareer { get; private set; }
+
+        /// <summary>
+        /// Min and Max value of a skill
+        /// </summary>
         private const uint MIN_VALUE = 0;
         private const uint MAX_VALUE = 5;
 
-        // ################################################# CTOR #################################################
-        // A skill is constructed without value and modification; these have to be added manually
-        public PAPISkill(SkillEnum skill, SkillTypeEnum type, CharacteristicEnum characteristic, List<GenreEnum> genres)
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// The JSON Constructor must contain all possible traits of the Skill
+        /// _name: automatically gets the name of the skillEnum, except this is CUSTOM, then this name is set
+        /// _value: if 0, the skill doesn't count as learned, if a invalid value is given, the skill is set to 0
+        /// _availableGenres: if null or empty, the skill is available in all genres
+        /// _modification: if null, there is no modification on the skill currently (default for newly trained or learned skills)
+        /// </summary>
+        /// <param name="_name"></param>
+        /// <param name="_skillEnum"></param>
+        /// <param name="_skillTypeEnum"></param>
+        /// <param name="_value"></param>
+        /// <param name="_characteristicEnum"></param>
+        /// <param name="_availableGenres"></param>
+        /// <param name="_modification"></param>
+        /// <param name="_isCareer"></param>
+        [JsonConstructor]
+        public PAPISkill(string _name, SkillEnum _skillEnum, SkillTypeEnum _skillTypeEnum, uint _value, CharacteristicEnum _characteristicEnum, 
+            List<GenreEnum> _availableGenres, Modification _modification, bool _isCareer)
         {
-            m_enum = skill;
-            m_value = 0;
-            m_characteristic = characteristic;
-            m_availableGenres = genres;
-            m_modification = new Modification();
-            m_isCareer = false;
-            m_typeEnum = type;
+            if(_skillEnum == SkillEnum.NOT_VALID)
+            {
+                this._name = "INVALID SKILL";
+                this._skillEnum = SkillEnum.NOT_VALID;
+                this._skillTypeEnum = SkillTypeEnum.CUSTOM;
+                this._value = 0;
+                this._characteristicEnum = CharacteristicEnum.BRAWN;
+                this._availableGenres = new List<GenreEnum>();
+                this._modification = new Modification(0, GameTimeInterval.NOT_VALID);
+                return;
+            }
+            this._skillEnum = _skillEnum;
+            this._name = (_skillEnum == SkillEnum.CUSTOM) ? ((_name == null || _name == "") ? "NOT VALID" : EnumToString(_skillEnum)) : _name;
+            this._skillTypeEnum = _skillTypeEnum;
+            this._value = (_value < MIN_VALUE || _value > MAX_VALUE)? this._value = 0 : this._value = _value;
+            this._characteristicEnum = this._characteristicEnum;
+            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
+                new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
+            this._modification = (_modification == null) ? new Modification(0, GameTimeInterval.NOT_VALID) : _modification;
+            this._isCareer = _isCareer;
         }
 
-        public PAPISkill(SkillEnum skill, SkillTypeEnum type, CharacteristicEnum characterisitc) : this(skill, type, characterisitc, GameSettings.GetAllGenres())
-        { }
+        // --------------------------------------------------------------------------------------------------------------------------------
 
-        
+        /// <summary>
+        /// The name of the enum with an uppercase first letter, and all folloging letters lowercase
+        /// Example: ARCANE_MAGIC -> "Arcane Magic"
+        /// </summary>
+        /// <param name="skill"></param>
+        /// <returns></returns>
+        private string EnumToString(SkillEnum skill)
+        {
+            string enumString = skill.ToString().ToLower();
+            string concatenatedString = enumString[0].ToString().ToUpper();
+            for(int i = 1; i < enumString.Length; ++i)
+            {
+                if (enumString[i] == '_')
+                {
+                    concatenatedString += ' ';
+                }
 
-        // ################################################# GETTER #################################################
-
-
-        // ################################################# SETTER #################################################
-
+                else
+                {
+                    concatenatedString += (i > 1 && enumString[i - 1] == '_') ?
+                        enumString[i].ToString().ToUpper() : concatenatedString += enumString[i].ToString().ToLower();
+                }
+            }
+            return concatenatedString;
+        }
     }
-
 
 }

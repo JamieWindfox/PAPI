@@ -2,6 +2,8 @@
 {
     public enum SkillEnum
     {
+        NOT_VALID,
+
         // GENERAL SKILLS
         ALCHEMY,
         ATHLETICS,
@@ -50,6 +52,9 @@
         KNOWLEDGE_ADVENTURING,
         KNOWLEDGE_FORBIDDEN,
         KNOWLEDGE_LORE,
-        KNOWLEDGE_GEOGRAPHY
+        KNOWLEDGE_GEOGRAPHY,
+
+        // CUSTOM
+        CUSTOM
     }
 }

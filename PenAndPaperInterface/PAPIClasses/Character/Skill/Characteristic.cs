@@ -1,44 +1,55 @@
 ﻿using PAPI.DataTypes;
 using PAPI.Logging;
+using System.Text.Json.Serialization;
 
 namespace PAPI.Character.Skill
 {
+    /// <summary>
+    /// Each character has the following Characteristics: Brawn, Agility, Intellect, Cunning, Willpower and Presence
+    /// in different levels. A Characteristic value starts at and cannot fall below 1, and cannot exceed 5
+    /// </summary>
     public class Characteristic
     {
-        // Enum that defines the characterisitc
-        private CharacteristicEnum m_type;
+        /// <summary>
+        /// The associated characteristic enum (BRAWN, AGILITY, INTELLECT, CUNNING, WILLPOWER, PRESENCE)
+        /// </summary>
+        public CharacteristicEnum _associatedEnum { get; private set; }
 
-        // Value of the characteristic
-        private uint m_value;
+        /// <summary>
+        /// The value of the characteristic, an Integer from 1 to 5
+        /// </summary>
+        public uint _value { get; private set; }
 
-        // Current modification
-        private Modification m_modification;
+        /// <summary>
+        /// The current modification, which strengthes or weakens the characteristic
+        /// </summary>
+        public Modification _modification { get; private set; }
 
-        // Min and max for value
-        private uint MIN_VALUE = 1;
-        private uint MAX_VALUE = 5;
+        /// <summary>
+        /// Constants for defining the min- and max values of a characteristic
+        /// </summary>
+        private const uint MIN_VALUE = 1;
+        private const uint MAX_VALUE = 5;
 
-        // ################################################# CTORS #################################################
-        public Characteristic(CharacteristicEnum characterisitc, uint value)
+        // --------------------------------------------------------------------------------------------------------------------------------
+        
+        /// <summary>
+        /// The JSON Constructor must contain all possible traits of the characterisitc
+        /// _value: Must be at least 1, and at most 5; If an invalid value is given, it is set to 1
+        /// _modification: if null, there is no modification on the characterisitc, no new characteristic should have a modification
+        /// </summary>
+        /// <param name="_associatedEnum"></param>
+        /// <param name="_value"></param>
+        /// <param name="_modification"></param>
+        [JsonConstructor]
+        public Characteristic(CharacteristicEnum _associatedEnum, uint _value, Modification _modification)
         {
-            m_type = characterisitc;
-            if (value >= MIN_VALUE && value >= MAX_VALUE)
-                m_value = value;
-            else
-            {
-                WfLogger.Log(this.GetType() + ".CTOR", LogLevel.WARNING, "Tried to set value of " + characterisitc + " to " + value
-                    + ", but value must be between " + MIN_VALUE + " and " + MAX_VALUE + ", so it was set to 1");
-                m_value = 1;
-            }
-            m_modification = new Modification();
+            this._associatedEnum = _associatedEnum;
+            this._value = (_value < MIN_VALUE || _value > MAX_VALUE) ? 1 : _value;
+            this._modification = (_modification == null) ? new Modification(0, GameTimeInterval.NOT_VALID) : _modification;
         }
 
-        // ################################################# GETTER #################################################
-
-        public uint GetBaseValue() { return m_value; }
-        public uint GetValue() { return (uint)(m_value + m_modification.GetValue()); }
-
-        // ################################################# SETTER #################################################
+        // --------------------------------------------------------------------------------------------------------------------------------
 
     }
 }
