@@ -9,56 +9,62 @@ namespace PAPI.Character.CharacterTypes
 {
     public abstract class PAPICharacter
     {
-        // Type or Archetype of the character, e.g. Vendor, Settler, Bum, Pirate, etc.
-        private string m_type;
+        /// <summary>
+        /// Type or Archetype of the character, e.g. Vendor, Settler, Bum, Pirate, etc.
+        /// </summary>
+        public string _archetype { get; private set; }
 
-        // The species or race of the character, e.g. Human, Bear, Troll, Witch, etc.
-        public Species species { get; private set; }
+        /// <summary>
+        /// The species or race of the character, e.g. Human, Bear, Troll, Witch, etc.
+        /// </summary>
+        public Species _species { get; private set; }
 
-        // The value of each hit that gets absorbed by the skin without damagin the character
-        private uint m_soak;
+        /// <summary>
+        /// The value of each hit that gets absorbed by the skin without damagin the character
+        /// </summary>
+        public Soak _soak { get; private set; }
 
-        // The modification of the soak value
-        private Modification m_soakModification;
+        /// <summary>
+        /// The value & Threshold of the characters Wounds; If the character gets injured, the value rises
+        /// by the amount of wounds
+        /// </summary>
+        public Health _health { get; private set; }
 
-        // The current value of the characters Wounds; If the character gets injured, the value rises by the amount of wounds
-        private uint m_currentWounds;
+        /// <summary>
+        /// The number of SETBACK dice anyone gets, who attacks this character
+        /// </summary>
+        public Defense _defense { get; private set; }
 
-        // The maximum amount of wounds, a character can suffer, before they faint
-        private uint m_woundThreshold;
+        /// <summary>
+        /// A Set of all characteristics a character has: Brawn, Agility, Intellect, Cunning, Willpwoer and Presence
+        /// </summary>
+        public CharacteristicSet _characteristics { get; private set; }
 
-        // The modification of the wound threshold
-        private Modification m_woundThresholdModification;
+        /// <summary>
+        /// All Items that are equipped at the moment
+        /// </summary>
+        public Equipment _equipment { get; private set; }
 
-        // The number of SETBACK dice anyone gets, who attacks this character with a melee weapon or in brawl
-        private uint m_defenceMelee;
+        /// <summary>
+        /// All Items that are not equipped but on the character at the moment, e.g. in their backpack
+        /// </summary>
+        public Inventory _inventory { get; private set; }
 
-        // The mdification of melee defense
-        private Modification m_defenceMeleeModification;
+        /// <summary>
+        /// A list of all learned skills with their ranks
+        /// </summary>
+        public List<PAPISkill> _skillSet { get; private set; }
 
-        // The number of SETBACK dice anyone gets, who attacks this character with a ranged weapon or throwing things at them
-        private uint m_defenceRanged;
+        /// <summary>
+        /// A list of all learned abilities
+        /// </summary>
+        public List<Ability> _abilities { get; private set; }
 
-        // The mdification of ranged defense
-        private Modification m_defenceRangedModification;
+        /// <summary>
+        /// The career of the nemesis
+        /// </summary>
+        public Career _career { get; private set; }
 
-        // A Set of all characteristics a character has: Brawn, Agility, Intellect, Cunning, Willpwoer and Presence
-        private CharacteristicSet m_characteristics;
-
-        // All Items that are equipped at the moment
-        private Equipment m_equipment;
-
-        // All Items that are not equipped but on the character at the moment, e.g. in their backpack
-        private Inventory m_inventory;
-
-        // A list of all learned skills with their ranks
-        private List<PAPISkill> m_skills;
-
-        // A list of all abilities
-        private List<Ability> m_abilities;
-
-
-        
 
     }
 }

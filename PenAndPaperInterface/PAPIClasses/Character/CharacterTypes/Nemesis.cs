@@ -1,33 +1,22 @@
-﻿using System;
+﻿using PAPI.Character.Motivations;
+using System;
 
 
 namespace PAPI.Character.CharacterTypes
 {
     public class Nemesis : Rival
     {
-        // The name of an unique character
-        private readonly string m_name;
+        /// <summary>
+        /// The set of the 4 motiavtions (Strength, Flaw, Desire, Fear) each nemesis has
+        /// </summary>
+        public MotivationSet _motivationSet { get; private set; }
 
+        /// <summary>
+        /// The name under which the players know the nemesis
+        /// </summary>
+        public string _name { get; private set; }
 
-        // ################################################# CTOR #################################################
-
-
-        // ################################################# GETTER #################################################
-
-        public string GetName() { return m_name; }
-
-
-
-        // ################################################# SETTER #################################################
-        public void SetMotivation(MotivationTypeEnum type, Motivation motivation)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetMotivationSet(MotivationSet motivationsSet)
-        {
-            throw new NotImplementedException();
-        }
+        
 
     }
 }

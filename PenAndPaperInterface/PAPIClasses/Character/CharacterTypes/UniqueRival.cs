@@ -1,35 +1,23 @@
-﻿using System;
+﻿using PAPI.Character.Motivations;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PAPI.Character
+namespace PAPI.Character.CharacterTypes
 {
-    public class UniqueRival : Rival, IUniqueCharacter
+    public class UniqueRival : Rival
     {
+        /// <summary>
+        /// The set of the 4 motiavtions (Strength, Flaw, Desire, Fear) each unique character has
+        /// </summary>
+        public MotivationSet _motivationSet { get; private set; }
 
-        // ################################################# CTOR #################################################
+        /// <summary>
+        /// The name under which the players know the rival
+        /// </summary>
+        public string _name { get; private set; }
 
-        // ################################################# GETTER #################################################
+        
 
-        // ################################################# SETTER #################################################
-        public MotivationSet GetMotivations()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetName()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetMotivation(Motivation motivation)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetMotivationSet(MotivationSet motivationsSet)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -1,47 +1,28 @@
-﻿using System;
+﻿using PAPI.Character.Motivations;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PAPI.Character
+namespace PAPI.Character.CharacterTypes
 {
-    public class PlayerCharacter : PAPICharacter, IUniqueCharacter
+    public class PlayerCharacter : PAPICharacter
     {
+        /// <summary>
+        /// The set of the 4 motiavtions (Strength, Flaw, Desire, Fear) each player character has
+        /// </summary>
+        public MotivationSet _motivationSet { get; private set; }
 
-        public MotivationSet motivationSet { get; private set; }
-        public string name { get; private set; }
+        /// <summary>
+        /// The name the player has given the character
+        /// </summary>
+        public string _name { get; private set; }
 
-        public Career career { get; private set; }
+        /// <summary>
+        /// The career of the character; it can't be changed after chosing it in character creation
+        /// </summary>
+        public Career _career { get; private set; }
 
-        // ################################################# CTOR #################################################
-
-
-
-        public PlayerCharacter(string name)
-        {
-            this.name = name;
-            motivationSet = new MotivationSet();
-        }
-
-
-        public PlayerCharacter() : this("NOT_VALID") { }
-
-
-        // ################################################# SETTER #################################################
-        public void SetMotivation(Motivation motivation)
-        {
-            motivationSet.AddMotivation(motivation);
-        }
-
-        public void SetMotivationSet(MotivationSet motivationsSet)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override string ToString()
-        {
-            return name + ", Motivations: " + motivationSet.ToString();
-        }
-
+        
 
     }
 }
