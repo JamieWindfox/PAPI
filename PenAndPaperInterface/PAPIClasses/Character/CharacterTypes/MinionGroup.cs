@@ -2,7 +2,7 @@
 using PAPI.Exception;
 
 
-namespace PAPI.Character
+namespace PAPI.Character.CharacterTypes
 {
     public class MinionGroup : NonPlayerCharacter
     {

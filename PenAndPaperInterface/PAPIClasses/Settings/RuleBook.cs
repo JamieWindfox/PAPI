@@ -2,6 +2,7 @@
 {
     public enum RuleBook
     {
+        NO_RULE_BOOK,
         CORE_RULE_BOOK,
         EXPANDED_PLAYER_GUIDE,
         REALMS_OF_TERRINOTH,

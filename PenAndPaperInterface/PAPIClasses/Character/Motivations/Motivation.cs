@@ -2,7 +2,7 @@
 using PAPI.Settings;
 using System.Collections.Generic;
 
-namespace PAPI.Character
+namespace PAPI.Character.Motivations
 {
     public class Motivation
     {

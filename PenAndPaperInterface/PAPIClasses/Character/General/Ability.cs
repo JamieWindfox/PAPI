@@ -4,7 +4,7 @@ using PAPI.Settings;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace PAPI.Character.Skill
+namespace PAPI.Character.General
 {
     /// <summary>
     /// A character can gain different abilities; Those abilities can be very unique; therefore only
@@ -13,8 +13,16 @@ namespace PAPI.Character.Skill
     public class Ability
     {
         public string _name { get; private set; }
+
+        /// <summary>
+        /// Flags if the ability needs something to get activated or if its passive
+        /// </summary>
         public bool _isActive { get; private set; }
-        public Dictionary<Language, string> _descriptions { get; private set; }
+
+        /// <summary>
+        /// the key with which the resources strings of the ability description can be assigned
+        /// </summary>
+        public string _descriptionKey { get; private set; }
 
         /// <summary>
         /// A list of all genres for which this ability is available
@@ -29,7 +37,7 @@ namespace PAPI.Character.Skill
         /// <summary>
         /// The rule book and page, where a more detailed description can be found
         /// </summary>
-        public RuleBook _ruleBookOfDescription { get; private set; }
+        public RuleBook _ruleBook { get; private set; }
         public uint _pageOfDescription { get; private set; }
 
 
@@ -49,33 +57,34 @@ namespace PAPI.Character.Skill
         /// </summary>
         /// <param name="_name"></param>
         /// <param name="_isActive"></param>
-        /// <param name="_descriptions"></param>
+        /// <param name="_descriptionKey"></param>
         /// <param name="_availableGenres"></param>
         /// <param name="_gameTimeInterval"></param>
         /// <param name="_ruleBookOfDescription"></param>
         /// <param name="_pageOfDescription"></param>
         /// <param name="_isUsed"></param>
         [JsonConstructor]
-        public Ability(string _name, bool _isActive, Dictionary<Language, string> _descriptions, List<GenreEnum> _availableGenres,
+        public Ability(string _name, bool _isActive, string _descriptionKey, List<GenreEnum> _availableGenres,
             GameTimeInterval _gameTimeInterval, RuleBook _ruleBookOfDescription, uint _pageOfDescription, bool _isUsed)
         {
             if(_name == null || _name == "")
             {
-                this._name = "INVALID ABILITY";
-                this._descriptions = new Dictionary<Language, string>();
+                this._name = "INVALID_ABILITY";
+                this._descriptionKey = "INVALID_DESCRIPTION";
                 this._availableGenres = new List<GenreEnum>();
                 this._gameTimeInterval = GameTimeInterval.NOT_VALID;
+                this._ruleBook = RuleBook.NO_RULE_BOOK;
                 this._pageOfDescription = 0;
                 WfLogger.Log(this, LogLevel.WARNING, "An invalid Ability was created (_name was null or empty)");
                 return;
             }
             this._name =  _name;
             this._isActive = _isActive;
-            this._descriptions = (_descriptions == null) ? new Dictionary<Language, string>() : _descriptions;
+            this._descriptionKey = (_descriptionKey == null) ? "INVALID_DESCRIPTION" : _descriptionKey;
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
                 this._availableGenres = new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
             this._gameTimeInterval = _gameTimeInterval;
-            this._ruleBookOfDescription = _ruleBookOfDescription;
+            this._ruleBook = _ruleBookOfDescription;
             this._pageOfDescription = _pageOfDescription;
             this._isUsed = _isUsed;
             WfLogger.Log(this, LogLevel.DETAILED, "Ability '" + this._name + "' was created");

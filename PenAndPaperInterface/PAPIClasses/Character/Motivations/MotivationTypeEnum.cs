@@ -1,4 +1,4 @@
-﻿namespace PAPI.Character
+﻿namespace PAPI.Character.Motivations
 {
     public enum MotivationTypeEnum
     {

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using PAPI.Character.Skill;
 using PAPI.DataTypes;
+using PAPI.Character.Characteristics;
+using PAPI.Character.General;
 
-namespace PAPI.Character
+namespace PAPI.Character.CharacterTypes
 {
     public abstract class PAPICharacter
     {

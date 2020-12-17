@@ -1,8 +1,9 @@
-﻿using System;
+﻿using PAPI.Character.Motivations;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PAPI.Character
+namespace PAPI.Character.CharacterTypes
 {
     public interface IUniqueCharacter
     {
