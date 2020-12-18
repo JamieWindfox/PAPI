@@ -30,7 +30,7 @@ namespace PAPI.Character.Characteristics
         public CharacteristicSet(List<Characteristic> _characteristicList)
         {
             this._characteristicList = (_characteristicList == null || _characteristicList.Count != 6) ?
-                new List<Characteristic>(CharacteristicHandler.GetBaseCharacteristics()) :
+                new List<Characteristic>(CharacteristicFactory.BaseCharacteristicList()) :
                 new List<Characteristic>(_characteristicList);
 
             WfLogger.Log(this, LogLevel.DETAILED, "CharacteristicSet was created");

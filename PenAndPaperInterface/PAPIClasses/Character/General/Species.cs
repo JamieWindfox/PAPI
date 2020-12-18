@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using System.Text.Json.Serialization;
 using PAPI.Logging;
 using PAPI.Settings;
 
@@ -8,31 +8,42 @@ namespace PAPI.Character
     public class Species
     {
         // The name of the species or race
-        public string name { get; private set; }
+        public string _name { get; private set; }
 
         // A List of all settings, in which this species is available
-        private List<GenreEnum> m_possibleGenres;
+        public List<GenreEnum> _availableGenres { get; private set; }
 
-        // ################################################# CTORS #################################################
-        // CTOR with just a name; Available for all Settings
-        public Species(string name) : this(name, GameSettings.GetAllGenres())
-        { }
+        // --------------------------------------------------------------------------------------------------------------------------------
 
-        public Species(string name, List<GenreEnum> genres)
+        /// <summary>
+        /// The JSON Constructor must contain all possible traits for a species
+        /// _name: if null, species is invalid
+        /// _availableGenres: if null, species is available for all genres
+        /// </summary>
+        /// <param name="_name"></param>
+        /// <param name="_availableGenres"></param>
+        [JsonConstructor]
+        public Species(string _name, List<GenreEnum> _availableGenres)
         {
-            this.name = name;
-            m_possibleGenres = genres;
-            WfLogger.Log(this.GetType() + ".CTOR", LogLevel.INFO, "Constructed Species '" + this.name + "'");
+            if(_name == null || _name == "")
+            {
+                this._name = "INVALID_SPECIES";
+                this._availableGenres = new List<GenreEnum>();
+                return;
+            }
+            this._name = _name;
+            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ? new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
         }
 
-        // ################################################# GETTER #################################################
 
-        public string GetName() { return name; }
-        public List<GenreEnum> GetGenres() { return m_possibleGenres; }
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public string GetName() { return _name; }
+        public List<GenreEnum> GetGenres() { return _availableGenres; }
 
         public bool AvailableForGenre(GenreEnum genre)
         {
-            return m_possibleGenres.Contains(genre);
+            return _availableGenres.Contains(genre);
         }
     }
 }

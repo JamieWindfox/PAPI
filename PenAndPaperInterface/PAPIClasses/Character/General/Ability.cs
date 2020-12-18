@@ -37,10 +37,8 @@ namespace PAPI.Character.General
         /// <summary>
         /// The rule book and page, where a more detailed description can be found
         /// </summary>
-        public RuleBook _ruleBook { get; private set; }
-        public uint _pageOfDescription { get; private set; }
-
-
+        public BookResource _bookResource { get; private set; }
+        
         /// <summary>
         /// Did the character already use the ability in the set time interval?
         /// </summary>
@@ -65,7 +63,7 @@ namespace PAPI.Character.General
         /// <param name="_isUsed"></param>
         [JsonConstructor]
         public Ability(string _name, bool _isActive, string _descriptionKey, List<GenreEnum> _availableGenres,
-            GameTimeInterval _gameTimeInterval, RuleBook _ruleBookOfDescription, uint _pageOfDescription, bool _isUsed)
+            GameTimeInterval _gameTimeInterval, BookResource _bookResource, bool _isUsed)
         {
             if(_name == null || _name == "")
             {
@@ -73,8 +71,7 @@ namespace PAPI.Character.General
                 this._descriptionKey = "INVALID_DESCRIPTION";
                 this._availableGenres = new List<GenreEnum>();
                 this._gameTimeInterval = GameTimeInterval.NOT_VALID;
-                this._ruleBook = RuleBook.NO_RULE_BOOK;
-                this._pageOfDescription = 0;
+                this._bookResource = new BookResource(RuleBook.NO_RULE_BOOK, 0);
                 WfLogger.Log(this, LogLevel.WARNING, "An invalid Ability was created (_name was null or empty)");
                 return;
             }
@@ -84,8 +81,7 @@ namespace PAPI.Character.General
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
                 this._availableGenres = new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
             this._gameTimeInterval = _gameTimeInterval;
-            this._ruleBook = _ruleBookOfDescription;
-            this._pageOfDescription = _pageOfDescription;
+            this._bookResource = _bookResource;
             this._isUsed = _isUsed;
             WfLogger.Log(this, LogLevel.DETAILED, "Ability '" + this._name + "' was created");
         }

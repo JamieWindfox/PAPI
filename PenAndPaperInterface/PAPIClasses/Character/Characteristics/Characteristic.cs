@@ -1,4 +1,5 @@
 ﻿using PAPI.DataTypes;
+using PAPI.Exception;
 using PAPI.Logging;
 using System.Text.Json.Serialization;
 
@@ -54,10 +55,16 @@ namespace PAPI.Character.Characteristics
 
         /// <summary>
         /// Increases the value once and returns true, unless it has already reached the max-value,
-        /// (if so, nothing happens and the method return false)
+        /// (if so, nothing happens and the method returns false)
         /// </summary>
         public bool Training()
         {
+            if(_value > MAX_VALUE)
+            {
+                string exMsg = "The Value can never be greater than MAX_VALUE (Value = " + this._value + ", MAX_VALUE = " + MAX_VALUE + ")";
+                WfLogger.Log(this, LogLevel.FATAL, exMsg);
+                throw new InvalidValueException(exMsg);
+            }
             if(_value < MAX_VALUE)
             {
                 _value++;
@@ -68,7 +75,7 @@ namespace PAPI.Character.Characteristics
             {
                 WfLogger.Log(this, LogLevel.WARNING, "Tried to train " + _associatedEnum.ToString()
                     + ", but it is already maximized (Value: " + _value + ")");
-                return true;
+                return false;
             }
         }
 
@@ -81,7 +88,10 @@ namespace PAPI.Character.Characteristics
         /// <returns></returns>
         public uint GetTrainingCost()
         {
-            return (_value + 1) * 10;
+            uint cost = (this._value + 1) * 10;
+            WfLogger.Log(this, LogLevel.DETAILED, "Get Trainings Cost of " + this._associatedEnum.ToString()
+                + ": " + cost);
+            return cost;
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -92,7 +102,10 @@ namespace PAPI.Character.Characteristics
         /// <returns></returns>
         public bool IsMaximized()
         {
-            return _value == MAX_VALUE;
+            bool isMax = (_value == MAX_VALUE);
+            WfLogger.Log(this, LogLevel.DETAILED, "Is " + this._associatedEnum.ToString() + " maximized: "
+                + isMax);
+            return isMax;
         }
     }
 }
