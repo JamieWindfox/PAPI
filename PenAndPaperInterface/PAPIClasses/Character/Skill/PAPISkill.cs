@@ -3,7 +3,7 @@ using PAPI.Logging;
 using PAPI.Settings;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using PAPI.Character.Characteristic;
+using PAPI.Character.Characteristics;
 
 namespace PAPI.Character.Skill
 {

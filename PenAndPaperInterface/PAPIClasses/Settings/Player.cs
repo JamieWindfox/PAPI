@@ -6,14 +6,14 @@ namespace PAPI.Settings
 {
     public class Player
     {
-        public string name { get; private set; }
+        public string _name { get; private set; }
         public string ip { get; private set; }
 
         // Attribute needed to send Players through the NET API
         [JsonConstructor]
         public Player(string name, string ip)
         {
-            this.name = name;
+            this._name = name;
             this.ip = ip;
         }
 
@@ -23,7 +23,7 @@ namespace PAPI.Settings
 
         public void SetName(string name)
         {
-            this.name = name;
+            this._name = name;
         }
         public void SetIp(string ip)
         {

@@ -60,13 +60,13 @@ namespace GameMasterPAPI.Views
         {
             foreach(KeyValuePair<Player, Button> playerButton in players_removeButtons)
             {
-                if(playerButton.Key.name == player.name)
+                if(playerButton.Key._name == player._name)
                 {
-                    WfLogger.Log(this, LogLevel.WARNING, "Add player " + player.name + " not possible, there already is a player with this name");
+                    WfLogger.Log(this, LogLevel.WARNING, "Add player " + player._name + " not possible, there already is a player with this name");
                     return;
                 }
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "Add player " + player.name + " to list of players");
+            WfLogger.Log(this, LogLevel.DEBUG, "Add player " + player._name + " to list of players");
 
             playerListPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
             playerListPanel.RowCount++;
@@ -74,7 +74,7 @@ namespace GameMasterPAPI.Views
             // Show name of player and put it into list
             playerListPanel.Controls.Add(new Label()
             {
-                Text = player.name,
+                Text = player._name,
                 Anchor = AnchorStyles.Left | AnchorStyles.Top,
                 Width = 200
             }, 0, players_removeButtons.Count+1);
@@ -106,7 +106,7 @@ namespace GameMasterPAPI.Views
                 rowStyle.SizeType = SizeType.Absolute;
                 rowStyle.Height = 44;
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "Added player " + player.name + " to List");
+            WfLogger.Log(this, LogLevel.DEBUG, "Added player " + player._name + " to List");
             SetButtonDesign();
         }
 
@@ -127,14 +127,14 @@ namespace GameMasterPAPI.Views
                 int rowNumber = -1;
                 foreach(Control control in playerListPanel.Controls)
                 {
-                    if(control.Text == playerToRemove.name)
+                    if(control.Text == playerToRemove._name)
                     {
                         rowNumber = playerListPanel.GetRow(control);
                         break;
                     }
                 }
                 
-                WfLogger.Log(this, LogLevel.DEBUG, "Remove Player " + playerToRemove.name + " from List (Number " + rowNumber + ")");
+                WfLogger.Log(this, LogLevel.DEBUG, "Remove Player " + playerToRemove._name + " from List (Number " + rowNumber + ")");
                 players_removeButtons.Remove(playerToRemove);
 
                 TableLayoutHelper.RemoveRowNumber(playerListPanel, rowNumber);
@@ -156,7 +156,7 @@ namespace GameMasterPAPI.Views
             {
                 Translate(resSet, gmNameLabel);
                 Translate(resSet, gmIPLabel);
-                gmNameLabel.Text += ": " + CurrentPlayer.player.name;
+                gmNameLabel.Text += ": " + CurrentPlayer.player._name;
                 gmIPLabel.Text += ": " + CurrentPlayer.player.ip;
                 Translate(resSet, cancelButton);
                 Translate(resSet, addPlayerButton);

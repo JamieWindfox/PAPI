@@ -68,7 +68,7 @@ namespace GameMasterPAPI.Server
             {
                 PlayerJoinRequest request = JsonSerializer.Deserialize<PlayerJoinRequest>(message);
                 PendingMessages.waitingPlayers.Add(request.playerToJoin);
-                response = new PlayerJoinResponse("PlayerJoinResponse", HttpStatusCode.OK, request.playerToJoin.name); 
+                response = new PlayerJoinResponse("PlayerJoinResponse", HttpStatusCode.OK, request.playerToJoin._name); 
             }
             else
             {

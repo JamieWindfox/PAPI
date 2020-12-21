@@ -11,8 +11,8 @@ namespace PAPI.Item
 
         // --------------------------------------------------------------------------------------------------------------------------------
         public Weapon(string _name, uint _basePrice, uint _encumbrance, uint _rarity, ItemConditionEnum _condition,
-            Dictionary<ItemQuality, uint> _qualities, List<GenreEnum> _availableGenres, Dictionary<Language, string> _description)
-            : base(_name, _basePrice, _encumbrance, _rarity, _condition, _qualities, _availableGenres, _description)
+            Dictionary<ItemQuality, uint> _qualities, List<GenreEnum> _availableGenres, string _descriptionKey)
+            : base(_name, _basePrice, _encumbrance, _rarity, _condition, _qualities, _availableGenres, _descriptionKey)
         { }
 
         public Weapon(Weapon other) : base(other._name, other._basePrice, other._encumbrance, other._rarity, other._condition,

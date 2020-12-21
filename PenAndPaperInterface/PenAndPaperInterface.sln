@@ -14,12 +14,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClient", "TextClient\Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAPITests", "PAPITests\PAPITests.csproj", "{9377EC25-6CFF-4467-9E41-0EC8F8AE19E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordMinigamePrototype", "PasswordMinigamePrototype\PasswordMinigamePrototype.csproj", "{CA69F32D-9C40-46D2-9C5A-077065C16328}"
-	ProjectSection(ProjectDependencies) = postProject
-		{70BACA27-10D5-450A-A1D6-ED8F792227C9} = {70BACA27-10D5-450A-A1D6-ED8F792227C9}
-		{5230926A-95B9-451C-8369-A8EF62D28CCD} = {5230926A-95B9-451C-8369-A8EF62D28CCD}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,10 +36,6 @@ Global
 		{9377EC25-6CFF-4467-9E41-0EC8F8AE19E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9377EC25-6CFF-4467-9E41-0EC8F8AE19E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9377EC25-6CFF-4467-9E41-0EC8F8AE19E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA69F32D-9C40-46D2-9C5A-077065C16328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA69F32D-9C40-46D2-9C5A-077065C16328}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA69F32D-9C40-46D2-9C5A-077065C16328}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA69F32D-9C40-46D2-9C5A-077065C16328}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using PAPI.Character;
+using PAPI.Character.CharacterTypes;
 using PAPI.Logging;
 using PAPI.Settings;
 using System;
@@ -60,27 +61,27 @@ namespace GameMasterPAPI.Views
             int rowNr = 1;
             foreach (KeyValuePair<Player, PlayerCharacter> player in RunningGame.game.playerParty)
             {
-                WfLogger.Log(this, LogLevel.DEBUG, "Added player to list of players: " + player.Key.name + ", Character: " + player.Value.name);
+                WfLogger.Log(this, LogLevel.DEBUG, "Added player to list of players: " + player.Key._name + ", Character: " + player.Value._name);
                 playerCharacterPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
                 playerCharacterPanel.RowCount++;
                 playerCharacterPanel.Controls.Add(new Label()
                 {
-                    Text = player.Key.name,
+                    Text = player.Key._name,
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
                 }, 0, rowNr);
                 playerCharacterPanel.Controls.Add(new Label()
                 {
-                    Text = player.Value.name,
+                    Text = player.Value._name,
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
                 }, 1, rowNr);
                 playerCharacterPanel.Controls.Add(new Label()
                 {
-                    Text = player.Value.species.name,
+                    Text = player.Value._species._name,
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
                 }, 2, rowNr);
                 playerCharacterPanel.Controls.Add(new Label()
                 {
-                    Text = player.Value.career._name,
+                    Text = player.Value._career._name,
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
                 }, 3, rowNr);
 

@@ -1,4 +1,5 @@
 ﻿using PAPI.Character;
+using PAPI.Character.CharacterTypes;
 using PAPI.Logging;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,7 @@ namespace PAPI.Settings
             {
                 if (!first) output += ", ";
                 else first = false;
-                output += player.Key.name + "(" + player.Value.name + ")";
+                output += player.Key._name + "(" + player.Value._name + ")";
             }
             return output;
         }
@@ -52,8 +53,8 @@ namespace PAPI.Settings
                 WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.WARNING, "Couldn't add player, because they already are in this game");
                 return;
             }
-            playerParty.Add(player, new PlayerCharacter());
-            WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.DEBUG, "Added Player '" + player.name + "' to Party");
+            playerParty.Add(player, new PlayerCharacter(null, null, null, null, null, null, null, null, null, null, null, null, null));
+            WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.DEBUG, "Added Player '" + player._name + "' to Party");
         }
     }
 }

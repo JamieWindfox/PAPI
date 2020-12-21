@@ -52,7 +52,7 @@ namespace GameMasterPAPI.Views
                 if (PendingMessages.waitingPlayers.Count > 0)
                 {
                     WfLogger.Log(this, LogLevel.DEBUG, "Pending Player Requests found: " + PendingMessages.waitingPlayers.Count);
-                    this.foundPlayerNameTextbox.Text = PendingMessages.waitingPlayers[0].name;
+                    this.foundPlayerNameTextbox.Text = PendingMessages.waitingPlayers[0]._name;
                     addPlayerButton.Visible = true;
                     addPlayerButton.Enabled = true;
                     searchPlayerButton.Visible = false;
@@ -89,7 +89,7 @@ namespace GameMasterPAPI.Views
 
         private void addPlayerButton_Click(object sender, EventArgs e)
         {
-            WfLogger.Log(this, LogLevel.DEBUG, "Add Player Button was clicked, adding Player '" + PendingMessages.waitingPlayers[0].name + "' to Game");
+            WfLogger.Log(this, LogLevel.DEBUG, "Add Player Button was clicked, adding Player '" + PendingMessages.waitingPlayers[0]._name + "' to Game");
             AddPlayer(PendingMessages.waitingPlayers[0]);
         }
 
