@@ -25,7 +25,7 @@ namespace PAPI.Item
         }
 
         public Wearable(Wearable other) : base(other._name, other._basePrice, other._encumbrance, other._rarity, other._condition, 
-            other._qualities, other._availableGenres, other._description)
+            other._qualities, other._availableGenres, other._descriptionKey)
         {
             this._soak = other._soak;
             this._defense = other._defense;

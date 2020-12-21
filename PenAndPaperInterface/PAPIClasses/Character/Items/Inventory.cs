@@ -1,59 +1,100 @@
 ﻿using PAPI.Item;
 using PAPI.Logging;
+using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace PAPI.Character
 {
     public class Inventory
     {
-        // A dictionary of all items in inventory (with number of count)
-        private Dictionary<PAPIItem, uint> m_inventory;
+        public Dictionary<PAPIItem, uint> _inventory { get; private set; }
 
-        // The total encumbrance of the inventory e.g. the 'backpack'
-        private uint m_encumbrance;
+        public Backpack _backpack { get; private set; }
+        
 
-        // ################################################# CTORS #################################################
-        // A new Inventory is always empty, items must be added amanually
-        public Inventory()
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// A JSON COnstructor must contain all possible traits of an inventory
+        /// _inventory: if null, inventory is empty; 
+        /// _backpack: if null, there is no backpack which could decrease the enumbrance of the inventory
+        /// </summary>
+        /// <param name="_inventory"></param>
+        /// <param name="_backpack"></param>
+        [JsonConstructor]
+        public Inventory(Dictionary<PAPIItem, uint> _inventory, Backpack _backpack)
         {
-            m_inventory = new Dictionary<PAPIItem, uint>();
-            m_encumbrance = 0;
+            this._inventory = (_inventory == null) ? new Dictionary<PAPIItem, uint>() : _inventory;
+            this._backpack = _backpack;
         }
 
-        // ################################################# GETTER #################################################
-        public uint GetEncumbrance() { return m_encumbrance; }
+        // --------------------------------------------------------------------------------------------------------------------------------
 
-
-        // ################################################# SETTER #################################################
+        /// <summary>
+        /// Adds one unit of the given Item to the inventory
+        /// </summary>
+        /// <param name="item"></param>
         public void Add(PAPIItem item)
         {
-            if (m_inventory.ContainsKey(item))
+            if (_inventory.ContainsKey(item))
             {
-                m_inventory[item]++;
+                _inventory[item]++;
             }
             else
             {
-                m_inventory.Add(item, 1);
+                _inventory.Add(item, 1);
             }
-            m_encumbrance += item._encumbrance;
             WfLogger.Log(this.GetType() + ".Add(Item)", LogLevel.INFO, "Added one " + item._name + " to inventory (new quantity: " 
-                + m_inventory[item] + ")");
+                + _inventory[item] + ")");
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Removes one unit of the given Item from the inventory and returns the item if successful;
+        /// If there is no item with the given key in the inventory, null is returned and nothing is removed
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public PAPIItem Take(PAPIItem item)
         {
-            if (m_inventory.ContainsKey(item) && m_inventory[item] > 0)
+            if (_inventory.ContainsKey(item) && _inventory[item] > 0)
             {
-                m_inventory[item]--;
-                m_encumbrance -= item._encumbrance;
+                _inventory[item]--;
             }
             else
             {
+                WfLogger.Log(this, LogLevel.DETAILED, "Removed nothing from the inventory");
                 return null;
             }
-            WfLogger.Log(this.GetType() + ".Take(Item)", LogLevel.INFO, "Removed one " + item._name + " from inventory (new quantity: "
-               + m_inventory[item] + ")");
+            WfLogger.Log(this, LogLevel.DETAILED, "Removed one " + item._name + " from inventory (new quantity: "
+               + _inventory[item] + ")");
             return item;
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Returns the total encumbrance of all items in the inventory, minus the capacity of the used backpack
+        /// </summary>
+        /// <returns></returns>
+        public uint GetEncumbrance()
+        {
+            int weight = 0;
+
+            foreach(KeyValuePair<PAPIItem, uint> item in _inventory)
+            {
+                weight += (int)(item.Key._encumbrance * item.Value);
+            }
+            weight -= (int)_backpack._capacity;
+            if(weight < 0)
+            {
+                weight = 0;
+            }
+            return (uint)Math.Abs(weight);
+        }
+
+
     }
 }

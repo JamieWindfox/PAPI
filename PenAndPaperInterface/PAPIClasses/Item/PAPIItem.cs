@@ -40,7 +40,7 @@ namespace PAPI.Item
         /// <summary>
         /// A dictionary with the description of the item in different languages
         /// </summary>
-        public Dictionary<Language, string> _description { get; private set; }
+        public string _descriptionKey { get; private set; }
 
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ namespace PAPI.Item
         /// <param name="genres"></param>
         [JsonConstructor]
         public PAPIItem(string _name, uint _basePrice, uint _encumbrance, uint _rarity, ItemConditionEnum _condition, Dictionary<ItemQuality, uint> _qualities, 
-            List<GenreEnum> _availableGenres, Dictionary<Language, string> _description)
+            List<GenreEnum> _availableGenres, string _descriptionKey)
         {
             if(_name == null || _name == "" || _rarity > 5)
             {
@@ -74,7 +74,7 @@ namespace PAPI.Item
                 this._condition = ItemConditionEnum.BROKEN_BEYOND_REPAIR;
                 this._qualities = new Dictionary<ItemQuality, uint>();
                 this._availableGenres = new List<GenreEnum>();
-                this._description = new Dictionary<Language, string>();
+                this._descriptionKey = "INVALIID_DESCRIPTION";
                 WfLogger.Log(this, LogLevel.WARNING, "A invalid item was created (either the name or the rarity were invalid values)");
                 return;
             }
@@ -87,14 +87,14 @@ namespace PAPI.Item
             this._qualities = (_qualities == null) ? new Dictionary<ItemQuality, uint>() : _qualities;
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
                 new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
-            this._description = (_description == null) ? new Dictionary<Language, string>() : _description;
+            this._descriptionKey = (_descriptionKey == null) ? "INVALIID_DESCRIPTION" : _descriptionKey;
             WfLogger.Log(this, LogLevel.DETAILED, "Item '" + this._name + "' was created");
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
         public PAPIItem(PAPIItem other) : this(other._name, other._basePrice, other._encumbrance, other._rarity, other._condition,
-            other._qualities, other._availableGenres, other._description)
+            other._qualities, other._availableGenres, other._descriptionKey)
         { }
     }
 }

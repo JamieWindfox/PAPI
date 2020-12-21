@@ -1,63 +1,57 @@
 ﻿using PAPI.Exception;
 using PAPI.Logging;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace PAPI.Character.Motivations
 {
     public class MotivationSet
     {
-        public Dictionary<MotivationTypeEnum, Motivation> motivations { get; private set; }
+        public List<Motivation> _motivations { get; private set; }
 
 
-        // ################################################# CTOR #################################################
-        public MotivationSet(Dictionary<MotivationTypeEnum, Motivation> motivations)
+        // --------------------------------------------------------------------------------------------------------------------------------
+        
+        /// <summary>
+        /// The JSON Constructor must contain all traits of a motivation set;
+        /// _motivataions: if null, random motivaitons get generated, if there aren't exactly one for each type, the missing ones are assigned randomly,
+        /// and from the one that are too much, the first one gets assigned
+        /// </summary>
+        /// <param name="_motivations"></param>
+        [JsonConstructor]
+        public MotivationSet(List<Motivation> _motivations)
         {
-            this.motivations = motivations;
-            if(motivations.Count != 4)
-            {
-                string errMsg = "Each Unique Character must have exactly 4 Motivations, but " + motivations.Count + " were given.";
-                WfLogger.Log(this, LogLevel.ERROR, errMsg);
-                throw new PAPIException(errMsg);
+            this._motivations = new List<Motivation>();
 
+            if(_motivations == null)
+            {
+                _motivations = new List<Motivation>();
+            }
+
+            List<MotivationTypeEnum> missingMotivations = new List<MotivationTypeEnum>() 
+            { MotivationTypeEnum.STRENGTH, MotivationTypeEnum.FLAW, MotivationTypeEnum.DESIRE, MotivationTypeEnum.FEAR };
+
+            // Add first existing motivation of each type to this
+            foreach(Motivation motivation in _motivations)
+            {
+                if (missingMotivations.Contains(motivation._type))
+                {
+                    this._motivations.Add(motivation);
+                    missingMotivations.Remove(motivation._type);
+                }
+            }
+
+
+            // Fill out the motivationSet blanks with random motivations of the missing types
+            foreach(MotivationTypeEnum type in missingMotivations)
+            {
+                this._motivations.Add(MotivationFactory.RandomMotivation(type));
             }
         }
 
-        public MotivationSet()
-        {
-            motivations = new Dictionary<MotivationTypeEnum, Motivation>();
-            motivations.Add(MotivationTypeEnum.STRENGTH, null);
-            motivations.Add(MotivationTypeEnum.FLAW, null);
-            motivations.Add(MotivationTypeEnum.DESIRE, null);
-            motivations.Add(MotivationTypeEnum.FEAR, null);
-        }
+        // --------------------------------------------------------------------------------------------------------------------------------
 
-
-
-        // ################################################# GETTER #################################################
-        public Motivation GetMotivation(MotivationTypeEnum type) { return motivations[type]; }
-
-        public override string ToString()
-        {
-            return "Strength: " + motivations[MotivationTypeEnum.STRENGTH]
-                + ", Flaw: " + motivations[MotivationTypeEnum.FLAW]
-                + ", Desire: " + motivations[MotivationTypeEnum.DESIRE]
-                + ", Fear: " + motivations[MotivationTypeEnum.FEAR];
-        }
-
-
-        // ################################################# SETTER #################################################
-
-        public void AddMotivation(Motivation motivation)
-        {
-            if(motivations.ContainsKey(motivation.GetMotivationType()))
-            {
-                motivations[motivation.GetMotivationType()] = motivation;
-            }
-            else
-            {
-                motivations.Add(motivation.GetMotivationType(), motivation);
-            }
-        }
+        
 
     }
 }

@@ -5,6 +5,7 @@ using PAPI.DataTypes;
 using PAPI.Character.Characteristics;
 using PAPI.Character.General;
 using System.Text.Json.Serialization;
+using PAPI.Logging;
 
 namespace PAPI.Character.CharacterTypes
 {
@@ -23,13 +24,13 @@ namespace PAPI.Character.CharacterTypes
         /// <summary>
         /// The value of each hit that gets absorbed by the skin without damagin the character
         /// </summary>
-        public Soak _soak { get; private set; }
+        public Value _soak { get; private set; }
 
         /// <summary>
         /// The value & Threshold of the characters Wounds; If the character gets injured, the value rises
         /// by the amount of wounds
         /// </summary>
-        public Health _health { get; private set; }
+        public ThresholdValue _health { get; private set; }
 
         /// <summary>
         /// The number of SETBACK dice anyone gets, who attacks this character
@@ -94,14 +95,45 @@ namespace PAPI.Character.CharacterTypes
         /// <param name="_abilities"></param>
         /// <param name="_career"></param>
         [JsonConstructor]
-        public PAPICharacter(string _archetype, Species _species, Soak _soak, Health _health, Defense _defense, CharacteristicSet _characteristics, Equipment _equipment,
+        public PAPICharacter(string _archetype, Species _species, Value _soak, ThresholdValue _health, Defense _defense, CharacteristicSet _characteristics, Equipment _equipment,
             Inventory _inventory, List<PAPISkill> _skillSet, List<Ability> _abilities, Career _career)
         {
             this._archetype = (_archetype == null || _archetype == "") ? "Townspeople" : _archetype;
             this._species = (_species == null) ? SpeciesHandler.GetSpecies("Human") : _species;
+            this._soak = (_soak == null) ? new Value(0, null) : _soak;
+            this._characteristics = (_characteristics == null) ? CharacteristicFactory.RandomCharacteristicSet(0) : _characteristics;
+            this._health = (_health == null) ? 
+                new ThresholdValue((SpeciesHandler.GetInitialHealthThreshold(this._species) + _characteristics.Get(CharacteristicEnum.BRAWN)._value), 0, null) : _health;
+            this._defense = (_defense == null) ? new Defense(0, null, 0, null) : _defense;
+            this._equipment = (_equipment == null) ? new Equipment(null, null, null, null) : _equipment;
+            this._inventory = (_inventory == null) ? new Inventory(null, null) : _inventory;
+            this._skillSet = (_skillSet == null) ? new List<PAPISkill>() : _skillSet;
+            this._abilities = (_abilities == null) ? new List<Ability>() : _abilities;
+            this._career = _career;
 
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Character (" + this._species._name + 
+                " " + this._archetype + ")");
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Sets all member sof PAPICharacter invalid
+        /// </summary>
+        public void SetInvalid()
+        {
+            this._archetype = "INVALID_CHARACTER";
+            this._species = null;
+            this._soak = null;
+            this._characteristics = null;
+            this._health = null;
+            this._defense = null;
+            this._equipment = null;
+            this._inventory = null;
+            this._skillSet = null;
+            this._abilities = null;
+            this._career = null;
+        }
 
     }
 }

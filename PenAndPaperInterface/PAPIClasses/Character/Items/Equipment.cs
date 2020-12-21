@@ -1,84 +1,70 @@
 ﻿using PAPI.Item;
 using PAPI.Logging;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace PAPI.Character
 {
     public class Equipment
     {
-        // The armour that is equipped
-        private Armour _armour;
+        /// <summary>
+        /// The armour that is equipped
+        /// </summary>
+        public Armour _armour { get; private set; }
 
-        // The clothes that are equipped instead, under or over the equipped armour
-        private Clothing m_clothing;
+        /// <summary>
+        /// The clothes that are equipped instead, under or over the equipped armour
+        /// </summary>
+        public Clothing _clothing { get; private set; }
 
-        // The equipped weapons, number depends on hands
-        private List<Weapon> m_weapons;
+        /// <summary>
+        /// The equipped weapon(s), number depends on hands, antlers teeth, etc. of the wielding character
+        /// </summary>
+        public List<Weapon> _weapons { get; private set; }
+
+        /// <summary>
+        /// The readied weapon with which the character does not need an extra maneuvre to use
+        /// </summary>
+        public Weapon _readyWeapon { get; private set; }
 
 
         // --------------------------------------------------------------------------------------------------------------------------------
-        // Equipment must be equipped manually per item
-        public Equipment()
+
+        /// <summary>
+        /// The JSON Constructor must contain all possible traits of the equipment
+        /// _armour: if null, no armour is equipped; 
+        /// _clothing: if null, no clothing is equipped; 
+        /// _weapons: if null, no weapon is equipped and there can't be a readyWeapon; 
+        /// _readyWeapon: if null, no weapon is ready to use, this weapon must also be in the list of _weapons, if it's not, it is automatically added here; 
+        /// </summary>
+        /// <param name="_armour"></param>
+        /// <param name="_clothing"></param>
+        /// <param name="_weapons"></param>
+        /// <param name="_readyWeapon"></param>
+        [JsonConstructor]
+        public Equipment(Armour _armour, Clothing _clothing, List<Weapon> _weapons, Weapon _readyWeapon)
         {
-            _armour = null;
-            m_clothing = null;
-            m_weapons = null;
-            WfLogger.Log(this.GetType() + ".CTOR", LogLevel.INFO, "Constructed empty Equipment");
-        }
+            this._armour = _armour;
+            this._clothing = _clothing;
 
-        // --------------------------------------------------------------------------------------------------------------------------------
-
-
-        // Adds the given Item to Equipment if possible
-        public void Equip(EquipmentItem item)
-        {
-            if (item is Armour && _armour == null)
+            if(_weapons == null || _weapons.Count == 0)
             {
-                _armour = (Armour)item;
-            }
-            else if(item is Clothing && m_clothing == null)
-            {
-                m_clothing = (Clothing)item;
-            }
-            else if((item is ITwoHandWeapon && m_weapons.Count == 0) || (item is ISingleHandWeapon && m_weapons.Count < 2))
-            {
-                m_weapons.Add((Weapon)item);
+                this._weapons = new List<Weapon>();
+                _readyWeapon = null;
             }
             else
             {
-                WfLogger.Log(this.GetType() + ".Equip(EquipmentItem)", LogLevel.WARNING, item._name + " couldn't be equipped");
-                return;
+                this._weapons = _weapons;
             }
-            WfLogger.Log(this.GetType() + ".Equip(EquipmentItem)", LogLevel.INFO, "Equipped" + item._name);
-        }
 
-        // --------------------------------------------------------------------------------------------------------------------------------
-        // Renoves the given item from Equipment if possible
-        public EquipmentItem Unequip(EquipmentItem item)
-        {
-            EquipmentItem itemToReturn;
-            if(item == _armour)
+            this._readyWeapon = _readyWeapon;
+
+            if(this._readyWeapon != null && !this._weapons.Contains(this._readyWeapon))
             {
-                itemToReturn = new Armour((Armour)item);
-                _armour = null;
+                this._weapons.Add(this._readyWeapon);
             }
-            else if(item == m_clothing)
-            {
-                itemToReturn = new Armour((Armour)item);
-                m_clothing = null;
-            }
-            else if(m_weapons.Contains((Weapon)item))
-            {
-                itemToReturn = new Weapon((Weapon)item);
-                m_weapons.Remove((Weapon)item);
-            }
-            else
-            {
-                WfLogger.Log(this.GetType() + ".Unequip(EquipmentItem)", LogLevel.WARNING, item._name + " couln't be unequipped because it never has been equipped");
-                return null;
-            }
-            WfLogger.Log(this.GetType() + ".Unequip(EquipmentItem)", LogLevel.INFO, itemToReturn._name + " got unequipped");
-            return itemToReturn;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Equipment");
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------

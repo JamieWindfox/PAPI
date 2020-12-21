@@ -1,52 +1,49 @@
 ﻿using PAPI.Logging;
 using PAPI.Settings;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace PAPI.Character.Motivations
 {
     public class Motivation
     {
-        private readonly MotivationTypeEnum m_type;
-        private readonly string m_name;
-        private readonly Dictionary<Language, string> m_descriptions;
-        private readonly List<GenreEnum> m_availableGenres;
+        public MotivationTypeEnum _type { get; private set; }
+        public string _name { get; private set; }
+        public string _descriptionKey { get; private set; }
+        public List<GenreEnum> _availableGenres { get; private set; }
 
-        // ################################################# CTOR #################################################
-        public Motivation(MotivationTypeEnum type, string name, Dictionary<Language, string> descriptions, List<GenreEnum> genres)
+        // --------------------------------------------------------------------------------------------------------------------------------
+        
+        /// <summary>
+        /// The JSON Constructor must contain all triats of a motivation, 
+        /// _name: if null or empty, the motivation is invalid
+        /// _descriptionKey: if null or empty, the motivation does not have a description
+        /// _availableGenres: if null or empty, the motivation is available for all genres
+        /// </summary>
+        /// <param name="_type"></param>
+        /// <param name="_name"></param>
+        /// <param name="_descriptionKey"></param>
+        /// <param name="_availableGenres"></param>
+        [JsonConstructor]
+        public Motivation(MotivationTypeEnum _type, string _name, string _descriptionKey, List<GenreEnum> _availableGenres)
         {
-            m_type = type;
-            m_name = name;
-            m_descriptions = descriptions;
-            m_availableGenres = genres;
-        }
-
-        public Motivation(MotivationTypeEnum type, string name, Dictionary<Language, string> descriptions)
-        {
-            m_type = type;
-            m_name = name;
-            m_descriptions = descriptions;
-            m_availableGenres = GameSettings.GetAllGenres();
-        }
-
-        // ################################################# GETTER #################################################
-        public MotivationTypeEnum GetMotivationType() { return m_type; }
-        public string GetName() { return m_name; }
-        public Dictionary<Language, string> GetDescriptions() { return m_descriptions; }
-        public string GetDescription(Language language) { return m_descriptions[language]; }
-        public bool AvailableForGenre(GenreEnum genre) { return m_availableGenres.Contains(genre); }
-
-        // ################################################# SETTER #################################################
-        public void AddDescription(Language language, string description)
-        {
-            if (!m_descriptions.ContainsKey(language))
+            this._type = _type;
+            if(_name == null || _name == "")
             {
-                m_descriptions.Add(language, description);
+                this._name = "INVALID_MOTIVATION";
+                this._descriptionKey = "INVALID_DESCRIPTION";
+                this._availableGenres = new List<GenreEnum>();
+                return;
             }
-            else
-            {
-                string msg = "Can't add description (" + description + "); There already is a description for " + m_name + " in " + language;
-                WfLogger.Log(this.GetType() + ".AddDescription(Language, string)", LogLevel.WARNING, msg);
-            }
+
+            this._name = _name;
+            this._descriptionKey = _descriptionKey;
+            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
+                new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
+
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
     }
 }

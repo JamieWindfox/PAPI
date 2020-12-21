@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PAPI.Item
 {
-    class Weapon : EquipmentItem
+    public class Weapon : EquipmentItem
     {
         // TODO: Add weapon specific traits
 
@@ -16,7 +16,7 @@ namespace PAPI.Item
         { }
 
         public Weapon(Weapon other) : base(other._name, other._basePrice, other._encumbrance, other._rarity, other._condition,
-           other._qualities, other._availableGenres, other._description)
+           other._qualities, other._availableGenres, other._descriptionKey)
         {
             
         }

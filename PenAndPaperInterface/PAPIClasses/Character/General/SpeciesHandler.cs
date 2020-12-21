@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PAPI.Character.Characteristics;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,6 +12,8 @@ namespace PAPI.Character.General
             new Species("Human", null)
         };
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
         public static Species GetSpecies(string speciesName)
         {
             foreach(Species species in _allSpecies)
@@ -21,6 +24,30 @@ namespace PAPI.Character.General
                 }
             }
             return null;
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public static uint GetInitialHealthThreshold(Species species)
+        {
+            switch(species._name)
+            {
+                case "Human": return 10;
+
+                default: return 10;
+            }
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public static uint GetInitialStrainThreshold(Species species)
+        {
+            switch (species._name)
+            {
+                case "Human": return 10;
+
+                default: return 10;
+            }
         }
     }
 }
