@@ -9,12 +9,7 @@ namespace PAPI.Character.Characteristics
     public class CharacteristicSet
     {
         /// <summary>
-        /// BRAWN for strength, toughness, indicator for wound threshold
-        /// AGILITY for dexterity, hand-eye coordination and body control
-        /// INTELLECT for intelligence, education and mental acuity
-        /// CUNNING for crafting, cleverness, creativity and how devious someone is
-        /// WILLPOWER for discipline, self-control, mental fortitude and faith
-        /// PRESENCE for charisma, confidence and force of personality
+        /// This should contain one of each Characteristic
         /// </summary>
         public List<Characteristic> _characteristicList { get; private set; }
 
@@ -22,16 +17,34 @@ namespace PAPI.Character.Characteristics
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// The JSON Constructor must contain all possible traits of a characterisitc; each value must be an integer from 1 to 5
-        /// _characteristics: if null, every characteristic is set to 1
+        /// The JSON Constructor must contain all traits of a characterisitc
         /// </summary>
-        /// <param name="_characteristicList"></param>
+        /// <param name="_characteristicList">If null, or if a characterisitc is missing, those get generated and get the value 1</param>
         [JsonConstructor]
         public CharacteristicSet(List<Characteristic> _characteristicList)
         {
-            this._characteristicList = (_characteristicList == null || _characteristicList.Count != 6) ?
-                new List<Characteristic>(CharacteristicFactory.BaseCharacteristicList()) :
-                new List<Characteristic>(_characteristicList);
+            if(_characteristicList == null)
+            {
+                _characteristicList = new List<Characteristic>();
+            }
+            this._characteristicList = new List<Characteristic>();
+
+            List<CharacteristicEnum> missing = new List<CharacteristicEnum>() { CharacteristicEnum.BRAWN, CharacteristicEnum.AGILITY, CharacteristicEnum.INTELLECT,
+                CharacteristicEnum.CUNNING, CharacteristicEnum.WILLPOWER, CharacteristicEnum.PRESENCE};
+            
+            foreach(Characteristic characteristic in _characteristicList)
+            {
+                if(missing.Contains(characteristic._associatedEnum) && characteristic._value >= Characteristic.MIN_VALUE && characteristic._value <= Characteristic.MAX_VALUE)
+                {
+                    this._characteristicList.Add(characteristic);
+                    missing.Remove(characteristic._associatedEnum);
+                }
+            }
+
+            foreach(CharacteristicEnum charaEnum in missing)
+            {
+                this._characteristicList.Add(new Characteristic(charaEnum, 1, null));
+            }
 
             WfLogger.Log(this, LogLevel.DETAILED, "CharacteristicSet was created");
         }

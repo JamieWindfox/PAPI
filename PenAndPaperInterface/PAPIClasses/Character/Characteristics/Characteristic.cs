@@ -37,18 +37,18 @@ namespace PAPI.Character.Characteristics
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// The JSON Constructor must contain all possible traits of the characteristic
-        /// _value: Must be at least 1, and at most 5; If an invalid value is given, it is set to 1
-        /// _modification: if null, there is no modification on the characterisitc, no new characteristic should have a modification
+        /// The JSON Constructor must contain all traits of a characteristic
         /// </summary>
-        /// <param name="_associatedEnum"></param>
-
+        /// <param name="_associatedEnum">Possible values: Strength, Agility, Intellect, Cunning, Willpower, Presence</param>
+        /// <param name="_value">Must be at least 1, and at most 5; If an invalid value is given, it is set to 1</param>
+        /// <param name="_modification">If null, there is no modification on the characterisitc</param>
         [JsonConstructor]
         public Characteristic(CharacteristicEnum _associatedEnum, uint _value, Modification _modification)
         {
             this._associatedEnum = _associatedEnum;
             this._value = (_value < MIN_VALUE || _value > MAX_VALUE) ? 1 : _value;
             this._modification = (_modification == null) ? new Modification(0, GameTimeInterval.NOT_VALID) : _modification;
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Characteristic (" + _associatedEnum.ToString() + ", Value: " + _value + ")");
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -68,13 +68,12 @@ namespace PAPI.Character.Characteristics
             if(_value < MAX_VALUE)
             {
                 _value++;
-                WfLogger.Log(this, LogLevel.DEBUG, "Trained " + _associatedEnum.ToString() + " to value " + _value);
+                WfLogger.Log(this, LogLevel.DEBUG, "Trained " + _associatedEnum.ToString() + " to value: " + _value);
                 return true;
             }
             else
             {
-                WfLogger.Log(this, LogLevel.WARNING, "Tried to train " + _associatedEnum.ToString()
-                    + ", but it is already maximized (Value: " + _value + ")");
+                WfLogger.Log(this, LogLevel.WARNING, "Tried to train " + _associatedEnum.ToString() + ", but it is already maximized (Value = " + _value + ")");
                 return false;
             }
         }
@@ -82,16 +81,19 @@ namespace PAPI.Character.Characteristics
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// Returns the cost to train the characteristic once
         /// Fomula = NextRank * 10
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Exp cost to train the characteristic once</returns>
         public uint GetTrainingCost()
         {
-            uint cost = (this._value + 1) * 10;
-            WfLogger.Log(this, LogLevel.DETAILED, "Get Trainings Cost of " + this._associatedEnum.ToString()
-                + ": " + cost);
-            return cost;
+            if (_value < MAX_VALUE)
+            {
+                uint cost = (this._value + 1) * 10;
+                WfLogger.Log(this, LogLevel.DETAILED, "Trainings Cost of " + this._associatedEnum.ToString() + ": " + cost);
+                return cost;
+            }
+            WfLogger.Log(this, LogLevel.DETAILED, "Trainings Cost of " + this._associatedEnum.ToString() + ": 0, beacuse it is already maxed");
+            return 0;
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -99,12 +101,11 @@ namespace PAPI.Character.Characteristics
         /// <summary>
         /// Returns true, if the value is already maximized and therefore not applicable for training anymore
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True, if value is same as MAX Value</returns>
         public bool IsMaximized()
         {
-            bool isMax = (_value == MAX_VALUE);
-            WfLogger.Log(this, LogLevel.DETAILED, "Is " + this._associatedEnum.ToString() + " maximized: "
-                + isMax);
+            bool isMax = (_value >= MAX_VALUE);
+            WfLogger.Log(this, LogLevel.DETAILED, this._associatedEnum.ToString() + " maximized: " + isMax);
             return isMax;
         }
     }

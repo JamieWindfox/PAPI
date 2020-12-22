@@ -13,4 +13,10 @@
     <PackageReference Include="coverlet.collector" Version="1.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GameMasterPAPI\GameMasterPAPI.csproj" />
+    <ProjectReference Include="..\PAPIClasses\PAPIClasses.csproj" />
+    <ProjectReference Include="..\TextClient\TestClient.csproj" />
+  </ItemGroup>
+
 </Project>
