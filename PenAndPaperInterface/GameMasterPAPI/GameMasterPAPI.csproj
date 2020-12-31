@@ -42,6 +42,9 @@
     <Reference Include="Microsoft.CodeAnalysis, Version=3.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeAnalysis.Common.3.8.0\lib\netstandard2.0\Microsoft.CodeAnalysis.dll</HintPath>
     </Reference>
+    <Reference Include="PAPIClasses">
+      <HintPath>..\PAPIClasses\bin\Debug\netstandard2.0\PAPIClasses.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -105,16 +108,22 @@
       <DependentUpon>General_EN.resx</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Views\GameCreationView.cs">
+    <Compile Include="Views\Popups\DeleteGamePromptPopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\GameCreationView.Designer.cs">
+    <Compile Include="Views\Popups\DeleteGamePromptPopup.Designer.cs">
+      <DependentUpon>DeleteGamePromptPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Views\GameCreationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Views\GameCreationView.Designer.cs">
       <DependentUpon>GameCreationView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\GameView.cs">
+    <Compile Include="Views\Views\GameView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\GameView.Designer.cs">
+    <Compile Include="Views\Views\GameView.Designer.cs">
       <DependentUpon>GameView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\PAPIPopup.cs">
@@ -123,28 +132,28 @@
     <Compile Include="Views\PAPIPopup.Designer.cs">
       <DependentUpon>PAPIPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\PlayerSearchPopup.cs">
+    <Compile Include="Views\Popups\PlayerSearchPopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\PlayerSearchPopup.Designer.cs">
+    <Compile Include="Views\Popups\PlayerSearchPopup.Designer.cs">
       <DependentUpon>PlayerSearchPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\GameSelectionView.cs">
+    <Compile Include="Views\Views\GameSelectionView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\GameSelectionView.Designer.cs">
+    <Compile Include="Views\Views\GameSelectionView.Designer.cs">
       <DependentUpon>GameSelectionView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\GMOptionsView.cs">
+    <Compile Include="Views\Views\GMOptionsView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\GMOptionsView.Designer.cs">
+    <Compile Include="Views\Views\GMOptionsView.Designer.cs">
       <DependentUpon>GMOptionsView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\GMStartView.cs">
+    <Compile Include="Views\Views\GMStartView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\GMStartView.Designer.cs">
+    <Compile Include="Views\Views\GMStartView.Designer.cs">
       <DependentUpon>GMStartView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\IPAPIView.cs" />
@@ -155,11 +164,11 @@
     <Compile Include="Views\PAPIView.Designer.cs">
       <DependentUpon>PAPIView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ShowGameOverviewPopup.cs">
+    <Compile Include="Views\Views\ShowGameOverviewView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ShowGameOverviewPopup.Designer.cs">
-      <DependentUpon>ShowGameOverviewPopup.cs</DependentUpon>
+    <Compile Include="Views\Views\ShowGameOverviewView.Designer.cs">
+      <DependentUpon>ShowGameOverviewView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\TableLayoutHelper.cs" />
     <Compile Include="Views\ViewController.cs" />
@@ -176,28 +185,36 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>General_DE.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings\General_EN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>General_EN.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\GameCreationView.resx">
+    <EmbeddedResource Include="Views\Popups\DeleteGamePromptPopup.resx">
+      <DependentUpon>DeleteGamePromptPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Views\ShowGameOverviewView.resx">
+      <DependentUpon>ShowGameOverviewView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Views\GameCreationView.resx">
       <DependentUpon>GameCreationView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\GMOptionsView.resx">
+    <EmbeddedResource Include="Views\Views\GMOptionsView.resx">
       <DependentUpon>GMOptionsView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\GMStartView.resx">
+    <EmbeddedResource Include="Views\Views\GMStartView.resx">
       <DependentUpon>GMStartView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PAPIView.resx">
       <DependentUpon>PAPIView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\PlayerSearchPopup.resx">
+    <EmbeddedResource Include="Views\Popups\PlayerSearchPopup.resx">
       <DependentUpon>PlayerSearchPopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\GameSelectionView.resx">
+    <EmbeddedResource Include="Views\Views\GameSelectionView.resx">
       <DependentUpon>GameSelectionView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -213,12 +230,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PAPIClasses\PAPIClasses.csproj">
-      <Project>{70baca27-10d5-450a-a1d6-ed8f792227c9}</Project>
-      <Name>PAPIClasses</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />

@@ -2,42 +2,38 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PAPI.DataTypes
 {
     public class Modification
     {
-        // The value of the modification; A positive value adds to the value, a negative takes from it
-        private int m_value;
+        /// <summary>
+        /// The value of the modification; A positive value adds to the value, a negative takes from it
+        /// </summary>
+        public int _value { get; private set; }
 
-        // The Time intervall when the modification wears off
-        private GameTimeInterval m_wearoff;
+        /// <summary>
+        /// The Time intervall when the modification wears off
+        /// </summary>
+        public GameTimeIntervalEnum _wearoff { get; private set; }
 
 
-        // ################################################# CTORS #################################################
+        // --------------------------------------------------------------------------------------------------------------------------------
 
-        // A blank Modification has a value of 0 and has an INVALID wear off
-        public Modification() : this(0, GameTimeInterval.NOT_VALID)
-        { }
-
-        // A modification with just a value given is permanent
-        public Modification(int value) : this(value, GameTimeInterval.NOT_VALID)
-        { }
-
-        // A modification can be constructed with a value and a wearoff
-        public Modification(int value, GameTimeInterval wearoff)
+        /// <summary>
+        /// The JSON Constructor must contain all possible traits of a modification
+        /// </summary>
+        /// <param name="_value">if 0, there is no modification, if positive it increases the value, if negiative, it decreases the initial value</param>
+        /// <param name="_wearoff"></param>
+        [JsonConstructor]
+        public Modification(int _value, GameTimeIntervalEnum _wearoff)
         {
-            m_value = value;
-            m_wearoff = wearoff;
-            WfLogger.Log(this.GetType() + ".CTOR", LogLevel.DEBUG, "Constructed Modification (Value = " + m_value + ", Wearoff = " + m_wearoff);
+            this._value = _value;
+            this._wearoff = _wearoff;
+            WfLogger.Log(this, LogLevel.DEBUG, "Constructed Modification (Value = " + this._value + ", Wearoff = " + this._wearoff);
         }
 
-        // ################################################# GETTER #################################################
-        public int GetValue() { return m_value; }
-        public GameTimeInterval GetWearOff() { return m_wearoff; }
-
-
-        // ################################################# SETTER #################################################
 
     }
 }

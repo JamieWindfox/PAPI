@@ -2,6 +2,7 @@
 {
     public enum SkillTypeEnum
     {
+        NOT_VALID,
         GENERAL,
         MAGIC,
         COMBAT,

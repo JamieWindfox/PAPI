@@ -12,6 +12,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClient", "TextClient\Te
 		{70BACA27-10D5-450A-A1D6-ED8F792227C9} = {70BACA27-10D5-450A-A1D6-ED8F792227C9}
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAPITests", "PAPITests\PAPITests.csproj", "{9377EC25-6CFF-4467-9E41-0EC8F8AE19E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{23238476-4227-482A-AD44-7E33BEEC862F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23238476-4227-482A-AD44-7E33BEEC862F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23238476-4227-482A-AD44-7E33BEEC862F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9377EC25-6CFF-4467-9E41-0EC8F8AE19E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9377EC25-6CFF-4467-9E41-0EC8F8AE19E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9377EC25-6CFF-4467-9E41-0EC8F8AE19E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9377EC25-6CFF-4467-9E41-0EC8F8AE19E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

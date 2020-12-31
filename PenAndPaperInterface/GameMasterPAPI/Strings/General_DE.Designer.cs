@@ -88,11 +88,29 @@ namespace GameMasterPAPI.Strings {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Erstellt ähnelt.
+        /// </summary>
+        internal static string creationDateLabel {
+            get {
+                return ResourceManager.GetString("creationDateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Datum ähnelt.
         /// </summary>
         internal static string dateLabel {
             get {
                 return ResourceManager.GetString("dateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Wirklich das gespeicherte Spiel löschen? ähnelt.
+        /// </summary>
+        internal static string deleteGameQuestionLabel {
+            get {
+                return ResourceManager.GetString("deleteGameQuestionLabel", resourceCulture);
             }
         }
         
@@ -135,36 +153,36 @@ namespace GameMasterPAPI.Strings {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Magische Moderne ähnelt.
         /// </summary>
-        internal static string genre_magicalWorld {
+        internal static string genre_magical_world {
             get {
-                return ResourceManager.GetString("genre_magicalWorld", resourceCulture);
+                return ResourceManager.GetString("genre_magical_world", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Mittelalter Fantasy ähnelt.
         /// </summary>
-        internal static string genre_medievalFantasy {
+        internal static string genre_medieval_fantasy {
             get {
-                return ResourceManager.GetString("genre_medievalFantasy", resourceCulture);
+                return ResourceManager.GetString("genre_medieval_fantasy", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Nuklearer Fallout ähnelt.
         /// </summary>
-        internal static string genre_nuclearFallout {
+        internal static string genre_nuclear_fallout {
             get {
-                return ResourceManager.GetString("genre_nuclearFallout", resourceCulture);
+                return ResourceManager.GetString("genre_nuclear_fallout", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Space Opera ähnelt.
         /// </summary>
-        internal static string genre_spaceOpera {
+        internal static string genre_space_opera {
             get {
-                return ResourceManager.GetString("genre_spaceOpera", resourceCulture);
+                return ResourceManager.GetString("genre_space_opera", resourceCulture);
             }
         }
         
@@ -223,11 +241,29 @@ namespace GameMasterPAPI.Strings {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Zuletz gespeichert ähnelt.
+        /// </summary>
+        internal static string lastSaveLabel {
+            get {
+                return ResourceManager.GetString("lastSaveLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Neues Spiel ähnelt.
         /// </summary>
         internal static string newGameButton {
             get {
                 return ResourceManager.GetString("newGameButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Nein ähnelt.
+        /// </summary>
+        internal static string noButton {
+            get {
+                return ResourceManager.GetString("noButton", resourceCulture);
             }
         }
         
@@ -318,6 +354,15 @@ namespace GameMasterPAPI.Strings {
         internal static string welcomeLabel {
             get {
                 return ResourceManager.GetString("welcomeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ja ähnelt.
+        /// </summary>
+        internal static string yesButton {
+            get {
+                return ResourceManager.GetString("yesButton", resourceCulture);
             }
         }
     }

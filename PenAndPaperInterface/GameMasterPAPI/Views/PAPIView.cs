@@ -12,7 +12,7 @@ namespace GameMasterPAPI.Views
 {
     public partial class PAPIView : Form, ITranslatableView
     {
-        public Language activeLanguage { get; protected set; } = Language.NOT_VALID;
+        public LanguageEnum activeLanguage { get; protected set; } = LanguageEnum.NOT_VALID;
         public List<Button> m_buttons { get; protected set; }
 
 
@@ -42,7 +42,7 @@ namespace GameMasterPAPI.Views
                     button.Size = new Size(40, 40);
                 }
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "Button design was set to " + GameSettings.GetDesign());
+            WfLogger.Log(this, LogLevel.DEBUG, "Button design was set to " + GameSettings._activeDesign);
         }
 
         public void Open(PAPIView caller)
@@ -65,7 +65,7 @@ namespace GameMasterPAPI.Views
 
         protected void SetDesign()
         {
-            switch (GameSettings.GetDesign())
+            switch (GameSettings._activeDesign)
             {
                 case DesignEnum.MEDIEVAL:
                     BackColor = System.Drawing.Color.AntiqueWhite;
@@ -102,7 +102,7 @@ namespace GameMasterPAPI.Views
             ShowInTaskbar = true;
             AutoScaleMode = AutoScaleMode.None;
             ControlBox = true;
-            WfLogger.Log(this, LogLevel.DEBUG, "Design was set to " + GameSettings.GetDesign());
+            WfLogger.Log(this, LogLevel.DEBUG, "Design was set to " + GameSettings._activeDesign);
             SetButtonDesign();
         }
 
@@ -120,16 +120,16 @@ namespace GameMasterPAPI.Views
         {
             string resFile;
 
-            switch (GameSettings.GetLanguage())
+            switch (GameSettings._activeLanguage)
             {
-                case Language.GERMAN:
+                case LanguageEnum.GERMAN:
                     resFile = @".\Strings\\General_DE.resx";
-                    activeLanguage = Language.GERMAN;
+                    activeLanguage = LanguageEnum.GERMAN;
                     break;
-                case Language.ENGLISH:
+                case LanguageEnum.ENGLISH:
                 default:
                     resFile = @".\Strings\\General_EN.resx";
-                    activeLanguage = Language.ENGLISH;
+                    activeLanguage = LanguageEnum.ENGLISH;
                     break;
             }
             return resFile;

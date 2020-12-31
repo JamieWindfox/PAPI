@@ -14,12 +14,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>PAPIStringsEN.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Strings_EN.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings_EN.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="PAPIStringsEN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PAPIStringsEN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Strings_DE.resx">
+      <LastGenOutput>Strings_EN.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Strings_EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings_EN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

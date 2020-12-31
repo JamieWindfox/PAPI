@@ -17,7 +17,7 @@ namespace GameMasterPAPI.Views
 
         // Popups
         static public PAPIPopup playerSearchPopup { get; } = new PlayerSearchPopup();
-        static public PAPIPopup showGameOverviewPopup { get; } = new ShowGameOverviewPopup();
+        static public PAPIView showGameOverviewView { get; } = new ShowGameOverviewView();
 
         // Currently open
         public static PAPIView curentlyOpenView { get; set; } = startView;
