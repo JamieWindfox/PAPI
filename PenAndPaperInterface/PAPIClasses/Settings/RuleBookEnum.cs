@@ -1,6 +1,6 @@
 ﻿namespace PAPI.Settings
 {
-    public enum RuleBook
+    public enum RuleBookEnum
     {
         NO_RULE_BOOK,
         CORE_RULE_BOOK,

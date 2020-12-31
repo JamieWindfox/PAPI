@@ -30,8 +30,8 @@ namespace PAPI.Character.General
         {
             this._valueMelee = _valueMelee;
             this._valueRanged = _valueRanged;
-            this._modificationMelee = (_modificationMelee == null) ? new Modification(0, GameTimeInterval.NOT_VALID) : _modificationMelee;
-            this._modificationRanged = (_modificationRanged == null) ? new Modification(0, GameTimeInterval.NOT_VALID) : _modificationRanged;
+            this._modificationMelee = (_modificationMelee == null) ? new Modification(0, GameTimeIntervalEnum.NOT_VALID) : _modificationMelee;
+            this._modificationRanged = (_modificationRanged == null) ? new Modification(0, GameTimeIntervalEnum.NOT_VALID) : _modificationRanged;
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Defence: melee = " + _valueMelee + ", ranged = " + _valueRanged);
         }
 

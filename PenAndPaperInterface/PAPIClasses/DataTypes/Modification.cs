@@ -16,19 +16,18 @@ namespace PAPI.DataTypes
         /// <summary>
         /// The Time intervall when the modification wears off
         /// </summary>
-        public GameTimeInterval _wearoff { get; private set; }
+        public GameTimeIntervalEnum _wearoff { get; private set; }
 
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// The JSON Constructor must contain all possible traits of a modification
-        /// _value: if 0, there is no modification, if positive it increases the value, if negiative, it decreases the initial value
         /// </summary>
-        /// <param name="_value"></param>
+        /// <param name="_value">if 0, there is no modification, if positive it increases the value, if negiative, it decreases the initial value</param>
         /// <param name="_wearoff"></param>
         [JsonConstructor]
-        public Modification(int _value, GameTimeInterval _wearoff)
+        public Modification(int _value, GameTimeIntervalEnum _wearoff)
         {
             this._value = _value;
             this._wearoff = _wearoff;

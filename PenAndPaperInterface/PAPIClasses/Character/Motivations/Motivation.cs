@@ -13,17 +13,14 @@ namespace PAPI.Character.Motivations
         public List<GenreEnum> _availableGenres { get; private set; }
 
         // --------------------------------------------------------------------------------------------------------------------------------
-        
+
         /// <summary>
         /// The JSON Constructor must contain all triats of a motivation, 
-        /// _name: if null or empty, the motivation is invalid
-        /// _descriptionKey: if null or empty, the motivation does not have a description
-        /// _availableGenres: if null or empty, the motivation is available for all genres
         /// </summary>
-        /// <param name="_type"></param>
-        /// <param name="_name"></param>
-        /// <param name="_descriptionKey"></param>
-        /// <param name="_availableGenres"></param>
+        /// <param name="_type">The type of the motivation</param>
+        /// <param name="_name">if null or empty, the motivation is invalid</param>
+        /// <param name="_descriptionKey">if null or empty, the motivation does not have a description</param>
+        /// <param name="_availableGenres">if null or empty, the motivation is available for all genres</param>
         [JsonConstructor]
         public Motivation(MotivationTypeEnum _type, string _name, string _descriptionKey, List<GenreEnum> _availableGenres)
         {
@@ -40,7 +37,6 @@ namespace PAPI.Character.Motivations
             this._descriptionKey = _descriptionKey;
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
                 new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
-
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------

@@ -29,7 +29,7 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings.GetLanguage())
+            if (activeLanguage == GameSettings._activeLanguage)
             {
                 return;
             }
@@ -42,7 +42,7 @@ namespace GameMasterPAPI.Views
                 Translate(resSet, searchPlayerButton);
                 foundPlayerNameTextbox.Text = "";
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings.GetLanguage());
+            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings._activeLanguage);
         }
 
         private void SearchPlayer()

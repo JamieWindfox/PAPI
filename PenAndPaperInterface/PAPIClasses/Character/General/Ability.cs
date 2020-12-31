@@ -12,7 +12,7 @@ namespace PAPI.Character.General
     /// </summary>
     public class Ability
     {
-        public string _name { get; private set; }
+        public string _nameKey { get; private set; }
 
         /// <summary>
         /// Flags if the ability needs something to get activated or if its passive
@@ -32,7 +32,7 @@ namespace PAPI.Character.General
         /// <summary>
         /// The interval of how often the ability can be used
         /// </summary>
-        public GameTimeInterval _gameTimeInterval { get; private set; }
+        public GameTimeIntervalEnum _gameTimeInterval { get; private set; }
 
         /// <summary>
         /// The rule book and page, where a more detailed description can be found
@@ -40,50 +40,45 @@ namespace PAPI.Character.General
         public BookResource _bookResource { get; private set; }
         
         /// <summary>
-        /// Did the character already use the ability in the set time interval?
+        /// Did the character already use the ability in the set time interval or can it be used now?
         /// </summary>
-        public bool _isUsed { get; private set; }
+        public bool _isUsable { get; private set; }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// The JSON Constructor must contain all possible parameters for the ability
-        /// _name: must not be null or an empty string
-        /// _descriptions: if null, an empty Dictionary is created
-        /// _availableGenres: if null or empty, the ability is available for all settings
-        /// _isUsed: Should always be false in a newly created/learnt ability
+        /// The JSON Constructor must contain all traits for the ability
         /// </summary>
-        /// <param name="_name"></param>
+        /// <param name="_name">must not be null or an empty string</param>
         /// <param name="_isActive"></param>
-        /// <param name="_descriptionKey"></param>
-        /// <param name="_availableGenres"></param>
-        /// <param name="_gameTimeInterval"></param>
-        /// <param name="_ruleBookOfDescription"></param>
-        /// <param name="_pageOfDescription"></param>
-        /// <param name="_isUsed"></param>
+        /// <param name="_descriptionKey">if null, there is no description</param>
+        /// <param name="_availableGenres">if null or empty, the ability is available for all settings</param>
+        /// <param name="_gameTimeInterval">determines how often the ability can be used</param>
+        /// <param name="_bookResource"></param>
+        /// <param name="_isUsable">Should always be true in a newly created/learnt ability, set to false if used, set to true again after time interval</param>
         [JsonConstructor]
         public Ability(string _name, bool _isActive, string _descriptionKey, List<GenreEnum> _availableGenres,
-            GameTimeInterval _gameTimeInterval, BookResource _bookResource, bool _isUsed)
+            GameTimeIntervalEnum _gameTimeInterval, BookResource _bookResource, bool _isUsable)
         {
             if(_name == null || _name == "")
             {
-                this._name = "INVALID_ABILITY";
+                this._nameKey = "INVALID_ABILITY";
                 this._descriptionKey = "INVALID_DESCRIPTION";
                 this._availableGenres = new List<GenreEnum>();
-                this._gameTimeInterval = GameTimeInterval.NOT_VALID;
-                this._bookResource = new BookResource(RuleBook.NO_RULE_BOOK, 0);
+                this._gameTimeInterval = GameTimeIntervalEnum.NOT_VALID;
+                this._bookResource = new BookResource(RuleBookEnum.NO_RULE_BOOK, 0);
                 WfLogger.Log(this, LogLevel.WARNING, "An invalid Ability was created (_name was null or empty)");
                 return;
             }
-            this._name =  _name;
+            this._nameKey =  _name;
             this._isActive = _isActive;
             this._descriptionKey = (_descriptionKey == null) ? "INVALID_DESCRIPTION" : _descriptionKey;
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
                 this._availableGenres = new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
             this._gameTimeInterval = _gameTimeInterval;
             this._bookResource = _bookResource;
-            this._isUsed = _isUsed;
-            WfLogger.Log(this, LogLevel.DETAILED, "Ability '" + this._name + "' was created");
+            this._isUsable = _isUsable;
+            WfLogger.Log(this, LogLevel.DETAILED, "Ability '" + this._nameKey + "' was created");
         }
         // --------------------------------------------------------------------------------------------------------------------------------
 

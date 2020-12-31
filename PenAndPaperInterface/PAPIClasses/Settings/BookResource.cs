@@ -11,22 +11,20 @@ namespace PAPI.Settings
         /// <summary>
         /// Rule book an page of it where the resource can be found
         /// </summary>
-        public RuleBook _ruleBook { get; private set; }
+        public RuleBookEnum _ruleBook { get; private set; }
         public uint _page { get; private set; }
 
         /// <summary>
-        /// The JSON Constructor must contain all poiisble trait sof the book resource
-        /// _ruleBook: if No_RULE_BOOK, resource is invalid
-        /// _page: if 0, resource in invalid
+        /// The JSON Constructor must contain all traits of the book resource
         /// </summary>
-        /// <param name="_ruleBook"></param>
-        /// <param name="_page"></param>
+        /// <param name="_ruleBook">if No_RULE_BOOK, resource is invalid</param>
+        /// <param name="_page"> if 0, resource in invalid</param>
         [JsonConstructor]
-        public BookResource(RuleBook _ruleBook, uint _page)
+        public BookResource(RuleBookEnum _ruleBook, uint _page)
         {
-            if(_ruleBook == RuleBook.NO_RULE_BOOK || _page == 0)
+            if(_ruleBook == RuleBookEnum.NO_RULE_BOOK || _page == 0)
             {
-                _ruleBook = RuleBook.NO_RULE_BOOK;
+                _ruleBook = RuleBookEnum.NO_RULE_BOOK;
                 _page = 0;
                 return;
             }

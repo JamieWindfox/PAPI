@@ -1,0 +1,1485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppearanceFeatureEnum_ACNE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppearanceFeatureEnum_BEARD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppearanceFeatureEnum_BURN_SCAR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppearanceFeatureEnum_DECOLORATION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppearanceFeatureEnum_HAIRY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppearanceFeatureEnum_HORNS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppearanceFeatureEnum_MISSING_BODY_PART" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppearanceFeatureEnum_MOLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppearanceFeatureEnum_NOTHING_SPECIAL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppearanceFeatureEnum_PIERCING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppearanceFeatureEnum_SCAR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppearanceFeatureEnum_TATTOO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyHeightEnum_AVERAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyHeightEnum_GIANT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyHeightEnum_SHORT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyHeightEnum_TALL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyHeightEnum_TINY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_BUM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_CHEST" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_CHIN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_FINGER_OF_LEFT_HAND" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_FINGER_OF_RIGHT_HAND" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_FOREHEAD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_HEAD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_HIP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_JAW" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LEFT_ARM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LEFT_CHEEK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LEFT_EAR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LEFT_EYE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LEFT_FOOT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LEFT_HAND" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LEFT_KNEE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LEFT_LEG" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LEFT_SHOULDER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LEFT_THUMB" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LEFT_WING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LOWER_BACK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_LOWER_LIP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_NECK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_NOSE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_RIGHT_ARM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_RIGHT_CHEEK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_RIGHT_EAR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_RIGHT_EYE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_RIGHT_FOOT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_RIGHT_HAND" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_RIGHT_KNEE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_RIGHT_LEG" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_RIGHT_SHOULDER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_RIGHT_THUMB" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_RIGHT_WING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_STOMACH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_TAIL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_THROAT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_TOE_OF_LEFT_FOOT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_TOE_OF_RIGHT_FOOT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_UPPER_BACK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyPartEnum_UPPER_LIP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyTypeEnum_AVERAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyTypeEnum_BIG" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyTypeEnum_MUSCULAR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BodyTypeEnum_SKINNY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BookResource" xml:space="preserve">
+    <value>Resource</value>
+  </data>
+  <data name="CharacteristicEnum_AGILITY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CharacteristicEnum_BRAWN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CharacteristicEnum_CUNNING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CharacteristicEnum_INTELLECT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CharacteristicEnum_PRESENCE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CharacteristicEnum_WILLPOWER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_AMBER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_AZURE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_BEIGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_BLACK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_BLONDE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_BLUE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_BRIGHT_YELLOW" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_BRONZE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_BROWN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_CYAN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_DARK_BLUE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_DARK_BROWN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_DARK_FLESH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_DARK_GREEN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_DARK_GREY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_DARK_OLIVE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_DARK_RED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_GOLD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_GRASS_GREEN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_GREEN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_GREY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_HAZELNUT_BROWN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_LAVENDER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_LIGHT_BROWN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_LIGHT_FLESH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_LIGHT_GREEN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_LIGHT_GREY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_LIME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_MAGENTA" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_MEDIUM_FLESH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_NEON_BLUE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_NEON_GREEN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_NEON_ORANGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_NEON_PINK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_NEON_YELLOW" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_NONE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_OCEAN_BLUE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_OLIVE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_ORANGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_OTHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_PINK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_PLATIN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_PURPLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_RED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_ROSE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_SILVER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_SKY_BLUE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_SMARAGD_GREEN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_STEEL_GREY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_TRANSPARENT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_TURQUOISE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_VIOLET" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_WHITE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColorEnum_YELLOW" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_AGONIZING_WOUND" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_AGONIZING_WOUND_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_AT_THE_BRINK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_AT_THE_BRINK_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_BLEEDING_OUT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_BLEEDING_OUT_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_BLINDED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_BLINDED_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_BOWLED_OVER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_BOWLED_OVER_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_COMPROMISED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_COMPROMISED_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_CRIPPLED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_CRIPPLED_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_DEAD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_DEAD_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_DISCOURAGING_WOUND" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_DISCOURAGING_WOUND_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_DISTRACTED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_DISTRACTED_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_FEARSOME_WOUND" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_FEARSOME_WOUND_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_GRUESOME_INJURY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_GRUESOME_INJURY_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_HAMSTRUNG" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_HAMSTRUNG_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_HEAD_RINGER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_HEAD_RINGER_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_HORRIFIC_INJURY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_HORRIFIC_INJURY_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_KNOCKED_SENSELESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_KNOCKED_SENSELESS_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_MAIMED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_MAIMED_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_MINOR_NICK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_MINOR_NICK_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_OFF_BALANCE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_OFF_BALANCE_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_OVERPOWERED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_OVERPOWERED_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_SCATTERED_SENSES" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_SCATTERED_SENSES_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_SLIGHTLY_DAZED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_SLIGHTLY_DAZED_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_SLOWED_DOWN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_SLOWED_DOWN_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_STINGER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_STINGER_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_STUNNED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_STUNNED_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_SUDDEN_JOLT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_SUDDEN_JOLT_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_TEMPORARILY_DISABLED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_TEMPORARILY_DISABLED_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_THE_END_IS_NIGH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_THE_END_IS_NIGH_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_WINDED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CriticalInjury_WINDED_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DesignEnum_MEDIEVAL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DesignEnum_MODERN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Dice_D10" xml:space="preserve">
+    <value>D10</value>
+  </data>
+  <data name="Dice_D100" xml:space="preserve">
+    <value>D100</value>
+  </data>
+  <data name="DifficultyEnum_AVERAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DifficultyEnum_DAUNTING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DifficultyEnum_EASY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DifficultyEnum_FORMIDABLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DifficultyEnum_HARD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DifficultyEnum_IMPOSSIBLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DifficultyEnum_NONE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GameTimeIntervalEnum_ADVENTURE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GameTimeIntervalEnum_ENCOUNTER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GameTimeIntervalEnum_EXPIRED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GameTimeIntervalEnum_NOT_VALID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GameTimeIntervalEnum_PERMANENT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GameTimeIntervalEnum_SESSION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GameTimeIntervalEnum_TURN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GameTimeIntervalEnum_UNTIL_REMOVED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GenreEnum_MAGICAL_WORLD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GenreEnum_MEDIEVAL_FANTASY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GenreEnum_NOT_VALID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GenreEnum_NUCLEAR_FALLOUT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GenreEnum_REALMS_OF_TERRINOTH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GenreEnum_SPACE_OPERA" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_ARMY_SHORT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_BALD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_LONG" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_LONG_BRAIDED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_LONG_BUN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_LONG_COMBED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_LONG_CURLY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_LONG_DREADLOCKS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_LONG_OPEN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_LONG_PIGTAILS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_LONG_PONYTAIL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_LONG_UNTIDY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_LONG_WITH_SIDECUT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_LONG_WITH_UNDERCUT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_AFRO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_BRAIDED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_BUN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_COMBED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_CURLY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_DREADLOCKS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_IROKESE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_PIGTAILS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_PONYTAIL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_TIDY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_UNTIDY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_WITH_SIDECUT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_MEDIUM_WITH_UNDERCUT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_OTHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_SHORT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_SHORT_AFRO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_SHORT_COMBED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_SHORT_CURLY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_SHORT_GELLED_UP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_SHORT_IROKESE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_SHORT_TIDY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_SHORT_UNTIDY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_SHORT_WITH_SIDE_CUT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ItemConditionEnum_BROKEN_BEYOND_REPAIR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ItemConditionEnum_MAJOR_DAMAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ItemConditionEnum_MINOR_DAMAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ItemConditionEnum_MODERATE_DAMAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ItemConditionEnum_NOT_DAMAGED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ItemQuality_INVALID_ITEM_QUALITY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Item_INVALID_ITEM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LanguageEnum_ENGLISH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LanguageEnum_GERMAN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LanguageEnum_NOT_VALID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MotivationTypeEnum_DESIRE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MotivationTypeEnum_FEAR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MotivationTypeEnum_FLAW" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MotivationTypeEnum_STRENGTH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeEnum_ENGAGED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeEnum_EXTREME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeEnum_LONG" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeEnum_MEDIUM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeEnum_SHORT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RulebookEnum_ANDROID_SHADOW_OF_THE_BEANSTALK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RulebookEnum_CORE_RULE_BOOK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RulebookEnum_EXPANDED_PLAYER_GUIDE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RulebookEnum_KEYFORGE_SECRETS_OF_THE_CRUCIBLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RulebookEnum_NO_RULE_BOOK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RulebookEnum_REALMS_OF_TERRINOTH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_ALCHEMY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_ARCANE_MAGIC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_ATHLETICS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_BRAWL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_CHARM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_COERCION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_COOL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_COORDINATION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_CUSTOM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_DECEPTION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_DISCIPLINE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_DIVINE_MAGIC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_GUNNERY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_KNOWLEDGE_ADVENTURING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_KNOWLEDGE_FORBIDDEN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_KNOWLEDGE_GEOGRAPHY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_KNOWLEDGE_LORE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_LEADERSHIP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_MECHANICS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_MELEE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_MELEE_HEAVY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_MELEE_LIGHT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_NEGOTIATION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_NOT_VALID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_PERCEPTION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_PRIMAL_MAGIC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_RANGED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_RANGED_HEAVY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_RANGED_LIGHT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_RESILIENCE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_RIDING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_RUNES_MAGIC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_SKULDUGGERY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_STEALTH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_STREETWISE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_SURVIVAL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_VERSE_MAGIC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillEnum_VIGILANCE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillTypeEnum_COMBAT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillTypeEnum_CUSTOM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillTypeEnum_GENERAL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillTypeEnum_KNOWLEDGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillTypeEnum_MAGIC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillTypeEnum_NOT_VALID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkillTypeEnum_SOCIAL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinColorTypeEnum_HARD_SOFT_DIFFERENCE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinColorTypeEnum_MIXED_PATTERN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinColorTypeEnum_OTHER_PATTERN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinColorTypeEnum_PATCHY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinColorTypeEnum_SINGLE_COLOR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinColorTypeEnum_SPOTTED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinColorTypeEnum_STRIPED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinTypeEnum_FEATHERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinTypeEnum_FUR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinTypeEnum_MIXED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinTypeEnum_OTHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinTypeEnum_SCALES" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SkinTypeEnum_SKIN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Species_ANDROID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Species_CATFOLK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Species_DRAGON" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Species_DWARF" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Species_GHOUL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Species_GOBLIN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Species_HALF_MAGE" xml:space="preserve">
+    <value>Halfblood</value>
+  </data>
+  <data name="Species_HUMAN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Species_LIZARDFOLK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Species_MAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Species_NON_MAGE" xml:space="preserve">
+    <value>Muggle</value>
+  </data>
+  <data name="Species_ORC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_ABILITIES" xml:space="preserve">
+    <value>Abilities</value>
+  </data>
+  <data name="Translation_ABILITY" xml:space="preserve">
+    <value>Ability</value>
+  </data>
+  <data name="Translation_ACCEPT" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="Translation_ACTIVE" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Translation_APPEARANCE" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="Translation_APPEARANCE_DESCRIPTION" xml:space="preserve">
+    <value>Description (Appearance)</value>
+  </data>
+  <data name="Translation_ARCHETYPE" xml:space="preserve">
+    <value>Archetype</value>
+  </data>
+  <data name="Translation_ARMOUR" xml:space="preserve">
+    <value>Armour</value>
+  </data>
+  <data name="Translation_AVAILABLE_GENRES" xml:space="preserve">
+    <value>Available Genres</value>
+  </data>
+  <data name="Translation_BACKPACK" xml:space="preserve">
+    <value>Backpack</value>
+  </data>
+  <data name="Translation_BASE_PRICE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_BODY_HEIGHT" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="Translation_BODY_PART" xml:space="preserve">
+    <value>Body Part</value>
+  </data>
+  <data name="Translation_BODY_PART_FEATURES" xml:space="preserve">
+    <value>Special Features of body parts</value>
+  </data>
+  <data name="Translation_BODY_TYPE" xml:space="preserve">
+    <value>Body Type</value>
+  </data>
+  <data name="Translation_CANCEL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Translation_CAREER" xml:space="preserve">
+    <value>Career</value>
+  </data>
+  <data name="Translation_CAREER_SKILL" xml:space="preserve">
+    <value>Career Skill</value>
+  </data>
+  <data name="Translation_CAREER_SKILLS" xml:space="preserve">
+    <value>Career Skills</value>
+  </data>
+  <data name="Translation_CHARACTER" xml:space="preserve">
+    <value>Character</value>
+  </data>
+  <data name="Translation_CHARACTERISTIC" xml:space="preserve">
+    <value>Characteristic</value>
+  </data>
+  <data name="Translation_CHARACTERISTICS" xml:space="preserve">
+    <value>Characteristics</value>
+  </data>
+  <data name="Translation_CLOSE" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Translation_CLOTHING" xml:space="preserve">
+    <value>Clothing</value>
+  </data>
+  <data name="Translation_COLOR" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="Translation_CRITICAL_INJURIES" xml:space="preserve">
+    <value>Critical Injuries</value>
+  </data>
+  <data name="Translation_CRITICAL_INJURY" xml:space="preserve">
+    <value>Critical Injury</value>
+  </data>
+  <data name="Translation_CRTICAL_RATING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_CURRENT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_DAMAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_DEFENSE" xml:space="preserve">
+    <value>Defense</value>
+  </data>
+  <data name="Translation_DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Translation_DESIGN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_DIFFICULTY" xml:space="preserve">
+    <value>Difficulty</value>
+  </data>
+  <data name="Translation_ENCUMBRANCE" xml:space="preserve">
+    <value>Encumbrance</value>
+  </data>
+  <data name="Translation_ENEMY" xml:space="preserve">
+    <value>Enemy</value>
+  </data>
+  <data name="Translation_EQUIPMENT" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="Translation_EQUIPMENT_ITEM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_EQUIPPED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_EYES" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_EYE_COLOR" xml:space="preserve">
+    <value>Eye Color</value>
+  </data>
+  <data name="Translation_GAME_TIME_INTERVAL" xml:space="preserve">
+    <value>Can be used once a</value>
+  </data>
+  <data name="Translation_GENRE" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="Translation_GENRES" xml:space="preserve">
+    <value>Genres</value>
+  </data>
+  <data name="Translation_GROUP_SIZE" xml:space="preserve">
+    <value>Group size</value>
+  </data>
+  <data name="Translation_HAIR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_HAIR_COLOR" xml:space="preserve">
+    <value>Hair Color</value>
+  </data>
+  <data name="Translation_HAIR_STYLE" xml:space="preserve">
+    <value>Hair Style</value>
+  </data>
+  <data name="Translation_HEALTH" xml:space="preserve">
+    <value>Health</value>
+  </data>
+  <data name="Translation_HEAVY_WEAPON" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_INVALID" xml:space="preserve">
+    <value>Invalid</value>
+  </data>
+  <data name="Translation_INVALID_DESCRIPTION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_INVENTORY" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="Translation_IS_USABLE" xml:space="preserve">
+    <value>Can be used currently</value>
+  </data>
+  <data name="Translation_ITEM" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="Translation_ITEMS" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="Translation_ITEM_CONDITION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_ITEM_QUALITY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_LANGUAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_LIGHT_WEAPON" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_MELEE" xml:space="preserve">
+    <value>Melee</value>
+  </data>
+  <data name="Translation_MINION" xml:space="preserve">
+    <value>Minion</value>
+  </data>
+  <data name="Translation_MINION_GROUP" xml:space="preserve">
+    <value>Minion Group</value>
+  </data>
+  <data name="Translation_MODIFICATION" xml:space="preserve">
+    <value>Modification</value>
+  </data>
+  <data name="Translation_MOTIVATION" xml:space="preserve">
+    <value>Motivation</value>
+  </data>
+  <data name="Translation_MOTIVATIONS" xml:space="preserve">
+    <value>Motivations</value>
+  </data>
+  <data name="Translation_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Translation_NEMESIS" xml:space="preserve">
+    <value>Nemesis</value>
+  </data>
+  <data name="Translation_NEW" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="Translation_NO" xml:space="preserve">
+    <value>no</value>
+  </data>
+  <data name="Translation_NON_PLAYER_CHARACTER" xml:space="preserve">
+    <value>NPC</value>
+  </data>
+  <data name="Translation_PAGE" xml:space="preserve">
+    <value>page</value>
+  </data>
+  <data name="Translation_PASSIVE" xml:space="preserve">
+    <value>Passive</value>
+  </data>
+  <data name="Translation_PERMANENT_EFFECT" xml:space="preserve">
+    <value>Permanent Effect</value>
+  </data>
+  <data name="Translation_PLAYER_CHARACTER" xml:space="preserve">
+    <value>Player Character</value>
+  </data>
+  <data name="Translation_PRICE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_PRIMARY_COLOR" xml:space="preserve">
+    <value>Primary Color</value>
+  </data>
+  <data name="Translation_RANDOM" xml:space="preserve">
+    <value>Random</value>
+  </data>
+  <data name="Translation_RANGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_RANGED" xml:space="preserve">
+    <value>Ranged</value>
+  </data>
+  <data name="Translation_RARITY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_RELATIONSHIP_TO_PARTY" xml:space="preserve">
+    <value>Relationship to Party</value>
+  </data>
+  <data name="Translation_REQUIRED_SKILL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_RETURN" xml:space="preserve">
+    <value>Returm</value>
+  </data>
+  <data name="Translation_RIVAL" xml:space="preserve">
+    <value>Rival</value>
+  </data>
+  <data name="Translation_RULEBOOK" xml:space="preserve">
+    <value>Rulebook</value>
+  </data>
+  <data name="Translation_SECONDARY_COLOR" xml:space="preserve">
+    <value>Secondary Color</value>
+  </data>
+  <data name="Translation_SEVERITY" xml:space="preserve">
+    <value>Severity</value>
+  </data>
+  <data name="Translation_SKILL" xml:space="preserve">
+    <value>Skill</value>
+  </data>
+  <data name="Translation_SKILLS" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="Translation_SKILL_TYPE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_SKIN" xml:space="preserve">
+    <value>Skin</value>
+  </data>
+  <data name="Translation_SKIN_COLOR_TYPE" xml:space="preserve">
+    <value>Color Pattern (Skin)</value>
+  </data>
+  <data name="Translation_SKIN_TYPE" xml:space="preserve">
+    <value>Skin Type</value>
+  </data>
+  <data name="Translation_SOAK" xml:space="preserve">
+    <value>Soak</value>
+  </data>
+  <data name="Translation_SPECIES" xml:space="preserve">
+    <value>Species</value>
+  </data>
+  <data name="Translation_START" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Translation_STRAIN" xml:space="preserve">
+    <value>Strain</value>
+  </data>
+  <data name="Translation_TRESHOLD" xml:space="preserve">
+    <value>Threshold</value>
+  </data>
+  <data name="Translation_UNIQUE" xml:space="preserve">
+    <value>Unique</value>
+  </data>
+  <data name="Translation_VALUE" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="Translation_WEAPON" xml:space="preserve">
+    <value>Weapon</value>
+  </data>
+  <data name="Translation_WEAPONS" xml:space="preserve">
+    <value>Weapons</value>
+  </data>
+  <data name="Translation_WEAPON_HAND_TYPE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_WEAPON_SPECIAL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_WEAPON_TYPE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_WEARABLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_WEARABLE_ITEM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_WEAR_OFF" xml:space="preserve">
+    <value>wear off</value>
+  </data>
+  <data name="Translation_YES" xml:space="preserve">
+    <value>yes</value>
+  </data>
+  <data name="WeaponHandTypeEnum_BOTH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WeaponHandTypeEnum_SINGLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WeaponTypeEnum_HEAVY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WeaponTypeEnum_LIGHT" xml:space="preserve">
+    <value />
+  </data>
+</root>

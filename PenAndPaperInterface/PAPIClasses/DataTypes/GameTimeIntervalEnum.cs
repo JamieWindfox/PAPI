@@ -1,6 +1,6 @@
 ﻿namespace PAPI.DataTypes
 {
-    public enum GameTimeInterval
+    public enum GameTimeIntervalEnum
     {
         NOT_VALID,
         TURN,

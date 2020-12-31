@@ -47,7 +47,7 @@ namespace PAPI.Character.Characteristics
         {
             this._associatedEnum = _associatedEnum;
             this._value = (_value < MIN_VALUE || _value > MAX_VALUE) ? 1 : _value;
-            this._modification = (_modification == null) ? new Modification(0, GameTimeInterval.NOT_VALID) : _modification;
+            this._modification = (_modification == null) ? new Modification(0, GameTimeIntervalEnum.NOT_VALID) : _modification;
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Characteristic (" + _associatedEnum.ToString() + ", Value: " + _value + ")");
         }
 

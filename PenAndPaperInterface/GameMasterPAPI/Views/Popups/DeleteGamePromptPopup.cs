@@ -29,7 +29,7 @@ namespace GameMasterPAPI.Views
         /// </summary>
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings.GetLanguage())
+            if (activeLanguage == GameSettings._activeLanguage)
             {
                 return;
             }

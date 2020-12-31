@@ -59,7 +59,7 @@ namespace GameMasterPAPI.Views
                 return;
             }
             int rowNr = 1;
-            foreach (KeyValuePair<Player, PlayerCharacter> player in RunningGame.game.playerParty)
+            foreach (KeyValuePair<Player, PlayerCharacter> player in RunningGame.game._playerParty)
             {
                 WfLogger.Log(this, LogLevel.DEBUG, "Added player to list of players: " + player.Key._name + ", Character: " + player.Value._name);
                 playerCharacterPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
@@ -76,7 +76,7 @@ namespace GameMasterPAPI.Views
                 }, 1, rowNr);
                 playerCharacterPanel.Controls.Add(new Label()
                 {
-                    Text = player.Value._species._name,
+                    Text = player.Value._species._nameKey,
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
                 }, 2, rowNr);
                 playerCharacterPanel.Controls.Add(new Label()
@@ -99,8 +99,7 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if ((activeLanguage == GameSettings.GetLanguage() 
-                && RunningGame.game != null && shownGenre == RunningGame.game.genre))
+            if ((activeLanguage == GameSettings._activeLanguage && RunningGame.game != null && shownGenre == RunningGame.game._genre))
             {
                 return;
             }
@@ -110,11 +109,11 @@ namespace GameMasterPAPI.Views
                 Translate(resSet, genreLabel);
                 if (RunningGame.game != null)
                 {
-                    genreLabel.Text += ": " + TranslatedString(resSet, "genre_" + RunningGame.game.genre.ToString().ToLower());
+                    genreLabel.Text += ": " + TranslatedString(resSet, "genre_" + RunningGame.game._genre.ToString().ToLower());
                     Translate(resSet, creationDateLabel);
-                    creationDateLabel.Text += ": " + RunningGame.game.dateOfCreation.ToString();
+                    creationDateLabel.Text += ": " + RunningGame.game._dateOfCreation.ToString();
                     Translate(resSet, lastSaveLabel);
-                    lastSaveLabel.Text += ": " + RunningGame.game.lastSession.ToString();
+                    lastSaveLabel.Text += ": " + RunningGame.game._dateOfLastSession.ToString();
                 }
                 
             }

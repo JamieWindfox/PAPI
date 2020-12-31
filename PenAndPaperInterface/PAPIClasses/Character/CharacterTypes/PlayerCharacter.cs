@@ -1,7 +1,9 @@
-﻿using PAPI.Character.Characteristics;
+﻿using PAPI.Character.Appearance;
+using PAPI.Character.Characteristics;
 using PAPI.Character.General;
 using PAPI.Character.Motivations;
 using PAPI.Character.Skill;
+using PAPI.DataTypes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,38 +33,26 @@ namespace PAPI.Character.CharacterTypes
 
         /// <summary>
         /// /// The JSON Constructor must contain all possible traits of a PAPI Character
-        /// _archetype: if null, archetype is 'Player Character'
-        /// _species: if null, species is 'Human'
-        /// _soak: if null, soak is set automatically
-        /// _health: if null, health is set automatically, depending on species and brawn
-        /// _defense: if null, all defense is 0
-        /// _characteristics; if null, characteristics are random
-        /// _equipment: if null, nothing is equipped
-        /// _inventory: if null, the inventory is empty
-        /// _skillSet: if null, the character does not know any skills
-        /// _abilities: if null, the character does not have any abilities
-        /// _career: if null, the character doesn't have a career
-        /// _name: if null, the character is invlaid
-        /// _motiavationSet: if null, the character gets random motivations
         /// </summary>
-        /// <param name="_archetype"></param>
-        /// <param name="_species"></param>
-        /// <param name="_soak"></param>
-        /// <param name="_health"></param>
-        /// <param name="_defense"></param>
-        /// <param name="_characteristics"></param>
-        /// <param name="_equipment"></param>
-        /// <param name="_inventory"></param>
-        /// <param name="_skillSet"></param>
-        /// <param name="_abilities"></param>
-        /// <param name="_career"></param>
-        /// <param name="_name"></param>
-        /// <param name="_motivationSet"></param>        
+        /// <param name="_archetype">if null, archetype is 'Townpeople'</param>
+        /// <param name="_species">if null, species is 'Human'</param>
+        /// <param name="_soak">if null, soak is set automatically</param>
+        /// <param name="_health"> if null, health is set automatically, depending on species and brawn</param>
+        /// <param name="_defense">if null, all defense is 0</param>
+        /// <param name="_characteristics">if null, characteristics are random</param>
+        /// <param name="_equipment">if null, nothing is equipped</param>
+        /// <param name="_inventory">if null, the inventory is empty</param>
+        /// <param name="_skillSet">if null, the character does not know any skills</param>
+        /// <param name="_abilities">if null, the character does not have any abilities</param>
+        /// <param name="_career">if null, the character doesn't have a career</param>
+        /// <param name="_appearance">if null, the character/creature looks like an average specimen of its species</param>
+        /// <param name="_name">if null, the character is invlaid</param>
+        /// <param name="_motivationSet">if null, the character gets random motivations</param>        
         [JsonConstructor]
         public PlayerCharacter(string _archetype, Species _species, Value _soak, ThresholdValue _health, Defense _defense, 
             CharacteristicSet _characteristics, Equipment _equipment, Inventory _inventory, List<PAPISkill> _skillSet, 
-            List<Ability> _abilities, Career _career, string _name, MotivationSet _motivationSet) : 
-            base(_archetype, _species, _soak, _health, _defense, _characteristics, _equipment, _inventory, _skillSet, _abilities, _career)
+            List<Ability> _abilities, Career _career, CharacterAppearance _appearance, string _name, MotivationSet _motivationSet) : 
+            base(_archetype, _species, _soak, _health, _defense, _characteristics, _equipment, _inventory, _skillSet, _abilities, _career, _appearance)
         {
             if(_name == null || _name == "")
             {

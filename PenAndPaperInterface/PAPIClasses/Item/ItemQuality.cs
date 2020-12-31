@@ -1,25 +1,34 @@
 ﻿using PAPI.Settings;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace PAPI.Item
 {
     public class ItemQuality
     {
-        // The name of the item quality
-        private string m_name;
+        public string _nameKey { get; private set; }
 
-        // Does the quality has to be activated somehow?
-        private bool m_isActive;
+        /// <summary>
+        /// Does the quality has to be activated somehow?
+        /// </summary>
+        public bool _isActive { get; private set; }
 
-        // description in available languages
-        private Dictionary<Language, string> m_descriptions;
+        public string _descriptionKey { get; private set; }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
 
-        public ItemQuality(string name, bool active, Dictionary<Language, string> descriptions)
+        /// <summary>
+        /// The Json CTOR must contain all traitsof the item quality
+        /// </summary>
+        /// <param name="_nameKey"></param>
+        /// <param name="_isActive"></param>
+        /// <param name="_descriptionKey"></param>
+        [JsonConstructor]
+        public ItemQuality(string _nameKey, bool _isActive, string _descriptionKey)
         {
-            m_name = name;
-            m_isActive = active;
-            m_descriptions = descriptions;
+            this._nameKey = (_nameKey == null || _nameKey == "") ? "ItemQuality_INVALID_ITEM_QUALITY" : _nameKey;
+            this._isActive = _isActive;
+            this._descriptionKey = (_descriptionKey == null || _descriptionKey == "") ? "Translation_INVALID_DESCRIPTION" : _descriptionKey;
         }
     }
 }

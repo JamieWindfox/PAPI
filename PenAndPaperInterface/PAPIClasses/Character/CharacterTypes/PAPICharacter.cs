@@ -6,6 +6,7 @@ using PAPI.Character.Characteristics;
 using PAPI.Character.General;
 using System.Text.Json.Serialization;
 using PAPI.Logging;
+using PAPI.Character.Appearance;
 
 namespace PAPI.Character.CharacterTypes
 {
@@ -48,7 +49,7 @@ namespace PAPI.Character.CharacterTypes
         public Equipment _equipment { get; private set; }
 
         /// <summary>
-        /// All Items that are not equipped but on the character at the moment, e.g. in their backpack
+        /// All Items that are not equipped but on the character at the moment, e.g. in their backpack/body (even teeth or fur for creatures
         /// </summary>
         public Inventory _inventory { get; private set; }
 
@@ -67,36 +68,31 @@ namespace PAPI.Character.CharacterTypes
         /// </summary>
         public Career _career { get; private set; }
 
+        /// <summary>
+        /// The many features that make up the general appearance of a character/creature
+        /// </summary>
+        public CharacterAppearance _appearance { get; private set; }
+
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// The JSON Constructor must contain all possible traits of a PAPI Character
-        /// _archetype: if null, archetype is 'Townpeople'
-        /// _species: if null, species is 'Human'
-        /// _soak: if null, soak is set automatically
-        /// _health: if null, health is set automatically, depending on species and brawn
-        /// _defense: if null, all defense is 0
-        /// _characteristics; if null, characteristics are random
-        /// _equipment: if null, nothing is equipped
-        /// _inventory: if null, the inventory is empty
-        /// _skillSet: if null, the character does not know any skilsl
-        /// _abilities: if null, the character does not have any abilities
-        /// _career: if null, the character doesn't have a career
+        /// The JSON Constructor must contain all traits of a PAPI Character
         /// </summary>
-        /// <param name="_archetype"></param>
-        /// <param name="_species"></param>
-        /// <param name="_soak"></param>
-        /// <param name="_health"></param>
-        /// <param name="_defense"></param>
-        /// <param name="_characteristics"></param>
-        /// <param name="_equipment"></param>
-        /// <param name="_inventory"></param>
-        /// <param name="_skillSet"></param>
-        /// <param name="_abilities"></param>
-        /// <param name="_career"></param>
+        /// <param name="_archetype">if null, archetype is 'Townpeople'</param>
+        /// <param name="_species">if null, species is 'Human'</param>
+        /// <param name="_soak">if null, soak is set automatically</param>
+        /// <param name="_health"> if null, health is set automatically, depending on species and brawn</param>
+        /// <param name="_defense">if null, all defense is 0</param>
+        /// <param name="_characteristics">if null, characteristics are random</param>
+        /// <param name="_equipment">if null, nothing is equipped</param>
+        /// <param name="_inventory">if null, the inventory is empty</param>
+        /// <param name="_skillSet">if null, the character does not know any skills</param>
+        /// <param name="_abilities">if null, the character does not have any abilities</param>
+        /// <param name="_career">if null, the character doesn't have a career</param>
+        /// <param name="_appearance">if null, the character/creature looks like an average specimen of its species</param>
         [JsonConstructor]
         public PAPICharacter(string _archetype, Species _species, Value _soak, ThresholdValue _health, Defense _defense, CharacteristicSet _characteristics, Equipment _equipment,
-            Inventory _inventory, List<PAPISkill> _skillSet, List<Ability> _abilities, Career _career)
+            Inventory _inventory, List<PAPISkill> _skillSet, List<Ability> _abilities, Career _career, CharacterAppearance _appearance)
         {
             this._archetype = (_archetype == null || _archetype == "") ? "Townspeople" : _archetype;
             this._species = (_species == null) ? SpeciesHandler.GetSpecies("Human") : _species;
@@ -110,8 +106,9 @@ namespace PAPI.Character.CharacterTypes
             this._skillSet = (_skillSet == null) ? new List<PAPISkill>() : _skillSet;
             this._abilities = (_abilities == null) ? new List<Ability>() : _abilities;
             this._career = _career;
+            this._appearance = (_appearance == null) ? new CharacterAppearance(SpeciesHandler.GetAverageAppearance(this._species)) : _appearance;
 
-            WfLogger.Log(this, LogLevel.DETAILED, "Created new Character (" + this._species._name + 
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Character (" + this._species._nameKey + 
                 " " + this._archetype + ")");
         }
 

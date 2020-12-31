@@ -6,10 +6,14 @@ using System.Text.Json.Serialization;
 
 namespace PAPI.Item
 {
-    public class Armour : WearableItem
+    /// <summary>
+    /// A Wearable is an equippable Item that can be worn on the body; It usually has a soak and/or a defense value,
+    /// or is even just looks or has a special ability
+    /// </summary>
+    public class WearableItem : EquipmentItem
     {
-
-
+        public uint _soak { get; private set; }
+        public uint _defense { get; private set; }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
@@ -28,11 +32,23 @@ namespace PAPI.Item
         /// <param name="_soak">the value that gets subtracted from any incoming damage (except falling damage)</param>
         /// <param name="_defense">the number of setback dice any attacker gets if they target this items bearer</param>
         [JsonConstructor]
-        public Armour(string _name, uint _basePrice, uint _encumbrance, uint _rarity, ItemConditionEnum _condition,
-            Dictionary<ItemQuality, uint> _qualities, List<GenreEnum> _availableGenres, string _descriptionKey, bool _isEquipped,
+        public WearableItem(string _name, uint _basePrice, uint _encumbrance, uint _rarity, ItemConditionEnum _condition,
+            Dictionary<ItemQuality, uint> _qualities, List<GenreEnum> _availableGenres,string _descriptionKey, bool _isEquipped,
             uint _soak, uint _defense)
-            : base(_name, _basePrice, _encumbrance, _rarity, _condition, _qualities, _availableGenres, _descriptionKey, _isEquipped, _soak, _defense)
-        { }
+            : base(_name, _basePrice, _encumbrance, _rarity, _condition, _qualities, _availableGenres, _descriptionKey, _isEquipped)
+        {
+            this._soak = _soak;
+            this._defense = _defense;
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public WearableItem(WearableItem other) : base(other._name, other._basePrice, other._encumbrance, other._rarity, other._condition, 
+            other._qualities, other._availableGenres, other._descriptionKey, other._isEquipped)
+        {
+            this._soak = other._soak;
+            this._defense = other._defense;
+        }
 
         // --------------------------------------------------------------------------------------------------------------------------------
     }

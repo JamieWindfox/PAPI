@@ -27,7 +27,7 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings.GetLanguage() && cachedGmName == CurrentPlayer.player._name)
+            if (activeLanguage == GameSettings._activeLanguage && cachedGmName == CurrentPlayer.player._name)
             {
                 return;
             }
@@ -46,7 +46,7 @@ namespace GameMasterPAPI.Views
                 languageDropdown.Items[1] = TranslatedString(resSet, "languageGerman");
 
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings.GetLanguage());
+            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings._activeLanguage);
         }
 
         private void languageDropdown_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,22 +54,22 @@ namespace GameMasterPAPI.Views
             switch(languageDropdown.SelectedIndex)
             {
                 case 0:
-                    GameSettings.SetActiveLanguage(Language.ENGLISH);
+                    GameSettings.SetActiveLanguage(LanguageEnum.ENGLISH);
                     break;
                 case 1:
-                    GameSettings.SetActiveLanguage(Language.GERMAN);
+                    GameSettings.SetActiveLanguage(LanguageEnum.GERMAN);
                     break;
                 default:
-                    GameSettings.SetActiveLanguage(Language.ENGLISH);
+                    GameSettings.SetActiveLanguage(LanguageEnum.ENGLISH);
                     break;
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "Set language to " + GameSettings.GetLanguage() + " in dropdown");
+            WfLogger.Log(this, LogLevel.DEBUG, "Set language to " + GameSettings._activeLanguage + " in dropdown");
             SetTextToActiveLanguage();
         }
 
         private void designDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DesignEnum chosenDesign = GameSettings.GetDesign();
+            DesignEnum chosenDesign = GameSettings._activeDesign;
             switch (designDropdown.SelectedIndex)
             {
                 case 0:
@@ -81,10 +81,10 @@ namespace GameMasterPAPI.Views
                 default:
                     break;
             }
-            if (chosenDesign != GameSettings.GetDesign())
+            if (chosenDesign != GameSettings._activeDesign)
             {
                 GameSettings.SetActiveDesign(chosenDesign);
-                WfLogger.Log(this, LogLevel.DEBUG, "Set design to " + GameSettings.GetDesign() + " in dropdown");
+                WfLogger.Log(this, LogLevel.DEBUG, "Set design to " + GameSettings._activeDesign + " in dropdown");
                 SetDesign();
                 SetButtonDesign();
             }

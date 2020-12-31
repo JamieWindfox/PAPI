@@ -29,7 +29,7 @@ namespace GameMasterPAPI.Views
         // Set all text in this view to the given language
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings.GetLanguage() && m_gmName == CurrentPlayer.player._name)
+            if (activeLanguage == GameSettings._activeLanguage && m_gmName == CurrentPlayer.player._name)
             {
                 return;
             }

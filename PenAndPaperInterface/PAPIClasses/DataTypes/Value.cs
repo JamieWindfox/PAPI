@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PAPI.Character.General
+namespace PAPI.DataTypes
 {
     public class Value
     {
@@ -16,15 +16,14 @@ namespace PAPI.Character.General
 
         /// <summary>
         /// The JSON Constructor must contain all possible traits of a Value
-        /// _modification: if null, there is no modification on this Value
         /// </summary>
-        /// <param name="_value"></param>
-        /// <param name="_modification"></param>
+        /// <param name="_value">the current value as uint</param>
+        /// <param name="_modification">if null, there is no modification on this Value</param>
         [JsonConstructor]
         public Value(uint _value, Modification _modification)
         {
             this._value = _value;
-            this._modification = (_modification == null) ? new Modification(0, GameTimeInterval.NOT_VALID) : _modification;
+            this._modification = (_modification == null) ? new Modification(0, GameTimeIntervalEnum.NOT_VALID) : _modification;
             WfLogger.Log(this, LogLevel.DETAILED, "Created Soak (Value = " + this._value + ", Modification: " + this._modification._value + ")");
         }
     }

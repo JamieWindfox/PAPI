@@ -1,6 +1,6 @@
 ﻿namespace PAPI.Settings
 {
-    public enum Language
+    public enum LanguageEnum
     {
         ENGLISH,
         GERMAN,

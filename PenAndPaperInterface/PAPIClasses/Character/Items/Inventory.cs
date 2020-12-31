@@ -11,17 +11,15 @@ namespace PAPI.Character
         public Dictionary<PAPIItem, uint> _inventory { get; private set; }
 
         public Backpack _backpack { get; private set; }
-        
+
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// A JSON COnstructor must contain all possible traits of an inventory
-        /// _inventory: if null, inventory is empty; 
-        /// _backpack: if null, there is no backpack which could decrease the enumbrance of the inventory
+        /// A JSON COnstructor must contain all traits of an inventory
         /// </summary>
-        /// <param name="_inventory"></param>
-        /// <param name="_backpack"></param>
+        /// <param name="_inventory">if null, inventory is empty</param>
+        /// <param name="_backpack">if null, there is no backpack which could decrease the enumbrance of the inventory</param>
         [JsonConstructor]
         public Inventory(Dictionary<PAPIItem, uint> _inventory, Backpack _backpack)
         {

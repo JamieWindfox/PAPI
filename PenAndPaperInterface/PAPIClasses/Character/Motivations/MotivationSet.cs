@@ -11,13 +11,12 @@ namespace PAPI.Character.Motivations
 
 
         // --------------------------------------------------------------------------------------------------------------------------------
-        
+
         /// <summary>
         /// The JSON Constructor must contain all traits of a motivation set;
-        /// _motivataions: if null, random motivaitons get generated, if there aren't exactly one for each type, the missing ones are assigned randomly,
-        /// and from the one that are too much, the first one gets assigned
         /// </summary>
-        /// <param name="_motivations"></param>
+        /// <param name="_motivations">if null, random motivaitons get generated, if there aren't exactly one for each type, the missing ones are assigned randomly,
+        /// and from the one that are too much, the first one gets assigned</param>
         [JsonConstructor]
         public MotivationSet(List<Motivation> _motivations)
         {

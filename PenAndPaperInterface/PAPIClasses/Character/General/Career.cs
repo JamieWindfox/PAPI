@@ -24,16 +24,13 @@ namespace PAPI.Character
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        
+
         /// <summary>
         /// A JSON Constructor must contain all possible traits f a career;
-        /// _name: Must not be null or empty, otherwise the career is not valid
-        /// _availableGenres: if null or empty, the career is avaílable for all genres
-        /// _careerSkills: if less than 8 are given, the career is not valid
         /// </summary>
-        /// <param name="_name"></param>
-        /// <param name="_availableGenres"></param>
-        /// <param name="_careerSkills"></param>
+        /// <param name="_name">Must not be null or empty, otherwise the career is not valid</param>
+        /// <param name="_availableGenres">if null or empty, the career is avaílable for all genres</param>
+        /// <param name="_careerSkills">if less than 8 are given, the career is not valid</param>
         [JsonConstructor]
         public Career(string _name, List<GenreEnum> _availableGenres, List<PAPISkill> _careerSkills)
         {

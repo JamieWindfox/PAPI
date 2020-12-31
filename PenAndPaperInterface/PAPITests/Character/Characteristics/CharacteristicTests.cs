@@ -18,7 +18,7 @@ namespace PAPITests.Character.Characteristics
             // Arrange
             CharacteristicEnum charaEnum = CharacteristicEnum.BRAWN;
             uint value = 1;
-            Modification modification = new Modification(0, GameTimeInterval.NOT_VALID);
+            Modification modification = new Modification(0, GameTimeIntervalEnum.NOT_VALID);
 
             // Act
             Characteristic testCharacteristic = new Characteristic(charaEnum, value, modification);
@@ -36,7 +36,7 @@ namespace PAPITests.Character.Characteristics
             // Arrange
             CharacteristicEnum charaEnum = CharacteristicEnum.AGILITY;
             uint value = 5;
-            Modification modification = new Modification(0, GameTimeInterval.NOT_VALID);
+            Modification modification = new Modification(0, GameTimeIntervalEnum.NOT_VALID);
 
             // Act
             Characteristic testCharacteristic = new Characteristic(charaEnum, value, modification);
@@ -54,7 +54,7 @@ namespace PAPITests.Character.Characteristics
             // Arrange
             CharacteristicEnum charaEnum = CharacteristicEnum.INTELLECT;
             uint value = 0;
-            Modification modification = new Modification(0, GameTimeInterval.NOT_VALID);
+            Modification modification = new Modification(0, GameTimeIntervalEnum.NOT_VALID);
 
             // Act
             Characteristic testCharacteristic = new Characteristic(charaEnum, value, modification);
@@ -72,7 +72,7 @@ namespace PAPITests.Character.Characteristics
             // Arrange
             CharacteristicEnum charaEnum = CharacteristicEnum.CUNNING;
             uint value = 6;
-            Modification modification = new Modification(0, GameTimeInterval.NOT_VALID);
+            Modification modification = new Modification(0, GameTimeIntervalEnum.NOT_VALID);
 
             // Act
             Characteristic testCharacteristic = new Characteristic(charaEnum, value, modification);

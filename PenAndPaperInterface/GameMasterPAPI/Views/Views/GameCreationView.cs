@@ -90,7 +90,7 @@ namespace GameMasterPAPI.Views
                 Name = "removePlayerButton" + (players_removeButtons.Count + 1)
             };
 
-            string imagePath = GameDirectory.GetFilePath_Images(GameSettings.GetDesign()) + "\\cancel.bmp";
+            string imagePath = GameDirectory.GetFilePath_Images(GameSettings._activeDesign) + "\\cancel.bmp";
             Image image = Image.FromFile(imagePath);
             button.Image = (Image)(new Bitmap(image, new Size(40, 40)));
 
@@ -147,7 +147,7 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings.GetLanguage())
+            if (activeLanguage == GameSettings._activeLanguage)
             {
                 return;
             }
@@ -209,7 +209,7 @@ namespace GameMasterPAPI.Views
         {
             if (selectedGenre != GenreEnum.NOT_VALID)
             {
-                RunningGame.StartGame(new Game(selectedGenre));
+                RunningGame.StartGame(new Game(selectedGenre, RunningGame._gameMaster, null, DateTime.Now, DateTime.Now, null));
                 WfLogger.Log(this, LogLevel.DEBUG, "Create Game Button clicked, created a new Game (" + selectedGenre + ")");
                 foreach(KeyValuePair<Player, Button> playerButton in players_removeButtons)
                 {

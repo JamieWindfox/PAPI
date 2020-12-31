@@ -17,14 +17,6 @@ namespace GameMasterPAPI.Views
 {
     public partial class GameSelectionView : PAPIView, ITranslatableView
     {
-        // List of games for test, remove when permanent save games are implemented
-        private static List<Game> savedGames = new List<Game>() { 
-            { new Game(GenreEnum.NUCLEAR_FALLOUT) },
-            { new Game(GenreEnum.MAGICAL_WORLD) },
-            { new Game(GenreEnum.SPACE_OPERA)},
-            { new Game(GenreEnum.MEDIEVAL_FANTASY)}
-            };
-
         private Dictionary<Game, Button> m_gameButtons = new Dictionary<Game, Button>();
 
         public GameSelectionView()
@@ -59,12 +51,12 @@ namespace GameMasterPAPI.Views
             int rowNr = 1;
             foreach (Game game in savedGames)
             {
-                WfLogger.Log(this, LogLevel.DEBUG, "Added game to list of saved games: " + game.genre + ", " + game.lastSession.ToString());
+                WfLogger.Log(this, LogLevel.DEBUG, "Added game to list of saved games: " + game._genre + ", " + game._dateOfLastSession.ToString());
                 gameTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
                 gameTable.RowCount++;
                 gameTable.Controls.Add(new Label()
                 {
-                    Text = game.lastSession.ToString(),
+                    Text = game._dateOfLastSession.ToString(),
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
                     Width = 200
                 }, 1, rowNr);
@@ -79,7 +71,7 @@ namespace GameMasterPAPI.Views
                     Size = new Size(40, 40),
                     Name = "showButton" + rowNr
                 };
-                string imagePath = GameDirectory.GetFilePath_Images(GameSettings.GetDesign()) + "\\show.bmp";
+                string imagePath = GameDirectory.GetFilePath_Images(GameSettings._activeDesign) + "\\show.bmp";
                 Image image = Image.FromFile(imagePath);
                 button.Image = (Image)(new Bitmap(image, new Size(40, 40)));
                 gameTable.Controls.Add(button, 3, rowNr);
@@ -129,7 +121,7 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings.GetLanguage())
+            if (activeLanguage == GameSettings._activeLanguage)
             {
                 return;
             }
@@ -147,13 +139,13 @@ namespace GameMasterPAPI.Views
                 {
                     gameTable.Controls.Add(new Label()
                     {
-                        Text = TranslatedString(resSet, "genre_" + savedGames[row].genre.ToString().ToLower()),
+                        Text = TranslatedString(resSet, "genre_" + savedGames[row]._genre.ToString().ToLower()),
                         Anchor = AnchorStyles.Left | AnchorStyles.Top,
                         Width = 250
                     }, 0, row + 1);
                 }
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings.GetLanguage());
+            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings._activeLanguage);
         }
 
         private void returnButton_Click(object sender, EventArgs e)
@@ -175,14 +167,14 @@ namespace GameMasterPAPI.Views
                 int rowNumber = -1;
                 foreach (Control control in gameTable.Controls)
                 {
-                    if (control.Text == game.dateOfCreation.ToString())
+                    if (control.Text == game._dateOfCreation.ToString())
                     {
                         rowNumber = gameTable.GetRow(control);
                         break;
                     }
                 }
 
-                WfLogger.Log(this, LogLevel.DEBUG, "Remove Game " + game.genre + ", "  + game.dateOfCreation 
+                WfLogger.Log(this, LogLevel.DEBUG, "Remove Game " + game._genre + ", "  + game._dateOfCreation 
                     + " from List (Number " + rowNumber + ")");
                 savedGames.Remove(game);
 

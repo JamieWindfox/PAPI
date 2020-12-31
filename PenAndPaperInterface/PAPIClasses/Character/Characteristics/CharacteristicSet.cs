@@ -83,6 +83,10 @@ namespace PAPI.Character.Characteristics
             {
                 return Get(characteristicEnum).Training();
             }
+            else
+            {
+                return false;
+            }
             string excMsg = "The Characteristic Enum value " + characteristicEnum.ToString() 
                 + " wasn't found in the list of characteristics";
             WfLogger.Log(this, LogLevel.ERROR, excMsg);
