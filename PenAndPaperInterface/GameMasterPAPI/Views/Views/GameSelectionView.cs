@@ -17,7 +17,7 @@ namespace GameMasterPAPI.Views
 {
     public partial class GameSelectionView : PAPIView, ITranslatableView
     {
-        private Dictionary<Game, Button> m_gameButtons = new Dictionary<Game, Button>();
+        private Dictionary<Game, Button> _gameButtons = new Dictionary<Game, Button>();
 
         public GameSelectionView()
         {
@@ -75,7 +75,7 @@ namespace GameMasterPAPI.Views
                 Image image = Image.FromFile(imagePath);
                 button.Image = (Image)(new Bitmap(image, new Size(40, 40)));
                 gameTable.Controls.Add(button, 3, rowNr);
-                m_gameButtons.Add(game, button);
+                _gameButtons.Add(game, button);
                 gameTable.Controls.Add(button, 2, rowNr++);
                 m_buttons.Add(button);
             }
@@ -92,7 +92,7 @@ namespace GameMasterPAPI.Views
             SetButtonDesign();
 
             // Add eventhandler for click on every show game button
-            foreach (KeyValuePair<Game, Button> button in m_gameButtons)
+            foreach (KeyValuePair<Game, Button> button in _gameButtons)
             {
                 button.Value.Click += GameButton_Click;
             }
@@ -101,7 +101,7 @@ namespace GameMasterPAPI.Views
         private void GameButton_Click(object sender, EventArgs e)
         {
             Game selectedGame = null;
-            foreach(KeyValuePair<Game, Button> gameButton in m_gameButtons)
+            foreach(KeyValuePair<Game, Button> gameButton in _gameButtons)
             {
                 if(gameButton.Value == (Button)sender)
                 {

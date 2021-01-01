@@ -9,9 +9,12 @@ namespace PAPI.Settings
 {
     public static class CurrentPlayer
     {
-        public static Player player = new Player("NO VALID NAME", GetLocalIPAddress());
+        public static Player _player { get; private set; } = new Player("NO VALID NAME", GetLocalIPAddress());
+        public static string _localIp { get; private set; } = GetLocalIPAddress();
 
-        public static string GetLocalIPAddress()
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        private static string GetLocalIPAddress()
         {
             var host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (var ip in host.AddressList)

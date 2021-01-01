@@ -23,7 +23,7 @@ namespace PAPI.Character.CharacterTypes
         public Species _species { get; private set; }
 
         /// <summary>
-        /// The value of each hit that gets absorbed by the skin without damagin the character
+        /// The value of each hit that gets absorbed by the skin without damaging the character
         /// </summary>
         public Value _soak { get; private set; }
 
@@ -73,6 +73,13 @@ namespace PAPI.Character.CharacterTypes
         /// </summary>
         public CharacterAppearance _appearance { get; private set; }
 
+        /// <summary>
+        /// Gender and sexual/romantic orientation of the character
+        /// </summary>
+        public GenderEnum _gender { get; private set; }
+        public List<GenderEnum> _genderPreferences { get; private set; }
+
+
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
@@ -90,9 +97,12 @@ namespace PAPI.Character.CharacterTypes
         /// <param name="_abilities">if null, the character does not have any abilities</param>
         /// <param name="_career">if null, the character doesn't have a career</param>
         /// <param name="_appearance">if null, the character/creature looks like an average specimen of its species</param>
+        /// <param name="_gender">the characters gender</param>
+        /// <param name="_genderPreferences">the characters sexcual/romabtic preferences, if null it is none</param>
         [JsonConstructor]
-        public PAPICharacter(string _archetype, Species _species, Value _soak, ThresholdValue _health, Defense _defense, CharacteristicSet _characteristics, Equipment _equipment,
-            Inventory _inventory, List<PAPISkill> _skillSet, List<Ability> _abilities, Career _career, CharacterAppearance _appearance)
+        public PAPICharacter(string _archetype, Species _species, Value _soak, ThresholdValue _health, Defense _defense, CharacteristicSet _characteristics, 
+            Equipment _equipment, Inventory _inventory, List<PAPISkill> _skillSet, List<Ability> _abilities, Career _career, CharacterAppearance _appearance, 
+            GenderEnum _gender, List<GenderEnum> _genderPreferences)
         {
             this._archetype = (_archetype == null || _archetype == "") ? "Townspeople" : _archetype;
             this._species = (_species == null) ? SpeciesHandler.GetSpecies("Human") : _species;
@@ -107,6 +117,8 @@ namespace PAPI.Character.CharacterTypes
             this._abilities = (_abilities == null) ? new List<Ability>() : _abilities;
             this._career = _career;
             this._appearance = (_appearance == null) ? new CharacterAppearance(SpeciesHandler.GetAverageAppearance(this._species)) : _appearance;
+            this._gender = _gender;
+            this._genderPreferences = (_genderPreferences == null || _genderPreferences.Count == 0) ? new List<GenderEnum>() { GenderEnum.NONE } : _genderPreferences;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Character (" + this._species._nameKey + 
                 " " + this._archetype + ")");

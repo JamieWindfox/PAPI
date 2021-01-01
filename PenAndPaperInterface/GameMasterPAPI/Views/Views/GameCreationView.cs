@@ -156,8 +156,8 @@ namespace GameMasterPAPI.Views
             {
                 Translate(resSet, gmNameLabel);
                 Translate(resSet, gmIPLabel);
-                gmNameLabel.Text += ": " + CurrentPlayer.player._name;
-                gmIPLabel.Text += ": " + CurrentPlayer.player.ip;
+                gmNameLabel.Text += ": " + CurrentPlayer._player._name;
+                gmIPLabel.Text += ": " + CurrentPlayer._player.ip;
                 Translate(resSet, cancelButton);
                 Translate(resSet, addPlayerButton);
                 Translate(resSet, createGameButton);

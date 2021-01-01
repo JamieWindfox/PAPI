@@ -738,119 +738,83 @@
   <data name="GenreEnum_SPACE_OPERA" xml:space="preserve">
     <value />
   </data>
-  <data name="HairStyleEnum_ARMY_SHORT" xml:space="preserve">
+  <data name="HairLengthEnum_LONG" xml:space="preserve">
     <value />
+  </data>
+  <data name="HairLengthEnum_MEDIUM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairLengthEnum_MEDIUM_LONG" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairLengthEnum_MEDIUM_SHORT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairLengthEnum_NONE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairLengthEnum_SHORT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairLengthEnum_VERY_LONG" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairLengthEnum_VERY_SHORT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HairStyleEnum_AFRO" xml:space="preserve">
+    <value>CURLY,</value>
+  </data>
+  <data name="HairStyleEnum_ARMY" xml:space="preserve">
+    <value>ARMY,</value>
   </data>
   <data name="HairStyleEnum_BALD" xml:space="preserve">
-    <value />
+    <value>BALD,</value>
   </data>
-  <data name="HairStyleEnum_LONG" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_BRAIDED" xml:space="preserve">
+    <value>BUN,</value>
   </data>
-  <data name="HairStyleEnum_LONG_BRAIDED" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_COMBED" xml:space="preserve">
+    <value>GELLED_UP,</value>
   </data>
-  <data name="HairStyleEnum_LONG_BUN" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_CURLY" xml:space="preserve">
+    <value>PONYTAIL,</value>
   </data>
-  <data name="HairStyleEnum_LONG_COMBED" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_DREADLOCKS" xml:space="preserve">
+    <value>BRAIDED,</value>
   </data>
-  <data name="HairStyleEnum_LONG_CURLY" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_GELLED_UP" xml:space="preserve">
+    <value>AFRO,</value>
   </data>
-  <data name="HairStyleEnum_LONG_DREADLOCKS" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_IROKESE" xml:space="preserve">
+    <value>COMBED,</value>
   </data>
-  <data name="HairStyleEnum_LONG_OPEN" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_LONG_PIGTAILS" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_LONG_PONYTAIL" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_LONG_UNTIDY" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_LONG_WITH_SIDECUT" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_LONG_WITH_UNDERCUT" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_AFRO" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_BRAIDED" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_BUN" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_COMBED" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_CURLY" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_DREADLOCKS" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_IROKESE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_PIGTAILS" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_PONYTAIL" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_TIDY" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_UNTIDY" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_WITH_SIDECUT" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_MEDIUM_WITH_UNDERCUT" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_OPEN" xml:space="preserve">
+    <value>OPEN,</value>
   </data>
   <data name="HairStyleEnum_OTHER" xml:space="preserve">
-    <value />
+    <value>OTHER</value>
   </data>
-  <data name="HairStyleEnum_SHORT" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_PIGTAILS" xml:space="preserve">
+    <value>DREADLOCKS,</value>
   </data>
-  <data name="HairStyleEnum_SHORT_AFRO" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_PONYTAIL" xml:space="preserve">
+    <value>PIGTAILS,</value>
   </data>
-  <data name="HairStyleEnum_SHORT_COMBED" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_SIDE_CUT" xml:space="preserve">
+    <value>SIDE_CUT,</value>
   </data>
-  <data name="HairStyleEnum_SHORT_CURLY" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_TIDY" xml:space="preserve">
+    <value>TIDY,</value>
   </data>
-  <data name="HairStyleEnum_SHORT_GELLED_UP" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_UNDERCUT" xml:space="preserve">
+    <value>IROKESE,</value>
   </data>
-  <data name="HairStyleEnum_SHORT_IROKESE" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_UNTIDY" xml:space="preserve">
+    <value>UNTIDY,</value>
   </data>
-  <data name="HairStyleEnum_SHORT_TIDY" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_SHORT_UNTIDY" xml:space="preserve">
-    <value />
-  </data>
-  <data name="HairStyleEnum_SHORT_WITH_SIDE_CUT" xml:space="preserve">
-    <value />
+  <data name="HairStyleEnum_WAVEY" xml:space="preserve">
+    <value>WAVEY,</value>
   </data>
   <data name="ItemConditionEnum_BROKEN_BEYOND_REPAIR" xml:space="preserve">
     <value />

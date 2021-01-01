@@ -1926,14 +1926,95 @@ namespace PAPIClasses.Resources {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_ARMY_SHORT {
+        internal static string HairLengthEnum_LONG {
             get {
-                return ResourceManager.GetString("HairStyleEnum_ARMY_SHORT", resourceCulture);
+                return ResourceManager.GetString("HairLengthEnum_LONG", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string HairLengthEnum_MEDIUM {
+            get {
+                return ResourceManager.GetString("HairLengthEnum_MEDIUM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string HairLengthEnum_MEDIUM_LONG {
+            get {
+                return ResourceManager.GetString("HairLengthEnum_MEDIUM_LONG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string HairLengthEnum_MEDIUM_SHORT {
+            get {
+                return ResourceManager.GetString("HairLengthEnum_MEDIUM_SHORT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string HairLengthEnum_NONE {
+            get {
+                return ResourceManager.GetString("HairLengthEnum_NONE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string HairLengthEnum_SHORT {
+            get {
+                return ResourceManager.GetString("HairLengthEnum_SHORT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string HairLengthEnum_VERY_LONG {
+            get {
+                return ResourceManager.GetString("HairLengthEnum_VERY_LONG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string HairLengthEnum_VERY_SHORT {
+            get {
+                return ResourceManager.GetString("HairLengthEnum_VERY_SHORT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die CURLY, ähnelt.
+        /// </summary>
+        internal static string HairStyleEnum_AFRO {
+            get {
+                return ResourceManager.GetString("HairStyleEnum_AFRO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die ARMY, ähnelt.
+        /// </summary>
+        internal static string HairStyleEnum_ARMY {
+            get {
+                return ResourceManager.GetString("HairStyleEnum_ARMY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die BALD, ähnelt.
         /// </summary>
         internal static string HairStyleEnum_BALD {
             get {
@@ -1942,241 +2023,70 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die BUN, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_LONG {
+        internal static string HairStyleEnum_BRAIDED {
             get {
-                return ResourceManager.GetString("HairStyleEnum_LONG", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_BRAIDED", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die GELLED_UP, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_LONG_BRAIDED {
+        internal static string HairStyleEnum_COMBED {
             get {
-                return ResourceManager.GetString("HairStyleEnum_LONG_BRAIDED", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_COMBED", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die PONYTAIL, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_LONG_BUN {
+        internal static string HairStyleEnum_CURLY {
             get {
-                return ResourceManager.GetString("HairStyleEnum_LONG_BUN", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_CURLY", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die BRAIDED, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_LONG_COMBED {
+        internal static string HairStyleEnum_DREADLOCKS {
             get {
-                return ResourceManager.GetString("HairStyleEnum_LONG_COMBED", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_DREADLOCKS", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die AFRO, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_LONG_CURLY {
+        internal static string HairStyleEnum_GELLED_UP {
             get {
-                return ResourceManager.GetString("HairStyleEnum_LONG_CURLY", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_GELLED_UP", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die COMBED, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_LONG_DREADLOCKS {
+        internal static string HairStyleEnum_IROKESE {
             get {
-                return ResourceManager.GetString("HairStyleEnum_LONG_DREADLOCKS", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_IROKESE", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die OPEN, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_LONG_OPEN {
+        internal static string HairStyleEnum_OPEN {
             get {
-                return ResourceManager.GetString("HairStyleEnum_LONG_OPEN", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_OPEN", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_LONG_PIGTAILS {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_LONG_PIGTAILS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_LONG_PONYTAIL {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_LONG_PONYTAIL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_LONG_UNTIDY {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_LONG_UNTIDY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_LONG_WITH_SIDECUT {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_LONG_WITH_SIDECUT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_LONG_WITH_UNDERCUT {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_LONG_WITH_UNDERCUT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_AFRO {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_AFRO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_BRAIDED {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_BRAIDED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_BUN {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_BUN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_COMBED {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_COMBED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_CURLY {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_CURLY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_DREADLOCKS {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_DREADLOCKS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_IROKESE {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_IROKESE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_PIGTAILS {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_PIGTAILS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_PONYTAIL {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_PONYTAIL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_TIDY {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_TIDY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_UNTIDY {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_UNTIDY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_WITH_SIDECUT {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_WITH_SIDECUT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_MEDIUM_WITH_UNDERCUT {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_MEDIUM_WITH_UNDERCUT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die OTHER ähnelt.
         /// </summary>
         internal static string HairStyleEnum_OTHER {
             get {
@@ -2185,83 +2095,65 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die DREADLOCKS, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_SHORT {
+        internal static string HairStyleEnum_PIGTAILS {
             get {
-                return ResourceManager.GetString("HairStyleEnum_SHORT", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_PIGTAILS", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die PIGTAILS, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_SHORT_AFRO {
+        internal static string HairStyleEnum_PONYTAIL {
             get {
-                return ResourceManager.GetString("HairStyleEnum_SHORT_AFRO", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_PONYTAIL", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die SIDE_CUT, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_SHORT_COMBED {
+        internal static string HairStyleEnum_SIDE_CUT {
             get {
-                return ResourceManager.GetString("HairStyleEnum_SHORT_COMBED", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_SIDE_CUT", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die TIDY, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_SHORT_CURLY {
+        internal static string HairStyleEnum_TIDY {
             get {
-                return ResourceManager.GetString("HairStyleEnum_SHORT_CURLY", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_TIDY", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die IROKESE, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_SHORT_GELLED_UP {
+        internal static string HairStyleEnum_UNDERCUT {
             get {
-                return ResourceManager.GetString("HairStyleEnum_SHORT_GELLED_UP", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_UNDERCUT", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die UNTIDY, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_SHORT_IROKESE {
+        internal static string HairStyleEnum_UNTIDY {
             get {
-                return ResourceManager.GetString("HairStyleEnum_SHORT_IROKESE", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_UNTIDY", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die WAVEY, ähnelt.
         /// </summary>
-        internal static string HairStyleEnum_SHORT_TIDY {
+        internal static string HairStyleEnum_WAVEY {
             get {
-                return ResourceManager.GetString("HairStyleEnum_SHORT_TIDY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_SHORT_UNTIDY {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_SHORT_UNTIDY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string HairStyleEnum_SHORT_WITH_SIDE_CUT {
-            get {
-                return ResourceManager.GetString("HairStyleEnum_SHORT_WITH_SIDE_CUT", resourceCulture);
+                return ResourceManager.GetString("HairStyleEnum_WAVEY", resourceCulture);
             }
         }
         
