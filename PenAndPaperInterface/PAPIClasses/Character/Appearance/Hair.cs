@@ -35,11 +35,26 @@ namespace PAPI.Character.Appearance
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// creates new default hair (Bald)
+        /// </summary>
         public Hair() : this(HairStyleEnum.BALD, HairLengthEnum.NONE, ColorEnum.BROWN, null)
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Hair from default CTOR");
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Copies given hair
+        /// </summary>
+        /// <param name="other"></param>
+        public Hair(Hair other) : this(other._style, other._length, other._color, other._description)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Hair from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>

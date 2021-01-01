@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using PAPI.Character.Skill;
 using PAPI.DataTypes;
 using PAPI.Character.Characteristics;
@@ -90,7 +89,7 @@ namespace PAPI.Character.CharacterTypes
         /// <param name="_soak">if null, soak is set automatically</param>
         /// <param name="_health"> if null, health is set automatically, depending on species and brawn</param>
         /// <param name="_defense">if null, all defense is 0</param>
-        /// <param name="_characteristics">if null, characteristics are random</param>
+        /// <param name="_characteristics">if null, all characteristics are 1</param>
         /// <param name="_equipment">if null, nothing is equipped</param>
         /// <param name="_inventory">if null, the inventory is empty</param>
         /// <param name="_skillSet">if null, the character does not know any skills</param>
@@ -107,7 +106,7 @@ namespace PAPI.Character.CharacterTypes
             this._archetype = (_archetype == null || _archetype == "") ? "Townspeople" : _archetype;
             this._species = (_species == null) ? SpeciesHandler.GetSpecies("Human") : _species;
             this._soak = (_soak == null) ? new Value(0, null) : _soak;
-            this._characteristics = (_characteristics == null) ? CharacteristicFactory.RandomCharacteristicSet(0) : _characteristics;
+            this._characteristics = (_characteristics == null) ? new CharacteristicSet() : _characteristics;
             this._health = (_health == null) ? 
                 new ThresholdValue((SpeciesHandler.GetInitialHealthThreshold(this._species) + _characteristics.Get(CharacteristicEnum.BRAWN)._value), 0, null) : _health;
             this._defense = (_defense == null) ? new Defense(0, null, 0, null) : _defense;
@@ -124,6 +123,29 @@ namespace PAPI.Character.CharacterTypes
                 " " + this._archetype + ")");
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+        
+        /// <summary>
+        /// Default CTOR creates an average bald, other gendered human without any skills and a random characteristicSet with the total value of 15
+        /// </summary>
+        public PAPICharacter() : this(null, null, null, null, null, null, null, null, null, null, null, null, GenderEnum.OTHER, null)
+        {
+            _characteristics.MakeRandom(15);
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Character from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Copy CTOR
+        /// </summary>
+        /// <param name="other"></param>
+        public PAPICharacter(PAPICharacter other) : this()
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Character from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>

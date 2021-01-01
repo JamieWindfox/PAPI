@@ -38,5 +38,26 @@ namespace PAPI.Character.Appearance
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Skin (" + this._type + ", " + this._colorType + ", " + this._primaryColor + ", " + this._secondaryColor + ")");
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Default CTOR makes Skin for an average human
+        /// </summary>
+        public Skin() : this(SkinColorTypeEnum.SINGLE_COLOR, SkinTypeEnum.SKIN, ColorEnum.MEDIUM_FLESH, ColorEnum.MEDIUM_FLESH, null)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Skin from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Skin(Skin other) : this(other._colorType, other._type, other._primaryColor, other._secondaryColor, other._description)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Skin from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
+
     }
 }
