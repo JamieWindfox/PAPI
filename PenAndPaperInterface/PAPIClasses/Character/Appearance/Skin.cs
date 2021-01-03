@@ -51,8 +51,16 @@ namespace PAPI.Character.Appearance
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        public Skin(Skin other) : this(other._colorType, other._type, other._primaryColor, other._secondaryColor, other._description)
+        public Skin(Skin other) : this()
         {
+            if (other == null) return;
+
+            _colorType = other._colorType;
+            _type = other._type;
+            _primaryColor = other._primaryColor;
+            _secondaryColor = other._secondaryColor;
+            _description = other._description;
+
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Skin from another");
         }
 

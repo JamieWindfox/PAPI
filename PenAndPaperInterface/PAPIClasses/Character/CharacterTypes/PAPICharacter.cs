@@ -108,7 +108,7 @@ namespace PAPI.Character.CharacterTypes
             this._soak = (_soak == null) ? new Value(0, null) : _soak;
             this._characteristics = (_characteristics == null) ? new CharacteristicSet() : _characteristics;
             this._health = (_health == null) ? 
-                new ThresholdValue((SpeciesHandler.GetInitialHealthThreshold(this._species) + _characteristics.Get(CharacteristicEnum.BRAWN)._value), 0, null) : _health;
+                new ThresholdValue(SpeciesHandler.GetInitialHealth(this._species)) : _health;
             this._defense = (_defense == null) ? new Defense(0, null, 0, null) : _defense;
             this._equipment = (_equipment == null) ? new Equipment(null, null, null, null) : _equipment;
             this._inventory = (_inventory == null) ? new Inventory(null, null) : _inventory;
@@ -126,11 +126,10 @@ namespace PAPI.Character.CharacterTypes
         // --------------------------------------------------------------------------------------------------------------------------------
         
         /// <summary>
-        /// Default CTOR creates an average bald, other gendered human without any skills and a random characteristicSet with the total value of 15
+        /// Default CTOR creates an average bald, other gendered human without any skills and a all characteristics 1
         /// </summary>
         public PAPICharacter() : this(null, null, null, null, null, null, null, null, null, null, null, null, GenderEnum.OTHER, null)
         {
-            _characteristics.MakeRandom(15);
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Character from default");
         }
 
@@ -142,6 +141,23 @@ namespace PAPI.Character.CharacterTypes
         /// <param name="other"></param>
         public PAPICharacter(PAPICharacter other) : this()
         {
+            if (other == null) return;
+
+            _archetype = other._archetype;
+            _species = new Species(other._species);
+            _soak = new Value(other._soak);
+            _health = new ThresholdValue(other._health);
+            _defense = new Defense(other._defense);
+            _characteristics = new CharacteristicSet(other._characteristics);
+            _equipment = new Equipment(other._equipment);
+            _inventory = new Inventory(other._inventory);
+            _skillSet = new List<PAPISkill>(other._skillSet);
+            _abilities = new List<Ability>(other._abilities);
+            _career = new Career(other._career);
+            _appearance = new CharacterAppearance(other._appearance);
+            _gender = other._gender;
+            _genderPreferences = new List<GenderEnum>(other._genderPreferences);
+
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Character from another");
         }
 

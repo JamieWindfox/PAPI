@@ -49,28 +49,18 @@ namespace PAPI.Character.General
         /// <summary>
         /// The JSON Constructor must contain all traits for the ability
         /// </summary>
-        /// <param name="_name">must not be null or an empty string</param>
+        /// <param name="_nameKey">must start with "Ability_"</param>
         /// <param name="_isActive"></param>
         /// <param name="_descriptionKey">if null, there is no description</param>
         /// <param name="_availableGenres">if null or empty, the ability is available for all settings</param>
         /// <param name="_gameTimeInterval">determines how often the ability can be used</param>
-        /// <param name="_bookResource"></param>
+        /// <param name="_bookResource">if null, the asset is custom</param>
         /// <param name="_isUsable">Should always be true in a newly created/learnt ability, set to false if used, set to true again after time interval</param>
         [JsonConstructor]
-        public Ability(string _name, bool _isActive, string _descriptionKey, List<GenreEnum> _availableGenres,
+        public Ability(string _nameKey, bool _isActive, string _descriptionKey, List<GenreEnum> _availableGenres,
             GameTimeIntervalEnum _gameTimeInterval, BookResource _bookResource, bool _isUsable)
         {
-            if(_name == null || _name == "")
-            {
-                this._nameKey = "INVALID_ABILITY";
-                this._descriptionKey = "INVALID_DESCRIPTION";
-                this._availableGenres = new List<GenreEnum>();
-                this._gameTimeInterval = GameTimeIntervalEnum.NOT_VALID;
-                this._bookResource = new BookResource(RuleBookEnum.NO_RULE_BOOK, 0);
-                WfLogger.Log(this, LogLevel.WARNING, "An invalid Ability was created (_name was null or empty)");
-                return;
-            }
-            this._nameKey =  _name;
+            this._nameKey =  (_nameKey == null) ? "INVALID_ABILITY" : _nameKey;
             this._isActive = _isActive;
             this._descriptionKey = (_descriptionKey == null) ? "INVALID_DESCRIPTION" : _descriptionKey;
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
@@ -78,11 +68,43 @@ namespace PAPI.Character.General
             this._gameTimeInterval = _gameTimeInterval;
             this._bookResource = _bookResource;
             this._isUsable = _isUsable;
+
             WfLogger.Log(this, LogLevel.DETAILED, "Ability '" + this._nameKey + "' was created");
         }
+
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates an invalid ability
+        /// </summary>
+        public Ability() : this(null, false, null, null, GameTimeIntervalEnum.NOT_VALID, null, true)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Ability from default");
+        }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// creates a copy of the given ability
+        /// </summary>
+        /// <param name="other">if null, an invalid ability is created</param>
+        public Ability(Ability other) : this()
+        {
+            if (other == null) return;
+
+            _nameKey = other._nameKey;
+            _isActive = other._isActive;
+            _descriptionKey = other._descriptionKey;
+            _availableGenres = new List<GenreEnum>(other._availableGenres);
+            _gameTimeInterval = other._gameTimeInterval;
+            _bookResource = new BookResource(other._bookResource);
+            _isUsable = other._isUsable;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Ability from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
 
     }
 }

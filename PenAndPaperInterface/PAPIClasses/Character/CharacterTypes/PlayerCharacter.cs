@@ -4,6 +4,7 @@ using PAPI.Character.General;
 using PAPI.Character.Motivations;
 using PAPI.Character.Skill;
 using PAPI.DataTypes;
+using PAPI.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,6 +34,11 @@ namespace PAPI.Character.CharacterTypes
         /// </summary>
         public ThresholdValue _strain { get; private set; }
 
+        /// <summary>
+        /// A list of the career skills, which are cheaper to train and whose first rank is for free
+        /// </summary>
+        public List<SkillEnum> _careerSkills { get; private set; }
+
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
@@ -55,12 +61,14 @@ namespace PAPI.Character.CharacterTypes
         /// <param name="_genderPreferences">the characters sexcual/romabtic preferences, if null it is none</param>
         /// <param name="_name">if null, the character is invlaid</param>
         /// <param name="_motivationSet">if null, the character gets random motivations</param>   
-        /// <param name="_critialInjuries">if null, there a re no critical injuries (yet)</param>
+        /// <param name="_criticalInjuries">if null, there a re no critical injuries (yet)</param>
         /// <param name="_strain">the strain of the player character</param>
+        /// <param name="_careerSkills">a list of the career skills, if null nothing has been chosen yet</param>
         [JsonConstructor]
         public PlayerCharacter(string _archetype, Species _species, Value _soak, ThresholdValue _health, Defense _defense, CharacteristicSet _characteristics,
             Equipment _equipment, Inventory _inventory, List<PAPISkill> _skillSet, List<Ability> _abilities, Career _career, CharacterAppearance _appearance,
-            GenderEnum _gender, List<GenderEnum> _genderPreferences, string _name, MotivationSet _motivationSet, List<CriticalInjury> _critialInjuries, ThresholdValue _strain) : 
+            GenderEnum _gender, List<GenderEnum> _genderPreferences, string _name, MotivationSet _motivationSet, List<CriticalInjury> _criticalInjuries, 
+            ThresholdValue _strain, List<SkillEnum> _careerSkills) : 
             base(_archetype, _species, _soak, _health, _defense, _characteristics, _equipment, _inventory, _skillSet, _abilities, _career, _appearance, _gender, 
                 _genderPreferences)
         {
@@ -70,19 +78,48 @@ namespace PAPI.Character.CharacterTypes
                 return;
             }
             this._name = _name;
-            this._motivationSet = (_motivationSet == null) ? new MotivationSet(null) : _motivationSet;
+            this._motivationSet = (_motivationSet == null) ? new MotivationSet() : _motivationSet;
+            this._criticalInjuries = (_criticalInjuries == null) ? new List<CriticalInjury>() : _criticalInjuries;
+            this._strain = (_strain == null) ? SpeciesHandler.GetInitialStrain(this._species) : _strain;
+            this._careerSkills = (_careerSkills == null) ? new List<SkillEnum>() : _careerSkills;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new PlayerCharacter " + this._name);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// Sets all members of the playerCharacter invalid
+        /// Default CTOR creates an invalid average bald, other gendered human without any skills and a all characteristics 1
         /// </summary>
-        private new void SetInvalid()
+        public PlayerCharacter() : base()
         {
-            base.SetInvalid();
             _name = "INVALID_PLAYER_CHARACTER";
-            _motivationSet = null;
+            _motivationSet = new MotivationSet();
+            _criticalInjuries = new List<CriticalInjury>();
+            _strain = new ThresholdValue();
+            _careerSkills = new List<SkillEnum>();
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new PlayerCharacter from default");
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public PlayerCharacter(PlayerCharacter other) : this()
+        {
+            if (other == null) return;
+
+            _name = other._name;
+            _motivationSet = new MotivationSet(other._motivationSet);
+            _criticalInjuries = new List<CriticalInjury>(other._criticalInjuries);
+            _strain = new ThresholdValue(other._strain);
+            _careerSkills = new List<SkillEnum>(other._careerSkills);
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new PlayerCharacter from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+
     }
 }

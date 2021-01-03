@@ -4,6 +4,7 @@ using PAPI.Character.General;
 using PAPI.Character.Motivations;
 using PAPI.Character.Skill;
 using PAPI.DataTypes;
+using PAPI.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -50,8 +51,32 @@ namespace PAPI.Character.CharacterTypes
             base(_archetype, _species, _soak, _health, _defense, _characteristics, _equipment, _inventory, _skillSet, _abilities, _career, _appearance, _gender, 
                 _genderPreferences, _relationshipToParty, _criticalInjuries, _name, _motivationSet)
         {
-            this._strain = (_strain == null || _strain._threshold == 0) ? 
-                new ThresholdValue(SpeciesHandler.GetInitialStrainThreshold(this._species), 0, null) : _strain;
+            this._strain = (_strain == null || _strain._threshold == 0) ? new ThresholdValue(SpeciesHandler.GetInitialStrain(this._species)) : _strain;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Nemesis " + this._name);
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Nemesis() : base()
+        {
+            _strain = new ThresholdValue();
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Nemesis from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Nemesis(Nemesis other) : this()
+        {
+            if (other == null) return;
+
+            _strain = new ThresholdValue(other._strain);
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Nemesis from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

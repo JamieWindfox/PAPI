@@ -28,5 +28,17 @@ namespace PAPI.DataTypes
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
+
+        public ThresholdValue() : this(10, 0, null)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new default ThresholdValue");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public ThresholdValue(ThresholdValue other) : this(other._threshold, other._value, new Modification(other._modification))
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new ThresholdValue from another");
+        }
     }
 }

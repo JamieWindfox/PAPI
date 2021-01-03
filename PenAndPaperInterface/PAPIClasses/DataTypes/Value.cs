@@ -26,5 +26,23 @@ namespace PAPI.DataTypes
             this._modification = (_modification == null) ? new Modification(0, GameTimeIntervalEnum.NOT_VALID) : _modification;
             WfLogger.Log(this, LogLevel.DETAILED, "Created Soak (Value = " + this._value + ", Modification: " + this._modification._value + ")");
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Value() : this(0, null)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Value from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Value(Value other)
+        {
+            _value = other._value;
+            _modification = new Modification(other._modification);
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Value from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

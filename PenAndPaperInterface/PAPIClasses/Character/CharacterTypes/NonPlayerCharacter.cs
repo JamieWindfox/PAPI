@@ -52,5 +52,28 @@ namespace PAPI.Character.CharacterTypes
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new NPC (Relationship to Party = " + this._relationshipToParty + ")");
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public NonPlayerCharacter() : base()
+        {
+            _relationshipToParty = 0;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new NPC from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public NonPlayerCharacter(NonPlayerCharacter other) : this()
+        {
+            if (other == null) return;
+
+            _relationshipToParty = other._relationshipToParty;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new NPC from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

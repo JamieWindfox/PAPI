@@ -64,14 +64,54 @@ namespace PAPI.Character.CharacterTypes
             }
 
             this._name = _name;
-            this._motivationSet = (_motivationSet == null) ? new MotivationSet(null) : _motivationSet;
+            this._motivationSet = (_motivationSet == null) ? new MotivationSet() : _motivationSet;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Unique Rival: " + this._name);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Create a default unique rival with a random set of motivations
+        /// </summary>
+        public UniqueRival() : base()
+        {
+            _name = "INVALID_UNIQUE_RIVAL";
+            _motivationSet = MotivationFactory.RandomMotivationSet();
 
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Unique Rival from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public UniqueRival(UniqueRival other) : this()
+        {
+            if (other == null) return;
+
+            _name = other._name;
+            _motivationSet = new MotivationSet(other._motivationSet);
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Unique Rival from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates an uniqie rival from a normal one, the name is the species + archetype and the motivations are randomly assigned
+        /// </summary>
+        /// <param name="other"></param>
+        public UniqueRival(Rival other) : this()
+        {
+            if (other == null) return;
+
+            _name = other._species + " " + other._archetype;
+            _motivationSet = MotivationFactory.RandomMotivationSet();
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Unique Rival from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
 
     }
 }

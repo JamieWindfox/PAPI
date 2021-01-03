@@ -18,6 +18,7 @@ namespace GameMasterPAPI.Views
     public partial class GameSelectionView : PAPIView, ITranslatableView
     {
         private Dictionary<Game, Button> _gameButtons = new Dictionary<Game, Button>();
+        private List<Game> _savedGames = new List<Game>();
 
         public GameSelectionView()
         {
@@ -49,7 +50,7 @@ namespace GameMasterPAPI.Views
         {
             // Show all saved Games
             int rowNr = 1;
-            foreach (Game game in savedGames)
+            foreach (Game game in _savedGames)
             {
                 WfLogger.Log(this, LogLevel.DEBUG, "Added game to list of saved games: " + game._genre + ", " + game._dateOfLastSession.ToString());
                 gameTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
@@ -135,11 +136,11 @@ namespace GameMasterPAPI.Views
                 Translate(resSet, dateLabel);
                 Translate(resSet, genreLabel);
                 
-                for (int row = 0; row < savedGames.Count; ++row)
+                for (int row = 0; row < _savedGames.Count; ++row)
                 {
                     gameTable.Controls.Add(new Label()
                     {
-                        Text = TranslatedString(resSet, "genre_" + savedGames[row]._genre.ToString().ToLower()),
+                        Text = TranslatedString(resSet, "genre_" + _savedGames[row]._genre.ToString().ToLower()),
                         Anchor = AnchorStyles.Left | AnchorStyles.Top,
                         Width = 250
                     }, 0, row + 1);
@@ -176,7 +177,7 @@ namespace GameMasterPAPI.Views
 
                 WfLogger.Log(this, LogLevel.DEBUG, "Remove Game " + game._genre + ", "  + game._dateOfCreation 
                     + " from List (Number " + rowNumber + ")");
-                savedGames.Remove(game);
+                _savedGames.Remove(game);
 
                 TableLayoutHelper.RemoveRowNumber(gameTable, rowNumber);
             }

@@ -3,6 +3,7 @@ using PAPI.Character.Characteristics;
 using PAPI.Character.General;
 using PAPI.Character.Skill;
 using PAPI.DataTypes;
+using PAPI.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -46,10 +47,32 @@ namespace PAPI.Character.CharacterTypes
                 _genderPreferences, _relationshipToParty)
         {
             this._criticalInjuries = (_criticalInjuries == null) ? new List<CriticalInjury>() : _criticalInjuries;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Rival");
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        public Rival() : base()
+        {
+            _criticalInjuries = new List<CriticalInjury>();
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Rival from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Rival(Rival other) : this()
+        {
+            if (other == null) return;
+
+            _criticalInjuries = new List<CriticalInjury>(other._criticalInjuries);
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Rival from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
 
     }
 }

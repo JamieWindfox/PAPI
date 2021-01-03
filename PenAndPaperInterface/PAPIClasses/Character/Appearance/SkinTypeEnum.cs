@@ -8,6 +8,8 @@ namespace PAPI.Character.Appearance
         FUR,
         SCALES,
         MIXED,
+        METAL,
+        ARTIFICIAL_SKIN,
         OTHER
     }
 }

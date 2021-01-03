@@ -69,10 +69,9 @@ namespace PAPI.Character.Appearance
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// An empty CTOR makes a very average human appearance
+        /// An empty CTOR makes a very average appearance with medium flesh skin, brown eyes and no hair
         /// </summary>
-        public CharacterAppearance() : this(BodyHeightEnum.AVERAGE, BodyTypeEnum.AVERAGE, "", null, null, ColorEnum.BROWN, "", 
-            30, null, "")
+        public CharacterAppearance() : this(BodyHeightEnum.AVERAGE, BodyTypeEnum.AVERAGE, "", null, null, ColorEnum.BROWN, "", 30, null, "")
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Character Appearance from default CTOR");
         }
@@ -82,10 +81,22 @@ namespace PAPI.Character.Appearance
         /// <summary>
         /// Copy CTOR
         /// </summary>
-        public CharacterAppearance(CharacterAppearance other) : this(other._bodyHeight, other._bodyType, other._bodyTypeDescription, other._skin, other._hair, 
-            other._eyeColor, other._eyeDescription, other._ageInYears, other._bodyPartFeatures, other._appearanceDescription)
+        public CharacterAppearance(CharacterAppearance other) : this()
         {
-            WfLogger.Log(this, LogLevel.DETAILED, "Created new Character Appearance as copy");
+            if (other == null) return;
+
+            _bodyHeight = other._bodyHeight;
+            _bodyType = other._bodyType;
+            _bodyTypeDescription = other._bodyTypeDescription;
+            _skin = new Skin(other._skin);
+            _hair = new Hair(other._hair);
+            _eyeColor = other._eyeColor;
+            _eyeDescription = other._eyeDescription;
+            _ageInYears = other._ageInYears;
+            _bodyPartFeatures = new Dictionary<BodyPartEnum, AppearanceFeatureEnum>(other._bodyPartFeatures);
+            _appearanceDescription = other._appearanceDescription;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Character Appearance from another");
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------

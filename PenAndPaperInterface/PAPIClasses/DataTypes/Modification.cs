@@ -34,6 +34,21 @@ namespace PAPI.DataTypes
             WfLogger.Log(this, LogLevel.DEBUG, "Constructed Modification (Value = " + this._value + ", Wearoff = " + this._wearoff);
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Modification() : this(0, GameTimeIntervalEnum.NOT_VALID)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created a new Modificastion from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Modification(Modification other) : this(other._value, other._wearoff)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created a new Modificastion from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
 
     }
 }

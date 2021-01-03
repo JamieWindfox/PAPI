@@ -49,8 +49,15 @@ namespace PAPI.Character.Appearance
         /// Copies given hair
         /// </summary>
         /// <param name="other"></param>
-        public Hair(Hair other) : this(other._style, other._length, other._color, other._description)
+        public Hair(Hair other) : this()
         {
+            if (other == null) return;
+
+            _style = other._style;
+            _length = other._length;
+            _color = other._color;
+            _description = other._description;
+
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Hair from another");
         }
 

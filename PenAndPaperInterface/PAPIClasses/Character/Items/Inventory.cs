@@ -25,8 +25,27 @@ namespace PAPI.Character
         {
             this._inventory = (_inventory == null) ? new Dictionary<PAPIItem, uint>() : _inventory;
             this._backpack = _backpack;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Creates new Inventory");
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Inventory() : this(null, null)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Creates new Inventory from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Inventory(Inventory other) : this()
+        {
+            _backpack = (other._backpack == null) ? null : new Backpack(other._backpack);
+            _inventory = (other._inventory == null) ? new Dictionary<PAPIItem, uint>() : other._inventory;
+            WfLogger.Log(this, LogLevel.DETAILED, "Creates new Inventory from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>

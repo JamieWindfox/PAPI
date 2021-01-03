@@ -49,7 +49,33 @@ namespace PAPI.Character.CharacterTypes
                 _genderPreferences, _relationshipToParty)
         {
             this._groupSize = _groupSize;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Minion Group");
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates 1 basic human minion
+        /// </summary>
+        public MinionGroup() : base()
+        {
+            _groupSize = 1;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Minion Group from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public MinionGroup(MinionGroup other) : this()
+        {
+            if (other == null) return;
+
+            _groupSize = other._groupSize;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Minion Group form another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }
