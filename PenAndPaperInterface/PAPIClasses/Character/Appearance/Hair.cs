@@ -5,6 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace PAPI.Character.Appearance
 {
+    /// <summary>
+    /// Describes how the hair of the character looks; This applies to the hairier part on the top of the head
+    /// </summary>
     public class Hair
     {
         public HairStyleEnum _style { get; private set; }

@@ -6,6 +6,9 @@ using System.Text.Json.Serialization;
 
 namespace PAPI.Character.Appearance
 {
+    /// <summary>
+    /// Describes the overall appearance of a character/creature
+    /// </summary>
     public class CharacterAppearance
     {
         // Body Type
@@ -176,11 +179,16 @@ namespace PAPI.Character.Appearance
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Changes the hair of the character to the given value
+        /// </summary>
+        /// <param name="newHair">if null, the Hair stays as it is</param>
+        /// <returns></returns>
         public bool ChangeHair(Hair newHair)
         {
             if (newHair != null && newHair == _hair)
             {
-                WfLogger.Log(this, LogLevel.INFO, "Didn't change hair, because it already was the given value");
+                WfLogger.Log(this, LogLevel.INFO, "Didn't change hair, because new Hair can't be null or it already was the given value");
                 return false;
             }
             _hair.ChangeStyle(newHair._style);
@@ -197,7 +205,7 @@ namespace PAPI.Character.Appearance
         /// <summary>
         /// Change the general appearance description to the given value
         /// </summary>
-        /// <param name="newDescription"></param>
+        /// <param name="newDescription">if null, the description is deleted</param>
         /// <returns>true if successful, false otherwise</returns>
         public bool ChangeAppearanceDescription(string newDescription)
         {

@@ -4,6 +4,9 @@ using System.Text.Json.Serialization;
 
 namespace PAPI.Character.Appearance
 {
+    /// <summary>
+    /// Describes the skin of a character/ceature
+    /// </summary>
     public class Skin
     {
         public SkinColorTypeEnum _colorType { get; private set; }

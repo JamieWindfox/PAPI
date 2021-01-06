@@ -1,5 +1,8 @@
 ﻿namespace PAPI.Character.Appearance
 {
+    /// <summary>
+    /// Describe party, the body of a character can habe
+    /// </summary>
     public enum BodyPartEnum
     {
         HEAD,
@@ -16,6 +19,8 @@
         JAW,
         CHIN,
         NECK,
+        TONGUE,
+        TEETH,
         THROAT,
         LEFT_SHOULDER,
         RIGHT_SHOULDER,
@@ -23,6 +28,8 @@
         LOWER_BACK,
         LEFT_WING,
         RIGHT_WING,
+        LEFT_FORELEG,
+        RIGHT_FORELEG,
         LEFT_ARM,
         RIGHT_ARM,
         CHEST,
@@ -32,6 +39,8 @@
         RINGER_OF_RIGHT_HAND,
         LEFT_THUMB,
         RIGHT_THUMB,
+        LEFT_PAW,
+        RIGHT_PAW,
         STOMACH,
         HIP,
         BUM,

@@ -1,5 +1,8 @@
 ﻿namespace PAPI.Character.Appearance
 {
+    /// <summary>
+    /// Describe special appearance features
+    /// </summary>
     public enum AppearanceFeatureEnum
     {
         NOTHING_SPECIAL,
