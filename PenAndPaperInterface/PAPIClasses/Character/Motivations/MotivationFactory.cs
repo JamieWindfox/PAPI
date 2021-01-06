@@ -32,6 +32,10 @@ namespace PAPI.Character.Motivations
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a set of motiavtions, where each type gets a random motivation
+        /// </summary>
+        /// <returns></returns>
         public static MotivationSet RandomMotivationSet()
         {
             MotivationSet newMotivationSet = new MotivationSet();

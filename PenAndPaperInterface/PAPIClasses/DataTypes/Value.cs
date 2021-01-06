@@ -40,7 +40,7 @@ namespace PAPI.DataTypes
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// Copy CTOR
+        /// Creates a copy of the given Value
         /// </summary>
         /// <param name="other">if null, a default value is created</param>
         public Value(Value other) : this()

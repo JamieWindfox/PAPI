@@ -1,5 +1,4 @@
 ﻿using PAPI.Logging;
-using PAPIClasses;
 using System.Text.Json.Serialization;
 
 namespace PAPI.DataTypes
@@ -45,7 +44,7 @@ namespace PAPI.DataTypes
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// creates a new Modification from another
+        /// creates a copy of the given Modification
         /// </summary>
         /// <param name="other">if null, a default Modification ist created</param>
         public Modification(Modification other) : this(other._value, other._wearoff)
