@@ -37,6 +37,9 @@ namespace PAPI.Character.General
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates default defensem wehere all values are 0 and there are no modifications
+        /// </summary>
         public Defense() : this(0, null, 0, null)
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Defense from default");
@@ -44,6 +47,10 @@ namespace PAPI.Character.General
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a copy of the given Defense
+        /// </summary>
+        /// <param name="other">if null, a default Defense is created</param>
         public Defense(Defense other) : this()
         {
             if(other == null) return;

@@ -119,7 +119,7 @@ namespace PAPI.Character.CharacterTypes
             this._gender = _gender;
             this._genderPreferences = (_genderPreferences == null || _genderPreferences.Count == 0) ? new List<GenderEnum>() { GenderEnum.NONE } : _genderPreferences;
 
-            WfLogger.Log(this, LogLevel.DETAILED, "Created new Character (" + this._species._nameKey + 
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Character (" + this._species._enum + 
                 " " + this._archetype + ")");
         }
 
@@ -136,9 +136,9 @@ namespace PAPI.Character.CharacterTypes
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// Copy CTOR
+        /// Creates a copy of the given character
         /// </summary>
-        /// <param name="other"></param>
+        /// <param name="other">if null, a default character is created</param>
         public PAPICharacter(PAPICharacter other) : this()
         {
             if (other == null) return;
@@ -164,23 +164,7 @@ namespace PAPI.Character.CharacterTypes
         // --------------------------------------------------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        /// <summary>
-        /// Sets all member sof PAPICharacter invalid
-        /// </summary>
-        public void SetInvalid()
-        {
-            this._archetype = "INVALID_CHARACTER";
-            this._species = null;
-            this._soak = null;
-            this._characteristics = null;
-            this._health = null;
-            this._defense = null;
-            this._equipment = null;
-            this._inventory = null;
-            this._skillSet = null;
-            this._abilities = null;
-            this._career = null;
-        }
+        
 
     }
 }

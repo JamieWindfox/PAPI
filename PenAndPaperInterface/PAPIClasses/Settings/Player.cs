@@ -54,13 +54,26 @@ namespace PAPI.Settings
         // --------------------------------------------------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Set the name of the player to the given value
+        /// </summary>
+        /// <param name="name">if null, the name is set to an invalid value</param>
         public void SetName(string name)
         {
-            this._name = name;
+            _name = (name == null || name == "") ? "INVALID_NAME" : name;
+            WfLogger.Log(this, LogLevel.DEBUG, "Set Player name to " + _name);
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Sets the ip to the given value
+        /// </summary>
+        /// <param name="ip">if null or empty, the ip is net to an invalid one</param>
         public void SetIp(string ip)
         {
-            this._ip = ip;
+            _ip = (ip == null || ip == "") ? "INVALID_IP" : ip;
+            WfLogger.Log(this, LogLevel.DEBUG, "Set Player IP to " + _ip);
         }
     }
 }

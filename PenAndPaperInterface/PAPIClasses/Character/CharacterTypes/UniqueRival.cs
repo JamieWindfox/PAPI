@@ -84,6 +84,10 @@ namespace PAPI.Character.CharacterTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a copy of the given UniqueRival
+        /// </summary>
+        /// <param name="other">if null, a default unique rival is created</param>
         public UniqueRival(UniqueRival other) : this()
         {
             if (other == null) return;

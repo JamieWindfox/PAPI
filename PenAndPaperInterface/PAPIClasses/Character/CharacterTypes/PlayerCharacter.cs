@@ -104,6 +104,10 @@ namespace PAPI.Character.CharacterTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a copy of the given PlayerCharacter
+        /// </summary>
+        /// <param name="other">if null, a default Player Character is created</param>
         public PlayerCharacter(PlayerCharacter other) : this()
         {
             if (other == null) return;

@@ -7,7 +7,7 @@ namespace PAPI.DataTypes
         TRANSPARENT,
         WHITE,
         BEIGE,
-        BLOND,
+        BLONDE,
         BRIGHT_YELLOW,
         NEON_YELLOW,
         YELLOW,

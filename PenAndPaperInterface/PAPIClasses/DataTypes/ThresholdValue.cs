@@ -48,7 +48,7 @@ namespace PAPI.DataTypes
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// Creates new Threshold-Value from another
+        /// Creates a copy of the given Threshold value
         /// </summary>
         /// <param name="other">if null, a default Threshold-Value is created</param>
         public ThresholdValue(ThresholdValue other) : base(other)

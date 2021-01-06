@@ -52,6 +52,9 @@ namespace PAPI.Character
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates an invalid default career
+        /// </summary>
         public Career() : this("Career_INVALID_CAREER", null, null)
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Career from default");
@@ -59,6 +62,10 @@ namespace PAPI.Character
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a copy of the given Career
+        /// </summary>
+        /// <param name="other">if null, a default one is created</param>
         public Career(Career other) : this()
         {
             if (other == null) return;

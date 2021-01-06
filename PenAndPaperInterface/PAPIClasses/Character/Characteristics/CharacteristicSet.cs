@@ -19,7 +19,7 @@ namespace PAPI.Character.Characteristics
         /// <summary>
         /// The JSON Constructor must contain all traits of a characterisitc
         /// </summary>
-        /// <param name="_characteristicList">if empty, or if a characterisitc is missing, those get generated and get the value 1; Can't be null</param>
+        /// <param name="_characteristicList">if empty, or if a characterisitc is missing, those get generated and get the value 1</param>
         [JsonConstructor]
         public CharacteristicSet(List<Characteristic> _characteristicList)
         {

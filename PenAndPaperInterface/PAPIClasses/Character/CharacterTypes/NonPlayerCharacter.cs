@@ -55,6 +55,9 @@ namespace PAPI.Character.CharacterTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a default NPC
+        /// </summary>
         public NonPlayerCharacter() : base()
         {
             _relationshipToParty = 0;
@@ -64,6 +67,10 @@ namespace PAPI.Character.CharacterTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a copy of the given NPC
+        /// </summary>
+        /// <param name="other">if null, a default NPC is created</param>
         public NonPlayerCharacter(NonPlayerCharacter other) : this()
         {
             if (other == null) return;

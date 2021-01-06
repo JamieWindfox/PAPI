@@ -8,7 +8,7 @@ namespace PAPI.Character.Characteristics
     public static class CharacteristicFactory
     {
         /// <summary>
-        /// Generates all different Characteristics in a list 
+        /// Generates all different Characteristics in a list, every value = 1
         /// </summary>
         /// <returns>List of all Characteristics, all with base value 1 and no Modification</returns>
         public static List<Characteristic> BaseCharacteristicList()
@@ -28,6 +28,7 @@ namespace PAPI.Character.Characteristics
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
+        /// Generates a random set of all characteristics with the total value sum is the given value
         /// </summary>
         /// <param name="sumOfValues">Must be between 6 (where every value = 1) and 30 (where every value is maxed out),
         /// If an invalid value is given, a completely random set is returned</param>

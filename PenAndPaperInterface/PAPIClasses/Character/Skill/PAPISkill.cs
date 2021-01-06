@@ -115,31 +115,7 @@ namespace PAPI.Character.Skill
         // --------------------------------------------------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        /// <summary>
-        /// The name of the enum with an uppercase first letter, and all folloging letters lowercase
-        /// Example: ARCANE_MAGIC -> "Arcane Magic"
-        /// </summary>
-        /// <param name="skill"></param>
-        /// <returns></returns>
-        private static string EnumToString(SkillEnum skill)
-        {
-            string enumString = skill.ToString().ToLower();
-            string concatenatedString = enumString[0].ToString().ToUpper();
-            for(int i = 1; i < enumString.Length; ++i)
-            {
-                if (enumString[i] == '_')
-                {
-                    concatenatedString += ' ';
-                }
-                else
-                {
-                    concatenatedString += (i > 1 && enumString[i - 1] == '_') ?
-                        enumString[i].ToString().ToUpper() : concatenatedString += enumString[i].ToString().ToLower();
-                }
-            }
-            WfLogger.Log("PAPISkill.EnumToString(string)", LogLevel.DETAILED, "Parsed SkillEnum '" + skill + "' to string '" + concatenatedString + "'");
-            return concatenatedString;
-        }
+        
     }
 
 }

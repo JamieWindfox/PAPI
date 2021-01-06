@@ -56,7 +56,7 @@ namespace PAPI.Character.CharacterTypes
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// Creates 1 basic human minion
+        /// Creates 1 basic human minion as default
         /// </summary>
         public MinionGroup() : base()
         {
@@ -67,6 +67,10 @@ namespace PAPI.Character.CharacterTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a copy of the given MinionGroup
+        /// </summary>
+        /// <param name="other">if null, a default minion is created</param>
         public MinionGroup(MinionGroup other) : this()
         {
             if (other == null) return;

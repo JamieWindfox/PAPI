@@ -65,8 +65,19 @@ namespace PAPI.Settings.Game
             WfLogger.Log("PAPIApplication.StartNewGame", LogLevel.DEBUG, "Started new Game");
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Sets the running game to the given value
+        /// </summary>
+        /// <param name="selectedGame">if null, nothing happens</param>
         public static void StartSession(PAPIGame selectedGame)
         {
+            if(selectedGame == null)
+            {
+                WfLogger.Log("Application.StartSession()", LogLevel.WARNING, "Couldn't start session, because the game is null");
+                return;
+            }
             _runningGame = selectedGame;
 
             WfLogger.Log("PAPIApplication.StartSession", LogLevel.DEBUG, "Started new Session of Game");
@@ -77,6 +88,7 @@ namespace PAPI.Settings.Game
         public static void SetLanguage(LanguageEnum language)
         {
             _settings.SetActiveLanguage(language);
+            WfLogger.Log("PAPIApplication.SetLanguage", LogLevel.DEBUG, "Set Language to " + language);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -84,6 +96,7 @@ namespace PAPI.Settings.Game
         public static void SetDesign(DesignEnum design)
         {
             _settings.SetActiveDesign(design);
+            WfLogger.Log("PAPIApplication.SetDesign", LogLevel.DEBUG, "Set Design to " + design);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------

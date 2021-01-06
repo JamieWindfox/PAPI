@@ -58,6 +58,9 @@ namespace PAPI.Character.CharacterTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a default Nemesis
+        /// </summary>
         public Nemesis() : base()
         {
             _strain = new ThresholdValue();
@@ -67,6 +70,10 @@ namespace PAPI.Character.CharacterTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a copy of the given Nemesis
+        /// </summary>
+        /// <param name="other">if null, a default Nemesis is created</param>
         public Nemesis(Nemesis other) : this()
         {
             if (other == null) return;
