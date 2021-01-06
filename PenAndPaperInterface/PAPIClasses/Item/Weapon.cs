@@ -1,4 +1,5 @@
 ﻿using PAPI.Character.Skill;
+using PAPI.Logging;
 using PAPI.Settings;
 using PAPIClasses.DataTypes;
 using System;
@@ -42,10 +43,47 @@ namespace PAPI.Item
             this._damage = _damage;
             this._criticalRating = _criticalRating;
             this._range = _range;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Weapon " + this._nameKey);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates new invalid weapon
+        /// </summary>
+        public Weapon() : base()
+        {
+            _handType = WeaponHandTypeEnum.SINGLE;
+            _requiredSkill = SkillEnum.CUSTOM;
+            _damage = 0;
+            _criticalRating = 0;
+            _range = RangeEnum.ENGAGED;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new invalid Weapon from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates a copy of the given Weapon
+        /// </summary>
+        /// <param name="other">if null, an invalid weapon item is created</param>
+        public Weapon(Weapon other) : base(other)
+        {
+            if (other == null) return;
+
+            _handType = other._handType;
+            _requiredSkill = other._requiredSkill;
+            _damage = other._damage;
+            _criticalRating = other._criticalRating;
+            _range = other._range;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Weapon from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
 
     }
 }

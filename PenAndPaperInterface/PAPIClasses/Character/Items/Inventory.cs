@@ -67,7 +67,7 @@ namespace PAPI.Character
             {
                 _inventory.Add(item, 1);
             }
-            WfLogger.Log(this.GetType() + ".Add(Item)", LogLevel.INFO, "Added one " + item._name + " to inventory (new quantity: " 
+            WfLogger.Log(this.GetType() + ".Add(Item)", LogLevel.INFO, "Added one " + item._nameKey + " to inventory (new quantity: " 
                 + _inventory[item] + ")");
         }
 
@@ -90,7 +90,7 @@ namespace PAPI.Character
                 WfLogger.Log(this, LogLevel.DETAILED, "Removed nothing from the inventory");
                 return null;
             }
-            WfLogger.Log(this, LogLevel.DETAILED, "Removed one " + item._name + " from inventory (new quantity: "
+            WfLogger.Log(this, LogLevel.DETAILED, "Removed one " + item._nameKey + " from inventory (new quantity: "
                + _inventory[item] + ")");
             return item;
         }

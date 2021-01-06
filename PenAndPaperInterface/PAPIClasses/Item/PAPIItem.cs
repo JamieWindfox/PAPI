@@ -9,7 +9,7 @@ namespace PAPI.Item
 {
     public class PAPIItem
     {
-        public string _name { get; private set; }
+        public string _nameKey { get; private set; }
         public uint _basePrice { get; private set; }
 
         /// <summary>
@@ -48,33 +48,19 @@ namespace PAPI.Item
         /// <summary>
         /// The JSON Constructor must contain all traits of an item
         /// </summary>
-        /// <param name="_name">if null or empty, the item is not valid</param>
+        /// <param name="_nameKey">if null or empty, the item is not valid</param>
         /// <param name="_basePrice">the price before any modifiers are adjusted</param>
         /// <param name="_encumbrance">the weight of the item</param>
-        /// <param name="_rarity"> a value from 0 to 5</param>
+        /// <param name="_rarity"> a value from 0 to 5, if higher it gets set to 5</param>
         /// <param name="_condition">if null, the item is in perfect condition</param>
         /// <param name="_qualities">if null or empty, the item has no special qualities</param>
         /// <param name="_availableGenres">if null or empty, the item is available in all settings</param>
         /// <param name="_descriptionKey">if null or empty, the item does not have, or doesn't even need a description</param>
         [JsonConstructor]
-        public PAPIItem(string _name, uint _basePrice, uint _encumbrance, uint _rarity, ItemConditionEnum _condition, Dictionary<ItemQuality, uint> _qualities, 
+        public PAPIItem(string _nameKey, uint _basePrice, uint _encumbrance, uint _rarity, ItemConditionEnum _condition, Dictionary<ItemQuality, uint> _qualities, 
             List<GenreEnum> _availableGenres, string _descriptionKey)
         {
-            if(_name == null || _name == "")
-            {
-                this._name = "Item_INVALID_ITEM";
-                this._basePrice = 0;
-                this._encumbrance = 0;
-                this._rarity = 0;
-                this._condition = ItemConditionEnum.BROKEN_BEYOND_REPAIR;
-                this._qualities = new Dictionary<ItemQuality, uint>();
-                this._availableGenres = new List<GenreEnum>();
-                this._descriptionKey = "INVALIID_DESCRIPTION";
-                WfLogger.Log(this, LogLevel.WARNING, "A invalid item was created (either the name or the rarity were invalid values)");
-                return;
-            }
-
-            this._name = _name;
+            this._nameKey = (_nameKey == null || _nameKey == "") ? "INVALID_ITEM" : _nameKey;
             this._basePrice = _basePrice;
             this._encumbrance = _encumbrance;
             this._rarity = (_rarity > 5) ? 5 : _rarity;
@@ -83,13 +69,43 @@ namespace PAPI.Item
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
                 new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
             this._descriptionKey = (_descriptionKey == null) ? "INVALIID_DESCRIPTION" : _descriptionKey;
-            WfLogger.Log(this, LogLevel.DETAILED, "Item '" + this._name + "' was created");
+
+            WfLogger.Log(this, LogLevel.DETAILED, "PAPIItem '" + this._nameKey + "' was created");
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        public PAPIItem(PAPIItem other) : this(other._name, other._basePrice, other._encumbrance, other._rarity, other._condition,
-            other._qualities, other._availableGenres, other._descriptionKey)
-        { }
+        /// <summary>
+        /// Creates an invlaid default item with no value
+        /// </summary>
+        public PAPIItem() : this(null, 0, 0, 0, ItemConditionEnum.BROKEN_BEYOND_REPAIR, null, null, null)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new invalid default PAPIItem");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates a copy of given PAPIItem
+        /// </summary>
+        /// <param name="other">if null, an invalid default PAPIItem is created</param>
+        public PAPIItem(PAPIItem other) : this()
+        {
+            if (other == null) return;
+
+            _nameKey = other._nameKey;
+            _basePrice = other._basePrice;
+            _encumbrance = other._encumbrance;
+            _rarity = other._rarity;
+            _condition = other._condition;
+            _qualities = new Dictionary<ItemQuality, uint>(other._qualities);
+            _availableGenres = new List<GenreEnum>(other._availableGenres);
+            _descriptionKey = other._descriptionKey;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new PAPIItem from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }
