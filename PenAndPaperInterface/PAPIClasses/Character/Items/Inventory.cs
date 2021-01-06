@@ -31,6 +31,9 @@ namespace PAPI.Character
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates an empty inventory with no backpack
+        /// </summary>
         public Inventory() : this(null, null)
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Creates new Inventory from default");
@@ -40,6 +43,8 @@ namespace PAPI.Character
 
         public Inventory(Inventory other) : this()
         {
+            if (other == null) return;
+
             _backpack = (other._backpack == null) ? null : new Backpack(other._backpack);
             _inventory = (other._inventory == null) ? new Dictionary<PAPIItem, uint>() : other._inventory;
             WfLogger.Log(this, LogLevel.DETAILED, "Creates new Inventory from another");

@@ -53,6 +53,9 @@ namespace PAPI.Character
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// creates an empty equipment
+        /// </summary>
         public Equipment() : this(null, null, null, null)
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Equipment from default");
@@ -74,5 +77,8 @@ namespace PAPI.Character
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Equipment from another");
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

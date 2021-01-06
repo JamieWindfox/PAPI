@@ -25,6 +25,9 @@ namespace PAPI.Character.Motivations
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// creates a random set of motivations
+        /// </summary>
         public MotivationSet() : this(new List<Motivation>())
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new random MotiavationSet as default");
