@@ -4,6 +4,7 @@ using PAPI.Settings;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using PAPI.Character.Characteristics;
+using PAPI.Settings.Game;
 
 namespace PAPI.Character.Skill
 {
@@ -15,7 +16,7 @@ namespace PAPI.Character.Skill
         /// <summary>
         /// The name of the skill; Usually is set by the skill enum, but if it is a custom skill, it gets a different (custom) name
         /// </summary>
-        public string _nameKey { get; private set; }
+        public string _name { get; private set; }
 
         /// <summary>
         /// The enum associated with the skill
@@ -58,8 +59,8 @@ namespace PAPI.Character.Skill
         /// <summary>
         /// The JSON Constructor must contain all possible traits of the Skill
         /// </summary>
-        /// <param name="_name">automatically gets the name of the skillEnum, except this is CUSTOM, then this name is set</param>
-        /// <param name="_skillEnum">the skill as enum, if it does not exist yet take CUSTOM</param>
+        /// <param name="_name">automatically gets the name of the skillEnum, except this is CUSTOM, then this name is set (if so, start with "Skill_"</param>
+        /// <param name="_skillEnum">the skill as enum, if it does not exist yet: take CUSTOM</param>
         /// <param name="_skillTypeEnum">the category the skill belongs to</param>
         /// <param name="_value">if 0, the skill doesn't count as learned, if a invalid value is given, the skill is set to 0</param>
         /// <param name="_characteristicEnum">the characteristic the skill belongs to</param>
@@ -69,37 +70,49 @@ namespace PAPI.Character.Skill
         public PAPISkill(string _name, SkillEnum _skillEnum, SkillTypeEnum _skillTypeEnum, Value _value, CharacteristicEnum _characteristicEnum, 
             List<GenreEnum> _availableGenres, bool _isCareer)
         {
-            if(_skillEnum == SkillEnum.NOT_VALID)
-            {
-                // set _skillEnum and _name to invalid valued, so that the the next if recognizes the object as invalid
-                _skillEnum = SkillEnum.CUSTOM;
-                _name = "";
-            }
-            if(_skillEnum == SkillEnum.CUSTOM && (_name == null || _name == ""))
-            {
-                this._nameKey = "INVALID SKILL";
-                this._skillEnum = SkillEnum.NOT_VALID;
-                this._skillTypeEnum = SkillTypeEnum.CUSTOM;
-                this._value = new Value(0, null);
-                this._characteristicEnum = CharacteristicEnum.BRAWN;
-                this._availableGenres = new List<GenreEnum>();
-                this._characteristicEnum = _characteristicEnum;
-                WfLogger.Log(this, LogLevel.WARNING, 
-                    "An invalid skill was created (either because the skillEnum, or the name wasn't valid)");
-                return;
-            }
             this._skillEnum = _skillEnum;
-            this._nameKey = (_skillEnum != SkillEnum.CUSTOM) ? EnumToString(_skillEnum) : _name;
+            this._name = (_name == null || _name == "" || _skillEnum != SkillEnum.CUSTOM) ? ("Skill_" + _skillEnum.ToString()) : _name;
             this._skillTypeEnum = _skillTypeEnum;
             this._value = (_value._value < MIN_VALUE || _value._value > MAX_VALUE)? this._value = new Value(0, null) : this._value = _value;
             this._characteristicEnum = this._characteristicEnum;
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
-                new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
+                new List<GenreEnum>(PAPIApplication.GetAllGenres()) : _availableGenres;
             this._isCareer = _isCareer;
-            WfLogger.Log(this, LogLevel.DETAILED,
-                    "Skill '" + this._nameKey + "' was created");
+            WfLogger.Log(this, LogLevel.DETAILED, "Skill '" + this._name + "' was created");
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates new invalid skill
+        /// </summary>
+        public PAPISkill() : this(null, SkillEnum.CUSTOM, SkillTypeEnum.CUSTOM, null, CharacteristicEnum.AGILITY, null, false)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Skill from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates a skill as copy of the given one
+        /// </summary>
+        /// <param name="other">if null, a default skill is created</param>
+        public PAPISkill(PAPISkill other) : this()
+        {
+            if (other == null) return;
+
+            _skillEnum = other._skillEnum;
+            _skillTypeEnum = other._skillTypeEnum;
+            _name = other._name;
+            _value = other._value;
+            _characteristicEnum = other._characteristicEnum;
+            _availableGenres = new List<GenreEnum>(other._availableGenres);
+            _isCareer = other._isCareer;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Skill from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>

@@ -1,4 +1,7 @@
-﻿using PAPI.Settings;
+﻿using PAPI.Character.General;
+using PAPI.DataTypes;
+using PAPI.Logging;
+using PAPI.Settings;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,10 +31,36 @@ namespace PAPI.Item
         [JsonConstructor]
         public Clothing(string _name, uint _basePrice, uint _encumbrance, uint _rarity, ItemConditionEnum _condition,
             Dictionary<ItemQuality, uint> _qualities, List<GenreEnum> _availableGenres, string _descriptionKey, bool _isEquipped,
-            uint _soak, uint _defense)
+            Value _soak, Defense _defense)
             : base(_name, _basePrice, _encumbrance, _rarity, _condition, _qualities, _availableGenres, _descriptionKey, _isEquipped, _soak, _defense)
-        { }
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Clothing " + this._nameKey);
+        }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates a new invalid Clothing Item
+        /// </summary>
+        public Clothing() : base()
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new invalid Clothing from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates a copy of the given Clothing
+        /// </summary>
+        /// <param name="other">if null, an invalid default clothing is created</param>
+        public Clothing(Clothing other) : base(other)
+        {
+            if (other == null) return;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Clothing from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

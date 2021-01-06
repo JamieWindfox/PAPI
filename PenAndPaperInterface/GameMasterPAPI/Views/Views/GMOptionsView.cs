@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Resources;
 using PAPI.Logging;
+using PAPI.Settings.Game;
 
 namespace GameMasterPAPI.Views
 {
     public partial class GMOptionsView : PAPIView
     {
-        private string cachedGmName;
+        private string cachedPlayerName;
         public GMOptionsView() : base()
         {
             InitializeComponent();
@@ -24,14 +25,15 @@ namespace GameMasterPAPI.Views
             SetButtonDesign();
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings._activeLanguage && cachedGmName == CurrentPlayer.player._name)
+            if (activeLanguage == PAPIApplication.GetLanguage() && cachedPlayerName == PAPIApplication._currentPlayer._name)
             {
                 return;
             }
-            cachedGmName = CurrentPlayer.player._name;
+            cachedPlayerName = PAPIApplication._currentPlayer._name;
 
             using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
             {
@@ -39,37 +41,41 @@ namespace GameMasterPAPI.Views
                 Translate(resSet, designLabel);
                 Translate(resSet, returnButton);
                 Translate(resSet, gmNameLabel);
-                gmNameInputField.Text = cachedGmName;
+                gmNameInputField.Text = cachedPlayerName;
                 designDropdown.Items[0] = TranslatedString(resSet, "designMedieval");
                 designDropdown.Items[1] = TranslatedString(resSet, "designModern");
                 languageDropdown.Items[0] = TranslatedString(resSet, "languageEnglish");
                 languageDropdown.Items[1] = TranslatedString(resSet, "languageGerman");
 
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings._activeLanguage);
+            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + PAPIApplication.GetLanguage());
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
 
         private void languageDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch(languageDropdown.SelectedIndex)
             {
                 case 0:
-                    GameSettings.SetActiveLanguage(LanguageEnum.ENGLISH);
+                    PAPIApplication.SetLanguage(LanguageEnum.ENGLISH);
                     break;
                 case 1:
-                    GameSettings.SetActiveLanguage(LanguageEnum.GERMAN);
+                    PAPIApplication.SetLanguage(LanguageEnum.GERMAN);
                     break;
                 default:
-                    GameSettings.SetActiveLanguage(LanguageEnum.ENGLISH);
+                    PAPIApplication.SetLanguage(LanguageEnum.ENGLISH);
                     break;
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "Set language to " + GameSettings._activeLanguage + " in dropdown");
+            WfLogger.Log(this, LogLevel.DEBUG, "Set language to " +  PAPIApplication.GetLanguage() + " in dropdown");
             SetTextToActiveLanguage();
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
         private void designDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DesignEnum chosenDesign = GameSettings._activeDesign;
+            DesignEnum chosenDesign = PAPIApplication.GetDesign();
             switch (designDropdown.SelectedIndex)
             {
                 case 0:
@@ -81,20 +87,24 @@ namespace GameMasterPAPI.Views
                 default:
                     break;
             }
-            if (chosenDesign != GameSettings._activeDesign)
+            if (chosenDesign != PAPIApplication.GetDesign())
             {
-                GameSettings.SetActiveDesign(chosenDesign);
-                WfLogger.Log(this, LogLevel.DEBUG, "Set design to " + GameSettings._activeDesign + " in dropdown");
+                PAPIApplication.SetDesign(chosenDesign);
+                WfLogger.Log(this, LogLevel.DEBUG, "Set design to " + PAPIApplication.GetDesign() + " in dropdown");
                 SetDesign();
                 SetButtonDesign();
             }
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
         private void gmNameInputField_TextChanged(object sender, EventArgs e)
         {
-            CurrentPlayer.player.SetName(gmNameInputField.Text);
-            WfLogger.Log(this, LogLevel.DEBUG, "Set game master name to " + CurrentPlayer.player._name);
+            PAPIApplication._currentPlayer.SetName(gmNameInputField.Text);
+            WfLogger.Log(this, LogLevel.DEBUG, "Set game master name to " + PAPIApplication._currentPlayer._name);
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
 
         private void returnButton_Click(object sender, EventArgs e)
         {

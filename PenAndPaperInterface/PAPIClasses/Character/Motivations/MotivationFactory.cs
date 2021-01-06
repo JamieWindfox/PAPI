@@ -29,5 +29,25 @@ namespace PAPI.Character.Motivations
 
             return null;
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public static MotivationSet RandomMotivationSet()
+        {
+            MotivationSet newMotivationSet = new MotivationSet();
+            newMotivationSet._motivations.Clear();
+
+            List<MotivationTypeEnum> allTypes = new List<MotivationTypeEnum>()
+            { MotivationTypeEnum.STRENGTH, MotivationTypeEnum.FLAW, MotivationTypeEnum.DESIRE, MotivationTypeEnum.FEAR };
+
+            foreach (MotivationTypeEnum type in allTypes)
+            {
+                newMotivationSet._motivations.Add(MotivationFactory.RandomMotivation(type));
+            }
+
+            return newMotivationSet;
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

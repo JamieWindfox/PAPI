@@ -1,5 +1,7 @@
 ﻿using PAPI.Character.Skill;
+using PAPI.Logging;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,7 +11,7 @@ namespace PAPI.Character
 {
     public class Career
     {
-        public string _name { get; private set; }
+        public string _nameKey { get; private set; }
 
         /// <summary>
         /// A list of a genres in which the career is available
@@ -24,27 +26,51 @@ namespace PAPI.Character
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-
         /// <summary>
         /// A JSON Constructor must contain all possible traits f a career;
         /// </summary>
-        /// <param name="_name">Must not be null or empty, otherwise the career is not valid</param>
+        /// <param name="_nameKey">Must not be null or empty, otherwise the career is not valid</param>
         /// <param name="_availableGenres">if null or empty, the career is avaílable for all genres</param>
         /// <param name="_careerSkills">if less than 8 are given, the career is not valid</param>
         [JsonConstructor]
-        public Career(string _name, List<GenreEnum> _availableGenres, List<PAPISkill> _careerSkills)
+        public Career(string _nameKey, List<GenreEnum> _availableGenres, List<PAPISkill> _careerSkills)
         {
-            if(_name == null || _name == "" || _careerSkills.Count < 8)
+            if(_nameKey == null || _nameKey == "" || _careerSkills.Count < 8)
             {
-                _name = "INVALID CAREER";
+                _nameKey = "Career_INVALID_CAREER";
                 _availableGenres = new List<GenreEnum>();
                 _careerSkills = new List<PAPISkill>();
                 return;
             }
-            this._name = _name;
+            this._nameKey = _nameKey;
             this._careerSkills = new List<PAPISkill>(_careerSkills);
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
-                new List<GenreEnum>(GameSettings.GetAllGenres()) : new List<GenreEnum>(_availableGenres);
+                new List<GenreEnum>(PAPIApplication.GetAllGenres()) : new List<GenreEnum>(_availableGenres);
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Career " + _nameKey);
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Career() : this("Career_INVALID_CAREER", null, null)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Career from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Career(Career other) : this()
+        {
+            if (other == null) return;
+
+            _nameKey = other._nameKey;
+            _careerSkills = new List<PAPISkill>(other._careerSkills);
+            _availableGenres = new List<GenreEnum>(other._availableGenres);
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Career from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

@@ -14,6 +14,8 @@ namespace PAPI.Settings
         public RuleBookEnum _ruleBook { get; private set; }
         public uint _page { get; private set; }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
         /// <summary>
         /// The JSON Constructor must contain all traits of the book resource
         /// </summary>
@@ -26,14 +28,37 @@ namespace PAPI.Settings
             {
                 _ruleBook = RuleBookEnum.NO_RULE_BOOK;
                 _page = 0;
-                return;
             }
             this._ruleBook = _ruleBook;
             this._page = _page;
 
-            WfLogger.Log(this, LogLevel.DETAILED, "Book Resource created: " + this._ruleBook.ToString()
-                + ", p. " + this._page);
+            WfLogger.Log(this, LogLevel.DETAILED, "Book Resource created: " + this._ruleBook.ToString() + ", p. " + this._page);
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates an invalid book resource for custom assets
+        /// </summary>
+        public BookResource() : this(RuleBookEnum.NO_RULE_BOOK, 0)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new book resource from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public BookResource(BookResource other) : this()
+        {
+            if (other == null) return;
+
+            _ruleBook = other._ruleBook;
+            _page = other._page;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new book resource from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
 
     }
 }

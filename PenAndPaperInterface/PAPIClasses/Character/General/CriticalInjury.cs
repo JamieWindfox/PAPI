@@ -1,5 +1,7 @@
 ﻿using PAPI.DataTypes;
+using PAPI.Logging;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -45,12 +47,42 @@ namespace PAPI.Character.General
         {
             this._nameKey = (_nameKey == null || _nameKey == "") ? "INVALID_CRITICAL_INJURY" : _nameKey;
             this._lowerBoundD100 = _lowerBoundD100;
-            this._upperBoundD100 = _upperBoundD100;
+            this._upperBoundD100 = (_upperBoundD100 < this._lowerBoundD100) ? this._lowerBoundD100 : _upperBoundD100;
             this._severity = _severity;
             this._descriptionKey = (_descriptionKey == null || _descriptionKey == "") ? "INVALID_DESCRIPTION" : _descriptionKey;
             this._hasPermanentEffect = _hasPermanentEffect;
             this._bookResource = (_bookResource == null) ? new BookResource(RuleBookEnum.NO_RULE_BOOK, 0) : _bookResource;
-            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ? new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
+            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ? new List<GenreEnum>(PAPIApplication.GetAllGenres()) : _availableGenres;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Critical Injury " + this._nameKey);
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public CriticalInjury() : this(null, 0, 0, DifficultyEnum.NONE, null, false, null, new List<GenreEnum>())
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Critical Injury from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public CriticalInjury(CriticalInjury other) : this()
+        {
+            if (other == null) return;
+
+            _nameKey = other._nameKey;
+            _lowerBoundD100 = other._lowerBoundD100;
+            _upperBoundD100 = other._upperBoundD100;
+            _severity = other._severity;
+            _descriptionKey = other._descriptionKey;
+            _hasPermanentEffect = other._hasPermanentEffect;
+            _bookResource = new BookResource(other._bookResource);
+            _availableGenres = new List<GenreEnum>(other._availableGenres);
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Critical Injury from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

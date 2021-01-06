@@ -25,8 +25,32 @@ namespace PAPI.Character
         {
             this._inventory = (_inventory == null) ? new Dictionary<PAPIItem, uint>() : _inventory;
             this._backpack = _backpack;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Creates new Inventory");
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates an empty inventory with no backpack
+        /// </summary>
+        public Inventory() : this(null, null)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Creates new Inventory from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Inventory(Inventory other) : this()
+        {
+            if (other == null) return;
+
+            _backpack = (other._backpack == null) ? null : new Backpack(other._backpack);
+            _inventory = (other._inventory == null) ? new Dictionary<PAPIItem, uint>() : other._inventory;
+            WfLogger.Log(this, LogLevel.DETAILED, "Creates new Inventory from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
@@ -43,7 +67,7 @@ namespace PAPI.Character
             {
                 _inventory.Add(item, 1);
             }
-            WfLogger.Log(this.GetType() + ".Add(Item)", LogLevel.INFO, "Added one " + item._name + " to inventory (new quantity: " 
+            WfLogger.Log(this.GetType() + ".Add(Item)", LogLevel.INFO, "Added one " + item._nameKey + " to inventory (new quantity: " 
                 + _inventory[item] + ")");
         }
 
@@ -66,7 +90,7 @@ namespace PAPI.Character
                 WfLogger.Log(this, LogLevel.DETAILED, "Removed nothing from the inventory");
                 return null;
             }
-            WfLogger.Log(this, LogLevel.DETAILED, "Removed one " + item._name + " from inventory (new quantity: "
+            WfLogger.Log(this, LogLevel.DETAILED, "Removed one " + item._nameKey + " from inventory (new quantity: "
                + _inventory[item] + ")");
             return item;
         }

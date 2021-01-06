@@ -32,9 +32,30 @@ namespace PAPI.Character.General
             this._valueRanged = _valueRanged;
             this._modificationMelee = (_modificationMelee == null) ? new Modification(0, GameTimeIntervalEnum.NOT_VALID) : _modificationMelee;
             this._modificationRanged = (_modificationRanged == null) ? new Modification(0, GameTimeIntervalEnum.NOT_VALID) : _modificationRanged;
-            WfLogger.Log(this, LogLevel.DETAILED, "Created new Defence: melee = " + _valueMelee + ", ranged = " + _valueRanged);
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Defense: melee = " + _valueMelee + ", ranged = " + _valueRanged);
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Defense() : this(0, null, 0, null)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Defense from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Defense(Defense other) : this()
+        {
+            if(other == null) return;
+            _valueMelee = other._valueMelee;
+            _valueRanged = other._valueRanged;
+            _modificationMelee = new Modification(other._modificationMelee);
+            _modificationRanged = new Modification(other._modificationRanged);
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Defense from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

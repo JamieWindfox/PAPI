@@ -19,7 +19,7 @@ namespace PAPI.Character.Characteristics
         /// <summary>
         /// The JSON Constructor must contain all traits of a characterisitc
         /// </summary>
-        /// <param name="_characteristicList">If null, or if a characterisitc is missing, those get generated and get the value 1</param>
+        /// <param name="_characteristicList">if empty, or if a characterisitc is missing, those get generated and get the value 1; Can't be null</param>
         [JsonConstructor]
         public CharacteristicSet(List<Characteristic> _characteristicList)
         {
@@ -50,7 +50,38 @@ namespace PAPI.Character.Characteristics
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
-        
+
+        /// <summary>
+        /// Default CTOR, creates a CharacteristicSet with all values 1
+        /// </summary>
+        public CharacteristicSet() : this(new List<Characteristic>())
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "CharacteristicSet was created from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Copy CTOR, creates a copy of the given CharacteristicSet
+        /// </summary>
+        public CharacteristicSet(CharacteristicSet other) : this(other._characteristicList)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "CharacteristicSet was created from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Makes the whole CharacteristicSet completely random
+        /// </summary>
+        public void MakeRandom(int sumOfValues)
+        {
+            _characteristicList = (new CharacteristicSet(CharacteristicFactory.RandomCharacteristicSet(sumOfValues)))._characteristicList;
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
         /// <summary>
         /// Returns the characteristic with the given characteristic enum
         /// </summary>

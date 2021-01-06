@@ -1,5 +1,6 @@
 ﻿using GameMasterPAPI.Server;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace GameMasterPAPI.Views
 
     public partial class GMStartView : PAPIView
     {
-        private string m_gmName;
+        private string _playerName;
         public GMStartView() : base()
         {
             InitializeComponent();
@@ -29,16 +30,16 @@ namespace GameMasterPAPI.Views
         // Set all text in this view to the given language
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings._activeLanguage && m_gmName == CurrentPlayer.player._name)
+            if (activeLanguage == PAPIApplication.GetLanguage() && _playerName == PAPIApplication._currentPlayer._name)
             {
                 return;
             }
-            m_gmName = CurrentPlayer.player._name;
+            _playerName = PAPIApplication._currentPlayer._name;
 
             using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
             {
                 Translate(resSet, welcomeLabel);
-                welcomeLabel.Text += ", " + m_gmName;
+                welcomeLabel.Text += ", " + _playerName;
                 Translate(resSet, quitButton);
                 Translate(resSet, startButton);
                 Translate(resSet, optionsButton);

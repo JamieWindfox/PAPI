@@ -22,7 +22,7 @@ namespace PAPITests.Character.Characteristics
             uint expectedValue = 1;
 
             // Act
-            CharacteristicSet testSet = new CharacteristicSet(null);
+            CharacteristicSet testSet = new CharacteristicSet();
 
             // Assert
             foreach(Characteristic chara in testSet._characteristicList)

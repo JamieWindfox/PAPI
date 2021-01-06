@@ -12,12 +12,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PAPI.Exception;
 using System.Threading;
+using PAPI.Settings.Game;
 
 namespace GameMasterPAPI.Views
 {
     public partial class GameSelectionView : PAPIView, ITranslatableView
     {
-        private Dictionary<Game, Button> m_gameButtons = new Dictionary<Game, Button>();
+        private Dictionary<PAPIGame, Button> _gameButtons = new Dictionary<PAPIGame, Button>();
+        private List<PAPIGame> _savedGames = new List<PAPIGame>();
 
         public GameSelectionView()
         {
@@ -49,7 +51,7 @@ namespace GameMasterPAPI.Views
         {
             // Show all saved Games
             int rowNr = 1;
-            foreach (Game game in savedGames)
+            foreach (PAPIGame game in _savedGames)
             {
                 WfLogger.Log(this, LogLevel.DEBUG, "Added game to list of saved games: " + game._genre + ", " + game._dateOfLastSession.ToString());
                 gameTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
@@ -71,11 +73,11 @@ namespace GameMasterPAPI.Views
                     Size = new Size(40, 40),
                     Name = "showButton" + rowNr
                 };
-                string imagePath = GameDirectory.GetFilePath_Images(GameSettings._activeDesign) + "\\show.bmp";
+                string imagePath = GameDirectory.GetFilePath_Images(PAPIApplication.GetDesign()) + "\\show.bmp";
                 Image image = Image.FromFile(imagePath);
                 button.Image = (Image)(new Bitmap(image, new Size(40, 40)));
                 gameTable.Controls.Add(button, 3, rowNr);
-                m_gameButtons.Add(game, button);
+                _gameButtons.Add(game, button);
                 gameTable.Controls.Add(button, 2, rowNr++);
                 m_buttons.Add(button);
             }
@@ -92,7 +94,7 @@ namespace GameMasterPAPI.Views
             SetButtonDesign();
 
             // Add eventhandler for click on every show game button
-            foreach (KeyValuePair<Game, Button> button in m_gameButtons)
+            foreach (KeyValuePair<PAPIGame, Button> button in _gameButtons)
             {
                 button.Value.Click += GameButton_Click;
             }
@@ -100,8 +102,8 @@ namespace GameMasterPAPI.Views
 
         private void GameButton_Click(object sender, EventArgs e)
         {
-            Game selectedGame = null;
-            foreach(KeyValuePair<Game, Button> gameButton in m_gameButtons)
+            PAPIGame selectedGame = null;
+            foreach(KeyValuePair<PAPIGame, Button> gameButton in _gameButtons)
             {
                 if(gameButton.Value == (Button)sender)
                 {
@@ -114,14 +116,14 @@ namespace GameMasterPAPI.Views
                 throw new GameNotFoundException("There is no game for the clicked button");
             }
             WfLogger.Log(this, LogLevel.DEBUG, "Button 'Show' was clicked, open Popup");
-            RunningGame.StartGame(selectedGame);
+            PAPIApplication.StartSession(selectedGame);
             ((ShowGameOverviewView)ViewController.showGameOverviewView).Open(this);
         }
 
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings._activeLanguage)
+            if (activeLanguage == PAPIApplication.GetLanguage())
             {
                 return;
             }
@@ -135,17 +137,17 @@ namespace GameMasterPAPI.Views
                 Translate(resSet, dateLabel);
                 Translate(resSet, genreLabel);
                 
-                for (int row = 0; row < savedGames.Count; ++row)
+                for (int row = 0; row < _savedGames.Count; ++row)
                 {
                     gameTable.Controls.Add(new Label()
                     {
-                        Text = TranslatedString(resSet, "genre_" + savedGames[row]._genre.ToString().ToLower()),
+                        Text = TranslatedString(resSet, "genre_" + _savedGames[row]._genre.ToString().ToLower()),
                         Anchor = AnchorStyles.Left | AnchorStyles.Top,
                         Width = 250
                     }, 0, row + 1);
                 }
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings._activeLanguage);
+            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + PAPIApplication.GetLanguage());
         }
 
         private void returnButton_Click(object sender, EventArgs e)
@@ -160,7 +162,7 @@ namespace GameMasterPAPI.Views
             ViewController.gameCreationView.Open(this);
         }
 
-        public void DeleteGame(Game game)
+        public void DeleteGame(PAPIGame game)
         {
             if (game != null)
             {
@@ -176,7 +178,7 @@ namespace GameMasterPAPI.Views
 
                 WfLogger.Log(this, LogLevel.DEBUG, "Remove Game " + game._genre + ", "  + game._dateOfCreation 
                     + " from List (Number " + rowNumber + ")");
-                savedGames.Remove(game);
+                _savedGames.Remove(game);
 
                 TableLayoutHelper.RemoveRowNumber(gameTable, rowNumber);
             }

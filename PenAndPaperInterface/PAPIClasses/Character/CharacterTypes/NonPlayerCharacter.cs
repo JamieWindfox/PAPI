@@ -37,17 +37,43 @@ namespace PAPI.Character.CharacterTypes
         /// <param name="_abilities">if null, the character does not have any abilities</param>
         /// <param name="_career">if null, the character doesn't have a career</param>
         /// <param name="_appearance">if null, the character/creature looks like an average specimen of its species</param>
+        /// <param name="_gender">the characters gender</param>
+        /// <param name="_genderPreferences">the characters sexcual/romabtic preferences, if null it is none</param>
         /// <param name="_relationshipToParty">must be a value between -100 and +100, otherwise it gets set to -100 if too low, or to +100 if too high</param>
         [JsonConstructor]
         public NonPlayerCharacter(string _archetype, Species _species, Value _soak, ThresholdValue _health, Defense _defense, CharacteristicSet _characteristics,
             Equipment _equipment, Inventory _inventory, List<PAPISkill> _skillSet, List<Ability> _abilities, Career _career, CharacterAppearance _appearance, 
-            int _relationshipToParty) : 
-            base(_archetype, _species, _soak, _health, _defense, _characteristics, _equipment, _inventory, _skillSet, _abilities, _career, _appearance)
+            GenderEnum _gender, List<GenderEnum> _genderPreferences, int _relationshipToParty) : 
+            base(_archetype, _species, _soak, _health, _defense, _characteristics, _equipment, _inventory, _skillSet, _abilities, _career, _appearance, _gender, 
+                _genderPreferences)
         {
             _relationshipToParty = (_relationshipToParty < -100) ? -100 : _relationshipToParty;
             this._relationshipToParty = (_relationshipToParty > 100) ? 100 : _relationshipToParty;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new NPC (Relationship to Party = " + this._relationshipToParty + ")");
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public NonPlayerCharacter() : base()
+        {
+            _relationshipToParty = 0;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new NPC from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public NonPlayerCharacter(NonPlayerCharacter other) : this()
+        {
+            if (other == null) return;
+
+            _relationshipToParty = other._relationshipToParty;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new NPC from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

@@ -42,6 +42,8 @@ namespace PAPI.Character.CharacterTypes
         /// <param name="_abilities">if null, the character does not have any abilities</param>
         /// <param name="_career">if null, the character doesn't have a career</param>
         /// <param name="_appearance">if null, the character/creature looks like an average specimen of its species</param>
+        /// <param name="_gender">the characters gender</param>
+        /// <param name="_genderPreferences">the characters sexcual/romabtic preferences, if null it is none</param>
         /// <param name="_relationshipToParty">must be a value between -100 and +100, otherwise it gets set to -100 if too low, or to +100 if too high</param>
         /// <param name="_criticalInjuries">If null or empty, the Rival is not suffering from any critical injuries</param>
         /// <param name="_name">if null or empty, the unique rival is invalid</param>
@@ -49,9 +51,10 @@ namespace PAPI.Character.CharacterTypes
         [JsonConstructor]
         public UniqueRival(string _archetype, Species _species, Value _soak, ThresholdValue _health, Defense _defense, CharacteristicSet _characteristics,
             Equipment _equipment, Inventory _inventory, List<PAPISkill> _skillSet, List<Ability> _abilities, Career _career, CharacterAppearance _appearance,
-            int _relationshipToParty, List<CriticalInjury> _criticalInjuries, string _name, MotivationSet _motivationSet) :
-            base(_archetype, _species, _soak, _health, _defense, _characteristics, _equipment, _inventory, _skillSet, _abilities, _career, _appearance,
-                _relationshipToParty, _criticalInjuries)
+            GenderEnum _gender, List<GenderEnum> _genderPreferences, int _relationshipToParty, List<CriticalInjury> _criticalInjuries, string _name, 
+            MotivationSet _motivationSet) :
+            base(_archetype, _species, _soak, _health, _defense, _characteristics, _equipment, _inventory, _skillSet, _abilities, _career, _appearance, _gender, 
+                _genderPreferences, _relationshipToParty, _criticalInjuries)
         {
             if(_name == null || _name == "")
             {
@@ -61,14 +64,54 @@ namespace PAPI.Character.CharacterTypes
             }
 
             this._name = _name;
-            this._motivationSet = (_motivationSet == null) ? new MotivationSet(null) : _motivationSet;
+            this._motivationSet = (_motivationSet == null) ? new MotivationSet() : _motivationSet;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Unique Rival: " + this._name);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Create a default unique rival with a random set of motivations
+        /// </summary>
+        public UniqueRival() : base()
+        {
+            _name = "INVALID_UNIQUE_RIVAL";
+            _motivationSet = MotivationFactory.RandomMotivationSet();
 
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Unique Rival from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public UniqueRival(UniqueRival other) : this()
+        {
+            if (other == null) return;
+
+            _name = other._name;
+            _motivationSet = new MotivationSet(other._motivationSet);
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Unique Rival from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates an uniqie rival from a normal one, the name is the species + archetype and the motivations are randomly assigned
+        /// </summary>
+        /// <param name="other"></param>
+        public UniqueRival(Rival other) : this()
+        {
+            if (other == null) return;
+
+            _name = other._species + " " + other._archetype;
+            _motivationSet = MotivationFactory.RandomMotivationSet();
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Unique Rival from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
 
     }
 }

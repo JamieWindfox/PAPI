@@ -1,6 +1,7 @@
 ﻿using GameMasterPAPI.Server;
 using PAPI.Logging;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,7 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings._activeLanguage)
+            if (activeLanguage == PAPIApplication.GetLanguage())
             {
                 return;
             }
@@ -42,7 +43,7 @@ namespace GameMasterPAPI.Views
                 Translate(resSet, searchPlayerButton);
                 foundPlayerNameTextbox.Text = "";
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + GameSettings._activeLanguage);
+            WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + PAPIApplication.GetLanguage());
         }
 
         private void SearchPlayer()

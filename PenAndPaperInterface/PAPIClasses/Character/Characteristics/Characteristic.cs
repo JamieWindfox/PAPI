@@ -54,6 +54,28 @@ namespace PAPI.Character.Characteristics
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
+        /// The default CTOR creates a basic Brawn characterisitc with value 1
+        /// </summary>
+        public Characteristic() : this(CharacteristicEnum.BRAWN, 1, null)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Characteristic from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// creates a copy of the given Characteristic
+        /// </summary>
+        /// <param name="other"></param>
+        public Characteristic(Characteristic other) : this(other._associatedEnum, other._value, other._modification)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Characteristic from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
         /// Increases the value once and returns true, unless it has already reached the max-value,
         /// (if so, nothing happens and the method returns false)
         /// </summary>

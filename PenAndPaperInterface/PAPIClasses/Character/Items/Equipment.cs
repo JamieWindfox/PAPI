@@ -53,5 +53,32 @@ namespace PAPI.Character
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// creates an empty equipment
+        /// </summary>
+        public Equipment() : this(null, null, null, null)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Equipment from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public Equipment(Equipment other) : this()
+        {
+            _armour = new Armour(other._armour);
+            _clothing = new Clothing(other._clothing);
+            _mainWeapon = new Weapon(other._mainWeapon);
+            
+            if(other._secondaryItem is Weapon)
+            {
+                _secondaryItem = new Weapon((Weapon)other._secondaryItem);
+            }
+            // TODO: Additional types
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Equipment from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

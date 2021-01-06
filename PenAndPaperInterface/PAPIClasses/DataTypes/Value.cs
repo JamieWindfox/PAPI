@@ -26,5 +26,33 @@ namespace PAPI.DataTypes
             this._modification = (_modification == null) ? new Modification(0, GameTimeIntervalEnum.NOT_VALID) : _modification;
             WfLogger.Log(this, LogLevel.DETAILED, "Created Soak (Value = " + this._value + ", Modification: " + this._modification._value + ")");
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Default CTOR with value = 0 and no modification
+        /// </summary>
+        public Value() : this(0, null)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Value from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Copy CTOR
+        /// </summary>
+        /// <param name="other">if null, a default value is created</param>
+        public Value(Value other) : this()
+        {
+            if (other == null) return;
+
+            _value = other._value;
+            _modification = new Modification(other._modification);
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Value from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

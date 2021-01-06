@@ -1,5 +1,6 @@
 ﻿using PAPI.Logging;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,7 @@ namespace GameMasterPAPI.Views
         /// </summary>
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings._activeLanguage)
+            if (activeLanguage == PAPIApplication.GetLanguage())
             {
                 return;
             }
@@ -42,18 +43,22 @@ namespace GameMasterPAPI.Views
             }
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
         /// <summary>
         /// Deletes the selected game if clicked
         /// </summary>
         private void yesButton_Click(object sender, EventArgs e)
         {
             WfLogger.Log(this, LogLevel.DEBUG, "'Yes' Button was clicked, game is being deleted");
-            ((GameSelectionView)(ViewController.gameSelectionView)).DeleteGame(RunningGame.game);
-            RunningGame.ClearGame();
+            ((GameSelectionView)(ViewController.gameSelectionView)).DeleteGame(PAPIApplication._runningGame);
+            PAPIApplication._runningGame.ClearGame();
             ViewController.showGameOverviewView.Hide();
             ViewController.gameSelectionView.Open(ViewController.startView);
             Hide();
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// Returns from the Popup without deleting the selected game

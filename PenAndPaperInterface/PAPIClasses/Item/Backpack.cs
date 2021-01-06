@@ -40,7 +40,38 @@ namespace PAPI.Item
             base(_name, _basePrice, _encumbrance, _rarity, _condition, _qualities, _availableGenres, _descriptionKey)
         {
             this._capacity = _capacity;
+
             WfLogger.Log(this, LogLevel.DETAILED, "A new backpack with capacity " + this._capacity + " was created");
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates a new invalid backpack wth capacity = encumbrance
+        /// </summary>
+        public Backpack() : base()
+        {
+            _capacity = _encumbrance;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new invalid backpack from default");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates a copy of the given backpack
+        /// </summary>
+        /// <param name="other">if null, an invalid default backpack is created</param>
+        public Backpack(Backpack other) : base(other)
+        {
+            if (other == null) return;
+
+            _capacity = other._capacity;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new backpack from another");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }
