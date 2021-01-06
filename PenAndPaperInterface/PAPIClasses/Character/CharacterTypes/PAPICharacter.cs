@@ -104,18 +104,18 @@ namespace PAPI.Character.CharacterTypes
             GenderEnum _gender, List<GenderEnum> _genderPreferences)
         {
             this._archetype = (_archetype == null || _archetype == "") ? "Townspeople" : _archetype;
-            this._species = (_species == null) ? SpeciesHandler.GetSpecies("Human") : _species;
+            this._species = (_species == null) ? SpeciesHandler.GetSpecies(SpeciesEnum.HUMAN) : _species;
             this._soak = (_soak == null) ? new Value(0, null) : _soak;
             this._characteristics = (_characteristics == null) ? new CharacteristicSet() : _characteristics;
             this._health = (_health == null) ? 
-                new ThresholdValue(SpeciesHandler.GetInitialHealth(this._species)) : _health;
+                new ThresholdValue(SpeciesHandler.GetInitialHealth(this._species._enum)) : _health;
             this._defense = (_defense == null) ? new Defense(0, null, 0, null) : _defense;
             this._equipment = (_equipment == null) ? new Equipment(null, null, null, null) : _equipment;
             this._inventory = (_inventory == null) ? new Inventory(null, null) : _inventory;
             this._skillSet = (_skillSet == null) ? new List<PAPISkill>() : _skillSet;
             this._abilities = (_abilities == null) ? new List<Ability>() : _abilities;
             this._career = _career;
-            this._appearance = (_appearance == null) ? new CharacterAppearance(SpeciesHandler.GetAverageAppearance(this._species)) : _appearance;
+            this._appearance = (_appearance == null) ? new CharacterAppearance(SpeciesHandler.GetAverageAppearance(this._species._enum)) : _appearance;
             this._gender = _gender;
             this._genderPreferences = (_genderPreferences == null || _genderPreferences.Count == 0) ? new List<GenderEnum>() { GenderEnum.NONE } : _genderPreferences;
 

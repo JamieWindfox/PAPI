@@ -51,7 +51,7 @@ namespace PAPI.Character.CharacterTypes
             base(_archetype, _species, _soak, _health, _defense, _characteristics, _equipment, _inventory, _skillSet, _abilities, _career, _appearance, _gender, 
                 _genderPreferences, _relationshipToParty, _criticalInjuries, _name, _motivationSet)
         {
-            this._strain = (_strain == null || _strain._threshold == 0) ? new ThresholdValue(SpeciesHandler.GetInitialStrain(this._species)) : _strain;
+            this._strain = (_strain == null || _strain._threshold == 0) ? new ThresholdValue(SpeciesHandler.GetInitialStrain(this._species._enum)) : _strain;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Nemesis " + this._name);
         }
