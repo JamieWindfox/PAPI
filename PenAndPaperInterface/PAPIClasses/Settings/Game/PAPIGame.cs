@@ -60,7 +60,7 @@ namespace PAPI.Settings
         /// <summary>
         /// Creates a default game with the current player as game master
         /// </summary>
-        /// <param name="other"></param>
+        /// <param name="other">if null, a default game is created</param>
         public PAPIGame(PAPIGame other) : this()
         {
             if (other == null) return;
@@ -79,11 +79,15 @@ namespace PAPI.Settings
         // --------------------------------------------------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Adds the given player to the party of players; If they already are in the party, nothing happens
+        /// </summary>
+        /// <param name="player">if null, nothing happens</param>
         public void AddPlayer(Player player)
         {
-            if(_playerParty.ContainsKey(player))
+            if(player == null || _playerParty.ContainsKey(player))
             {
-                WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.WARNING, "Couldn't add player, because they already are in this game");
+                WfLogger.Log(this.GetType() + ".AddPlayer(Player)", LogLevel.WARNING, "Couldn't add player, because they already are in this game or they are null");
                 return;
             }
             _playerParty.Add(player, null);
@@ -92,12 +96,21 @@ namespace PAPI.Settings
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Adds the given playerCharacter to the given player
+        /// </summary>
+        /// <param name="player">if null, nothing happens</param>
+        /// <param name="playerCharacter">if null, nothing happens</param>
         public void AddPlayerCharacter(Player player, PlayerCharacter playerCharacter)
         {
+            if(player == null || playerCharacter == null)
+            {
+                WfLogger.Log(this, LogLevel.WARNING, "Couldn't add playerCharacter, because either player and/or character were null");
+                return;
+            }
             if (!_playerParty.ContainsKey(player))
             {
-                WfLogger.Log(this.GetType() + ".AddPlayerCharacter(Player, Character)", LogLevel.WARNING, 
-                    "Couldn't add playerCharacter, because they already have a character in this game");
+                WfLogger.Log(this, LogLevel.WARNING, "Couldn't add playerCharacter, because they already have a character in this game");
                 return;
             }
             _playerParty[player] = playerCharacter;
@@ -106,7 +119,7 @@ namespace PAPI.Settings
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// Sets all game values to default
+        /// Sets all game values to null (if possible)
         /// </summary>
         public void ClearGame()
         {

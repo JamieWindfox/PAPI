@@ -47,6 +47,10 @@ namespace PAPI.Settings
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a copy of the given resource
+        /// </summary>
+        /// <param name="other">if null, an invalid resource is created</param>
         public BookResource(BookResource other) : this()
         {
             if (other == null) return;
