@@ -1,6 +1,7 @@
 ﻿using PAPI.DataTypes;
 using PAPI.Logging;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -51,7 +52,7 @@ namespace PAPI.Character.General
             this._descriptionKey = (_descriptionKey == null || _descriptionKey == "") ? "INVALID_DESCRIPTION" : _descriptionKey;
             this._hasPermanentEffect = _hasPermanentEffect;
             this._bookResource = (_bookResource == null) ? new BookResource(RuleBookEnum.NO_RULE_BOOK, 0) : _bookResource;
-            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ? new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
+            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ? new List<GenreEnum>(PAPIApplication.GetAllGenres()) : _availableGenres;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Critical Injury " + this._nameKey);
         }

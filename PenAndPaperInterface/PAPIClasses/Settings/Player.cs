@@ -1,5 +1,5 @@
-﻿using System;
-using System.Text.Json;
+﻿
+using PAPI.Logging;
 using System.Text.Json.Serialization;
 
 namespace PAPI.Settings
@@ -7,19 +7,52 @@ namespace PAPI.Settings
     public class Player
     {
         public string _name { get; private set; }
-        public string ip { get; private set; }
+        public string _ip { get; private set; }
 
-        // Attribute needed to send Players through the NET API
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// The JSON CTOR must contain all traits of the player
+        /// </summary>
+        /// <param name="name">if null or empty, the name ist set to "NOT_VALID"</param>
+        /// <param name="ip">if null or empty, is is set to the local ip</param>
         [JsonConstructor]
-        public Player(string name, string ip)
+        public Player(string _name, string _ip)
         {
-            this._name = name;
-            this.ip = ip;
+            this._name = (_name == null || _name == "") ? "NOT_VALID" : _name;
+            this._ip = (_ip == null || _ip == "") ? Settings.Game.PAPIApplication.GetLocalIP() : _ip;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Player " + _name);
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
 
-        public Player() 
-            : this("NOT A VALID PLAYER NAME", "0.0.0.0:0") { }
+        /// <summary>
+        /// Creates a new default player
+        /// </summary>
+        public Player() : this(null, null)
+        {
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new default Player");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Creates a copy of the given player
+        /// </summary>
+        /// <param name="other">if null, a default player is created</param>
+        public Player(Player other) : this()
+        {
+            if (other == null) return;
+
+            _name = other._name;
+            _ip = other._ip;
+
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Player as copy");
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
 
         public void SetName(string name)
         {
@@ -27,7 +60,7 @@ namespace PAPI.Settings
         }
         public void SetIp(string ip)
         {
-            this.ip = ip;
+            this._ip = ip;
         }
     }
 }

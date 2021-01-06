@@ -4,6 +4,7 @@ using PAPI.Settings;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using PAPI.Character.Characteristics;
+using PAPI.Settings.Game;
 
 namespace PAPI.Character.Skill
 {
@@ -75,7 +76,7 @@ namespace PAPI.Character.Skill
             this._value = (_value._value < MIN_VALUE || _value._value > MAX_VALUE)? this._value = new Value(0, null) : this._value = _value;
             this._characteristicEnum = this._characteristicEnum;
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
-                new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
+                new List<GenreEnum>(PAPIApplication.GetAllGenres()) : _availableGenres;
             this._isCareer = _isCareer;
             WfLogger.Log(this, LogLevel.DETAILED, "Skill '" + this._name + "' was created");
         }

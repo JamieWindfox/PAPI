@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 using PAPI.Character.Appearance;
 using PAPI.Logging;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 
 namespace PAPI.Character
 {
@@ -31,7 +32,7 @@ namespace PAPI.Character
         public Species(string _nameKey, List<GenreEnum> _availableGenres)
         {
             this._nameKey = (_nameKey == null || _nameKey == "") ? "INVALID_SPECIES" : _nameKey;
-            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ? new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
+            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ? new List<GenreEnum>(PAPIApplication.GetAllGenres()) : _availableGenres;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Species " + this._nameKey);
         }

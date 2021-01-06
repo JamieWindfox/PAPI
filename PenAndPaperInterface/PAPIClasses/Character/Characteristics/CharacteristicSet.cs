@@ -52,7 +52,7 @@ namespace PAPI.Character.Characteristics
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// Default CTOR, creates a random CharacteristicSet
+        /// Default CTOR, creates a CharacteristicSet with all values 1
         /// </summary>
         public CharacteristicSet() : this(new List<Characteristic>())
         {

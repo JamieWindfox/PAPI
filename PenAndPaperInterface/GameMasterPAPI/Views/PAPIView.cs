@@ -7,6 +7,7 @@ using PAPI.Settings;
 using Microsoft.CodeAnalysis;
 using PAPI.Exception;
 using System.Resources;
+using PAPI.Settings.Game;
 
 namespace GameMasterPAPI.Views
 {
@@ -42,7 +43,7 @@ namespace GameMasterPAPI.Views
                     button.Size = new Size(40, 40);
                 }
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "Button design was set to " + GameSettings._activeDesign);
+            WfLogger.Log(this, LogLevel.DEBUG, "Button design was set to " + PAPIApplication.GetDesign());
         }
 
         public void Open(PAPIView caller)
@@ -65,7 +66,7 @@ namespace GameMasterPAPI.Views
 
         protected void SetDesign()
         {
-            switch (GameSettings._activeDesign)
+            switch (PAPIApplication.GetDesign())
             {
                 case DesignEnum.MEDIEVAL:
                     BackColor = System.Drawing.Color.AntiqueWhite;
@@ -102,7 +103,7 @@ namespace GameMasterPAPI.Views
             ShowInTaskbar = true;
             AutoScaleMode = AutoScaleMode.None;
             ControlBox = true;
-            WfLogger.Log(this, LogLevel.DEBUG, "Design was set to " + GameSettings._activeDesign);
+            WfLogger.Log(this, LogLevel.DEBUG, "Design was set to " + PAPIApplication.GetDesign());
             SetButtonDesign();
         }
 
@@ -120,7 +121,7 @@ namespace GameMasterPAPI.Views
         {
             string resFile;
 
-            switch (GameSettings._activeLanguage)
+            switch (PAPIApplication.GetLanguage())
             {
                 case LanguageEnum.GERMAN:
                     resFile = @".\Strings\\General_DE.resx";
@@ -161,6 +162,7 @@ namespace GameMasterPAPI.Views
             }
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
         public string RemoveNumbers(string text)
         {
             string output = text.Replace("0", "");

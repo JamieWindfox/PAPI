@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PAPIClasses.DataTypes
+namespace PAPI.DataTypes
 {
     public enum RangeEnum
     {

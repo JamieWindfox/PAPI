@@ -1,6 +1,7 @@
 ﻿using PAPI.Character.Skill;
 using PAPI.Logging;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -44,7 +45,7 @@ namespace PAPI.Character
             this._nameKey = _nameKey;
             this._careerSkills = new List<PAPISkill>(_careerSkills);
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
-                new List<GenreEnum>(GameSettings.GetAllGenres()) : new List<GenreEnum>(_availableGenres);
+                new List<GenreEnum>(PAPIApplication.GetAllGenres()) : new List<GenreEnum>(_availableGenres);
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Career " + _nameKey);
         }

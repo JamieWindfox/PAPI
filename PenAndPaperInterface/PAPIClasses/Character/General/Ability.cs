@@ -1,6 +1,7 @@
 ﻿using PAPI.DataTypes;
 using PAPI.Logging;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -64,7 +65,7 @@ namespace PAPI.Character.General
             this._isActive = _isActive;
             this._descriptionKey = (_descriptionKey == null) ? "INVALID_DESCRIPTION" : _descriptionKey;
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
-                this._availableGenres = new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
+                this._availableGenres = new List<GenreEnum>(PAPIApplication.GetAllGenres()) : _availableGenres;
             this._gameTimeInterval = _gameTimeInterval;
             this._bookResource = _bookResource;
             this._isUsable = _isUsable;

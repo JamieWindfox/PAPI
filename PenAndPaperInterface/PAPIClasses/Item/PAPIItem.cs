@@ -1,5 +1,6 @@
 ﻿using PAPI.Logging;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -67,7 +68,7 @@ namespace PAPI.Item
             this._condition = _condition;
             this._qualities = (_qualities == null) ? new Dictionary<ItemQuality, uint>() : _qualities;
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ?
-                new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
+                new List<GenreEnum>(PAPIApplication.GetAllGenres()) : _availableGenres;
             this._descriptionKey = (_descriptionKey == null) ? "INVALIID_DESCRIPTION" : _descriptionKey;
 
             WfLogger.Log(this, LogLevel.DETAILED, "PAPIItem '" + this._nameKey + "' was created");

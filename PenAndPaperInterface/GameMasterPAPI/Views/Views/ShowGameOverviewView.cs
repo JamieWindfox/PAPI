@@ -1,16 +1,10 @@
-﻿using PAPI.Character;
-using PAPI.Character.CharacterTypes;
+﻿using PAPI.Character.CharacterTypes;
 using PAPI.Logging;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GameMasterPAPI.Views
@@ -54,12 +48,12 @@ namespace GameMasterPAPI.Views
         private void ShowPlayers()
         {
             // Show all saved Games
-            if(RunningGame.game == null)
+            if(PAPIApplication._runningGame == null)
             {
                 return;
             }
             int rowNr = 1;
-            foreach (KeyValuePair<Player, PlayerCharacter> player in RunningGame.game._playerParty)
+            foreach (KeyValuePair<Player, PlayerCharacter> player in PAPIApplication._runningGame._playerParty)
             {
                 WfLogger.Log(this, LogLevel.DEBUG, "Added player to list of players: " + player.Key._name + ", Character: " + player.Value._name);
                 playerCharacterPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
@@ -97,9 +91,12 @@ namespace GameMasterPAPI.Views
             SetButtonDesign();
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
         public override void SetTextToActiveLanguage()
         {
-            if ((activeLanguage == GameSettings._activeLanguage && RunningGame.game != null && shownGenre == RunningGame.game._genre))
+            if ((activeLanguage == PAPIApplication.GetLanguage() && PAPIApplication._runningGame != null &&
+                shownGenre == PAPIApplication._runningGame._genre))
             {
                 return;
             }
@@ -107,17 +104,19 @@ namespace GameMasterPAPI.Views
             using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
             {
                 Translate(resSet, genreLabel);
-                if (RunningGame.game != null)
+                if (PAPIApplication._runningGame != null)
                 {
-                    genreLabel.Text += ": " + TranslatedString(resSet, "genre_" + RunningGame.game._genre.ToString().ToLower());
+                    genreLabel.Text += ": " + TranslatedString(resSet, EnumConverter.Convert(PAPIApplication._runningGame._genre));
                     Translate(resSet, creationDateLabel);
-                    creationDateLabel.Text += ": " + RunningGame.game._dateOfCreation.ToString();
+                    creationDateLabel.Text += ": " + PAPIApplication._runningGame._dateOfCreation.ToString();
                     Translate(resSet, lastSaveLabel);
-                    lastSaveLabel.Text += ": " + RunningGame.game._dateOfLastSession.ToString();
+                    lastSaveLabel.Text += ": " + PAPIApplication._runningGame._dateOfLastSession.ToString();
                 }
                 
             }
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
 
         private void cancelButton_Click(object sender, EventArgs e)
         {

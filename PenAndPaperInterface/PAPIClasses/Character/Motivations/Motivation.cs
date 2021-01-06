@@ -1,5 +1,6 @@
 ﻿using PAPI.Logging;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -27,7 +28,7 @@ namespace PAPI.Character.Motivations
             this._type = _type;
             this._nameKey = (_nameKey == null || _nameKey == "") ? "INVALID_MOTIVATION" : _nameKey;
             this._descriptionKey = (_descriptionKey == null || _descriptionKey == "") ? "INVALID_DESCRIPTION" : _descriptionKey; ;
-            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ? new List<GenreEnum>(GameSettings.GetAllGenres()) : _availableGenres;
+            this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ? new List<GenreEnum>(PAPIApplication.GetAllGenres()) : _availableGenres;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Motivation " + this._type + ": " + _nameKey);
         }

@@ -12,6 +12,7 @@ using System.Text.Json;
 using PAPI.Settings;
 using PAPI.Network;
 using PAPI.Client;
+using PAPI.Settings.Game;
 
 namespace TestClient
 {
@@ -19,7 +20,8 @@ namespace TestClient
     {
         static void Main(string[] args)
         {
-            Player player = new Player("Raine", CurrentPlayer.GetLocalIPAddress());
+
+            Player player = new Player("Raine", PAPIApplication._currentPlayer._ip);
             PlayerJoinRequest request = new PlayerJoinRequest("PlayerJoinRequest", player);
             byte[] bytes = PAPIClient.SendMessage(System.Text.Encoding.Unicode.GetBytes(JsonSerializer.Serialize(request)));
 

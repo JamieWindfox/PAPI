@@ -1,10 +1,8 @@
 ﻿using PAPI.Character.Skill;
+using PAPI.DataTypes;
 using PAPI.Logging;
 using PAPI.Settings;
-using PAPIClasses.DataTypes;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Text.Json.Serialization;
 
 namespace PAPI.Item

@@ -1,5 +1,6 @@
 ﻿using PAPI.Logging;
 using PAPI.Settings;
+using PAPI.Settings.Game;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -90,7 +91,7 @@ namespace GameMasterPAPI.Views
                 Name = "removePlayerButton" + (players_removeButtons.Count + 1)
             };
 
-            string imagePath = GameDirectory.GetFilePath_Images(GameSettings._activeDesign) + "\\cancel.bmp";
+            string imagePath = GameDirectory.GetFilePath_Images(PAPIApplication.GetDesign()) + "\\cancel.bmp";
             Image image = Image.FromFile(imagePath);
             button.Image = (Image)(new Bitmap(image, new Size(40, 40)));
 
@@ -147,7 +148,7 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == GameSettings._activeLanguage)
+            if (activeLanguage == PAPIApplication.GetLanguage())
             {
                 return;
             }
@@ -156,8 +157,8 @@ namespace GameMasterPAPI.Views
             {
                 Translate(resSet, gmNameLabel);
                 Translate(resSet, gmIPLabel);
-                gmNameLabel.Text += ": " + CurrentPlayer._player._name;
-                gmIPLabel.Text += ": " + CurrentPlayer._player.ip;
+                gmNameLabel.Text += ": " + PAPIApplication._currentPlayer._name;
+                gmIPLabel.Text += ": " + PAPIApplication._currentPlayer._ip;
                 Translate(resSet, cancelButton);
                 Translate(resSet, addPlayerButton);
                 Translate(resSet, createGameButton);
@@ -209,11 +210,11 @@ namespace GameMasterPAPI.Views
         {
             if (selectedGenre != GenreEnum.NOT_VALID)
             {
-                RunningGame.StartGame(new Game(selectedGenre, RunningGame._gameMaster, null, DateTime.Now, DateTime.Now, null));
+                PAPIApplication.StartNewGame(selectedGenre);
                 WfLogger.Log(this, LogLevel.DEBUG, "Create Game Button clicked, created a new Game (" + selectedGenre + ")");
                 foreach(KeyValuePair<Player, Button> playerButton in players_removeButtons)
                 {
-                    RunningGame.game.AddPlayer(playerButton.Key);
+                    PAPIApplication._runningGame.AddPlayer(playerButton.Key);
                 }
                 ViewController.gameView.Open(this);
             }
