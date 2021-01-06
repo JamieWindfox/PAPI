@@ -66,7 +66,7 @@ namespace PAPI.Character.Characteristics
         /// <summary>
         /// creates a copy of the given Characteristic
         /// </summary>
-        /// <param name="other"></param>
+        /// <param name="other">if null a default ine is created</param>
         public Characteristic(Characteristic other) : this(other._associatedEnum, other._value, other._modification)
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Characteristic from another");
@@ -105,12 +105,12 @@ namespace PAPI.Character.Characteristics
         /// <summary>
         /// Fomula = NextRank * 10
         /// </summary>
-        /// <returns>Exp cost to train the characteristic once</returns>
+        /// <returns>Exp cost to train the characteristic to the next rank, if it cant be trained, it returns 0</returns>
         public uint GetTrainingCost()
         {
-            if (_value < MAX_VALUE)
+            if (!IsMaximized())
             {
-                uint cost = (this._value + 1) * 10;
+                uint cost = (_value + 1) * 10;
                 WfLogger.Log(this, LogLevel.DETAILED, "Trainings Cost of " + this._associatedEnum.ToString() + ": " + cost);
                 return cost;
             }

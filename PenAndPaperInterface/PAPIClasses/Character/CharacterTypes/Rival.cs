@@ -53,6 +53,9 @@ namespace PAPI.Character.CharacterTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a default Rival with no critical injuries
+        /// </summary>
         public Rival() : base()
         {
             _criticalInjuries = new List<CriticalInjury>();
@@ -62,6 +65,10 @@ namespace PAPI.Character.CharacterTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a copy of the given Rival
+        /// </summary>
+        /// <param name="other">if null, a default rival is created</param>
         public Rival(Rival other) : this()
         {
             if (other == null) return;
