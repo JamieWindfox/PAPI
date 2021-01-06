@@ -59,7 +59,7 @@ namespace PAPI.Character.CharacterTypes
         /// <param name="_appearance">if null, the character/creature looks like an average specimen of its species</param>
         /// <param name="_gender">the characters gender</param>
         /// <param name="_genderPreferences">the characters sexcual/romabtic preferences, if null it is none</param>
-        /// <param name="_name">if null, the character is invlaid</param>
+        /// <param name="_name">if null, the name is set to invlaid</param>
         /// <param name="_motivationSet">if null, the character gets random motivations</param>   
         /// <param name="_criticalInjuries">if null, there a re no critical injuries (yet)</param>
         /// <param name="_strain">the strain of the player character</param>
@@ -72,15 +72,10 @@ namespace PAPI.Character.CharacterTypes
             base(_archetype, _species, _soak, _health, _defense, _characteristics, _equipment, _inventory, _skillSet, _abilities, _career, _appearance, _gender, 
                 _genderPreferences)
         {
-            if(_name == null || _name == "")
-            {
-                SetInvalid();
-                return;
-            }
-            this._name = _name;
+            this._name = (_name == null || _name == "") ? "NOT_VALID" : _name;
             this._motivationSet = (_motivationSet == null) ? new MotivationSet() : _motivationSet;
             this._criticalInjuries = (_criticalInjuries == null) ? new List<CriticalInjury>() : _criticalInjuries;
-            this._strain = (_strain == null) ? SpeciesHandler.GetInitialStrain(this._species) : _strain;
+            this._strain = (_strain == null) ? SpeciesHandler.GetInitialStrain(this._species._enum) : _strain;
             this._careerSkills = (_careerSkills == null) ? new List<SkillEnum>() : _careerSkills;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new PlayerCharacter " + this._name);

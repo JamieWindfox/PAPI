@@ -4,8 +4,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using PAPI.Logging;
 using PAPI.Settings;
-using Microsoft.CodeAnalysis;
-using PAPI.Exception;
 using System.Resources;
 using PAPI.Settings.Game;
 

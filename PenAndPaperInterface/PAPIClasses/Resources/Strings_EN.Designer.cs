@@ -1870,6 +1870,51 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die more genders ähnelt.
+        /// </summary>
+        internal static string GenderEnum_BOTH {
+            get {
+                return ResourceManager.GetString("GenderEnum_BOTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die female ähnelt.
+        /// </summary>
+        internal static string GenderEnum_FEMALE {
+            get {
+                return ResourceManager.GetString("GenderEnum_FEMALE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die male ähnelt.
+        /// </summary>
+        internal static string GenderEnum_MALE {
+            get {
+                return ResourceManager.GetString("GenderEnum_MALE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die no gender ähnelt.
+        /// </summary>
+        internal static string GenderEnum_NONE {
+            get {
+                return ResourceManager.GetString("GenderEnum_NONE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die other gender ähnelt.
+        /// </summary>
+        internal static string GenderEnum_OTHER {
+            get {
+                return ResourceManager.GetString("GenderEnum_OTHER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string GenreEnum_MAGICAL_WORLD {
@@ -2923,6 +2968,15 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Custom Species ähnelt.
+        /// </summary>
+        internal static string Species_CUSTOM {
+            get {
+                return ResourceManager.GetString("Species_CUSTOM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string Species_DRAGON {
@@ -3013,15 +3067,6 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Abilities ähnelt.
         /// </summary>
         internal static string Translation_ABILITIES {
@@ -3058,6 +3103,15 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_ADD {
+            get {
+                return ResourceManager.GetString("Translation_ADD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Appearance ähnelt.
         /// </summary>
         internal static string Translation_APPEARANCE {
@@ -3067,11 +3121,11 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Description (Appearance) ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
-        internal static string Translation_APPEARANCE_DESCRIPTION {
+        internal static string Translation_APPLICATION {
             get {
-                return ResourceManager.GetString("Translation_APPEARANCE_DESCRIPTION", resourceCulture);
+                return ResourceManager.GetString("Translation_APPLICATION", resourceCulture);
             }
         }
         
@@ -3166,6 +3220,15 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_CAPACITY {
+            get {
+                return ResourceManager.GetString("Translation_CAPACITY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Career ähnelt.
         /// </summary>
         internal static string Translation_CAREER {
@@ -3247,6 +3310,15 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_CONNECTED {
+            get {
+                return ResourceManager.GetString("Translation_CONNECTED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Critical Injuries ähnelt.
         /// </summary>
         internal static string Translation_CRITICAL_INJURIES {
@@ -3292,11 +3364,29 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_DECLINE {
+            get {
+                return ResourceManager.GetString("Translation_DECLINE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Defense ähnelt.
         /// </summary>
         internal static string Translation_DEFENSE {
             get {
                 return ResourceManager.GetString("Translation_DEFENSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_DELETE {
+            get {
+                return ResourceManager.GetString("Translation_DELETE", resourceCulture);
             }
         }
         
@@ -3319,11 +3409,38 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_DICE {
+            get {
+                return ResourceManager.GetString("Translation_DICE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_DIE {
+            get {
+                return ResourceManager.GetString("Translation_DIE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Difficulty ähnelt.
         /// </summary>
         internal static string Translation_DIFFICULTY {
             get {
                 return ResourceManager.GetString("Translation_DIFFICULTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_DIRECTORY {
+            get {
+                return ResourceManager.GetString("Translation_DIRECTORY", resourceCulture);
             }
         }
         
@@ -3382,11 +3499,47 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Eyes ähnelt.
         /// </summary>
         internal static string Translation_EYES {
             get {
                 return ResourceManager.GetString("Translation_EYES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_FILE {
+            get {
+                return ResourceManager.GetString("Translation_FILE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_FILE_NAME {
+            get {
+                return ResourceManager.GetString("Translation_FILE_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_FROM {
+            get {
+                return ResourceManager.GetString("Translation_FROM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_GAME {
+            get {
+                return ResourceManager.GetString("Translation_GAME", resourceCulture);
             }
         }
         
@@ -3396,6 +3549,33 @@ namespace PAPIClasses.Resources {
         internal static string Translation_GAME_TIME_INTERVAL {
             get {
                 return ResourceManager.GetString("Translation_GAME_TIME_INTERVAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_GAMES {
+            get {
+                return ResourceManager.GetString("Translation_GAMES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Gender ähnelt.
+        /// </summary>
+        internal static string Translation_GENDER {
+            get {
+                return ResourceManager.GetString("Translation_GENDER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_GENDER_PREFERENCES {
+            get {
+                return ResourceManager.GetString("Translation_GENDER_PREFERENCES", resourceCulture);
             }
         }
         
@@ -3427,7 +3607,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Hair ähnelt.
         /// </summary>
         internal static string Translation_HAIR {
             get {
@@ -3499,6 +3679,15 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_IP_ADDRESS {
+            get {
+                return ResourceManager.GetString("Translation_IP_ADDRESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Can be used currently ähnelt.
         /// </summary>
         internal static string Translation_IS_USABLE {
@@ -3522,6 +3711,15 @@ namespace PAPIClasses.Resources {
         internal static string Translation_ITEM_CONDITION {
             get {
                 return ResourceManager.GetString("Translation_ITEM_CONDITION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_ITEM_QUALITIES {
+            get {
+                return ResourceManager.GetString("Translation_ITEM_QUALITIES", resourceCulture);
             }
         }
         
@@ -3558,6 +3756,15 @@ namespace PAPIClasses.Resources {
         internal static string Translation_LIGHT_WEAPON {
             get {
                 return ResourceManager.GetString("Translation_LIGHT_WEAPON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_MAIN_WEAPON {
+            get {
+                return ResourceManager.GetString("Translation_MAIN_WEAPON", resourceCulture);
             }
         }
         
@@ -3679,6 +3886,15 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_PERMANENT {
+            get {
+                return ResourceManager.GetString("Translation_PERMANENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Permanent Effect ähnelt.
         /// </summary>
         internal static string Translation_PERMANENT_EFFECT {
@@ -3699,6 +3915,15 @@ namespace PAPIClasses.Resources {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
+        internal static string Translation_PORT {
+            get {
+                return ResourceManager.GetString("Translation_PORT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
         internal static string Translation_PRICE {
             get {
                 return ResourceManager.GetString("Translation_PRICE", resourceCulture);
@@ -3711,6 +3936,15 @@ namespace PAPIClasses.Resources {
         internal static string Translation_PRIMARY_COLOR {
             get {
                 return ResourceManager.GetString("Translation_PRIMARY_COLOR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_QUIT {
+            get {
+                return ResourceManager.GetString("Translation_QUIT", resourceCulture);
             }
         }
         
@@ -3762,6 +3996,15 @@ namespace PAPIClasses.Resources {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
+        internal static string Translation_REMOVE {
+            get {
+                return ResourceManager.GetString("Translation_REMOVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
         internal static string Translation_REQUIRED_SKILL {
             get {
                 return ResourceManager.GetString("Translation_REQUIRED_SKILL", resourceCulture);
@@ -3787,6 +4030,15 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_RULE_BOOK {
+            get {
+                return ResourceManager.GetString("Translation_RULE_BOOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Rulebook ähnelt.
         /// </summary>
         internal static string Translation_RULEBOOK {
@@ -3796,11 +4048,38 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_SAVE {
+            get {
+                return ResourceManager.GetString("Translation_SAVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Secondary Color ähnelt.
         /// </summary>
         internal static string Translation_SECONDARY_COLOR {
             get {
                 return ResourceManager.GetString("Translation_SECONDARY_COLOR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_SECONDARY_ITEM {
+            get {
+                return ResourceManager.GetString("Translation_SECONDARY_ITEM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_SETTINGS {
+            get {
+                return ResourceManager.GetString("Translation_SETTINGS", resourceCulture);
             }
         }
         
@@ -3819,6 +4098,15 @@ namespace PAPIClasses.Resources {
         internal static string Translation_SKILL {
             get {
                 return ResourceManager.GetString("Translation_SKILL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die This skilll can&apos;t be trained anymore ähnelt.
+        /// </summary>
+        internal static string Translation_SKILL_MAXIMIZED_Description {
+            get {
+                return ResourceManager.GetString("Translation_SKILL_MAXIMIZED_Description", resourceCulture);
             }
         }
         
@@ -3895,11 +4183,47 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_STORY_POINT {
+            get {
+                return ResourceManager.GetString("Translation_STORY_POINT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Strain ähnelt.
         /// </summary>
         internal static string Translation_STRAIN {
             get {
                 return ResourceManager.GetString("Translation_STRAIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_SYMBOL {
+            get {
+                return ResourceManager.GetString("Translation_SYMBOL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_THRESHOLD {
+            get {
+                return ResourceManager.GetString("Translation_THRESHOLD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_TO {
+            get {
+                return ResourceManager.GetString("Translation_TO", resourceCulture);
             }
         }
         
@@ -3918,6 +4242,15 @@ namespace PAPIClasses.Resources {
         internal static string Translation_UNIQUE {
             get {
                 return ResourceManager.GetString("Translation_UNIQUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        internal static string Translation_USABLE {
+            get {
+                return ResourceManager.GetString("Translation_USABLE", resourceCulture);
             }
         }
         

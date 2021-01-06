@@ -720,6 +720,21 @@
   <data name="GameTimeIntervalEnum_UNTIL_REMOVED" xml:space="preserve">
     <value />
   </data>
+  <data name="GenderEnum_BOTH" xml:space="preserve">
+    <value>more genders</value>
+  </data>
+  <data name="GenderEnum_FEMALE" xml:space="preserve">
+    <value>female</value>
+  </data>
+  <data name="GenderEnum_MALE" xml:space="preserve">
+    <value>male</value>
+  </data>
+  <data name="GenderEnum_NONE" xml:space="preserve">
+    <value>no gender</value>
+  </data>
+  <data name="GenderEnum_OTHER" xml:space="preserve">
+    <value>other gender</value>
+  </data>
   <data name="GenreEnum_MAGICAL_WORLD" xml:space="preserve">
     <value />
   </data>
@@ -1071,6 +1086,9 @@
   <data name="Species_CATFOLK" xml:space="preserve">
     <value />
   </data>
+  <data name="Species_CUSTOM" xml:space="preserve">
+    <value>Custom Species</value>
+  </data>
   <data name="Species_DRAGON" xml:space="preserve">
     <value />
   </data>
@@ -1101,9 +1119,6 @@
   <data name="Species_ORC" xml:space="preserve">
     <value />
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="Translation_ABILITIES" xml:space="preserve">
     <value>Abilities</value>
   </data>
@@ -1116,11 +1131,14 @@
   <data name="Translation_ACTIVE" xml:space="preserve">
     <value>Active</value>
   </data>
+  <data name="Translation_ADD" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_APPEARANCE" xml:space="preserve">
     <value>Appearance</value>
   </data>
-  <data name="Translation_APPEARANCE_DESCRIPTION" xml:space="preserve">
-    <value>Description (Appearance)</value>
+  <data name="Translation_APPLICATION" xml:space="preserve">
+    <value />
   </data>
   <data name="Translation_ARCHETYPE" xml:space="preserve">
     <value>Archetype</value>
@@ -1152,6 +1170,9 @@
   <data name="Translation_CANCEL" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="Translation_CAPACITY" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_CAREER" xml:space="preserve">
     <value>Career</value>
   </data>
@@ -1179,6 +1200,9 @@
   <data name="Translation_COLOR" xml:space="preserve">
     <value>Color</value>
   </data>
+  <data name="Translation_CONNECTED" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_CRITICAL_INJURIES" xml:space="preserve">
     <value>Critical Injuries</value>
   </data>
@@ -1194,8 +1218,14 @@
   <data name="Translation_DAMAGE" xml:space="preserve">
     <value />
   </data>
+  <data name="Translation_DECLINE" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_DEFENSE" xml:space="preserve">
     <value>Defense</value>
+  </data>
+  <data name="Translation_DELETE" xml:space="preserve">
+    <value />
   </data>
   <data name="Translation_DESCRIPTION" xml:space="preserve">
     <value>Description</value>
@@ -1203,8 +1233,17 @@
   <data name="Translation_DESIGN" xml:space="preserve">
     <value />
   </data>
+  <data name="Translation_DICE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_DIE" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_DIFFICULTY" xml:space="preserve">
     <value>Difficulty</value>
+  </data>
+  <data name="Translation_DIRECTORY" xml:space="preserve">
+    <value />
   </data>
   <data name="Translation_ENCUMBRANCE" xml:space="preserve">
     <value>Encumbrance</value>
@@ -1222,13 +1261,34 @@
     <value />
   </data>
   <data name="Translation_EYES" xml:space="preserve">
-    <value />
+    <value>Eyes</value>
   </data>
   <data name="Translation_EYE_COLOR" xml:space="preserve">
     <value>Eye Color</value>
   </data>
+  <data name="Translation_FILE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_FILE_NAME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_FROM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_GAME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_GAMES" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_GAME_TIME_INTERVAL" xml:space="preserve">
     <value>Can be used once a</value>
+  </data>
+  <data name="Translation_GENDER" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="Translation_GENDER_PREFERENCES" xml:space="preserve">
+    <value />
   </data>
   <data name="Translation_GENRE" xml:space="preserve">
     <value>Genre</value>
@@ -1240,7 +1300,7 @@
     <value>Group size</value>
   </data>
   <data name="Translation_HAIR" xml:space="preserve">
-    <value />
+    <value>Hair</value>
   </data>
   <data name="Translation_HAIR_COLOR" xml:space="preserve">
     <value>Hair Color</value>
@@ -1263,6 +1323,9 @@
   <data name="Translation_INVENTORY" xml:space="preserve">
     <value>Inventory</value>
   </data>
+  <data name="Translation_IP_ADDRESS" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_IS_USABLE" xml:space="preserve">
     <value>Can be used currently</value>
   </data>
@@ -1275,6 +1338,9 @@
   <data name="Translation_ITEM_CONDITION" xml:space="preserve">
     <value />
   </data>
+  <data name="Translation_ITEM_QUALITIES" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_ITEM_QUALITY" xml:space="preserve">
     <value />
   </data>
@@ -1282,6 +1348,9 @@
     <value />
   </data>
   <data name="Translation_LIGHT_WEAPON" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_MAIN_WEAPON" xml:space="preserve">
     <value />
   </data>
   <data name="Translation_MELEE" xml:space="preserve">
@@ -1323,17 +1392,26 @@
   <data name="Translation_PASSIVE" xml:space="preserve">
     <value>Passive</value>
   </data>
+  <data name="Translation_PERMANENT" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_PERMANENT_EFFECT" xml:space="preserve">
     <value>Permanent Effect</value>
   </data>
   <data name="Translation_PLAYER_CHARACTER" xml:space="preserve">
     <value>Player Character</value>
   </data>
+  <data name="Translation_PORT" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_PRICE" xml:space="preserve">
     <value />
   </data>
   <data name="Translation_PRIMARY_COLOR" xml:space="preserve">
     <value>Primary Color</value>
+  </data>
+  <data name="Translation_QUIT" xml:space="preserve">
+    <value />
   </data>
   <data name="Translation_RANDOM" xml:space="preserve">
     <value>Random</value>
@@ -1350,6 +1428,9 @@
   <data name="Translation_RELATIONSHIP_TO_PARTY" xml:space="preserve">
     <value>Relationship to Party</value>
   </data>
+  <data name="Translation_REMOVE" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_REQUIRED_SKILL" xml:space="preserve">
     <value />
   </data>
@@ -1362,8 +1443,20 @@
   <data name="Translation_RULEBOOK" xml:space="preserve">
     <value>Rulebook</value>
   </data>
+  <data name="Translation_RULE_BOOK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_SAVE" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_SECONDARY_COLOR" xml:space="preserve">
     <value>Secondary Color</value>
+  </data>
+  <data name="Translation_SECONDARY_ITEM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_SETTINGS" xml:space="preserve">
+    <value />
   </data>
   <data name="Translation_SEVERITY" xml:space="preserve">
     <value>Severity</value>
@@ -1373,6 +1466,9 @@
   </data>
   <data name="Translation_SKILLS" xml:space="preserve">
     <value>Skills</value>
+  </data>
+  <data name="Translation_SKILL_MAXIMIZED_Description" xml:space="preserve">
+    <value>This skilll can't be trained anymore</value>
   </data>
   <data name="Translation_SKILL_TYPE" xml:space="preserve">
     <value />
@@ -1395,14 +1491,29 @@
   <data name="Translation_START" xml:space="preserve">
     <value>Start</value>
   </data>
+  <data name="Translation_STORY_POINT" xml:space="preserve">
+    <value />
+  </data>
   <data name="Translation_STRAIN" xml:space="preserve">
     <value>Strain</value>
+  </data>
+  <data name="Translation_SYMBOL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_THRESHOLD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Translation_TO" xml:space="preserve">
+    <value />
   </data>
   <data name="Translation_TRESHOLD" xml:space="preserve">
     <value>Threshold</value>
   </data>
   <data name="Translation_UNIQUE" xml:space="preserve">
     <value>Unique</value>
+  </data>
+  <data name="Translation_USABLE" xml:space="preserve">
+    <value />
   </data>
   <data name="Translation_VALUE" xml:space="preserve">
     <value>Value</value>

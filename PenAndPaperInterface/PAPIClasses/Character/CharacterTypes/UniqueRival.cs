@@ -46,7 +46,7 @@ namespace PAPI.Character.CharacterTypes
         /// <param name="_genderPreferences">the characters sexcual/romabtic preferences, if null it is none</param>
         /// <param name="_relationshipToParty">must be a value between -100 and +100, otherwise it gets set to -100 if too low, or to +100 if too high</param>
         /// <param name="_criticalInjuries">If null or empty, the Rival is not suffering from any critical injuries</param>
-        /// <param name="_name">if null or empty, the unique rival is invalid</param>
+        /// <param name="_name">if null or empty, the unique rival has an invalid name</param>
         /// <param name="_motivationSet">if null or empty, the motivations are set random</param>
         [JsonConstructor]
         public UniqueRival(string _archetype, Species _species, Value _soak, ThresholdValue _health, Defense _defense, CharacteristicSet _characteristics,
@@ -56,14 +56,7 @@ namespace PAPI.Character.CharacterTypes
             base(_archetype, _species, _soak, _health, _defense, _characteristics, _equipment, _inventory, _skillSet, _abilities, _career, _appearance, _gender, 
                 _genderPreferences, _relationshipToParty, _criticalInjuries)
         {
-            if(_name == null || _name == "")
-            {
-                SetInvalid();
-                this._name = "INVALID_UNIQUE_RIVAL";
-                return;
-            }
-
-            this._name = _name;
+            this._name = (_name == null || _name == "") ? "NOT_VALID" : _name;
             this._motivationSet = (_motivationSet == null) ? new MotivationSet() : _motivationSet;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Unique Rival: " + this._name);
