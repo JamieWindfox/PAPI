@@ -1,7 +1,5 @@
 ﻿using PAPI.Logging;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using PAPIClasses;
 using System.Text.Json.Serialization;
 
 namespace PAPI.DataTypes
@@ -36,18 +34,26 @@ namespace PAPI.DataTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates new default Modification with value = 0 and a invalid wearoff
+        /// </summary>
         public Modification() : this(0, GameTimeIntervalEnum.NOT_VALID)
         {
-            WfLogger.Log(this, LogLevel.DETAILED, "Created a new Modificastion from default");
+            WfLogger.Log(this, LogLevel.DETAILED, "Created a new Modification from default");
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// creates a new Modification from another
+        /// </summary>
+        /// <param name="other">if null, a default Modification ist created</param>
         public Modification(Modification other) : this(other._value, other._wearoff)
         {
-            WfLogger.Log(this, LogLevel.DETAILED, "Created a new Modificastion from another");
+            WfLogger.Log(this, LogLevel.DETAILED, "Created a new Modification from another");
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
         // --------------------------------------------------------------------------------------------------------------------------------
 
     }

@@ -29,6 +29,9 @@ namespace PAPI.DataTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Default CTOR with value = 0 and no modification
+        /// </summary>
         public Value() : this(0, null)
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Value from default");
@@ -36,10 +39,17 @@ namespace PAPI.DataTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        public Value(Value other)
+        /// <summary>
+        /// Copy CTOR
+        /// </summary>
+        /// <param name="other">if null, a default value is created</param>
+        public Value(Value other) : this()
         {
+            if (other == null) return;
+
             _value = other._value;
             _modification = new Modification(other._modification);
+
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Value from default");
         }
 

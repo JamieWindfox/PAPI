@@ -29,16 +29,38 @@ namespace PAPI.DataTypes
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        public ThresholdValue() : this(10, 0, null)
+        /// <summary>
+        /// create nbw default Threshold Value with a Threshold of 10, if value is smaller than that, otherwise sets threshold to value
+        /// </summary>
+        public ThresholdValue() : base()
         {
+            if (_value < 10)
+            {
+                _threshold = 10;
+            }
+            else
+            {
+                _threshold = _value;
+            }
             WfLogger.Log(this, LogLevel.DETAILED, "Created new default ThresholdValue");
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        public ThresholdValue(ThresholdValue other) : this(other._threshold, other._value, new Modification(other._modification))
+        /// <summary>
+        /// Creates new Threshold-Value from another
+        /// </summary>
+        /// <param name="other">if null, a default Threshold-Value is created</param>
+        public ThresholdValue(ThresholdValue other) : base(other)
         {
+            if (other == null) return;
+
+            _threshold = other._threshold;
+
             WfLogger.Log(this, LogLevel.DETAILED, "Created new ThresholdValue from another");
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }
