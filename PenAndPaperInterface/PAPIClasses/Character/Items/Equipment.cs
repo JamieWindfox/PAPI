@@ -63,6 +63,10 @@ namespace PAPI.Character
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a copy of the given Equipment
+        /// </summary>
+        /// <param name="other">if null, a default equipment is created</param>
         public Equipment(Equipment other) : this()
         {
             _armour = new Armour(other._armour);

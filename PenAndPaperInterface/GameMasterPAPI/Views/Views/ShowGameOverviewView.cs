@@ -70,7 +70,7 @@ namespace GameMasterPAPI.Views
                 }, 1, rowNr);
                 playerCharacterPanel.Controls.Add(new Label()
                 {
-                    Text = player.Value._species._nameKey,
+                    Text = player.Value._species._enum,
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
                 }, 2, rowNr);
                 playerCharacterPanel.Controls.Add(new Label()

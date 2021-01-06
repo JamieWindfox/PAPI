@@ -119,7 +119,7 @@ namespace PAPI.Character.CharacterTypes
             this._gender = _gender;
             this._genderPreferences = (_genderPreferences == null || _genderPreferences.Count == 0) ? new List<GenderEnum>() { GenderEnum.NONE } : _genderPreferences;
 
-            WfLogger.Log(this, LogLevel.DETAILED, "Created new Character (" + this._species._nameKey + 
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Character (" + this._species._enum + 
                 " " + this._archetype + ")");
         }
 

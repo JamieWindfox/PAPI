@@ -41,6 +41,10 @@ namespace PAPI.Character
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a copy of the given Invetory
+        /// </summary>
+        /// <param name="other">if null a default inventory is created</param>
         public Inventory(Inventory other) : this()
         {
             if (other == null) return;

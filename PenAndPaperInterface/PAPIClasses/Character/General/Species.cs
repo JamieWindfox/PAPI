@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using PAPI.Character.Appearance;
+using PAPI.Character.General;
 using PAPI.Logging;
 using PAPI.Settings;
 using PAPI.Settings.Game;
@@ -10,9 +11,14 @@ namespace PAPI.Character
     public class Species
     {
         /// <summary>
-        /// The name of the species or race
+        /// The type/name of the species or race
         /// </summary>
-        public string _nameKey { get; private set; }
+        public SpeciesEnum _enum { get; private set; }
+
+        /// <summary>
+        /// The name of the species, if the enum is CUSTOM
+        /// </summary>
+        public string _name { get; private set; }
 
         /// <summary>
         /// A List of all settings, in which this species is available
@@ -26,20 +32,22 @@ namespace PAPI.Character
         /// _name: if null, species is invalid
         /// _availableGenres: if null, species is available for all genres
         /// </summary>
-        /// <param name="_nameKey">must start with "Species_, otherwise it can't be translated"</param>
+        /// <param name="_enum"></param>
+        /// <param name="_name">if enum is custom the name is set here, other wise the name is set automatically</param>
         /// <param name="_availableGenres"></param>
         [JsonConstructor]
-        public Species(string _nameKey, List<GenreEnum> _availableGenres)
+        public Species(SpeciesEnum _enum, string _name, List<GenreEnum> _availableGenres)
         {
-            this._nameKey = (_nameKey == null || _nameKey == "") ? "INVALID_SPECIES" : _nameKey;
+            this._enum = _enum;
+            this._name = (_name == null || _name == "" || _enum != SpeciesEnum.CUSTOM) ? EnumConverter.Convert(_enum) : _name;
             this._availableGenres = (_availableGenres == null || _availableGenres.Count == 0) ? new List<GenreEnum>(PAPIApplication.GetAllGenres()) : _availableGenres;
 
-            WfLogger.Log(this, LogLevel.DETAILED, "Created new Species " + this._nameKey);
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Species " + this._enum);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        public Species() : this(null, null)
+        public Species() : this(SpeciesEnum.CUSTOM, null, null)
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new invalid Species from default");
         }
@@ -50,7 +58,8 @@ namespace PAPI.Character
         {
             if (other == null) return;
 
-            _nameKey = other._nameKey;
+            _enum = other._enum;
+            _name = other._name;
             _availableGenres = new List<GenreEnum>(other._availableGenres);
         }
 

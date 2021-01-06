@@ -59,6 +59,9 @@ namespace PAPI.Character.General
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates an invlalid default critical injury
+        /// </summary>
         public CriticalInjury() : this(null, 0, 0, DifficultyEnum.NONE, null, false, null, new List<GenreEnum>())
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Critical Injury from default");
@@ -66,6 +69,10 @@ namespace PAPI.Character.General
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Creates a copy of the given Critical Injurie
+        /// </summary>
+        /// <param name="other">if null, the a default one is created</param>
         public CriticalInjury(CriticalInjury other) : this()
         {
             if (other == null) return;
