@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
     public partial class PAPIPopup : PAPIView
     {

@@ -1,11 +1,11 @@
 ﻿
-using GameMasterPAPI.Server;
-using GameMasterPAPI.Views;
+using PAPIClient.Server;
+using PAPIClient.Views;
 using System;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace GameMasterPAPI
+namespace PAPIClient
 {
     static class Program
     {

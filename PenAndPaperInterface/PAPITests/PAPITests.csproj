@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GameMasterPAPI\GameMasterPAPI.csproj" />
+    <ProjectReference Include="..\GameMasterPAPI\PAPIClient.csproj" />
     <ProjectReference Include="..\PAPIClasses\PAPIClasses.csproj" />
     <ProjectReference Include="..\TextClient\TestClient.csproj" />
   </ItemGroup>

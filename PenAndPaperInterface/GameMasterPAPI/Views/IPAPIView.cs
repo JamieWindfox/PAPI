@@ -1,6 +1,6 @@
 ﻿
 
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
     public interface IPAPIView
     {

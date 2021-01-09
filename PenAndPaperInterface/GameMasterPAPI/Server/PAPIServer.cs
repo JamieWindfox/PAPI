@@ -12,10 +12,10 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using PAPI.Settings;
 using System.Runtime.Serialization;
-using GameMasterPAPI.Views;
+using PAPIClient.Views;
 using PAPI.Network;
 
-namespace GameMasterPAPI.Server
+namespace PAPIClient.Server
 {
     class PAPIServer
     {

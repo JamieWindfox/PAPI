@@ -1,7 +1,7 @@
 ﻿
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
-    partial class GMStartView
+    partial class WelcomeView
     {
         /// <summary>
         /// Required designer variable.

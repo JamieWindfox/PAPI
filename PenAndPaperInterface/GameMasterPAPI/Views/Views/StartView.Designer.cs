@@ -1,7 +1,7 @@
 ﻿
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
-    partial class GameView
+    partial class StartView
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace GameMasterPAPI.Views
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "GameView";
+            this.Text = "StartView";
         }
 
         #endregion

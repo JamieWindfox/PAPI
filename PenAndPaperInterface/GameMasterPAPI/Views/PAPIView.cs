@@ -7,27 +7,33 @@ using PAPI.Settings;
 using System.Resources;
 using PAPI.Settings.Game;
 
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
     public partial class PAPIView : Form, ITranslatableView
     {
-        public LanguageEnum activeLanguage { get; protected set; } = LanguageEnum.NOT_VALID;
-        public List<Button> m_buttons { get; protected set; }
+        public LanguageEnum _shownLanguage { get; protected set; } = LanguageEnum.NOT_VALID;
+        public List<Button> _buttons { get; protected set; }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
 
         public PAPIView()
         {
             InitializeComponent();
             WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
 
-            m_buttons = new List<Button>();
+            _buttons = new List<Button>();
             
             WfLogger.Log(this, LogLevel.DEBUG, "Created new View");
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Sets the desisgn of the buttons to the same as the view
+        /// </summary>
         protected void SetButtonDesign()
         {
-            foreach(Button button in m_buttons)
+            foreach(Button button in _buttons)
             {
                 button.BackColor = BackColor;
                 button.ForeColor = ForeColor;
@@ -44,6 +50,12 @@ namespace GameMasterPAPI.Views
             WfLogger.Log(this, LogLevel.DEBUG, "Button design was set to " + PAPIApplication.GetDesign());
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Opens the view and hides the caller
+        /// </summary>
+        /// <param name="caller"></param>
         public void Open(PAPIView caller)
         {
             ViewController.lastView = caller;
@@ -62,6 +74,11 @@ namespace GameMasterPAPI.Views
             WfLogger.Log(this, LogLevel.DEBUG, "Opened View" + this.GetType().ToString());
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Sets the design of the view to the one, that was set in the settings
+        /// </summary>
         protected void SetDesign()
         {
             switch (PAPIApplication.GetDesign())
@@ -105,48 +122,59 @@ namespace GameMasterPAPI.Views
             SetButtonDesign();
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Translates all text on the view to the language that was set in the settings
+        /// </summary>
         public virtual void SetTextToActiveLanguage()
         {
-            WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented");
+            WfLogger.Log(this, LogLevel.WARNING, "SetTextToActiveLanguage not implemented for the super class PAPIView");
         }
 
-        /*public virtual void Translate(ResXResourceSet resSet, Control control)
-        {
-            WfLogger.Log(this, LogLevel.WARNING, "Translate not implemented");
-        }*/
+        // --------------------------------------------------------------------------------------------------------------------------------
 
-        public string GetResourceFile()
+        /// <summary>
+        /// Returns the filepath of the translation file (Language from settings)
+        /// </summary>
+        /// <returns></returns>
+        public string GetTranslationFile()
         {
-            string resFile;
-
-            switch (PAPIApplication.GetLanguage())
-            {
-                case LanguageEnum.GERMAN:
-                    resFile = @".\Strings\\General_DE.resx";
-                    activeLanguage = LanguageEnum.GERMAN;
-                    break;
-                case LanguageEnum.ENGLISH:
-                default:
-                    resFile = @".\Strings\\General_EN.resx";
-                    activeLanguage = LanguageEnum.ENGLISH;
-                    break;
-            }
+            string resFile = GameDirectory.GetTranslationFile(PAPIApplication.GetLanguage());
             return resFile;
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Translates a control from it's name
+        /// </summary>
+        /// <param name="resSet"></param>
+        /// <param name="control"></param>
         public void Translate(ResXResourceSet resSet, Control control)
         {
-            string text = resSet.GetString(control.Name);
+            string textToTranslate = "Translation_" + control.Name.ToUpper();
+            string text = resSet.GetString(textToTranslate);
             if (text != null)
             {
-                control.Text = resSet.GetString(control.Name);
+                control.Text = text;
             }
             else
             {
                 control.Text = control.Name;
             }
+            WfLogger.Log(this, LogLevel.DEBUG, "Translated " + control.Name + " to " + control.Text
+                + " (Language = " + PAPIApplication.GetLanguage() + ")");
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Translates a string
+        /// </summary>
+        /// <param name="resSet"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public string TranslatedString(ResXResourceSet resSet, string key)
         {
             string text = resSet.GetString(key);
@@ -161,8 +189,16 @@ namespace GameMasterPAPI.Views
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Copies the given strings, but removed the numbers form it
+        /// </summary>
+        /// <param name="text">if null or empty, nothing happens</param>
+        /// <returns>The given stirng without numbers</returns>
         public string RemoveNumbers(string text)
         {
+            if (text == null || text == "") return text;
+
             string output = text.Replace("0", "");
             output = output.Replace("1", "");
             output = output.Replace("2", "");
@@ -175,5 +211,7 @@ namespace GameMasterPAPI.Views
             output = output.Replace("9", "");
             return output;
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using PAPI.Exception;
 using PAPI.Settings.Game;
 
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
     public partial class GameSelectionView : PAPIView, ITranslatableView
     {
@@ -73,7 +73,7 @@ namespace GameMasterPAPI.Views
                 gameTable.Controls.Add(button, 3, rowNr);
                 _gameButtons.Add(game, button);
                 gameTable.Controls.Add(button, 2, rowNr++);
-                m_buttons.Add(button);
+                _buttons.Add(button);
             }
 
             // Set size of each row to same
@@ -83,8 +83,8 @@ namespace GameMasterPAPI.Views
                 rowStyle.Height = 44;
             }
 
-            m_buttons.Add(returnButton);
-            m_buttons.Add(newGameButton);
+            _buttons.Add(returnButton);
+            _buttons.Add(newGameButton);
             SetButtonDesign();
 
             // Add eventhandler for click on every show game button
@@ -117,12 +117,12 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == PAPIApplication.GetLanguage())
+            if (_shownLanguage == PAPIApplication.GetLanguage())
             {
                 return;
             }
 
-            using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
+            using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {
                 Translate(resSet, savedGamesLabel);
                 Translate(resSet, returnButton);

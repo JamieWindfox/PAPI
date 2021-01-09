@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameMasterPAPI.Server
+namespace PAPIClient.Server
 {
     public static class PendingMessages
     {

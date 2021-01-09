@@ -1,7 +1,10 @@
 ﻿using System.Windows.Forms;
 
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
+    /// <summary>
+    /// Helper class, so that rows of tables can be deleted
+    /// </summary>
     public static class TableLayoutHelper
     {
         public static void RemoveRowNumber(TableLayoutPanel panel, int rowIndex)

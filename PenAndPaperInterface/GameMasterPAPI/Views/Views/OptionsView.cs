@@ -4,7 +4,7 @@ using System.Resources;
 using PAPI.Logging;
 using PAPI.Settings.Game;
 
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
     public partial class GMOptionsView : PAPIView
     {
@@ -13,7 +13,7 @@ namespace GameMasterPAPI.Views
         {
             InitializeComponent();
             WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
-            m_buttons.Add(returnButton);
+            _buttons.Add(returnButton);
             SetButtonDesign();
         }
 
@@ -21,19 +21,19 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == PAPIApplication.GetLanguage() && cachedPlayerName == PAPIApplication._currentPlayer._name)
+            if (_shownLanguage == PAPIApplication.GetLanguage() && cachedPlayerName == PAPIApplication._currentPlayer._name)
             {
                 return;
             }
             cachedPlayerName = PAPIApplication._currentPlayer._name;
 
-            using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
+            using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {
                 Translate(resSet, languageLabel);
                 Translate(resSet, designLabel);
                 Translate(resSet, returnButton);
                 Translate(resSet, gmNameLabel);
-                gmNameInputField.Text = cachedPlayerName;
+                playerNameInputField.Text = cachedPlayerName;
                 designDropdown.Items[0] = TranslatedString(resSet, "designMedieval");
                 designDropdown.Items[1] = TranslatedString(resSet, "designModern");
                 languageDropdown.Items[0] = TranslatedString(resSet, "languageEnglish");
@@ -90,10 +90,10 @@ namespace GameMasterPAPI.Views
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        private void gmNameInputField_TextChanged(object sender, EventArgs e)
+        private void playerNameInputField_TextChanged(object sender, EventArgs e)
         {
-            PAPIApplication._currentPlayer.SetName(gmNameInputField.Text);
-            WfLogger.Log(this, LogLevel.DEBUG, "Set game master name to " + PAPIApplication._currentPlayer._name);
+            PAPIApplication._currentPlayer.SetName(playerNameInputField.Text);
+            WfLogger.Log(this, LogLevel.DEBUG, "Set player name to " + PAPIApplication._currentPlayer._name);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------

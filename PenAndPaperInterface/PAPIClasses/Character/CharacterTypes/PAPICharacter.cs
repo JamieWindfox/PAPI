@@ -6,9 +6,11 @@ using PAPI.Character.General;
 using System.Text.Json.Serialization;
 using PAPI.Logging;
 using PAPI.Character.Appearance;
+using System;
 
 namespace PAPI.Character.CharacterTypes
 {
+    [Serializable]
     public abstract class PAPICharacter
     {
         /// <summary>

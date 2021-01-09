@@ -1,5 +1,5 @@
 ﻿
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
     partial class ShowGameOverviewView
     {
