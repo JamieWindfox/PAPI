@@ -4,7 +4,7 @@ using System;
 using System.Drawing;
 using System.Resources;
 
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
     public partial class DeleteGamePromptPopup : PAPIPopup, ITranslatableView
     {
@@ -22,12 +22,12 @@ namespace GameMasterPAPI.Views
         /// </summary>
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == PAPIApplication.GetLanguage())
+            if (_shownLanguage == PAPIApplication.GetLanguage())
             {
                 return;
             }
 
-            using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
+            using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {
                 Translate(resSet, deleteGameQuestionLabel);
                 Translate(resSet, yesButton);

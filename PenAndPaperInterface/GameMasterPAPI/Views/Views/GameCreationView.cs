@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Resources;
 using System.Windows.Forms;
 
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
     public partial class GameCreationView : PAPIView, ITranslatableView
     {
@@ -44,9 +44,9 @@ namespace GameMasterPAPI.Views
             playerListPanel.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
 
 
-            m_buttons.Add(cancelButton);
-            m_buttons.Add(createGameButton);
-            m_buttons.Add(addPlayerButton);
+            _buttons.Add(cancelButton);
+            _buttons.Add(createGameButton);
+            _buttons.Add(addPlayerButton);
             SetButtonDesign();
             allComponentsAdded = true;
             WfLogger.Log(this, LogLevel.DEBUG, "Added all components");
@@ -91,7 +91,7 @@ namespace GameMasterPAPI.Views
             button.Image = (Image)(new Bitmap(image, new Size(40, 40)));
 
             playerListPanel.Controls.Add(button, 1, players_removeButtons.Count + 1);
-            m_buttons.Add(button);
+            _buttons.Add(button);
             button.Click += RemovePlayerButton_Click;
 
             players_removeButtons.Add(player, button);
@@ -143,12 +143,12 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == PAPIApplication.GetLanguage())
+            if (_shownLanguage == PAPIApplication.GetLanguage())
             {
                 return;
             }
             
-            using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
+            using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {
                 Translate(resSet, gmNameLabel);
                 Translate(resSet, gmIPLabel);
@@ -211,7 +211,7 @@ namespace GameMasterPAPI.Views
                 {
                     PAPIApplication._runningGame.AddPlayer(playerButton.Key);
                 }
-                ViewController.gameView.Open(this);
+                // TODO
             }
         }
 

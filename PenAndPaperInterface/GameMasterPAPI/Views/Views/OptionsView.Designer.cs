@@ -1,5 +1,5 @@
 ﻿
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
     partial class GMOptionsView
     {
@@ -37,7 +37,7 @@ namespace GameMasterPAPI.Views
             this.languageLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gmNameLabel = new System.Windows.Forms.Label();
-            this.gmNameInputField = new System.Windows.Forms.TextBox();
+            this.playerNameInputField = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -131,7 +131,7 @@ namespace GameMasterPAPI.Views
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.gmNameLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.gmNameInputField, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.playerNameInputField, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 121);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -152,15 +152,15 @@ namespace GameMasterPAPI.Views
             // 
             // gmNameInputField
             // 
-            this.gmNameInputField.BackColor = System.Drawing.SystemColors.Window;
-            this.gmNameInputField.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gmNameInputField.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.gmNameInputField.Location = new System.Drawing.Point(3, 33);
-            this.gmNameInputField.Name = "gmNameInputField";
-            this.gmNameInputField.Size = new System.Drawing.Size(321, 26);
-            this.gmNameInputField.TabIndex = 1;
-            this.gmNameInputField.Text = "GAME MASTER";
-            this.gmNameInputField.TextChanged += new System.EventHandler(this.gmNameInputField_TextChanged);
+            this.playerNameInputField.BackColor = System.Drawing.SystemColors.Window;
+            this.playerNameInputField.Dock = System.Windows.Forms.DockStyle.Top;
+            this.playerNameInputField.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.playerNameInputField.Location = new System.Drawing.Point(3, 33);
+            this.playerNameInputField.Name = "gmNameInputField";
+            this.playerNameInputField.Size = new System.Drawing.Size(321, 26);
+            this.playerNameInputField.TabIndex = 1;
+            this.playerNameInputField.Text = "GAME MASTER";
+            this.playerNameInputField.TextChanged += new System.EventHandler(this.playerNameInputField_TextChanged);
             // 
             // GMOptionsView
             // 
@@ -189,6 +189,6 @@ namespace GameMasterPAPI.Views
         private System.Windows.Forms.Label designLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label gmNameLabel;
-        private System.Windows.Forms.TextBox gmNameInputField;
+        private System.Windows.Forms.TextBox playerNameInputField;
     }
 }

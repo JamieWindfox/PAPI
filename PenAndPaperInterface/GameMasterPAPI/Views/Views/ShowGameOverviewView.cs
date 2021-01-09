@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Resources;
 using System.Windows.Forms;
 
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
     public partial class ShowGameOverviewView : PAPIView, ITranslatableView
     {
@@ -21,9 +21,9 @@ namespace GameMasterPAPI.Views
 
         private void AddComponents()
         {
-            m_buttons.Add(cancelButton);
-            m_buttons.Add(deleteButton);
-            m_buttons.Add(startButton);
+            _buttons.Add(cancelButton);
+            _buttons.Add(deleteButton);
+            _buttons.Add(startButton);
 
             playerCharacterPanel.AutoSize = true;
             playerCharacterPanel.ColumnCount = 3;
@@ -95,13 +95,13 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if ((activeLanguage == PAPIApplication.GetLanguage() && PAPIApplication._runningGame != null &&
+            if ((_shownLanguage == PAPIApplication.GetLanguage() && PAPIApplication._runningGame != null &&
                 shownGenre == PAPIApplication._runningGame._genre))
             {
                 return;
             }
 
-            using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
+            using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {
                 Translate(resSet, genreLabel);
                 if (PAPIApplication._runningGame != null)

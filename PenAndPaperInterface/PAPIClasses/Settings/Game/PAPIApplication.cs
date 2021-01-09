@@ -30,6 +30,15 @@ namespace PAPI.Settings.Game
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        public static void Start()
+        {
+            _currentPlayer = new Player();
+            _settings = new AppSettings();
+            _runningGame = null;
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
         /// <returns>The IP of the device on which the app runs</returns>
         public static string GetLocalIP()
         {

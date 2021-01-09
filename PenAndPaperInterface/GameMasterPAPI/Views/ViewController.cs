@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PAPI.Settings.Game;
 
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
+    /// <summary>
+    /// Controls the opening and closing af the views
+    /// </summary>
     public static class ViewController
     {
         // Views
-        public static PAPIView startView { get; } = new GMStartView();
+        public static PAPIView welcomeView { get; } = new WelcomeView();
+        public static PAPIView startView { get; } = new StartView();
         public static PAPIView optionsView { get; } = new GMOptionsView();
         public static PAPIView gameSelectionView { get; } = new GameSelectionView();
         public static PAPIView gameCreationView { get; } = new GameCreationView();
-        public static PAPIView gameView { get; } = new GameView();
+        
 
         // Popups
         static public PAPIPopup playerSearchPopup { get; } = new PlayerSearchPopup();
@@ -27,8 +27,9 @@ namespace GameMasterPAPI.Views
 
         public static PAPIView Start()
         {
-            ((GMStartView)startView).Open();
-            return startView;
+            PAPIApplication.Start();
+            ((WelcomeView)welcomeView).Open();
+            return welcomeView;
         }
 
     }

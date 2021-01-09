@@ -3868,6 +3868,15 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Options ähnelt.
+        /// </summary>
+        internal static string Translation_OPTIONS_BUTTON {
+            get {
+                return ResourceManager.GetString("Translation_OPTIONS_BUTTON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die page ähnelt.
         /// </summary>
         internal static string Translation_PAGE {
@@ -3945,6 +3954,15 @@ namespace PAPIClasses.Resources {
         internal static string Translation_QUIT {
             get {
                 return ResourceManager.GetString("Translation_QUIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Quit ähnelt.
+        /// </summary>
+        internal static string Translation_QUIT_BUTTON {
+            get {
+                return ResourceManager.GetString("Translation_QUIT_BUTTON", resourceCulture);
             }
         }
         
@@ -4183,6 +4201,15 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Start ähnelt.
+        /// </summary>
+        internal static string Translation_START_BUTTON {
+            get {
+                return ResourceManager.GetString("Translation_START_BUTTON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string Translation_STORY_POINT {
@@ -4332,6 +4359,15 @@ namespace PAPIClasses.Resources {
         internal static string Translation_WEARABLE_ITEM {
             get {
                 return ResourceManager.GetString("Translation_WEARABLE_ITEM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Welcome,  ähnelt.
+        /// </summary>
+        internal static string Translation_WELCOME_LABEL {
+            get {
+                return ResourceManager.GetString("Translation_WELCOME_LABEL", resourceCulture);
             }
         }
         

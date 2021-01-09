@@ -1,4 +1,4 @@
-﻿using GameMasterPAPI.Server;
+﻿using PAPIClient.Server;
 using PAPI.Logging;
 using PAPI.Settings;
 using PAPI.Settings.Game;
@@ -6,7 +6,7 @@ using System;
 using System.Resources;
 using System.Threading;
 
-namespace GameMasterPAPI.Views
+namespace PAPIClient.Views
 {
     public partial class PlayerSearchPopup : PAPIPopup, ITranslatableView
     {
@@ -22,12 +22,12 @@ namespace GameMasterPAPI.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if (activeLanguage == PAPIApplication.GetLanguage())
+            if (_shownLanguage == PAPIApplication.GetLanguage())
             {
                 return;
             }
 
-            using (ResXResourceSet resSet = new ResXResourceSet(GetResourceFile()))
+            using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {
                 Translate(resSet, foundPlayerNameLabel);
                 Translate(resSet, cancelButton);
