@@ -1552,7 +1552,7 @@
     <value>wear off</value>
   </data>
   <data name="Translation_WELCOME_LABEL" xml:space="preserve">
-    <value>Welcome, </value>
+    <value>Welcome</value>
   </data>
   <data name="Translation_YES" xml:space="preserve">
     <value>yes</value>

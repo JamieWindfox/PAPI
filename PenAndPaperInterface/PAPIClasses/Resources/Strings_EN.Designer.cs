@@ -4363,7 +4363,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Welcome,  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Welcome ähnelt.
         /// </summary>
         internal static string Translation_WELCOME_LABEL {
             get {

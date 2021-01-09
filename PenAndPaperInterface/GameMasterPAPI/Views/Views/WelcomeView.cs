@@ -37,11 +37,11 @@ namespace PAPIClient.Views
 
             using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {
-                Translate(resSet, welcomeLabel);
-                welcomeLabel.Text += ", " + _playerName;
-                Translate(resSet, quitButton);
-                Translate(resSet, startButton);
-                Translate(resSet, optionsButton);
+                Translate(resSet, welcome_label);
+                welcome_label.Text += ", " + _playerName;
+                Translate(resSet, quit_button);
+                Translate(resSet, start_button);
+                Translate(resSet, options_button);
             }
         }
 
