@@ -3076,6 +3076,51 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Buildings ähnelt.
+        /// </summary>
+        internal static string Translation_BUILDING_SELECTION_BUTTON {
+            get {
+                return ResourceManager.GetString("Translation_BUILDING_SELECTION_BUTTON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Manage your saved buildings and create new ones (not yet implemented) ähnelt.
+        /// </summary>
+        internal static string Translation_BUILDING_SELECTION_BUTTON_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("Translation_BUILDING_SELECTION_BUTTON_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Characters ähnelt.
+        /// </summary>
+        internal static string Translation_CHARACTER_SELECTION_BUTTON {
+            get {
+                return ResourceManager.GetString("Translation_CHARACTER_SELECTION_BUTTON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Manage your saved characters and create new ones (not yet implemented) ähnelt.
+        /// </summary>
+        internal static string Translation_CHARACTER_SELECTION_BUTTON_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("Translation_CHARACTER_SELECTION_BUTTON_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Description ähnelt.
+        /// </summary>
+        internal static string Translation_DESCRIPTION_LABEL {
+            get {
+                return ResourceManager.GetString("Translation_DESCRIPTION_LABEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Shown design ähnelt.
         /// </summary>
         internal static string Translation_DESIGN_LABEL {
@@ -3085,11 +3130,56 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Games ähnelt.
+        /// </summary>
+        internal static string Translation_GAME_SELECTION_BUTTON {
+            get {
+                return ResourceManager.GetString("Translation_GAME_SELECTION_BUTTON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Manage your saved games and create new ones (not yet implemented) ähnelt.
+        /// </summary>
+        internal static string Translation_GAME_SELECTION_BUTTON_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("Translation_GAME_SELECTION_BUTTON_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Items ähnelt.
+        /// </summary>
+        internal static string Translation_ITEM_SELECTION_BUTTON {
+            get {
+                return ResourceManager.GetString("Translation_ITEM_SELECTION_BUTTON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Manage your saved items and create new ones (not yet implemented) ähnelt.
+        /// </summary>
+        internal static string Translation_ITEM_SELECTION_BUTTON_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("Translation_ITEM_SELECTION_BUTTON_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Shown language ähnelt.
         /// </summary>
         internal static string Translation_LANGUAGE_LABEL {
             get {
                 return ResourceManager.GetString("Translation_LANGUAGE_LABEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Open selected creator ähnelt.
+        /// </summary>
+        internal static string Translation_OPEN_CREATOR_BUTTON {
+            get {
+                return ResourceManager.GetString("Translation_OPEN_CREATOR_BUTTON", resourceCulture);
             }
         }
         
@@ -3130,11 +3220,38 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Select what you want to do: ähnelt.
+        /// </summary>
+        internal static string Translation_SELECTION_LABEL {
+            get {
+                return ResourceManager.GetString("Translation_SELECTION_LABEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Start ähnelt.
         /// </summary>
         internal static string Translation_START_BUTTON {
             get {
                 return ResourceManager.GetString("Translation_START_BUTTON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Vehicles ähnelt.
+        /// </summary>
+        internal static string Translation_VEHICLE_SELECTION_BUTTON {
+            get {
+                return ResourceManager.GetString("Translation_VEHICLE_SELECTION_BUTTON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Manage your saved vehicles and create new ones (not yet implemented) ähnelt.
+        /// </summary>
+        internal static string Translation_VEHICLE_SELECTION_BUTTON_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("Translation_VEHICLE_SELECTION_BUTTON_DESCRIPTION", resourceCulture);
             }
         }
         

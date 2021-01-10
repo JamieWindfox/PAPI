@@ -151,7 +151,7 @@ namespace PAPIClient.Views
         /// </summary>
         /// <param name="resSet"></param>
         /// <param name="control"></param>
-        public void Translate(ResXResourceSet resSet, Control control)
+        public string Translate(ResXResourceSet resSet, Control control)
         {
             string textToTranslate = "Translation_" + control.Name.ToUpper();
             string text = resSet.GetString(textToTranslate);
@@ -165,6 +165,8 @@ namespace PAPIClient.Views
             }
             WfLogger.Log(this, LogLevel.DEBUG, "Translated " + control.Name + " to " + control.Text
                 + " (Language = " + PAPIApplication.GetLanguage() + ")");
+
+            return control.Text;
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -177,7 +179,7 @@ namespace PAPIClient.Views
         /// <returns></returns>
         public string TranslatedString(ResXResourceSet resSet, string key)
         {
-            string text = resSet.GetString(key);
+            string text = resSet.GetString("Translation_" + key.ToUpper());
             if (text != null)
             {
                 return text;

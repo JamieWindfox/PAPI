@@ -181,6 +181,9 @@
     <EmbeddedResource Include="Views\Views\OptionsView.resx">
       <DependentUpon>OptionsView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Views\StartView.resx">
+      <DependentUpon>StartView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Views\WelcomeView.resx">
       <DependentUpon>WelcomeView.cs</DependentUpon>
     </EmbeddedResource>
