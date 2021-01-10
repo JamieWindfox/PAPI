@@ -2,7 +2,8 @@
 { 
     public enum DesignEnum
     {
-        MODERN,
-        MEDIEVAL
+        BLACK_ON_WHITE,
+        GREEN_ON_BLACK,
+        BLACK_ON_ANTIQUE
     }
 }

@@ -1699,20 +1699,29 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die black on antique ähnelt.
         /// </summary>
-        internal static string DesignEnum_MEDIEVAL {
+        internal static string DesignEnum_BLACK_ON_ANTIQUE {
             get {
-                return ResourceManager.GetString("DesignEnum_MEDIEVAL", resourceCulture);
+                return ResourceManager.GetString("DesignEnum_BLACK_ON_ANTIQUE", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die black on white ähnelt.
         /// </summary>
-        internal static string DesignEnum_MODERN {
+        internal static string DesignEnum_BLACK_ON_WHITE {
             get {
-                return ResourceManager.GetString("DesignEnum_MODERN", resourceCulture);
+                return ResourceManager.GetString("DesignEnum_BLACK_ON_WHITE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die green on black ähnelt.
+        /// </summary>
+        internal static string DesignEnum_GREEN_ON_BLACK {
+            get {
+                return ResourceManager.GetString("DesignEnum_GREEN_ON_BLACK", resourceCulture);
             }
         }
         
@@ -2041,7 +2050,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die CURLY, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_AFRO {
             get {
@@ -2050,7 +2059,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die ARMY, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_ARMY {
             get {
@@ -2059,7 +2068,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die BALD, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_BALD {
             get {
@@ -2068,7 +2077,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die BUN, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_BRAIDED {
             get {
@@ -2077,7 +2086,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die GELLED_UP, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_COMBED {
             get {
@@ -2086,7 +2095,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die PONYTAIL, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_CURLY {
             get {
@@ -2095,7 +2104,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die BRAIDED, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_DREADLOCKS {
             get {
@@ -2104,7 +2113,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die AFRO, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_GELLED_UP {
             get {
@@ -2113,7 +2122,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die COMBED, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_IROKESE {
             get {
@@ -2122,7 +2131,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die OPEN, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_OPEN {
             get {
@@ -2131,7 +2140,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die OTHER ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_OTHER {
             get {
@@ -2140,7 +2149,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die DREADLOCKS, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_PIGTAILS {
             get {
@@ -2149,7 +2158,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die PIGTAILS, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_PONYTAIL {
             get {
@@ -2158,7 +2167,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die SIDE_CUT, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_SIDE_CUT {
             get {
@@ -2167,7 +2176,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die TIDY, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_TIDY {
             get {
@@ -2176,7 +2185,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die IROKESE, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_UNDERCUT {
             get {
@@ -2185,7 +2194,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die UNTIDY, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_UNTIDY {
             get {
@@ -2194,7 +2203,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die WAVEY, ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
         internal static string HairStyleEnum_WAVEY {
             get {
@@ -2266,7 +2275,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die English ähnelt.
         /// </summary>
         internal static string LanguageEnum_ENGLISH {
             get {
@@ -2275,7 +2284,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die German ähnelt.
         /// </summary>
         internal static string LanguageEnum_GERMAN {
             get {
@@ -3067,803 +3076,20 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Abilities ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Shown design ähnelt.
         /// </summary>
-        internal static string Translation_ABILITIES {
+        internal static string Translation_DESIGN_LABEL {
             get {
-                return ResourceManager.GetString("Translation_ABILITIES", resourceCulture);
+                return ResourceManager.GetString("Translation_DESIGN_LABEL", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Ability ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Shown language ähnelt.
         /// </summary>
-        internal static string Translation_ABILITY {
+        internal static string Translation_LANGUAGE_LABEL {
             get {
-                return ResourceManager.GetString("Translation_ABILITY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Accept ähnelt.
-        /// </summary>
-        internal static string Translation_ACCEPT {
-            get {
-                return ResourceManager.GetString("Translation_ACCEPT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Active ähnelt.
-        /// </summary>
-        internal static string Translation_ACTIVE {
-            get {
-                return ResourceManager.GetString("Translation_ACTIVE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_ADD {
-            get {
-                return ResourceManager.GetString("Translation_ADD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Appearance ähnelt.
-        /// </summary>
-        internal static string Translation_APPEARANCE {
-            get {
-                return ResourceManager.GetString("Translation_APPEARANCE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_APPLICATION {
-            get {
-                return ResourceManager.GetString("Translation_APPLICATION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Archetype ähnelt.
-        /// </summary>
-        internal static string Translation_ARCHETYPE {
-            get {
-                return ResourceManager.GetString("Translation_ARCHETYPE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Armour ähnelt.
-        /// </summary>
-        internal static string Translation_ARMOUR {
-            get {
-                return ResourceManager.GetString("Translation_ARMOUR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Available Genres ähnelt.
-        /// </summary>
-        internal static string Translation_AVAILABLE_GENRES {
-            get {
-                return ResourceManager.GetString("Translation_AVAILABLE_GENRES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Backpack ähnelt.
-        /// </summary>
-        internal static string Translation_BACKPACK {
-            get {
-                return ResourceManager.GetString("Translation_BACKPACK", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_BASE_PRICE {
-            get {
-                return ResourceManager.GetString("Translation_BASE_PRICE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Height ähnelt.
-        /// </summary>
-        internal static string Translation_BODY_HEIGHT {
-            get {
-                return ResourceManager.GetString("Translation_BODY_HEIGHT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Body Part ähnelt.
-        /// </summary>
-        internal static string Translation_BODY_PART {
-            get {
-                return ResourceManager.GetString("Translation_BODY_PART", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Special Features of body parts ähnelt.
-        /// </summary>
-        internal static string Translation_BODY_PART_FEATURES {
-            get {
-                return ResourceManager.GetString("Translation_BODY_PART_FEATURES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Body Type ähnelt.
-        /// </summary>
-        internal static string Translation_BODY_TYPE {
-            get {
-                return ResourceManager.GetString("Translation_BODY_TYPE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Cancel ähnelt.
-        /// </summary>
-        internal static string Translation_CANCEL {
-            get {
-                return ResourceManager.GetString("Translation_CANCEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_CAPACITY {
-            get {
-                return ResourceManager.GetString("Translation_CAPACITY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Career ähnelt.
-        /// </summary>
-        internal static string Translation_CAREER {
-            get {
-                return ResourceManager.GetString("Translation_CAREER", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Career Skill ähnelt.
-        /// </summary>
-        internal static string Translation_CAREER_SKILL {
-            get {
-                return ResourceManager.GetString("Translation_CAREER_SKILL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Career Skills ähnelt.
-        /// </summary>
-        internal static string Translation_CAREER_SKILLS {
-            get {
-                return ResourceManager.GetString("Translation_CAREER_SKILLS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Character ähnelt.
-        /// </summary>
-        internal static string Translation_CHARACTER {
-            get {
-                return ResourceManager.GetString("Translation_CHARACTER", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Characteristic ähnelt.
-        /// </summary>
-        internal static string Translation_CHARACTERISTIC {
-            get {
-                return ResourceManager.GetString("Translation_CHARACTERISTIC", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Characteristics ähnelt.
-        /// </summary>
-        internal static string Translation_CHARACTERISTICS {
-            get {
-                return ResourceManager.GetString("Translation_CHARACTERISTICS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Close ähnelt.
-        /// </summary>
-        internal static string Translation_CLOSE {
-            get {
-                return ResourceManager.GetString("Translation_CLOSE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Clothing ähnelt.
-        /// </summary>
-        internal static string Translation_CLOTHING {
-            get {
-                return ResourceManager.GetString("Translation_CLOTHING", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Color ähnelt.
-        /// </summary>
-        internal static string Translation_COLOR {
-            get {
-                return ResourceManager.GetString("Translation_COLOR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_CONNECTED {
-            get {
-                return ResourceManager.GetString("Translation_CONNECTED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Critical Injuries ähnelt.
-        /// </summary>
-        internal static string Translation_CRITICAL_INJURIES {
-            get {
-                return ResourceManager.GetString("Translation_CRITICAL_INJURIES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Critical Injury ähnelt.
-        /// </summary>
-        internal static string Translation_CRITICAL_INJURY {
-            get {
-                return ResourceManager.GetString("Translation_CRITICAL_INJURY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_CRTICAL_RATING {
-            get {
-                return ResourceManager.GetString("Translation_CRTICAL_RATING", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_CURRENT {
-            get {
-                return ResourceManager.GetString("Translation_CURRENT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_DAMAGE {
-            get {
-                return ResourceManager.GetString("Translation_DAMAGE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_DECLINE {
-            get {
-                return ResourceManager.GetString("Translation_DECLINE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Defense ähnelt.
-        /// </summary>
-        internal static string Translation_DEFENSE {
-            get {
-                return ResourceManager.GetString("Translation_DEFENSE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_DELETE {
-            get {
-                return ResourceManager.GetString("Translation_DELETE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Description ähnelt.
-        /// </summary>
-        internal static string Translation_DESCRIPTION {
-            get {
-                return ResourceManager.GetString("Translation_DESCRIPTION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_DESIGN {
-            get {
-                return ResourceManager.GetString("Translation_DESIGN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_DICE {
-            get {
-                return ResourceManager.GetString("Translation_DICE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_DIE {
-            get {
-                return ResourceManager.GetString("Translation_DIE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Difficulty ähnelt.
-        /// </summary>
-        internal static string Translation_DIFFICULTY {
-            get {
-                return ResourceManager.GetString("Translation_DIFFICULTY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_DIRECTORY {
-            get {
-                return ResourceManager.GetString("Translation_DIRECTORY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Encumbrance ähnelt.
-        /// </summary>
-        internal static string Translation_ENCUMBRANCE {
-            get {
-                return ResourceManager.GetString("Translation_ENCUMBRANCE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Enemy ähnelt.
-        /// </summary>
-        internal static string Translation_ENEMY {
-            get {
-                return ResourceManager.GetString("Translation_ENEMY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Equipment ähnelt.
-        /// </summary>
-        internal static string Translation_EQUIPMENT {
-            get {
-                return ResourceManager.GetString("Translation_EQUIPMENT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_EQUIPMENT_ITEM {
-            get {
-                return ResourceManager.GetString("Translation_EQUIPMENT_ITEM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_EQUIPPED {
-            get {
-                return ResourceManager.GetString("Translation_EQUIPPED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Eye Color ähnelt.
-        /// </summary>
-        internal static string Translation_EYE_COLOR {
-            get {
-                return ResourceManager.GetString("Translation_EYE_COLOR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Eyes ähnelt.
-        /// </summary>
-        internal static string Translation_EYES {
-            get {
-                return ResourceManager.GetString("Translation_EYES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_FILE {
-            get {
-                return ResourceManager.GetString("Translation_FILE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_FILE_NAME {
-            get {
-                return ResourceManager.GetString("Translation_FILE_NAME", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_FROM {
-            get {
-                return ResourceManager.GetString("Translation_FROM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_GAME {
-            get {
-                return ResourceManager.GetString("Translation_GAME", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Can be used once a ähnelt.
-        /// </summary>
-        internal static string Translation_GAME_TIME_INTERVAL {
-            get {
-                return ResourceManager.GetString("Translation_GAME_TIME_INTERVAL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_GAMES {
-            get {
-                return ResourceManager.GetString("Translation_GAMES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Gender ähnelt.
-        /// </summary>
-        internal static string Translation_GENDER {
-            get {
-                return ResourceManager.GetString("Translation_GENDER", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_GENDER_PREFERENCES {
-            get {
-                return ResourceManager.GetString("Translation_GENDER_PREFERENCES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Genre ähnelt.
-        /// </summary>
-        internal static string Translation_GENRE {
-            get {
-                return ResourceManager.GetString("Translation_GENRE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Genres ähnelt.
-        /// </summary>
-        internal static string Translation_GENRES {
-            get {
-                return ResourceManager.GetString("Translation_GENRES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Group size ähnelt.
-        /// </summary>
-        internal static string Translation_GROUP_SIZE {
-            get {
-                return ResourceManager.GetString("Translation_GROUP_SIZE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Hair ähnelt.
-        /// </summary>
-        internal static string Translation_HAIR {
-            get {
-                return ResourceManager.GetString("Translation_HAIR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Hair Color ähnelt.
-        /// </summary>
-        internal static string Translation_HAIR_COLOR {
-            get {
-                return ResourceManager.GetString("Translation_HAIR_COLOR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Hair Style ähnelt.
-        /// </summary>
-        internal static string Translation_HAIR_STYLE {
-            get {
-                return ResourceManager.GetString("Translation_HAIR_STYLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Health ähnelt.
-        /// </summary>
-        internal static string Translation_HEALTH {
-            get {
-                return ResourceManager.GetString("Translation_HEALTH", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_HEAVY_WEAPON {
-            get {
-                return ResourceManager.GetString("Translation_HEAVY_WEAPON", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Invalid ähnelt.
-        /// </summary>
-        internal static string Translation_INVALID {
-            get {
-                return ResourceManager.GetString("Translation_INVALID", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_INVALID_DESCRIPTION {
-            get {
-                return ResourceManager.GetString("Translation_INVALID_DESCRIPTION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Inventory ähnelt.
-        /// </summary>
-        internal static string Translation_INVENTORY {
-            get {
-                return ResourceManager.GetString("Translation_INVENTORY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_IP_ADDRESS {
-            get {
-                return ResourceManager.GetString("Translation_IP_ADDRESS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Can be used currently ähnelt.
-        /// </summary>
-        internal static string Translation_IS_USABLE {
-            get {
-                return ResourceManager.GetString("Translation_IS_USABLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Item ähnelt.
-        /// </summary>
-        internal static string Translation_ITEM {
-            get {
-                return ResourceManager.GetString("Translation_ITEM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_ITEM_CONDITION {
-            get {
-                return ResourceManager.GetString("Translation_ITEM_CONDITION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_ITEM_QUALITIES {
-            get {
-                return ResourceManager.GetString("Translation_ITEM_QUALITIES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_ITEM_QUALITY {
-            get {
-                return ResourceManager.GetString("Translation_ITEM_QUALITY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Items ähnelt.
-        /// </summary>
-        internal static string Translation_ITEMS {
-            get {
-                return ResourceManager.GetString("Translation_ITEMS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_LANGUAGE {
-            get {
-                return ResourceManager.GetString("Translation_LANGUAGE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_LIGHT_WEAPON {
-            get {
-                return ResourceManager.GetString("Translation_LIGHT_WEAPON", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_MAIN_WEAPON {
-            get {
-                return ResourceManager.GetString("Translation_MAIN_WEAPON", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Melee ähnelt.
-        /// </summary>
-        internal static string Translation_MELEE {
-            get {
-                return ResourceManager.GetString("Translation_MELEE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Minion ähnelt.
-        /// </summary>
-        internal static string Translation_MINION {
-            get {
-                return ResourceManager.GetString("Translation_MINION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Minion Group ähnelt.
-        /// </summary>
-        internal static string Translation_MINION_GROUP {
-            get {
-                return ResourceManager.GetString("Translation_MINION_GROUP", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Modification ähnelt.
-        /// </summary>
-        internal static string Translation_MODIFICATION {
-            get {
-                return ResourceManager.GetString("Translation_MODIFICATION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Motivation ähnelt.
-        /// </summary>
-        internal static string Translation_MOTIVATION {
-            get {
-                return ResourceManager.GetString("Translation_MOTIVATION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Motivations ähnelt.
-        /// </summary>
-        internal static string Translation_MOTIVATIONS {
-            get {
-                return ResourceManager.GetString("Translation_MOTIVATIONS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Name ähnelt.
-        /// </summary>
-        internal static string Translation_NAME {
-            get {
-                return ResourceManager.GetString("Translation_NAME", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Nemesis ähnelt.
-        /// </summary>
-        internal static string Translation_NEMESIS {
-            get {
-                return ResourceManager.GetString("Translation_NEMESIS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die New ähnelt.
-        /// </summary>
-        internal static string Translation_NEW {
-            get {
-                return ResourceManager.GetString("Translation_NEW", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die no ähnelt.
-        /// </summary>
-        internal static string Translation_NO {
-            get {
-                return ResourceManager.GetString("Translation_NO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die NPC ähnelt.
-        /// </summary>
-        internal static string Translation_NON_PLAYER_CHARACTER {
-            get {
-                return ResourceManager.GetString("Translation_NON_PLAYER_CHARACTER", resourceCulture);
+                return ResourceManager.GetString("Translation_LANGUAGE_LABEL", resourceCulture);
             }
         }
         
@@ -3877,83 +3103,11 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die page ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Player name ähnelt.
         /// </summary>
-        internal static string Translation_PAGE {
+        internal static string Translation_PLAYER_NAME_LABEL {
             get {
-                return ResourceManager.GetString("Translation_PAGE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Passive ähnelt.
-        /// </summary>
-        internal static string Translation_PASSIVE {
-            get {
-                return ResourceManager.GetString("Translation_PASSIVE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_PERMANENT {
-            get {
-                return ResourceManager.GetString("Translation_PERMANENT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Permanent Effect ähnelt.
-        /// </summary>
-        internal static string Translation_PERMANENT_EFFECT {
-            get {
-                return ResourceManager.GetString("Translation_PERMANENT_EFFECT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Player Character ähnelt.
-        /// </summary>
-        internal static string Translation_PLAYER_CHARACTER {
-            get {
-                return ResourceManager.GetString("Translation_PLAYER_CHARACTER", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_PORT {
-            get {
-                return ResourceManager.GetString("Translation_PORT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_PRICE {
-            get {
-                return ResourceManager.GetString("Translation_PRICE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Primary Color ähnelt.
-        /// </summary>
-        internal static string Translation_PRIMARY_COLOR {
-            get {
-                return ResourceManager.GetString("Translation_PRIMARY_COLOR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_QUIT {
-            get {
-                return ResourceManager.GetString("Translation_QUIT", resourceCulture);
+                return ResourceManager.GetString("Translation_PLAYER_NAME_LABEL", resourceCulture);
             }
         }
         
@@ -3967,236 +3121,11 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Random ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Return ähnelt.
         /// </summary>
-        internal static string Translation_RANDOM {
+        internal static string Translation_RETURN_BUTTON {
             get {
-                return ResourceManager.GetString("Translation_RANDOM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_RANGE {
-            get {
-                return ResourceManager.GetString("Translation_RANGE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Ranged ähnelt.
-        /// </summary>
-        internal static string Translation_RANGED {
-            get {
-                return ResourceManager.GetString("Translation_RANGED", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_RARITY {
-            get {
-                return ResourceManager.GetString("Translation_RARITY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Relationship to Party ähnelt.
-        /// </summary>
-        internal static string Translation_RELATIONSHIP_TO_PARTY {
-            get {
-                return ResourceManager.GetString("Translation_RELATIONSHIP_TO_PARTY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_REMOVE {
-            get {
-                return ResourceManager.GetString("Translation_REMOVE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_REQUIRED_SKILL {
-            get {
-                return ResourceManager.GetString("Translation_REQUIRED_SKILL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Returm ähnelt.
-        /// </summary>
-        internal static string Translation_RETURN {
-            get {
-                return ResourceManager.GetString("Translation_RETURN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Rival ähnelt.
-        /// </summary>
-        internal static string Translation_RIVAL {
-            get {
-                return ResourceManager.GetString("Translation_RIVAL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_RULE_BOOK {
-            get {
-                return ResourceManager.GetString("Translation_RULE_BOOK", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Rulebook ähnelt.
-        /// </summary>
-        internal static string Translation_RULEBOOK {
-            get {
-                return ResourceManager.GetString("Translation_RULEBOOK", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_SAVE {
-            get {
-                return ResourceManager.GetString("Translation_SAVE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Secondary Color ähnelt.
-        /// </summary>
-        internal static string Translation_SECONDARY_COLOR {
-            get {
-                return ResourceManager.GetString("Translation_SECONDARY_COLOR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_SECONDARY_ITEM {
-            get {
-                return ResourceManager.GetString("Translation_SECONDARY_ITEM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_SETTINGS {
-            get {
-                return ResourceManager.GetString("Translation_SETTINGS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Severity ähnelt.
-        /// </summary>
-        internal static string Translation_SEVERITY {
-            get {
-                return ResourceManager.GetString("Translation_SEVERITY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Skill ähnelt.
-        /// </summary>
-        internal static string Translation_SKILL {
-            get {
-                return ResourceManager.GetString("Translation_SKILL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die This skilll can&apos;t be trained anymore ähnelt.
-        /// </summary>
-        internal static string Translation_SKILL_MAXIMIZED_Description {
-            get {
-                return ResourceManager.GetString("Translation_SKILL_MAXIMIZED_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_SKILL_TYPE {
-            get {
-                return ResourceManager.GetString("Translation_SKILL_TYPE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Skills ähnelt.
-        /// </summary>
-        internal static string Translation_SKILLS {
-            get {
-                return ResourceManager.GetString("Translation_SKILLS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Skin ähnelt.
-        /// </summary>
-        internal static string Translation_SKIN {
-            get {
-                return ResourceManager.GetString("Translation_SKIN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Color Pattern (Skin) ähnelt.
-        /// </summary>
-        internal static string Translation_SKIN_COLOR_TYPE {
-            get {
-                return ResourceManager.GetString("Translation_SKIN_COLOR_TYPE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Skin Type ähnelt.
-        /// </summary>
-        internal static string Translation_SKIN_TYPE {
-            get {
-                return ResourceManager.GetString("Translation_SKIN_TYPE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Soak ähnelt.
-        /// </summary>
-        internal static string Translation_SOAK {
-            get {
-                return ResourceManager.GetString("Translation_SOAK", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Species ähnelt.
-        /// </summary>
-        internal static string Translation_SPECIES {
-            get {
-                return ResourceManager.GetString("Translation_SPECIES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Start ähnelt.
-        /// </summary>
-        internal static string Translation_START {
-            get {
-                return ResourceManager.GetString("Translation_START", resourceCulture);
+                return ResourceManager.GetString("Translation_RETURN_BUTTON", resourceCulture);
             }
         }
         
@@ -4210,173 +3139,11 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_STORY_POINT {
-            get {
-                return ResourceManager.GetString("Translation_STORY_POINT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Strain ähnelt.
-        /// </summary>
-        internal static string Translation_STRAIN {
-            get {
-                return ResourceManager.GetString("Translation_STRAIN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_SYMBOL {
-            get {
-                return ResourceManager.GetString("Translation_SYMBOL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_THRESHOLD {
-            get {
-                return ResourceManager.GetString("Translation_THRESHOLD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_TO {
-            get {
-                return ResourceManager.GetString("Translation_TO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Threshold ähnelt.
-        /// </summary>
-        internal static string Translation_TRESHOLD {
-            get {
-                return ResourceManager.GetString("Translation_TRESHOLD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Unique ähnelt.
-        /// </summary>
-        internal static string Translation_UNIQUE {
-            get {
-                return ResourceManager.GetString("Translation_UNIQUE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_USABLE {
-            get {
-                return ResourceManager.GetString("Translation_USABLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Value ähnelt.
-        /// </summary>
-        internal static string Translation_VALUE {
-            get {
-                return ResourceManager.GetString("Translation_VALUE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Weapon ähnelt.
-        /// </summary>
-        internal static string Translation_WEAPON {
-            get {
-                return ResourceManager.GetString("Translation_WEAPON", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_WEAPON_HAND_TYPE {
-            get {
-                return ResourceManager.GetString("Translation_WEAPON_HAND_TYPE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_WEAPON_SPECIAL {
-            get {
-                return ResourceManager.GetString("Translation_WEAPON_SPECIAL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_WEAPON_TYPE {
-            get {
-                return ResourceManager.GetString("Translation_WEAPON_TYPE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Weapons ähnelt.
-        /// </summary>
-        internal static string Translation_WEAPONS {
-            get {
-                return ResourceManager.GetString("Translation_WEAPONS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die wear off ähnelt.
-        /// </summary>
-        internal static string Translation_WEAR_OFF {
-            get {
-                return ResourceManager.GetString("Translation_WEAR_OFF", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_WEARABLE {
-            get {
-                return ResourceManager.GetString("Translation_WEARABLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string Translation_WEARABLE_ITEM {
-            get {
-                return ResourceManager.GetString("Translation_WEARABLE_ITEM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Welcome ähnelt.
         /// </summary>
         internal static string Translation_WELCOME_LABEL {
             get {
                 return ResourceManager.GetString("Translation_WELCOME_LABEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die yes ähnelt.
-        /// </summary>
-        internal static string Translation_YES {
-            get {
-                return ResourceManager.GetString("Translation_YES", resourceCulture);
             }
         }
         
