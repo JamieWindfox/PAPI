@@ -3139,7 +3139,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Manage your saved games and create new ones (not yet implemented) ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Manage your saved games and create new ones ähnelt.
         /// </summary>
         internal static string Translation_GAME_SELECTION_BUTTON_DESCRIPTION {
             get {

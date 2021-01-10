@@ -23,6 +23,11 @@ namespace PAPI.Settings
         /// </summary>
         public bool _isSessionRunning { get; private set; } = false;
 
+        /// <summary>
+        /// The player who started the application, and who runs it on their device
+        /// </summary>
+        public Player _player { get; private set; } = new Player();
+
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
@@ -31,12 +36,14 @@ namespace PAPI.Settings
         /// <param name="_activeDesign"></param>
         /// <param name="_activeLanguage"></param>
         /// <param name="_isSessionRunning"></param>
+        /// <param name="_player"></param>
         [JsonConstructor]
-        public AppSettings(DesignEnum _activeDesign, LanguageEnum _activeLanguage, bool _isSessionRunning)
+        public AppSettings(DesignEnum _activeDesign, LanguageEnum _activeLanguage, bool _isSessionRunning, Player _player)
         {
             this._activeDesign = _activeDesign;
             this._activeLanguage = _activeLanguage;
             this._isSessionRunning = _isSessionRunning;
+            this._player = (_player == null) ? new Player() : _player;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new AppSettings (" + this._activeDesign + ", " + this._activeLanguage + ")");
         }
@@ -46,7 +53,7 @@ namespace PAPI.Settings
         /// <summary>
         /// Creates AppSettings with the default values: ENGLISH, MODERN and not running
         /// </summary>
-        public AppSettings() : this(DesignEnum.GREEN_ON_BLACK, LanguageEnum.ENGLISH, false)
+        public AppSettings() : this(DesignEnum.GREEN_ON_BLACK, LanguageEnum.ENGLISH, false, null)
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new default AppSettings)");
         }

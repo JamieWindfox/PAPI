@@ -1144,7 +1144,7 @@
     <value>Games</value>
   </data>
   <data name="Translation_GAME_SELECTION_BUTTON_DESCRIPTION" xml:space="preserve">
-    <value>Manage your saved games and create new ones (not yet implemented)</value>
+    <value>Manage your saved games and create new ones</value>
   </data>
   <data name="Translation_ITEM_SELECTION_BUTTON" xml:space="preserve">
     <value>Items</value>

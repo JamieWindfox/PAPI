@@ -29,11 +29,11 @@ namespace PAPIClient.Views
         /// </summary>
         public override void SetTextToActiveLanguage()
         {
-            if (_shownLanguage == PAPIApplication.GetLanguage() && _playerName == PAPIApplication._currentPlayer._name)
+            if (_shownLanguage == PAPIApplication.GetLanguage() && _playerName == PAPIApplication.GetPlayer()._name)
             {
                 return;
             }
-            _playerName = PAPIApplication._currentPlayer._name;
+            _playerName = PAPIApplication.GetPlayer()._name;
 
             using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {

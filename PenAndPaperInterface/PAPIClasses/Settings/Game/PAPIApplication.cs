@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Linq;
 using PAPI.Logging;
+using PAPI.Serialization;
 
 namespace PAPI.Settings.Game
 {
@@ -13,11 +14,6 @@ namespace PAPI.Settings.Game
     /// </summary>
     public static class PAPIApplication
     {
-        /// <summary>
-        /// The player who started the application, and who runs it on their device
-        /// </summary>
-        public static Player _currentPlayer { get; private set; } = new Player();
-
         /// <summary>
         /// the settings of the application, regarding design and language
         /// </summary>
@@ -32,8 +28,8 @@ namespace PAPI.Settings.Game
 
         public static void Start()
         {
-            _currentPlayer = new Player();
             _settings = new AppSettings();
+            _settings = SaveFileManager.Load(_settings);
             _runningGame = null;
         }
 
@@ -67,11 +63,11 @@ namespace PAPI.Settings.Game
         /// Calls the CTOR of PAPIGame and creates a new game with the given genre and the current player as game master
         /// </summary>
         /// <param name="genre"></param>
-        public static void StartNewGame(GenreEnum genre)
+        public static void CreateNewGame(GenreEnum genre)
         {
             _runningGame = new PAPIGame(genre, null, null, DateTime.Now, DateTime.Now, null);
 
-            WfLogger.Log("PAPIApplication.StartNewGame", LogLevel.DEBUG, "Started new Game");
+            WfLogger.Log("PAPIApplication.CreateNewGame", LogLevel.DEBUG, "Created new Game");
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -126,6 +122,17 @@ namespace PAPI.Settings.Game
                 _settings = new AppSettings();
             }
             return _settings._activeLanguage;
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public static Player GetPlayer()
+        {
+            if (_settings == null)
+            {
+                _settings = new AppSettings();
+            }
+            return _settings._player;
         }
     }
 }

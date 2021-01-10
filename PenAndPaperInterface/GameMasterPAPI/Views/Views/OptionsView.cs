@@ -21,11 +21,11 @@ namespace PAPIClient.Views
 
         public override void SetTextToActiveLanguage()
         {
-            if (_shownLanguage == PAPIApplication.GetLanguage() && _cachedPlayerName == PAPIApplication._currentPlayer._name)
+            if (_shownLanguage == PAPIApplication.GetLanguage() && _cachedPlayerName == PAPIApplication.GetPlayer()._name)
             {
                 return;
             }
-            _cachedPlayerName = PAPIApplication._currentPlayer._name;
+            _cachedPlayerName = PAPIApplication.GetPlayer()._name;
 
             using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {
@@ -100,8 +100,8 @@ namespace PAPIClient.Views
 
         private void playerNameInputField_TextChanged(object sender, EventArgs e)
         {
-            PAPIApplication._currentPlayer.SetName(playerName_inputField.Text);
-            WfLogger.Log(this, LogLevel.DEBUG, "Set player name to " + PAPIApplication._currentPlayer._name);
+            PAPIApplication.GetPlayer().SetName(playerName_inputField.Text);
+            WfLogger.Log(this, LogLevel.DEBUG, "Set player name to " + PAPIApplication.GetPlayer()._name);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------

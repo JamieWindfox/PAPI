@@ -19,7 +19,7 @@ namespace PAPI.Settings
         [JsonConstructor]
         public Player(string _name, string _ip)
         {
-            this._name = (_name == null || _name == "") ? "NOT_VALID" : _name;
+            this._name = (_name == null || _name == "") ? "NOT_VALID_FROM_CTOR" : _name;
             this._ip = (_ip == null || _ip == "") ? Settings.Game.PAPIApplication.GetLocalIP() : _ip;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Player " + _name);
