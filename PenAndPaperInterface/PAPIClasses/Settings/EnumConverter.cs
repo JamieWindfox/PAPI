@@ -12,7 +12,15 @@ namespace PAPI.Settings
         /// <returns>the stirng representation of the given enum value</returns>
         public static string Convert(Enum enumValue)
         {
-            string result = enumValue.GetType().ToString() + "_" + enumValue.ToString();
+            string type = enumValue.GetType().ToString();
+            
+            // get the index of the last '.' in type and cut everything before that to get the actual type
+            int indexOfPoint = type.LastIndexOf(".");
+            type = type.Remove(0, indexOfPoint+1);
+            
+
+            string result = type + "_" + enumValue;
+
 
             WfLogger.Log("EnumConverter", LogLevel.DEBUG, "Converted " + enumValue + " to string " + result);
 

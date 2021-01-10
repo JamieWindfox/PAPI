@@ -40,7 +40,7 @@ namespace PAPIClient.Views
                 button.FlatStyle = FlatStyle.Flat;
                 if(button.Text != "")
                 {
-                    button.Size = new Size(120, 40);
+                    button.Size = new Size(200, 40);
                 }
                 else
                 {
@@ -83,12 +83,12 @@ namespace PAPIClient.Views
         {
             switch (PAPIApplication.GetDesign())
             {
-                case DesignEnum.MEDIEVAL:
+                case DesignEnum.BLACK_ON_ANTIQUE:
                     BackColor = System.Drawing.Color.AntiqueWhite;
                     ForeColor = System.Drawing.Color.Black;
                     Font = new Font("Papyrus", 12, FontStyle.Bold);
                     break;
-                case DesignEnum.MODERN:
+                case DesignEnum.GREEN_ON_BLACK:
                     BackColor = System.Drawing.Color.Black;
                     ForeColor = System.Drawing.Color.Lime;
                     Font = new Font("Consolas", 12);
@@ -179,6 +179,28 @@ namespace PAPIClient.Views
         {
             string text = resSet.GetString(key);
             if (text != null)
+            {
+                return text;
+            }
+            else
+            {
+                return key;
+            }
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Translates a string
+        /// </summary>
+        /// <param name="resSet"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public string TranslatedEnum(ResXResourceSet resSet, Enum enumValue)
+        {
+            string key = EnumConverter.Convert(enumValue);
+            string text = resSet.GetString(key);
+            if (text != null && text != "")
             {
                 return text;
             }

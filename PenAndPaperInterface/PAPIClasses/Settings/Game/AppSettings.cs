@@ -46,7 +46,7 @@ namespace PAPI.Settings
         /// <summary>
         /// Creates AppSettings with the default values: ENGLISH, MODERN and not running
         /// </summary>
-        public AppSettings() : this(DesignEnum.MODERN, LanguageEnum.ENGLISH, false)
+        public AppSettings() : this(DesignEnum.GREEN_ON_BLACK, LanguageEnum.ENGLISH, false)
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new default AppSettings)");
         }

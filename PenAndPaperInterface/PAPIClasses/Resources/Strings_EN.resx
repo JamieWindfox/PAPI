@@ -663,11 +663,14 @@
   <data name="CriticalInjury_WINDED_Description" xml:space="preserve">
     <value />
   </data>
-  <data name="DesignEnum_MEDIEVAL" xml:space="preserve">
-    <value />
+  <data name="DesignEnum_BLACK_ON_ANTIQUE" xml:space="preserve">
+    <value>black on antique</value>
   </data>
-  <data name="DesignEnum_MODERN" xml:space="preserve">
-    <value />
+  <data name="DesignEnum_BLACK_ON_WHITE" xml:space="preserve">
+    <value>black on white</value>
+  </data>
+  <data name="DesignEnum_GREEN_ON_BLACK" xml:space="preserve">
+    <value>green on black</value>
   </data>
   <data name="Dice_D10" xml:space="preserve">
     <value>D10</value>
@@ -778,58 +781,58 @@
     <value />
   </data>
   <data name="HairStyleEnum_AFRO" xml:space="preserve">
-    <value>CURLY,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_ARMY" xml:space="preserve">
-    <value>ARMY,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_BALD" xml:space="preserve">
-    <value>BALD,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_BRAIDED" xml:space="preserve">
-    <value>BUN,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_COMBED" xml:space="preserve">
-    <value>GELLED_UP,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_CURLY" xml:space="preserve">
-    <value>PONYTAIL,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_DREADLOCKS" xml:space="preserve">
-    <value>BRAIDED,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_GELLED_UP" xml:space="preserve">
-    <value>AFRO,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_IROKESE" xml:space="preserve">
-    <value>COMBED,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_OPEN" xml:space="preserve">
-    <value>OPEN,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_OTHER" xml:space="preserve">
-    <value>OTHER</value>
+    <value />
   </data>
   <data name="HairStyleEnum_PIGTAILS" xml:space="preserve">
-    <value>DREADLOCKS,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_PONYTAIL" xml:space="preserve">
-    <value>PIGTAILS,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_SIDE_CUT" xml:space="preserve">
-    <value>SIDE_CUT,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_TIDY" xml:space="preserve">
-    <value>TIDY,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_UNDERCUT" xml:space="preserve">
-    <value>IROKESE,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_UNTIDY" xml:space="preserve">
-    <value>UNTIDY,</value>
+    <value />
   </data>
   <data name="HairStyleEnum_WAVEY" xml:space="preserve">
-    <value>WAVEY,</value>
+    <value />
   </data>
   <data name="ItemConditionEnum_BROKEN_BEYOND_REPAIR" xml:space="preserve">
     <value />
@@ -853,10 +856,10 @@
     <value />
   </data>
   <data name="LanguageEnum_ENGLISH" xml:space="preserve">
-    <value />
+    <value>English</value>
   </data>
   <data name="LanguageEnum_GERMAN" xml:space="preserve">
-    <value />
+    <value>German</value>
   </data>
   <data name="LanguageEnum_NOT_VALID" xml:space="preserve">
     <value />
@@ -1119,443 +1122,29 @@
   <data name="Species_ORC" xml:space="preserve">
     <value />
   </data>
-  <data name="Translation_ABILITIES" xml:space="preserve">
-    <value>Abilities</value>
-  </data>
-  <data name="Translation_ABILITY" xml:space="preserve">
-    <value>Ability</value>
-  </data>
-  <data name="Translation_ACCEPT" xml:space="preserve">
-    <value>Accept</value>
-  </data>
-  <data name="Translation_ACTIVE" xml:space="preserve">
-    <value>Active</value>
-  </data>
-  <data name="Translation_ADD" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_APPEARANCE" xml:space="preserve">
-    <value>Appearance</value>
-  </data>
-  <data name="Translation_APPLICATION" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_ARCHETYPE" xml:space="preserve">
-    <value>Archetype</value>
-  </data>
-  <data name="Translation_ARMOUR" xml:space="preserve">
-    <value>Armour</value>
-  </data>
-  <data name="Translation_AVAILABLE_GENRES" xml:space="preserve">
-    <value>Available Genres</value>
-  </data>
-  <data name="Translation_BACKPACK" xml:space="preserve">
-    <value>Backpack</value>
-  </data>
-  <data name="Translation_BASE_PRICE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_BODY_HEIGHT" xml:space="preserve">
-    <value>Height</value>
-  </data>
-  <data name="Translation_BODY_PART" xml:space="preserve">
-    <value>Body Part</value>
-  </data>
-  <data name="Translation_BODY_PART_FEATURES" xml:space="preserve">
-    <value>Special Features of body parts</value>
-  </data>
-  <data name="Translation_BODY_TYPE" xml:space="preserve">
-    <value>Body Type</value>
-  </data>
-  <data name="Translation_CANCEL" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="Translation_CAPACITY" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_CAREER" xml:space="preserve">
-    <value>Career</value>
-  </data>
-  <data name="Translation_CAREER_SKILL" xml:space="preserve">
-    <value>Career Skill</value>
-  </data>
-  <data name="Translation_CAREER_SKILLS" xml:space="preserve">
-    <value>Career Skills</value>
-  </data>
-  <data name="Translation_CHARACTER" xml:space="preserve">
-    <value>Character</value>
-  </data>
-  <data name="Translation_CHARACTERISTIC" xml:space="preserve">
-    <value>Characteristic</value>
-  </data>
-  <data name="Translation_CHARACTERISTICS" xml:space="preserve">
-    <value>Characteristics</value>
-  </data>
-  <data name="Translation_CLOSE" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="Translation_CLOTHING" xml:space="preserve">
-    <value>Clothing</value>
-  </data>
-  <data name="Translation_COLOR" xml:space="preserve">
-    <value>Color</value>
-  </data>
-  <data name="Translation_CONNECTED" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_CRITICAL_INJURIES" xml:space="preserve">
-    <value>Critical Injuries</value>
-  </data>
-  <data name="Translation_CRITICAL_INJURY" xml:space="preserve">
-    <value>Critical Injury</value>
-  </data>
-  <data name="Translation_CRTICAL_RATING" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_CURRENT" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_DAMAGE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_DECLINE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_DEFENSE" xml:space="preserve">
-    <value>Defense</value>
-  </data>
-  <data name="Translation_DELETE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_DESCRIPTION" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="Translation_DESIGN" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_DICE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_DIE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_DIFFICULTY" xml:space="preserve">
-    <value>Difficulty</value>
-  </data>
-  <data name="Translation_DIRECTORY" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_ENCUMBRANCE" xml:space="preserve">
-    <value>Encumbrance</value>
-  </data>
-  <data name="Translation_ENEMY" xml:space="preserve">
-    <value>Enemy</value>
-  </data>
-  <data name="Translation_EQUIPMENT" xml:space="preserve">
-    <value>Equipment</value>
-  </data>
-  <data name="Translation_EQUIPMENT_ITEM" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_EQUIPPED" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_EYES" xml:space="preserve">
-    <value>Eyes</value>
-  </data>
-  <data name="Translation_EYE_COLOR" xml:space="preserve">
-    <value>Eye Color</value>
-  </data>
-  <data name="Translation_FILE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_FILE_NAME" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_FROM" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_GAME" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_GAMES" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_GAME_TIME_INTERVAL" xml:space="preserve">
-    <value>Can be used once a</value>
-  </data>
-  <data name="Translation_GENDER" xml:space="preserve">
-    <value>Gender</value>
-  </data>
-  <data name="Translation_GENDER_PREFERENCES" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_GENRE" xml:space="preserve">
-    <value>Genre</value>
-  </data>
-  <data name="Translation_GENRES" xml:space="preserve">
-    <value>Genres</value>
-  </data>
-  <data name="Translation_GROUP_SIZE" xml:space="preserve">
-    <value>Group size</value>
-  </data>
-  <data name="Translation_HAIR" xml:space="preserve">
-    <value>Hair</value>
-  </data>
-  <data name="Translation_HAIR_COLOR" xml:space="preserve">
-    <value>Hair Color</value>
-  </data>
-  <data name="Translation_HAIR_STYLE" xml:space="preserve">
-    <value>Hair Style</value>
-  </data>
-  <data name="Translation_HEALTH" xml:space="preserve">
-    <value>Health</value>
-  </data>
-  <data name="Translation_HEAVY_WEAPON" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_INVALID" xml:space="preserve">
-    <value>Invalid</value>
-  </data>
-  <data name="Translation_INVALID_DESCRIPTION" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_INVENTORY" xml:space="preserve">
-    <value>Inventory</value>
-  </data>
-  <data name="Translation_IP_ADDRESS" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_IS_USABLE" xml:space="preserve">
-    <value>Can be used currently</value>
-  </data>
-  <data name="Translation_ITEM" xml:space="preserve">
-    <value>Item</value>
-  </data>
-  <data name="Translation_ITEMS" xml:space="preserve">
-    <value>Items</value>
-  </data>
-  <data name="Translation_ITEM_CONDITION" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_ITEM_QUALITIES" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_ITEM_QUALITY" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_LANGUAGE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_LIGHT_WEAPON" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_MAIN_WEAPON" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_MELEE" xml:space="preserve">
-    <value>Melee</value>
-  </data>
-  <data name="Translation_MINION" xml:space="preserve">
-    <value>Minion</value>
-  </data>
-  <data name="Translation_MINION_GROUP" xml:space="preserve">
-    <value>Minion Group</value>
-  </data>
-  <data name="Translation_MODIFICATION" xml:space="preserve">
-    <value>Modification</value>
-  </data>
-  <data name="Translation_MOTIVATION" xml:space="preserve">
-    <value>Motivation</value>
-  </data>
-  <data name="Translation_MOTIVATIONS" xml:space="preserve">
-    <value>Motivations</value>
-  </data>
-  <data name="Translation_NAME" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="Translation_NEMESIS" xml:space="preserve">
-    <value>Nemesis</value>
-  </data>
-  <data name="Translation_NEW" xml:space="preserve">
-    <value>New</value>
-  </data>
-  <data name="Translation_NO" xml:space="preserve">
-    <value>no</value>
-  </data>
-  <data name="Translation_NON_PLAYER_CHARACTER" xml:space="preserve">
-    <value>NPC</value>
+  <data name="Translation_DESIGN_LABEL" xml:space="preserve">
+    <value>Shown design</value>
+  </data>
+  <data name="Translation_LANGUAGE_LABEL" xml:space="preserve">
+    <value>Shown language</value>
   </data>
   <data name="Translation_OPTIONS_BUTTON" xml:space="preserve">
     <value>Options</value>
   </data>
-  <data name="Translation_PAGE" xml:space="preserve">
-    <value>page</value>
-  </data>
-  <data name="Translation_PASSIVE" xml:space="preserve">
-    <value>Passive</value>
-  </data>
-  <data name="Translation_PERMANENT" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_PERMANENT_EFFECT" xml:space="preserve">
-    <value>Permanent Effect</value>
-  </data>
-  <data name="Translation_PLAYER_CHARACTER" xml:space="preserve">
-    <value>Player Character</value>
-  </data>
-  <data name="Translation_PORT" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_PRICE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_PRIMARY_COLOR" xml:space="preserve">
-    <value>Primary Color</value>
-  </data>
-  <data name="Translation_QUIT" xml:space="preserve">
-    <value />
+  <data name="Translation_PLAYER_NAME_LABEL" xml:space="preserve">
+    <value>Player name</value>
   </data>
   <data name="Translation_QUIT_BUTTON" xml:space="preserve">
     <value>Quit</value>
   </data>
-  <data name="Translation_RANDOM" xml:space="preserve">
-    <value>Random</value>
-  </data>
-  <data name="Translation_RANGE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_RANGED" xml:space="preserve">
-    <value>Ranged</value>
-  </data>
-  <data name="Translation_RARITY" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_RELATIONSHIP_TO_PARTY" xml:space="preserve">
-    <value>Relationship to Party</value>
-  </data>
-  <data name="Translation_REMOVE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_REQUIRED_SKILL" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_RETURN" xml:space="preserve">
-    <value>Returm</value>
-  </data>
-  <data name="Translation_RIVAL" xml:space="preserve">
-    <value>Rival</value>
-  </data>
-  <data name="Translation_RULEBOOK" xml:space="preserve">
-    <value>Rulebook</value>
-  </data>
-  <data name="Translation_RULE_BOOK" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_SAVE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_SECONDARY_COLOR" xml:space="preserve">
-    <value>Secondary Color</value>
-  </data>
-  <data name="Translation_SECONDARY_ITEM" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_SETTINGS" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_SEVERITY" xml:space="preserve">
-    <value>Severity</value>
-  </data>
-  <data name="Translation_SKILL" xml:space="preserve">
-    <value>Skill</value>
-  </data>
-  <data name="Translation_SKILLS" xml:space="preserve">
-    <value>Skills</value>
-  </data>
-  <data name="Translation_SKILL_MAXIMIZED_Description" xml:space="preserve">
-    <value>This skilll can't be trained anymore</value>
-  </data>
-  <data name="Translation_SKILL_TYPE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_SKIN" xml:space="preserve">
-    <value>Skin</value>
-  </data>
-  <data name="Translation_SKIN_COLOR_TYPE" xml:space="preserve">
-    <value>Color Pattern (Skin)</value>
-  </data>
-  <data name="Translation_SKIN_TYPE" xml:space="preserve">
-    <value>Skin Type</value>
-  </data>
-  <data name="Translation_SOAK" xml:space="preserve">
-    <value>Soak</value>
-  </data>
-  <data name="Translation_SPECIES" xml:space="preserve">
-    <value>Species</value>
-  </data>
-  <data name="Translation_START" xml:space="preserve">
-    <value>Start</value>
+  <data name="Translation_RETURN_BUTTON" xml:space="preserve">
+    <value>Return</value>
   </data>
   <data name="Translation_START_BUTTON" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="Translation_STORY_POINT" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_STRAIN" xml:space="preserve">
-    <value>Strain</value>
-  </data>
-  <data name="Translation_SYMBOL" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_THRESHOLD" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_TO" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_TRESHOLD" xml:space="preserve">
-    <value>Threshold</value>
-  </data>
-  <data name="Translation_UNIQUE" xml:space="preserve">
-    <value>Unique</value>
-  </data>
-  <data name="Translation_USABLE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_VALUE" xml:space="preserve">
-    <value>Value</value>
-  </data>
-  <data name="Translation_WEAPON" xml:space="preserve">
-    <value>Weapon</value>
-  </data>
-  <data name="Translation_WEAPONS" xml:space="preserve">
-    <value>Weapons</value>
-  </data>
-  <data name="Translation_WEAPON_HAND_TYPE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_WEAPON_SPECIAL" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_WEAPON_TYPE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_WEARABLE" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_WEARABLE_ITEM" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Translation_WEAR_OFF" xml:space="preserve">
-    <value>wear off</value>
-  </data>
   <data name="Translation_WELCOME_LABEL" xml:space="preserve">
     <value>Welcome</value>
-  </data>
-  <data name="Translation_YES" xml:space="preserve">
-    <value>yes</value>
   </data>
   <data name="WeaponHandTypeEnum_BOTH" xml:space="preserve">
     <value />
