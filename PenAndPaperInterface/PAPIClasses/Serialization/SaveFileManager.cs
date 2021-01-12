@@ -52,12 +52,9 @@ namespace PAPI.Serialization
         public static AppSettings Load(AppSettings settings)
         {
             if (!_isInitialized) Init();
+
             List<AppSettings> settingList = _settingManager.Load();
-            if(settingList == null || settingList.Count == 0)
-            {
-                // nothing happens, the settings stay the same
-            }
-            else
+            if(settingList != null && settingList.Count != 0)
             {
                 settings = settingList[0];
             }

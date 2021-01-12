@@ -3,6 +3,7 @@ using System;
 using System.Resources;
 using PAPI.Logging;
 using PAPI.Settings.Game;
+using PAPI.Serialization;
 
 namespace PAPIClient.Views
 {
@@ -108,7 +109,8 @@ namespace PAPIClient.Views
 
         private void returnButton_Click(object sender, EventArgs e)
         {
-            WfLogger.Log(this, LogLevel.DEBUG, "Return button was clicked, and view changes to " + ViewController.lastView.GetType());
+            SaveFileManager.Save(PAPIApplication.GetSettings());
+            WfLogger.Log(this, LogLevel.DEBUG, "Return button was clicked, options are being saved and view changes to " + ViewController.lastView.GetType());
             ViewController.lastView.Open(this);
         }
     }

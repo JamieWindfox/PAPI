@@ -134,5 +134,16 @@ namespace PAPI.Settings.Game
             }
             return _settings._player;
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public static AppSettings GetSettings()
+        {
+            if (_settings == null)
+            {
+                _settings = new AppSettings();
+            }
+            return _settings;
+        }
     }
 }
