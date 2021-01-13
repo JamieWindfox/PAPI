@@ -16,6 +16,7 @@ namespace PAPI.Serialization
         private string _saveFile;
         public List<Type> _saveData;
         private static Object lockObj = new Object();
+        private int errorCountdown = 10;
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
@@ -89,7 +90,6 @@ namespace PAPI.Serialization
                 await Task.Delay(5);
             }
             stopwatch.Stop();
-            Thread.Sleep(100);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -156,17 +156,32 @@ namespace PAPI.Serialization
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
+        /// Loads the save file and reads from it
+        /// If the file is new, there is an io exception thrown, but then the file is empty anyways, so the program can continue normally
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A list of th eread objects of the given type</returns>
         public List<Type> Load()
         {
             string jsonString = "";
 
+            if(!File.Exists(_saveFile))
+            {
+                _ = CreateFile(_saveFile);
+            }
             lock(_saveFile)
             {
-                jsonString = File.ReadAllText(_saveFile);
-            }
+                try
+                {
+                    jsonString = File.ReadAllText(_saveFile);
+                }
+                catch(IOException exc)
+                {
+                    WfLogger.Log(this, LogLevel.ERROR, "An Exception was thrown while reading from file (" + _saveFile + "): " + exc.Message 
+                        + ", but as this error is only thrown when the file is new and empty, this doesn't matter that much");
 
+                    return new List<Type>();
+                }
+            }
 
             try
             {
