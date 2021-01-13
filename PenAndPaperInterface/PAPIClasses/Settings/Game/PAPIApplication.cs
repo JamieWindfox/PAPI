@@ -29,7 +29,7 @@ namespace PAPI.Settings.Game
         public static void Start()
         {
             _settings = new AppSettings();
-            _settings = SaveFileManager.Load(_settings);
+            _settings = SaveFileManager.LoadSettings();
             _runningGame = null;
         }
 
