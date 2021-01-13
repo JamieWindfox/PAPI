@@ -16,6 +16,13 @@ namespace PAPI.Settings
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        public static string GetFilePath_SaveFiles()
+        {
+            return GetFilePath_Game() + "\\SaveFiles\\";
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
         /// <param name="design"></param>
         /// <returns>The path of the file which includes all images for the given design</returns>
         public static string GetFilePath_Images(DesignEnum design)

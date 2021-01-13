@@ -35,7 +35,7 @@ namespace PAPI.Settings
         public PAPIGame(GenreEnum _genre, Player _gameMaster, Dictionary<Player, PlayerCharacter> _playerParty, DateTime _dateOfCreation, DateTime _dateOfLastSession,
             List<UniqueRival> _knownNPCs)
         {
-            this._gameMaster = (_gameMaster == null) ? PAPIApplication._currentPlayer : _gameMaster;
+            this._gameMaster = (_gameMaster == null) ? PAPIApplication.GetPlayer() : _gameMaster;
             this._genre = _genre;
             this._playerParty = (_playerParty == null) ? new Dictionary<Player, PlayerCharacter>() : _playerParty;
             this._dateOfCreation = (_dateOfCreation == null) ? DateTime.Now : _dateOfCreation;

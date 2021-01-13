@@ -152,8 +152,8 @@ namespace PAPIClient.Views
             {
                 Translate(resSet, gmNameLabel);
                 Translate(resSet, gmIPLabel);
-                gmNameLabel.Text += ": " + PAPIApplication._currentPlayer._name;
-                gmIPLabel.Text += ": " + PAPIApplication._currentPlayer._ip;
+                gmNameLabel.Text += ": " + PAPIApplication.GetPlayer()._name;
+                gmIPLabel.Text += ": " + PAPIApplication.GetPlayer()._ip;
                 Translate(resSet, cancelButton);
                 Translate(resSet, addPlayerButton);
                 Translate(resSet, createGameButton);
@@ -205,7 +205,7 @@ namespace PAPIClient.Views
         {
             if (selectedGenre != GenreEnum.NOT_VALID)
             {
-                PAPIApplication.StartNewGame(selectedGenre);
+                PAPIApplication.CreateNewGame(selectedGenre);
                 WfLogger.Log(this, LogLevel.DEBUG, "Create Game Button clicked, created a new Game (" + selectedGenre + ")");
                 foreach(KeyValuePair<Player, Button> playerButton in players_removeButtons)
                 {

@@ -7,6 +7,7 @@ using System.Resources;
 using System.Windows.Forms;
 using PAPI.Exception;
 using PAPI.Settings.Game;
+using PAPI.Serialization;
 
 namespace PAPIClient.Views
 {
@@ -17,6 +18,7 @@ namespace PAPIClient.Views
 
         public GameSelectionView()
         {
+            _savedGames = SaveFileManager.LoadGames();
             InitializeComponent();
             WfLogger.Log(this, LogLevel.DEBUG, "Initialized SelectGameView");
             AddComponents();
