@@ -30,15 +30,14 @@ namespace PAPIClient.Views
         private void InitializeComponent()
         {
             this.gameSelectionPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.saved_games_label = new System.Windows.Forms.Label();
+            this.savedGamesLabel = new System.Windows.Forms.Label();
             this.bottomButtonPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.return_button = new System.Windows.Forms.Button();
-            this.game_creator_button = new System.Windows.Forms.Button();
+            this.returnButton = new System.Windows.Forms.Button();
+            this.newGameButton = new System.Windows.Forms.Button();
             this.gameTable = new System.Windows.Forms.TableLayoutPanel();
-            this.delete_game_button = new System.Windows.Forms.Button();
-            this.load_game_button = new System.Windows.Forms.Button();
-            this.genre_label = new System.Windows.Forms.Label();
-            this.date_label = new System.Windows.Forms.Label();
+            this.genreLabel = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.startButton = new System.Windows.Forms.Button();
             this.gameSelectionPanel.SuspendLayout();
             this.bottomButtonPanel.SuspendLayout();
             this.gameTable.SuspendLayout();
@@ -50,7 +49,7 @@ namespace PAPIClient.Views
             this.gameSelectionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.gameSelectionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.gameSelectionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.gameSelectionPanel.Controls.Add(this.saved_games_label, 1, 1);
+            this.gameSelectionPanel.Controls.Add(this.savedGamesLabel, 1, 1);
             this.gameSelectionPanel.Controls.Add(this.bottomButtonPanel, 1, 3);
             this.gameSelectionPanel.Controls.Add(this.gameTable, 1, 2);
             this.gameSelectionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -58,22 +57,22 @@ namespace PAPIClient.Views
             this.gameSelectionPanel.Name = "gameSelectionPanel";
             this.gameSelectionPanel.RowCount = 5;
             this.gameSelectionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.gameSelectionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.gameSelectionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.gameSelectionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.gameSelectionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.gameSelectionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.gameSelectionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.gameSelectionPanel.Size = new System.Drawing.Size(803, 453);
             this.gameSelectionPanel.TabIndex = 0;
             // 
-            // saved_games_label
+            // savedGamesLabel
             // 
-            this.saved_games_label.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.saved_games_label.AutoSize = true;
-            this.saved_games_label.Location = new System.Drawing.Point(23, 35);
-            this.saved_games_label.Name = "saved_games_label";
-            this.saved_games_label.Size = new System.Drawing.Size(99, 19);
-            this.saved_games_label.TabIndex = 0;
-            this.saved_games_label.Text = "savedGames";
+            this.savedGamesLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.savedGamesLabel.AutoSize = true;
+            this.savedGamesLabel.Location = new System.Drawing.Point(23, 30);
+            this.savedGamesLabel.Name = "savedGamesLabel";
+            this.savedGamesLabel.Size = new System.Drawing.Size(99, 19);
+            this.savedGamesLabel.TabIndex = 0;
+            this.savedGamesLabel.Text = "savedGames";
             // 
             // bottomButtonPanel
             // 
@@ -82,104 +81,88 @@ namespace PAPIClient.Views
             this.bottomButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.bottomButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.bottomButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.bottomButtonPanel.Controls.Add(this.return_button, 0, 0);
-            this.bottomButtonPanel.Controls.Add(this.game_creator_button, 3, 0);
+            this.bottomButtonPanel.Controls.Add(this.returnButton, 0, 0);
+            this.bottomButtonPanel.Controls.Add(this.newGameButton, 3, 0);
             this.bottomButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bottomButtonPanel.Location = new System.Drawing.Point(23, 376);
+            this.bottomButtonPanel.Location = new System.Drawing.Point(23, 386);
             this.bottomButtonPanel.Name = "bottomButtonPanel";
             this.bottomButtonPanel.RowCount = 1;
             this.bottomButtonPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.bottomButtonPanel.Size = new System.Drawing.Size(757, 54);
+            this.bottomButtonPanel.Size = new System.Drawing.Size(757, 44);
             this.bottomButtonPanel.TabIndex = 1;
             // 
-            // return_button
+            // returnButton
             // 
-            this.return_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.return_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.return_button.Location = new System.Drawing.Point(3, 11);
-            this.return_button.Name = "return_button";
-            this.return_button.Size = new System.Drawing.Size(200, 40);
-            this.return_button.TabIndex = 0;
-            this.return_button.Text = "return";
-            this.return_button.UseVisualStyleBackColor = true;
-            this.return_button.Click += new System.EventHandler(this.return_button_Click);
+            this.returnButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.returnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.returnButton.Location = new System.Drawing.Point(3, 3);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(120, 38);
+            this.returnButton.TabIndex = 0;
+            this.returnButton.Text = "return";
+            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
-            // game_creator_button
+            // newGameButton
             // 
-            this.game_creator_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.game_creator_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.game_creator_button.Location = new System.Drawing.Point(554, 11);
-            this.game_creator_button.Name = "game_creator_button";
-            this.game_creator_button.Size = new System.Drawing.Size(200, 40);
-            this.game_creator_button.TabIndex = 1;
-            this.game_creator_button.Text = "newGame";
-            this.game_creator_button.UseVisualStyleBackColor = true;
-            this.game_creator_button.Click += new System.EventHandler(this.new_game_button_Click);
+            this.newGameButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.newGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newGameButton.Location = new System.Drawing.Point(634, 3);
+            this.newGameButton.Name = "newGameButton";
+            this.newGameButton.Size = new System.Drawing.Size(120, 38);
+            this.newGameButton.TabIndex = 1;
+            this.newGameButton.Text = "newGame";
+            this.newGameButton.UseVisualStyleBackColor = true;
+            this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
             // 
             // gameTable
             // 
             this.gameTable.AutoScroll = true;
-            this.gameTable.ColumnCount = 4;
-            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.gameTable.ColumnCount = 3;
+            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.56234F));
+            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.27851F));
             this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.gameTable.Controls.Add(this.delete_game_button, 2, 0);
-            this.gameTable.Controls.Add(this.load_game_button, 3, 0);
-            this.gameTable.Controls.Add(this.genre_label, 0, 0);
-            this.gameTable.Controls.Add(this.date_label, 1, 0);
+            this.gameTable.Controls.Add(this.genreLabel, 0, 0);
+            this.gameTable.Controls.Add(this.dateLabel, 1, 0);
+            this.gameTable.Controls.Add(this.startButton, 2, 0);
             this.gameTable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gameTable.Location = new System.Drawing.Point(23, 73);
+            this.gameTable.Location = new System.Drawing.Point(23, 63);
             this.gameTable.Name = "gameTable";
             this.gameTable.RowCount = 1;
             this.gameTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.gameTable.Size = new System.Drawing.Size(757, 50);
+            this.gameTable.Size = new System.Drawing.Size(757, 44);
             this.gameTable.TabIndex = 2;
             // 
-            // delete_game_button
+            // genreLabel
             // 
-            this.delete_game_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.delete_game_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete_game_button.Location = new System.Drawing.Point(457, 5);
-            this.delete_game_button.Name = "delete_game_button";
-            this.delete_game_button.Size = new System.Drawing.Size(145, 40);
-            this.delete_game_button.TabIndex = 4;
-            this.delete_game_button.Text = "delete_game";
-            this.delete_game_button.UseVisualStyleBackColor = true;
-            this.delete_game_button.Visible = false;
-            this.delete_game_button.Click += new System.EventHandler(this.delete_game_button_Click);
+            this.genreLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.genreLabel.AutoSize = true;
+            this.genreLabel.Location = new System.Drawing.Point(3, 12);
+            this.genreLabel.Name = "genreLabel";
+            this.genreLabel.Size = new System.Drawing.Size(117, 19);
+            this.genreLabel.TabIndex = 1;
+            this.genreLabel.Text = "sessionGenre";
             // 
-            // load_game_button
+            // dateLabel
             // 
-            this.load_game_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.load_game_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.load_game_button.Location = new System.Drawing.Point(608, 5);
-            this.load_game_button.Name = "load_game_button";
-            this.load_game_button.Size = new System.Drawing.Size(146, 40);
-            this.load_game_button.TabIndex = 0;
-            this.load_game_button.Text = "load_game";
-            this.load_game_button.UseVisualStyleBackColor = true;
-            this.load_game_button.Visible = false;
+            this.dateLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Location = new System.Drawing.Point(340, 12);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(81, 19);
+            this.dateLabel.TabIndex = 3;
+            this.dateLabel.Text = "dateText";
             // 
-            // genre_label
+            // startButton
             // 
-            this.genre_label.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.genre_label.AutoSize = true;
-            this.genre_label.Location = new System.Drawing.Point(3, 15);
-            this.genre_label.Name = "genre_label";
-            this.genre_label.Size = new System.Drawing.Size(117, 19);
-            this.genre_label.TabIndex = 1;
-            this.genre_label.Text = "sessionGenre";
-            // 
-            // date_label
-            // 
-            this.date_label.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.date_label.AutoSize = true;
-            this.date_label.Location = new System.Drawing.Point(230, 15);
-            this.date_label.Name = "date_label";
-            this.date_label.Size = new System.Drawing.Size(81, 19);
-            this.date_label.TabIndex = 3;
-            this.date_label.Text = "dateText";
+            this.startButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButton.Location = new System.Drawing.Point(714, 3);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(40, 38);
+            this.startButton.TabIndex = 0;
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Visible = false;
             // 
             // GameSelectionView
             // 
@@ -202,14 +185,13 @@ namespace PAPIClient.Views
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel gameSelectionPanel;
-        private System.Windows.Forms.Label saved_games_label;
+        private System.Windows.Forms.Label savedGamesLabel;
         private System.Windows.Forms.TableLayoutPanel bottomButtonPanel;
-        private System.Windows.Forms.Button return_button;
-        private System.Windows.Forms.Button game_creator_button;
+        private System.Windows.Forms.Button returnButton;
+        private System.Windows.Forms.Button newGameButton;
         private System.Windows.Forms.TableLayoutPanel gameTable;
-        private System.Windows.Forms.Button load_game_button;
-        private System.Windows.Forms.Label genre_label;
-        private System.Windows.Forms.Label date_label;
-        private System.Windows.Forms.Button delete_game_button;
+        private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Label genreLabel;
+        private System.Windows.Forms.Label dateLabel;
     }
 }
