@@ -14,7 +14,7 @@ namespace PAPI.Serialization
     public class SerializationManager<Type>
     {
         private string _saveFile;
-        public List<Type> _saveData;
+        public List<Type> _saveData = null;
         private static Object lockObj = new Object();
         private int errorCountdown = 10;
 
@@ -45,12 +45,10 @@ namespace PAPI.Serialization
             {
                 if (!File.Exists(_saveFile))
                 {
-                    CreateFile(_saveFile);
+                    _ = CreateFile(_saveFile);
                 }
             }
-
-            
-            _saveData = new List<Type>();
+            _saveData = null;
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -99,6 +97,7 @@ namespace PAPI.Serialization
         /// <param name="dataToSave"></param>
         public void Save(Type dataToSave)
         {
+            if (_saveData == null) _saveData = new List<Type>();
             _saveData.Add(dataToSave);
             string jsonString = JsonSerializer.Serialize(_saveData);
 
@@ -117,7 +116,7 @@ namespace PAPI.Serialization
         /// </summary>
         /// <param name="jsonString"></param>
         /// <returns></returns>
-        public async Task WriteToFileAsync(string jsonString)
+        private async Task WriteToFileAsync(string jsonString)
         {
             int timeOut = 100;
             Stopwatch stopwatch = new Stopwatch();
@@ -163,6 +162,10 @@ namespace PAPI.Serialization
         public List<Type> Load()
         {
             string jsonString = "";
+            if(_saveData != null)
+            {
+                return _saveData;
+            }
 
             if(!File.Exists(_saveFile))
             {
