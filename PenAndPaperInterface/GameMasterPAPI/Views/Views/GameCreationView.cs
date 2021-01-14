@@ -56,9 +56,9 @@ namespace PAPIClient.Views
         {
             foreach(KeyValuePair<Player, Button> playerButton in players_removeButtons)
             {
-                if(playerButton.Key._name == player._name)
+                if(playerButton.Key._id == player._id)
                 {
-                    WfLogger.Log(this, LogLevel.WARNING, "Add player " + player._name + " not possible, there already is a player with this name");
+                    WfLogger.Log(this, LogLevel.WARNING, "Add player " + player._name + " not possible, there already is a player with this id");
                     return;
                 }
             }
@@ -150,10 +150,10 @@ namespace PAPIClient.Views
             
             using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {
-                Translate(resSet, gmNameLabel);
-                Translate(resSet, gmIPLabel);
-                gmNameLabel.Text += ": " + PAPIApplication.GetPlayer()._name;
-                gmIPLabel.Text += ": " + PAPIApplication.GetPlayer()._ip;
+                Translate(resSet, gm_name_label);
+                Translate(resSet, gm_id_label);
+                gm_name_label.Text += ": " + PAPIApplication.GetPlayer()._name;
+                gm_id_label.Text += ": " + PAPIApplication.GetPlayer()._id;
                 Translate(resSet, cancelButton);
                 Translate(resSet, addPlayerButton);
                 Translate(resSet, createGameButton);

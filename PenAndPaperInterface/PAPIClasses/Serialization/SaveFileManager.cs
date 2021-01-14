@@ -96,8 +96,8 @@ namespace PAPI.Serialization
 
             if(settingsList == null || settingsList.Count == 0)
             {
-                WfLogger.Log("SaveFileManager.LoadSettings()", LogLevel.DEBUG, "Couldn't read any data from the save file, return default Settings");
-                return new AppSettings();
+                WfLogger.Log("SaveFileManager.LoadSettings()", LogLevel.DEBUG, "Couldn't read any data from the save file, return null");
+                return null;
             }
             WfLogger.Log("SaveFileManager.LoadSettings()", LogLevel.DEBUG, "Could read data form save file and return the first AppSetting");
             return settingsList[0];           
