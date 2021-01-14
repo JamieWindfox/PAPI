@@ -31,8 +31,8 @@ namespace PAPIClient.Views
         {
             this.createGamePanel = new System.Windows.Forms.TableLayoutPanel();
             this.gmInfoPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.gmNameLabel = new System.Windows.Forms.Label();
-            this.gmIPLabel = new System.Windows.Forms.Label();
+            this.gm_name_label = new System.Windows.Forms.Label();
+            this.gm_id_label = new System.Windows.Forms.Label();
             this.bottomButtonPanel = new System.Windows.Forms.TableLayoutPanel();
             this.createGameButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -77,8 +77,8 @@ namespace PAPIClient.Views
             this.gmInfoPanel.ColumnCount = 2;
             this.gmInfoPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.gmInfoPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.gmInfoPanel.Controls.Add(this.gmNameLabel, 0, 0);
-            this.gmInfoPanel.Controls.Add(this.gmIPLabel, 1, 0);
+            this.gmInfoPanel.Controls.Add(this.gm_name_label, 0, 0);
+            this.gmInfoPanel.Controls.Add(this.gm_id_label, 1, 0);
             this.gmInfoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gmInfoPanel.Location = new System.Drawing.Point(23, 23);
             this.gmInfoPanel.Name = "gmInfoPanel";
@@ -87,27 +87,27 @@ namespace PAPIClient.Views
             this.gmInfoPanel.Size = new System.Drawing.Size(754, 34);
             this.gmInfoPanel.TabIndex = 3;
             // 
-            // gmNameLabel
+            // gm_name_label
             // 
-            this.gmNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.gmNameLabel.AutoSize = true;
-            this.gmNameLabel.Location = new System.Drawing.Point(3, 7);
-            this.gmNameLabel.Name = "gmNameLabel";
-            this.gmNameLabel.Size = new System.Drawing.Size(63, 19);
-            this.gmNameLabel.TabIndex = 0;
-            this.gmNameLabel.Text = "gmName";
-            this.gmNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gm_name_label.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.gm_name_label.AutoSize = true;
+            this.gm_name_label.Location = new System.Drawing.Point(3, 7);
+            this.gm_name_label.Name = "gm_name_label";
+            this.gm_name_label.Size = new System.Drawing.Size(126, 19);
+            this.gm_name_label.TabIndex = 0;
+            this.gm_name_label.Text = "gm_name_label";
+            this.gm_name_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gmIPLabel
+            // gm_id_label
             // 
-            this.gmIPLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.gmIPLabel.AutoSize = true;
-            this.gmIPLabel.Location = new System.Drawing.Point(380, 7);
-            this.gmIPLabel.Name = "gmIPLabel";
-            this.gmIPLabel.Size = new System.Drawing.Size(117, 19);
-            this.gmIPLabel.TabIndex = 1;
-            this.gmIPLabel.Text = "gameMasterIP";
-            this.gmIPLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gm_id_label.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.gm_id_label.AutoSize = true;
+            this.gm_id_label.Location = new System.Drawing.Point(380, 7);
+            this.gm_id_label.Name = "gm_id_label";
+            this.gm_id_label.Size = new System.Drawing.Size(108, 19);
+            this.gm_id_label.TabIndex = 1;
+            this.gm_id_label.Text = "gm_id_label";
+            this.gm_id_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bottomButtonPanel
             // 
@@ -253,8 +253,8 @@ namespace PAPIClient.Views
         private System.Windows.Forms.TableLayoutPanel createGamePanel;
         private System.Windows.Forms.Label genreLabel;
         private System.Windows.Forms.TableLayoutPanel gmInfoPanel;
-        private System.Windows.Forms.Label gmNameLabel;
-        private System.Windows.Forms.Label gmIPLabel;
+        private System.Windows.Forms.Label gm_name_label;
+        private System.Windows.Forms.Label gm_id_label;
         private System.Windows.Forms.TableLayoutPanel bottomButtonPanel;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button createGameButton;

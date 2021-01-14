@@ -3184,6 +3184,24 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die GM Id:  ähnelt.
+        /// </summary>
+        internal static string Translation_GM_ID_LABEL {
+            get {
+                return ResourceManager.GetString("Translation_GM_ID_LABEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Game Master:  ähnelt.
+        /// </summary>
+        internal static string Translation_GM_NAME_LABEL {
+            get {
+                return ResourceManager.GetString("Translation_GM_NAME_LABEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Items ähnelt.
         /// </summary>
         internal static string Translation_ITEM_SELECTION_BUTTON {
@@ -3315,6 +3333,15 @@ namespace PAPIClasses.Resources {
         internal static string Translation_WELCOME_LABEL {
             get {
                 return ResourceManager.GetString("Translation_WELCOME_LABEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Welcome! Please enter your name in the options menu! ähnelt.
+        /// </summary>
+        internal static string Translation_WHATS_YOUR_NAME_LABEL {
+            get {
+                return ResourceManager.GetString("Translation_WHATS_YOUR_NAME_LABEL", resourceCulture);
             }
         }
         

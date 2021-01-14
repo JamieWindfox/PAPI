@@ -24,13 +24,15 @@ namespace PAPI.Settings.Game
         /// </summary>
         public static PAPIGame _runningGame { get; private set; } = null;
 
+        public static bool _isFirstStart { get; private set; } = true;
+
         // --------------------------------------------------------------------------------------------------------------------------------
 
         public static void Start()
         {
-            _settings = new AppSettings();
             _settings = SaveFileManager.LoadSettings();
             _runningGame = null;
+            _isFirstStart = _settings == null;
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------

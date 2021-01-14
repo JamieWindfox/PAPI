@@ -1,5 +1,6 @@
 ﻿
 using PAPI.Logging;
+using System;
 using System.Text.Json.Serialization;
 
 namespace PAPI.Settings
@@ -7,22 +8,33 @@ namespace PAPI.Settings
     public class Player
     {
         public string _name { get; private set; }
-        public string _ip { get; private set; }
+        public string _id { get; private set; }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// The JSON CTOR must contain all traits of the player
         /// </summary>
-        /// <param name="name">if null or empty, the name ist set to "NOT_VALID"</param>
-        /// <param name="ip">if null or empty, is is set to the local ip</param>
+        /// <param name="_name">if null or empty, the name ist set to "NOT_VALID"</param>
+        /// <param name="_id">if null or empty, is is set to a new uniqie id</param>
         [JsonConstructor]
-        public Player(string _name, string _ip)
+        public Player(string _name, string _id)
         {
             this._name = (_name == null || _name == "") ? "NOT_VALID_FROM_CTOR" : _name;
-            this._ip = (_ip == null || _ip == "") ? Settings.Game.PAPIApplication.GetLocalIP() : _ip;
+            this._id = (_id == null || _id == "") ? GenerateUniqueId() : _id;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Player " + _name);
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        private string GenerateUniqueId()
+        {
+            Guid newGuid = Guid.NewGuid();
+            string generatedId = Convert.ToBase64String(newGuid.ToByteArray());
+            generatedId = generatedId.Remove(generatedId.IndexOf("=="));
+
+            return generatedId;
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -46,7 +58,7 @@ namespace PAPI.Settings
             if (other == null) return;
 
             _name = other._name;
-            _ip = other._ip;
+            _id = other._id;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Player as copy");
         }
@@ -65,15 +77,5 @@ namespace PAPI.Settings
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
-
-        /// <summary>
-        /// Sets the ip to the given value
-        /// </summary>
-        /// <param name="ip">if null or empty, the ip is net to an invalid one</param>
-        public void SetIp(string ip)
-        {
-            _ip = (ip == null || ip == "") ? "INVALID_IP" : ip;
-            WfLogger.Log(this, LogLevel.DEBUG, "Set Player IP to " + _ip);
-        }
     }
 }

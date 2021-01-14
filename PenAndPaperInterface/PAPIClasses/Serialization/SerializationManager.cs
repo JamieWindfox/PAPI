@@ -100,13 +100,26 @@ namespace PAPI.Serialization
             if (_saveData == null) _saveData = new List<Type>();
             _saveData.Add(dataToSave);
             string jsonString = JsonSerializer.Serialize(_saveData);
+            bool exceptionThrown = false;
 
             lock(_saveFile)
             {
-                File.WriteAllText(_saveFile, jsonString);
+                try
+                {
+                    File.WriteAllText(_saveFile, jsonString);
+                }
+                catch(IOException exc)
+                {
+                    exceptionThrown = true;
+                    WfLogger.Log("SerializationManager.Save(data)", LogLevel.ERROR, "An exception was trown: " + exc.Message);
+                }
             }
 
-            WfLogger.Log("SerializationManager.Save(data)", LogLevel.DEBUG, "Saved data: " + File.ReadAllText(_saveFile));
+            if(exceptionThrown)
+            {
+                WfLogger.Log("SerializationManager.Save(data)", LogLevel.DEBUG, "Couldn't save data");
+            }
+            else WfLogger.Log("SerializationManager.Save(data)", LogLevel.DEBUG, "Saved data: " + File.ReadAllText(_saveFile));
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------

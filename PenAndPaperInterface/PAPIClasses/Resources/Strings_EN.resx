@@ -1158,6 +1158,12 @@
   <data name="Translation_GENRE_LABEL" xml:space="preserve">
     <value>Genre</value>
   </data>
+  <data name="Translation_GM_ID_LABEL" xml:space="preserve">
+    <value>GM Id: </value>
+  </data>
+  <data name="Translation_GM_NAME_LABEL" xml:space="preserve">
+    <value>Game Master: </value>
+  </data>
   <data name="Translation_ITEM_SELECTION_BUTTON" xml:space="preserve">
     <value>Items</value>
   </data>
@@ -1202,6 +1208,9 @@
   </data>
   <data name="Translation_WELCOME_LABEL" xml:space="preserve">
     <value>Welcome</value>
+  </data>
+  <data name="Translation_WHATS_YOUR_NAME_LABEL" xml:space="preserve">
+    <value>Welcome! Please enter your name in the options menu!</value>
   </data>
   <data name="WeaponHandTypeEnum_BOTH" xml:space="preserve">
     <value />

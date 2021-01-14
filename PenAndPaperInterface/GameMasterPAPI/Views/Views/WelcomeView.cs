@@ -3,6 +3,9 @@ using PAPI.Settings.Game;
 using System;
 using System.Resources;
 using System.Windows.Forms;
+using PAPI.Settings;
+using PAPI.Logging;
+using PAPI.Serialization;
 
 namespace PAPIClient.Views
 {
@@ -20,6 +23,7 @@ namespace PAPIClient.Views
             InitializeComponent();
             Open();
             PAPIServer.Start();
+
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -35,6 +39,17 @@ namespace PAPIClient.Views
             }
             _playerName = PAPIApplication.GetPlayer()._name;
 
+            if(PAPIApplication._isFirstStart) // not valid
+            {
+                whats_your_name_label.Visible = true;
+                welcome_label.Visible = false;
+            }
+            else
+            {
+                whats_your_name_label.Visible = false;
+                welcome_label.Visible = true;
+            }
+
             using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {
                 Translate(resSet, welcome_label);
@@ -42,6 +57,7 @@ namespace PAPIClient.Views
                 Translate(resSet, quit_button);
                 Translate(resSet, start_button);
                 Translate(resSet, options_button);
+                Translate(resSet, whats_your_name_label);
             }
         }
 
@@ -50,6 +66,7 @@ namespace PAPIClient.Views
         // Shuts down the application
         private void quitButton_Click(object sender, EventArgs e)
         {
+            SaveFileManager.Save(PAPIApplication.GetSettings());
             Application.Exit();
         }
 
@@ -69,6 +86,7 @@ namespace PAPIClient.Views
         {
             StartView startView = new StartView();
             startView.Open(this);
+            SaveFileManager.Save(PAPIApplication.GetSettings());
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
