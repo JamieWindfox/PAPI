@@ -3112,24 +3112,6 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Date of creation ähnelt.
-        /// </summary>
-        internal static string Translation_DATE_LABEL {
-            get {
-                return ResourceManager.GetString("Translation_DATE_LABEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Delete ähnelt.
-        /// </summary>
-        internal static string Translation_DELETE_GAME_BUTTON {
-            get {
-                return ResourceManager.GetString("Translation_DELETE_GAME_BUTTON", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Description ähnelt.
         /// </summary>
         internal static string Translation_DESCRIPTION_LABEL {
@@ -3148,15 +3130,6 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Create new game ähnelt.
-        /// </summary>
-        internal static string Translation_GAME_CREATOR_BUTTON {
-            get {
-                return ResourceManager.GetString("Translation_GAME_CREATOR_BUTTON", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Games ähnelt.
         /// </summary>
         internal static string Translation_GAME_SELECTION_BUTTON {
@@ -3171,15 +3144,6 @@ namespace PAPIClasses.Resources {
         internal static string Translation_GAME_SELECTION_BUTTON_DESCRIPTION {
             get {
                 return ResourceManager.GetString("Translation_GAME_SELECTION_BUTTON_DESCRIPTION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Genre ähnelt.
-        /// </summary>
-        internal static string Translation_GENRE_LABEL {
-            get {
-                return ResourceManager.GetString("Translation_GENRE_LABEL", resourceCulture);
             }
         }
         
@@ -3207,15 +3171,6 @@ namespace PAPIClasses.Resources {
         internal static string Translation_LANGUAGE_LABEL {
             get {
                 return ResourceManager.GetString("Translation_LANGUAGE_LABEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Load ähnelt.
-        /// </summary>
-        internal static string Translation_LOAD_GAME_BUTTON {
-            get {
-                return ResourceManager.GetString("Translation_LOAD_GAME_BUTTON", resourceCulture);
             }
         }
         
@@ -3261,15 +3216,6 @@ namespace PAPIClasses.Resources {
         internal static string Translation_RETURN_BUTTON {
             get {
                 return ResourceManager.GetString("Translation_RETURN_BUTTON", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Saved Games: ähnelt.
-        /// </summary>
-        internal static string Translation_SAVED_GAMES_LABEL {
-            get {
-                return ResourceManager.GetString("Translation_SAVED_GAMES_LABEL", resourceCulture);
             }
         }
         
