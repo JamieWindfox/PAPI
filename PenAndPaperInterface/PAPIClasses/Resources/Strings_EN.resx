@@ -1134,29 +1134,17 @@
   <data name="Translation_CHARACTER_SELECTION_BUTTON_DESCRIPTION" xml:space="preserve">
     <value>Manage your saved characters and create new ones (not yet implemented)</value>
   </data>
-  <data name="Translation_DATE_LABEL" xml:space="preserve">
-    <value>Date of creation</value>
-  </data>
-  <data name="Translation_DELETE_GAME_BUTTON" xml:space="preserve">
-    <value>Delete</value>
-  </data>
   <data name="Translation_DESCRIPTION_LABEL" xml:space="preserve">
     <value>Description</value>
   </data>
   <data name="Translation_DESIGN_LABEL" xml:space="preserve">
     <value>Shown design</value>
   </data>
-  <data name="Translation_GAME_CREATOR_BUTTON" xml:space="preserve">
-    <value>Create new game</value>
-  </data>
   <data name="Translation_GAME_SELECTION_BUTTON" xml:space="preserve">
     <value>Games</value>
   </data>
   <data name="Translation_GAME_SELECTION_BUTTON_DESCRIPTION" xml:space="preserve">
     <value>Manage your saved games and create new ones</value>
-  </data>
-  <data name="Translation_GENRE_LABEL" xml:space="preserve">
-    <value>Genre</value>
   </data>
   <data name="Translation_ITEM_SELECTION_BUTTON" xml:space="preserve">
     <value>Items</value>
@@ -1166,9 +1154,6 @@
   </data>
   <data name="Translation_LANGUAGE_LABEL" xml:space="preserve">
     <value>Shown language</value>
-  </data>
-  <data name="Translation_LOAD_GAME_BUTTON" xml:space="preserve">
-    <value>Load</value>
   </data>
   <data name="Translation_OPEN_CREATOR_BUTTON" xml:space="preserve">
     <value>Open selected creator</value>
@@ -1184,9 +1169,6 @@
   </data>
   <data name="Translation_RETURN_BUTTON" xml:space="preserve">
     <value>Return</value>
-  </data>
-  <data name="Translation_SAVED_GAMES_LABEL" xml:space="preserve">
-    <value>Saved Games:</value>
   </data>
   <data name="Translation_SELECTION_LABEL" xml:space="preserve">
     <value>Select what you want to do:</value>
