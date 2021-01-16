@@ -32,7 +32,7 @@ namespace PAPI.Settings
         {
             Guid newGuid = Guid.NewGuid();
             string generatedId = Convert.ToBase64String(newGuid.ToByteArray());
-            generatedId = generatedId.Remove(generatedId.IndexOf("=="));
+            generatedId = generatedId.Remove(generatedId.IndexOf("="));
 
             return generatedId;
         }
