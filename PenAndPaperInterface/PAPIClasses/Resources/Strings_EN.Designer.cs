@@ -3256,6 +3256,15 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Player ID (you can&apos;t change this):  ähnelt.
+        /// </summary>
+        internal static string Translation_PLAYER_ID_LABEL {
+            get {
+                return ResourceManager.GetString("Translation_PLAYER_ID_LABEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Player name ähnelt.
         /// </summary>
         internal static string Translation_PLAYER_NAME_LABEL {

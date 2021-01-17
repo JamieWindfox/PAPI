@@ -34,7 +34,9 @@ namespace PAPIClient.Views
                 Translate(resSet, design_label);
                 Translate(resSet, return_button);
                 Translate(resSet, player_name_label);
+                Translate(resSet, player_id_label);
                 playerName_inputField.Text = _cachedPlayerName;
+                player_id_textbox.Text = PAPIApplication.GetPlayer()._id;
                 design_dropdown.Items[0] = TranslatedEnum(resSet, DesignEnum.BLACK_ON_ANTIQUE);
                 design_dropdown.Items[1] = TranslatedEnum(resSet, DesignEnum.GREEN_ON_BLACK);
                 design_dropdown.Items[2] = TranslatedEnum(resSet, DesignEnum.BLACK_ON_WHITE);
@@ -113,5 +115,8 @@ namespace PAPIClient.Views
             WfLogger.Log(this, LogLevel.DEBUG, "Return button was clicked, options are being saved and view changes to " + ViewController.lastView.GetType());
             ViewController.lastView.Open(this);
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
     }
 }
