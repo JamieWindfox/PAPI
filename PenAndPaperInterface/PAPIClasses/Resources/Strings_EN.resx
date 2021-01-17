@@ -1182,6 +1182,9 @@
   <data name="Translation_OPTIONS_BUTTON" xml:space="preserve">
     <value>Options</value>
   </data>
+  <data name="Translation_PLAYER_ID_LABEL" xml:space="preserve">
+    <value>Player ID (you can't change this): </value>
+  </data>
   <data name="Translation_PLAYER_NAME_LABEL" xml:space="preserve">
     <value>Player name</value>
   </data>
