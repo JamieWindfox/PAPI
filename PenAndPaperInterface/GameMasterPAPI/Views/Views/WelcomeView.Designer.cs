@@ -146,7 +146,7 @@ namespace PAPIClient.Views
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "WelcomeView";
-            this.Text = "GMStartView";
+            this.Text = "P.A.P.I. Welcome View";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

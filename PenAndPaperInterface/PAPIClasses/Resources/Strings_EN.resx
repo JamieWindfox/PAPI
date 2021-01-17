@@ -663,14 +663,14 @@
   <data name="CriticalInjury_WINDED_Description" xml:space="preserve">
     <value />
   </data>
-  <data name="DesignEnum_BLACK_ON_ANTIQUE" xml:space="preserve">
-    <value>black on antique</value>
+  <data name="DesignEnum_DIGITAL" xml:space="preserve">
+    <value>Digital (green on black)</value>
   </data>
-  <data name="DesignEnum_BLACK_ON_WHITE" xml:space="preserve">
-    <value>black on white</value>
+  <data name="DesignEnum_NOVEL" xml:space="preserve">
+    <value>Novel (black on white)</value>
   </data>
-  <data name="DesignEnum_GREEN_ON_BLACK" xml:space="preserve">
-    <value>green on black</value>
+  <data name="DesignEnum_PAPYRUS" xml:space="preserve">
+    <value>Papyrus (black on antique)</value>
   </data>
   <data name="Dice_D10" xml:space="preserve">
     <value>D10</value>
@@ -1126,13 +1126,13 @@
     <value>Buildings</value>
   </data>
   <data name="Translation_BUILDING_SELECTION_BUTTON_DESCRIPTION" xml:space="preserve">
-    <value>Manage your saved buildings and create new ones (not yet implemented)</value>
+    <value>Manage, edit or delete your saved buildings and create new ones (Buildings are not yet implemented)</value>
   </data>
   <data name="Translation_CHARACTER_SELECTION_BUTTON" xml:space="preserve">
     <value>Characters</value>
   </data>
   <data name="Translation_CHARACTER_SELECTION_BUTTON_DESCRIPTION" xml:space="preserve">
-    <value>Manage your saved characters and create new ones (not yet implemented)</value>
+    <value>Manage, edit or delete your saved characters and create new ones (Characters are not yet implemented)</value>
   </data>
   <data name="Translation_DATE_LABEL" xml:space="preserve">
     <value>Date of creation</value>
@@ -1153,7 +1153,7 @@
     <value>Games</value>
   </data>
   <data name="Translation_GAME_SELECTION_BUTTON_DESCRIPTION" xml:space="preserve">
-    <value>Manage your saved games and create new ones</value>
+    <value>Manage, start or delete your saved games and create new ones.</value>
   </data>
   <data name="Translation_GENRE_LABEL" xml:space="preserve">
     <value>Genre</value>
@@ -1168,7 +1168,7 @@
     <value>Items</value>
   </data>
   <data name="Translation_ITEM_SELECTION_BUTTON_DESCRIPTION" xml:space="preserve">
-    <value>Manage your saved items and create new ones (not yet implemented)</value>
+    <value>Manage, edit or delete your saved items and create new ones (Items are not yet implemented)</value>
   </data>
   <data name="Translation_LANGUAGE_LABEL" xml:space="preserve">
     <value>Shown language</value>
@@ -1207,7 +1207,7 @@
     <value>Vehicles</value>
   </data>
   <data name="Translation_VEHICLE_SELECTION_BUTTON_DESCRIPTION" xml:space="preserve">
-    <value>Manage your saved vehicles and create new ones (not yet implemented)</value>
+    <value>Manage, edit or delete your saved vehicles and create new ones (Vehicles are not yet implemented)</value>
   </data>
   <data name="Translation_WELCOME_LABEL" xml:space="preserve">
     <value>Welcome</value>

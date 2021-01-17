@@ -1699,29 +1699,29 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die black on antique ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Digital (green on black) ähnelt.
         /// </summary>
-        internal static string DesignEnum_BLACK_ON_ANTIQUE {
+        internal static string DesignEnum_DIGITAL {
             get {
-                return ResourceManager.GetString("DesignEnum_BLACK_ON_ANTIQUE", resourceCulture);
+                return ResourceManager.GetString("DesignEnum_DIGITAL", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die black on white ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Novel (black on white) ähnelt.
         /// </summary>
-        internal static string DesignEnum_BLACK_ON_WHITE {
+        internal static string DesignEnum_NOVEL {
             get {
-                return ResourceManager.GetString("DesignEnum_BLACK_ON_WHITE", resourceCulture);
+                return ResourceManager.GetString("DesignEnum_NOVEL", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die green on black ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Papyrus (black on antique) ähnelt.
         /// </summary>
-        internal static string DesignEnum_GREEN_ON_BLACK {
+        internal static string DesignEnum_PAPYRUS {
             get {
-                return ResourceManager.GetString("DesignEnum_GREEN_ON_BLACK", resourceCulture);
+                return ResourceManager.GetString("DesignEnum_PAPYRUS", resourceCulture);
             }
         }
         
@@ -3085,7 +3085,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Manage your saved buildings and create new ones (not yet implemented) ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Manage, edit or delete your saved buildings and create new ones (Buildings are not yet implemented) ähnelt.
         /// </summary>
         internal static string Translation_BUILDING_SELECTION_BUTTON_DESCRIPTION {
             get {
@@ -3103,7 +3103,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Manage your saved characters and create new ones (not yet implemented) ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Manage, edit or delete your saved characters and create new ones (Characters are not yet implemented) ähnelt.
         /// </summary>
         internal static string Translation_CHARACTER_SELECTION_BUTTON_DESCRIPTION {
             get {
@@ -3166,7 +3166,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Manage your saved games and create new ones ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Manage, start or delete your saved games and create new ones. ähnelt.
         /// </summary>
         internal static string Translation_GAME_SELECTION_BUTTON_DESCRIPTION {
             get {
@@ -3211,7 +3211,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Manage your saved items and create new ones (not yet implemented) ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Manage, edit or delete your saved items and create new ones (Items are not yet implemented) ähnelt.
         /// </summary>
         internal static string Translation_ITEM_SELECTION_BUTTON_DESCRIPTION {
             get {
@@ -3328,7 +3328,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Manage your saved vehicles and create new ones (not yet implemented) ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Manage, edit or delete your saved vehicles and create new ones (Vehicles are not yet implemented) ähnelt.
         /// </summary>
         internal static string Translation_VEHICLE_SELECTION_BUTTON_DESCRIPTION {
             get {

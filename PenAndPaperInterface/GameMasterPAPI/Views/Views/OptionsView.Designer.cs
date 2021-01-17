@@ -1,7 +1,7 @@
 ﻿
 namespace PAPIClient.Views
 {
-    partial class GMOptionsView
+    partial class OptionsView
     {
         /// <summary>
         /// Required designer variable.
@@ -46,6 +46,7 @@ namespace PAPIClient.Views
             // 
             // language_dropdown
             // 
+            this.language_dropdown.Dock = System.Windows.Forms.DockStyle.Top;
             this.language_dropdown.FormattingEnabled = true;
             this.language_dropdown.Items.AddRange(new object[] {
             "English",
@@ -53,12 +54,13 @@ namespace PAPIClient.Views
             this.language_dropdown.Location = new System.Drawing.Point(24, 55);
             this.language_dropdown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.language_dropdown.Name = "language_dropdown";
-            this.language_dropdown.Size = new System.Drawing.Size(220, 27);
+            this.language_dropdown.Size = new System.Drawing.Size(364, 27);
             this.language_dropdown.TabIndex = 0;
             this.language_dropdown.SelectedIndexChanged += new System.EventHandler(this.languageDropdown_SelectedIndexChanged);
             // 
             // design_dropdown
             // 
+            this.design_dropdown.Dock = System.Windows.Forms.DockStyle.Top;
             this.design_dropdown.FormattingEnabled = true;
             this.design_dropdown.Items.AddRange(new object[] {
             "black_on_antique",
@@ -67,7 +69,7 @@ namespace PAPIClient.Views
             this.design_dropdown.Location = new System.Drawing.Point(396, 55);
             this.design_dropdown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.design_dropdown.Name = "design_dropdown";
-            this.design_dropdown.Size = new System.Drawing.Size(220, 27);
+            this.design_dropdown.Size = new System.Drawing.Size(364, 27);
             this.design_dropdown.TabIndex = 1;
             this.design_dropdown.SelectedIndexChanged += new System.EventHandler(this.designDropdown_SelectedIndexChanged);
             // 
@@ -190,15 +192,15 @@ namespace PAPIClient.Views
             this.player_id_label.TabIndex = 2;
             this.player_id_label.Text = "player_id_label";
             // 
-            // GMOptionsView
+            // OptionsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 453);
             this.Controls.Add(this.tableLayoutPanel);
             this.Margin = new System.Windows.Forms.Padding(9);
-            this.Name = "GMOptionsView";
-            this.Text = "GMOptionsView";
+            this.Name = "OptionsView";
+            this.Text = "P.A.P.I. Options View";
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             this.player_info_panel.ResumeLayout(false);

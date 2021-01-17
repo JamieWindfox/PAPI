@@ -10,7 +10,7 @@ namespace PAPIClient.Views
         // Views
         public static PAPIView welcomeView { get; } = new WelcomeView();
         public static PAPIView startView { get; } = new StartView();
-        public static PAPIView optionsView { get; } = new GMOptionsView();
+        public static PAPIView optionsView { get; } = new OptionsView();
         public static PAPIView gameSelectionView { get; } = new GameSelectionView();
         public static PAPIView gameCreationView { get; } = new GameCreationView();
         
