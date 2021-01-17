@@ -7,10 +7,10 @@ using PAPI.Serialization;
 
 namespace PAPIClient.Views
 {
-    public partial class GMOptionsView : PAPIView
+    public partial class OptionsView : PAPIView
     {
         private string _cachedPlayerName;
-        public GMOptionsView() : base()
+        public OptionsView() : base()
         {
             InitializeComponent();
             WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
@@ -37,9 +37,9 @@ namespace PAPIClient.Views
                 Translate(resSet, player_id_label);
                 playerName_inputField.Text = _cachedPlayerName;
                 player_id_textbox.Text = PAPIApplication.GetPlayer()._id;
-                design_dropdown.Items[0] = TranslatedEnum(resSet, DesignEnum.BLACK_ON_ANTIQUE);
-                design_dropdown.Items[1] = TranslatedEnum(resSet, DesignEnum.GREEN_ON_BLACK);
-                design_dropdown.Items[2] = TranslatedEnum(resSet, DesignEnum.BLACK_ON_WHITE);
+                design_dropdown.Items[0] = TranslatedEnum(resSet, DesignEnum.PAPYRUS);
+                design_dropdown.Items[1] = TranslatedEnum(resSet, DesignEnum.DIGITAL);
+                design_dropdown.Items[2] = TranslatedEnum(resSet, DesignEnum.NOVEL);
                 language_dropdown.Items[0] = TranslatedEnum(resSet, LanguageEnum.ENGLISH);
                 language_dropdown.Items[1] = TranslatedEnum(resSet, LanguageEnum.GERMAN);
             }
@@ -79,13 +79,13 @@ namespace PAPIClient.Views
             switch (design_dropdown.SelectedIndex)
             {
                 case 0:
-                    chosenDesign = DesignEnum.BLACK_ON_ANTIQUE;
+                    chosenDesign = DesignEnum.PAPYRUS;
                     break;
                 case 1:
-                    chosenDesign = DesignEnum.GREEN_ON_BLACK;
+                    chosenDesign = DesignEnum.DIGITAL;
                     break;
                 case 2:
-                    chosenDesign = DesignEnum.BLACK_ON_WHITE;
+                    chosenDesign = DesignEnum.NOVEL;
                     break;
                 default:
                     break;

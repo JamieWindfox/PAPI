@@ -75,7 +75,7 @@ namespace PAPIClient.Views
         // Opens the options view
         private void optionsButton_Click(object sender, EventArgs e)
         {
-            GMOptionsView optionsView = new GMOptionsView();
+            OptionsView optionsView = new OptionsView();
             optionsView.Open(this);
         }
 

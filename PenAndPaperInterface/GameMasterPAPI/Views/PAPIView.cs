@@ -83,12 +83,12 @@ namespace PAPIClient.Views
         {
             switch (PAPIApplication.GetDesign())
             {
-                case DesignEnum.BLACK_ON_ANTIQUE:
+                case DesignEnum.PAPYRUS:
                     BackColor = System.Drawing.Color.AntiqueWhite;
                     ForeColor = System.Drawing.Color.Black;
                     Font = new Font("Papyrus", 12, FontStyle.Bold);
                     break;
-                case DesignEnum.GREEN_ON_BLACK:
+                case DesignEnum.DIGITAL:
                     BackColor = System.Drawing.Color.Black;
                     ForeColor = System.Drawing.Color.Lime;
                     Font = new Font("Consolas", 12);
