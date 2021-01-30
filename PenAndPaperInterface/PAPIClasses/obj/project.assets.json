@@ -516,23 +516,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Windfuchs\\.nuget\\packages\\": {},
+    "C:\\Users\\jamie\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Windfuchs\\Documents\\GameDevelopment\\PAPI\\PenAndPaperInterface\\PAPIClasses\\PAPIClasses.csproj",
+      "projectUniqueName": "C:\\Users\\jamie\\Documents\\GameDevelopment\\PAPI\\PAPI-for-Windows\\PenAndPaperInterface\\PAPIClasses\\PAPIClasses.csproj",
       "projectName": "PAPIClasses",
-      "projectPath": "C:\\Users\\Windfuchs\\Documents\\GameDevelopment\\PAPI\\PenAndPaperInterface\\PAPIClasses\\PAPIClasses.csproj",
-      "packagesPath": "C:\\Users\\Windfuchs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Windfuchs\\Documents\\GameDevelopment\\PAPI\\PenAndPaperInterface\\PAPIClasses\\obj\\",
+      "projectPath": "C:\\Users\\jamie\\Documents\\GameDevelopment\\PAPI\\PAPI-for-Windows\\PenAndPaperInterface\\PAPIClasses\\PAPIClasses.csproj",
+      "packagesPath": "C:\\Users\\jamie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jamie\\Documents\\GameDevelopment\\PAPI\\PAPI-for-Windows\\PenAndPaperInterface\\PAPIClasses\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Windfuchs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jamie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -580,7 +580,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
