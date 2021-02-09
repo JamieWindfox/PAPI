@@ -42,7 +42,7 @@ namespace PAPI.Settings
             this._dateOfLastSession = (_dateOfLastSession == null) ? DateTime.Now : _dateOfLastSession;
             this._knownNPCs = (_knownNPCs == null) ? new List<UniqueRival>() : _knownNPCs;
 
-            WfLogger.Log(this, LogLevel.DETAILED, "Created new Game (GameMaster " + _gameMaster._name + ", Ganre " + _genre + ")");
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Game (" + ((_gameMaster == null) ? "" : ("GameMaster " + _gameMaster._name + ", ")) + "Genre " + _genre + ")");
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------

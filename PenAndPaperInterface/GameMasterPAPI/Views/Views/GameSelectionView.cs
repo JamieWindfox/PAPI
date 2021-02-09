@@ -16,7 +16,7 @@ namespace PAPIClient.Views
     /// </summary>
     public partial class GameSelectionView : PAPIView, ITranslatableView
     {
-        private Dictionary<PAPIGame, Button> _gameButtons = new Dictionary<PAPIGame, Button>();
+        private Dictionary<PAPIGame, Button> _loadGameButtons = new Dictionary<PAPIGame, Button>();
         private List<PAPIGame> _savedGames = new List<PAPIGame>();
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace PAPIClient.Views
 
 
                 // Add show Game Button to current row
-                Button button = new Button()
+                Button loadGameBtn = new Button()
                 {
                     Text = "",
                     FlatStyle = FlatStyle.Flat,
@@ -97,11 +97,30 @@ namespace PAPIClient.Views
                 };
                 string imagePath = GameDirectory.GetFilePath_Images(PAPIApplication.GetDesign()) + "\\show.bmp";
                 Image image = Image.FromFile(imagePath);
-                button.Image = (Image)(new Bitmap(image, new Size(40, 40)));
-                gameTable.Controls.Add(button, 3, rowNr);
-                _gameButtons.Add(game, button);
-                gameTable.Controls.Add(button, 2, rowNr++);
-                _buttons.Add(button);
+                loadGameBtn.Image = (Image)(new Bitmap(image, new Size(40, 40)));
+                gameTable.Controls.Add(loadGameBtn, 3, rowNr);
+                _loadGameButtons.Add(game, loadGameBtn);
+                //gameTable.Controls.Add(loadGameBtn, 2, rowNr++);
+                _buttons.Add(loadGameBtn);
+
+                // Add delete Game Button to current row
+                Button deleteGameBtn = new Button()
+                {
+                    Text = "",
+                    FlatStyle = FlatStyle.Flat,
+                    Anchor = AnchorStyles.Right | AnchorStyles.Top,
+                    Size = new Size(40, 40),
+                    Name = "delete_game_button_" + rowNr
+                };
+                imagePath = GameDirectory.GetFilePath_Images(PAPIApplication.GetDesign()) + "\\delete.bmp";
+                image = Image.FromFile(imagePath);
+                deleteGameBtn.Image = (Image)(new Bitmap(image, new Size(40, 40)));
+                gameTable.Controls.Add(deleteGameBtn, 4, rowNr);
+                _loadGameButtons.Add(game, deleteGameBtn);
+                //gameTable.Controls.Add(deleteGameBtn, 2, rowNr++);
+                _buttons.Add(deleteGameBtn);
+
+
             }
 
             // Set size of each row to same
@@ -116,7 +135,7 @@ namespace PAPIClient.Views
             SetButtonDesign();
 
             // Add eventhandler for click on every show game button
-            foreach (KeyValuePair<PAPIGame, Button> button in _gameButtons)
+            foreach (KeyValuePair<PAPIGame, Button> button in _loadGameButtons)
             {
                 button.Value.Click += Load_Game_Button_Click;
             }
@@ -128,7 +147,7 @@ namespace PAPIClient.Views
         private void Load_Game_Button_Click(object sender, EventArgs e)
         {
             PAPIGame selectedGame = null;
-            foreach(KeyValuePair<PAPIGame, Button> gameButton in _gameButtons)
+            foreach(KeyValuePair<PAPIGame, Button> gameButton in _loadGameButtons)
             {
                 if(gameButton.Value == (Button)sender)
                 {
@@ -147,7 +166,9 @@ namespace PAPIClient.Views
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-
+        /// <summary>
+        /// Translates all shown text to the set language
+        /// </summary>
         public override void SetTextToActiveLanguage()
         {
             if (_shownLanguage == PAPIApplication.GetLanguage())
@@ -180,7 +201,11 @@ namespace PAPIClient.Views
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-
+        /// <summary>
+        /// Returns to the Start View
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void returnButton_Click(object sender, EventArgs e)
         {
             WfLogger.Log(this, LogLevel.DEBUG, "Return Button was clicked, return to " + ViewController.lastView.GetType());
@@ -189,7 +214,11 @@ namespace PAPIClient.Views
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-
+        /// <summary>
+        /// Starts the Game Creator
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void newGameButton_Click(object sender, EventArgs e)
         {
             WfLogger.Log(this, LogLevel.DEBUG, "The Create new Game Button was clicked, open CreateNewGameView");
@@ -198,7 +227,10 @@ namespace PAPIClient.Views
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-
+        /// <summary>
+        /// Deletes the selected game and removes it from the list
+        /// </summary>
+        /// <param name="game"></param>
         public void DeleteGame(PAPIGame game)
         {
             if (game != null)
@@ -227,10 +259,9 @@ namespace PAPIClient.Views
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-
         private void GameSelectionView_Load(object sender, EventArgs e)
         {
-            // do nothing
+            // do nothing when loading the view
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
