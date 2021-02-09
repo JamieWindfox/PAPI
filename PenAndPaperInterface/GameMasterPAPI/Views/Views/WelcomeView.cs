@@ -63,16 +63,23 @@ namespace PAPIClient.Views
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        // Shuts down the application
+        /// <summary>
+        /// Shuts down the application
+        /// </summary>
         private void quitButton_Click(object sender, EventArgs e)
         {
             SaveFileManager.Save(PAPIApplication.GetSettings());
-            Application.Exit();
+            Application.Exit(); // To exit the WinForm App
+            System.Environment.Exit(0); // To exit the program
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        // Opens the options view
+        /// <summary>
+        /// Opens the options view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void optionsButton_Click(object sender, EventArgs e)
         {
             OptionsView optionsView = new OptionsView();
@@ -81,7 +88,11 @@ namespace PAPIClient.Views
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-        // Opens the Game Overview
+        /// <summary>
+        /// Opens the Game Overview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void startButton_Click(object sender, EventArgs e)
         {
             StartView startView = new StartView();
@@ -91,6 +102,9 @@ namespace PAPIClient.Views
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Opens this Form and calls the superclass method Open(Form caller)
+        /// </summary>
         public void Open()
         {
             base.Open(null);
