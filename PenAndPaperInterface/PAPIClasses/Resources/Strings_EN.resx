@@ -1134,8 +1134,11 @@
   <data name="Translation_CHARACTER_SELECTION_BUTTON_DESCRIPTION" xml:space="preserve">
     <value>Manage, edit or delete your saved characters and create new ones (Characters are not yet implemented)</value>
   </data>
-  <data name="Translation_DATE_LABEL" xml:space="preserve">
-    <value>Date of creation</value>
+  <data name="Translation_DATE_GAME_CREATION_LABEL" xml:space="preserve">
+    <value>Game created</value>
+  </data>
+  <data name="Translation_DATE_LAST_SAVE_LABEL" xml:space="preserve">
+    <value>Last save</value>
   </data>
   <data name="Translation_DELETE_GAME_BUTTON" xml:space="preserve">
     <value>Delete</value>
