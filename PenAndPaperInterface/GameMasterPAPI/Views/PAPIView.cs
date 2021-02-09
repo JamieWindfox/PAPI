@@ -193,6 +193,27 @@ namespace PAPIClient.Views
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
+        /// Translates a description
+        /// </summary>
+        /// <param name="resSet"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public string TranslatedDescription(ResXResourceSet resSet, string key)
+        {
+            string text = resSet.GetString("Description_" + key.ToUpper());
+            if (text != null)
+            {
+                return text;
+            }
+            else
+            {
+                return key;
+            }
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
         /// Translates a string
         /// </summary>
         /// <param name="resSet"></param>

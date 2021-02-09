@@ -1699,6 +1699,51 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Magic is real in our modern world, but hidden in its own secret society only a few get to find..
+        /// </summary>
+        internal static string Description_GENREENUM_MAGICAL_WORLD {
+            get {
+                return ResourceManager.GetString("Description_GENREENUM_MAGICAL_WORLD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mystical creatures, different species and kingdoms, all roam this world, where chivalry, magic and dragons collide..
+        /// </summary>
+        internal static string Description_GENREENUM_MEDIEVAL_FANTASY {
+            get {
+                return ResourceManager.GetString("Description_GENREENUM_MEDIEVAL_FANTASY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  .
+        /// </summary>
+        internal static string Description_GENREENUM_NOT_VALID {
+            get {
+                return ResourceManager.GetString("Description_GENREENUM_NOT_VALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A nuclear catastrophy has come over the world. Radiation, bandits and dangerous mutants, human or creature, roam the destroyed cities and landscapes..
+        /// </summary>
+        internal static string Description_GENREENUM_NUCLEAR_FALLOUT {
+            get {
+                return ResourceManager.GetString("Description_GENREENUM_NUCLEAR_FALLOUT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not quite science fiction, but definitely set in space, there are many planets, species and cultures to discover in this galaxy..
+        /// </summary>
+        internal static string Description_GENREENUM_SPACE_OPERA {
+            get {
+                return ResourceManager.GetString("Description_GENREENUM_SPACE_OPERA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Digital (green on black).
         /// </summary>
         internal static string DesignEnum_DIGITAL {
@@ -3166,6 +3211,15 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Game ID:.
+        /// </summary>
+        internal static string Translation_GAME_ID_LABEL {
+            get {
+                return ResourceManager.GetString("Translation_GAME_ID_LABEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Games.
         /// </summary>
         internal static string Translation_GAME_SELECTION_BUTTON {
@@ -3189,15 +3243,6 @@ namespace PAPIClasses.Resources {
         internal static string Translation_GENRE_LABEL {
             get {
                 return ResourceManager.GetString("Translation_GENRE_LABEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to GM Id: .
-        /// </summary>
-        internal static string Translation_GM_ID_LABEL {
-            get {
-                return ResourceManager.GetString("Translation_GM_ID_LABEL", resourceCulture);
             }
         }
         

@@ -663,6 +663,21 @@
   <data name="CriticalInjury_WINDED_Description" xml:space="preserve">
     <value />
   </data>
+  <data name="Description_GENREENUM_MAGICAL_WORLD" xml:space="preserve">
+    <value>Magic is real in our modern world, but hidden in its own secret society only a few get to find.</value>
+  </data>
+  <data name="Description_GENREENUM_MEDIEVAL_FANTASY" xml:space="preserve">
+    <value>Mystical creatures, different species and kingdoms, all roam this world, where chivalry, magic and dragons collide.</value>
+  </data>
+  <data name="Description_GENREENUM_NOT_VALID" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="Description_GENREENUM_NUCLEAR_FALLOUT" xml:space="preserve">
+    <value>A nuclear catastrophy has come over the world. Radiation, bandits and dangerous mutants, human or creature, roam the destroyed cities and landscapes.</value>
+  </data>
+  <data name="Description_GENREENUM_SPACE_OPERA" xml:space="preserve">
+    <value>Not quite science fiction, but definitely set in space, there are many planets, species and cultures to discover in this galaxy.</value>
+  </data>
   <data name="DesignEnum_DIGITAL" xml:space="preserve">
     <value>Digital (green on black)</value>
   </data>
@@ -1152,6 +1167,9 @@
   <data name="Translation_GAME_CREATOR_BUTTON" xml:space="preserve">
     <value>Create new game</value>
   </data>
+  <data name="Translation_GAME_ID_LABEL" xml:space="preserve">
+    <value>Game ID:</value>
+  </data>
   <data name="Translation_GAME_SELECTION_BUTTON" xml:space="preserve">
     <value>Games</value>
   </data>
@@ -1160,9 +1178,6 @@
   </data>
   <data name="Translation_GENRE_LABEL" xml:space="preserve">
     <value>Genre</value>
-  </data>
-  <data name="Translation_GM_ID_LABEL" xml:space="preserve">
-    <value>GM Id: </value>
   </data>
   <data name="Translation_GM_NAME_LABEL" xml:space="preserve">
     <value>Game Master: </value>
