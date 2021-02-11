@@ -21,9 +21,9 @@ namespace TestClient
         static void Main(string[] args)
         {
 
-            /*Player player = new Player("Raine", PAPIApplication._currentPlayer._ip);
-            PlayerJoinRequest request = new PlayerJoinRequest("PlayerJoinRequest", player);
-            byte[] bytes = PAPIClient.SendMessage(System.Text.Encoding.Unicode.GetBytes(JsonSerializer.Serialize(request)));*/
+            //Player player = new Player("Raine", PAPIApplication._currentPlayer._ip);
+            //PlayerJoinRequest request = new PlayerJoinRequest("PlayerJoinRequest", player);
+            //byte[] bytes = PAPIClient.SendMessage(System.Text.Encoding.Unicode.GetBytes(JsonSerializer.Serialize(request)));
 
         }
     }

@@ -11,21 +11,20 @@ namespace PAPIClient.Views
 {
     public partial class GameCreationView : PAPIView, ITranslatableView
     {
-        // Players only added for Test, remove in release!!!!!
-        private static Dictionary<Player, Button> players_removeButtons = new Dictionary<Player, Button>();
-
         private static bool allComponentsAdded = false;
 
-        private static GenreEnum selectedGenre = GenreEnum.NOT_VALID;
+        private static GenreEnum _cachedGenre = GenreEnum.NOT_VALID;
+        private Dictionary<GenreEnum, string> _genreDescriptions = new Dictionary<GenreEnum, string>();
 
         public GameCreationView()
         {
             InitializeComponent();
             WfLogger.Log(this, LogLevel.DEBUG, "Initialized components");
             AddComponents();
-            createGameButton.Enabled = false;
+            create_and_start_button.Enabled = false;
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------
 
         private void AddComponents()
         {
@@ -34,24 +33,17 @@ namespace PAPIClient.Views
                 WfLogger.Log(this, LogLevel.WARNING, "Stopped creating table, because it already has been created before");
                 return;
             }
-            playerListPanel.AutoSize = true;
-            playerListPanel.ColumnCount = 2;
-            playerListPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            playerListPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 130F));
-            playerListPanel.Controls.Add(playerNameLabel, 0, 0);
-            playerListPanel.RowCount = 1;
 
-            playerListPanel.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
-
-
-            _buttons.Add(cancelButton);
-            _buttons.Add(createGameButton);
-            _buttons.Add(addPlayerButton);
+            _buttons.Add(cancel_button);
+            _buttons.Add(create_and_return_button);
+            _buttons.Add(create_and_start_button);
             SetButtonDesign();
             allComponentsAdded = true;
             WfLogger.Log(this, LogLevel.DEBUG, "Added all components");
         }
 
+        /* --------------------------------------------------------------------------------------------------------------------------------
+         * Functionality removed, but code saved for other views 
         public void AddPlayer(Player player)
         {
             foreach(KeyValuePair<Player, Button> playerButton in players_removeButtons)
@@ -140,6 +132,8 @@ namespace PAPIClient.Views
                 WfLogger.Log(this, LogLevel.WARNING, "For the given Button no player was found, who could be removed");
             }
         }
+        */
+        // --------------------------------------------------------------------------------------------------------------------------------
 
         public override void SetTextToActiveLanguage()
         {
@@ -151,74 +145,94 @@ namespace PAPIClient.Views
             using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {
                 Translate(resSet, gm_name_label);
-                Translate(resSet, gm_id_label);
-                gm_name_label.Text += ": " + PAPIApplication.GetPlayer()._name;
-                gm_id_label.Text += ": " + PAPIApplication.GetPlayer()._id;
-                Translate(resSet, cancelButton);
-                Translate(resSet, addPlayerButton);
-                Translate(resSet, createGameButton);
-                Translate(resSet, genreLabel);
-                Translate(resSet, playerNameLabel);
-                genreDropdown.Items[0] = TranslatedString(resSet, "genre_nuclear_fallout");
-                genreDropdown.Items[1] = TranslatedString(resSet, "genre_medieval_fantasy");
-                genreDropdown.Items[2] = TranslatedString(resSet, "genre_magical_world");
-                genreDropdown.Items[3] = TranslatedString(resSet, "genre_space_opera");
+                Translate(resSet, game_id_label);
+                gm_name.Text = PAPIApplication.GetPlayer()._name;
+                id_textbox.Text = PAPIApplication.GetUniqueId();
+                Translate(resSet, cancel_button);
+                Translate(resSet, create_and_start_button);
+                Translate(resSet, create_and_return_button);
+                Translate(resSet, genre_label);
+                genreDropdown.Items[0] = TranslatedString(resSet, "GenreEnum_NUCLEAR_FALLOUT");
+                genreDropdown.Items[1] = TranslatedString(resSet, "GenreEnum_MEDIEVAL_FANTASY");
+                genreDropdown.Items[2] = TranslatedString(resSet, "GenreEnum_MAGICAL_WORLD");
+                genreDropdown.Items[3] = TranslatedString(resSet, "GenreEnum_SPACE_OPERA");
+
+                _genreDescriptions.Add(GenreEnum.NUCLEAR_FALLOUT, TranslatedDescription(resSet, "GenreEnum_NUCLEAR_FALLOUT"));
+                _genreDescriptions.Add(GenreEnum.MEDIEVAL_FANTASY, TranslatedDescription(resSet, "GenreEnum_MEDIEVAL_FANTASY"));
+                _genreDescriptions.Add(GenreEnum.MAGICAL_WORLD, TranslatedDescription(resSet, "GenreEnum_MAGICAL_WORLD"));
+                _genreDescriptions.Add(GenreEnum.SPACE_OPERA, TranslatedDescription(resSet, "GenreEnum_SPACE_OPERA"));
+                _genreDescriptions.Add(GenreEnum.NOT_VALID, TranslatedDescription(resSet, "GenreEnum_NOT_VALID"));
             }
         }
 
 
-        private void addPlayerButton_Click(object sender, EventArgs e)
+        // Functionality removed, but code is still there for reference
+       /* private void addPlayerButton_Click(object sender, EventArgs e)
         {
             WfLogger.Log(this, LogLevel.DEBUG, "Add new Player Button was clicked, open the Player Search Popup");
             ViewController.playerSearchPopup.Popup(this);
 
-        }
+        }*/
 
         private void genreDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (genreDropdown.SelectedIndex)
             {
                 case 0:
-                    selectedGenre = GenreEnum.NUCLEAR_FALLOUT;
+                    _cachedGenre = GenreEnum.NUCLEAR_FALLOUT;
                     break;
                 case 1:
-                    selectedGenre = GenreEnum.MEDIEVAL_FANTASY;
+                    _cachedGenre = GenreEnum.MEDIEVAL_FANTASY;
                     break;
                 case 2:
-                    selectedGenre = GenreEnum.MAGICAL_WORLD;
+                    _cachedGenre = GenreEnum.MAGICAL_WORLD;
                     break;
                 case 3:
-                    selectedGenre = GenreEnum.SPACE_OPERA;
+                    _cachedGenre = GenreEnum.SPACE_OPERA;
                     break;
                 default:
-                    selectedGenre = GenreEnum.NOT_VALID;
+                    _cachedGenre = GenreEnum.NOT_VALID;
                     break;
             }
-            if(selectedGenre != GenreEnum.NOT_VALID)
+            if(_cachedGenre != GenreEnum.NOT_VALID)
             {
-                createGameButton.Enabled = true;
+                create_and_start_button.Enabled = true;
             }
-            WfLogger.Log(this, LogLevel.DEBUG, "Genre " + selectedGenre + " was selected in dropdown");
+            genre_description.Text = _genreDescriptions[_cachedGenre];
+
+            WfLogger.Log(this, LogLevel.DEBUG, "Genre " + _cachedGenre + " was selected in dropdown");
         }
 
-        private void createGameButton_Click(object sender, EventArgs e)
+        private void create_and_start_button_Click(object sender, EventArgs e)
         {
-            if (selectedGenre != GenreEnum.NOT_VALID)
+            if (_cachedGenre != GenreEnum.NOT_VALID)
             {
-                PAPIApplication.CreateNewGame(selectedGenre);
-                WfLogger.Log(this, LogLevel.DEBUG, "Create Game Button clicked, created a new Game (" + selectedGenre + ")");
-                foreach(KeyValuePair<Player, Button> playerButton in players_removeButtons)
+                PAPIApplication.CreateNewGame(_cachedGenre, id_textbox.Text);
+                WfLogger.Log(this, LogLevel.DEBUG, "Create ans start Game Button clicked, created a new Game (" + _cachedGenre + ")");
+
+                // Functionality removed, but keeping code for now as a reference
+                /*foreach(KeyValuePair<Player, Button> playerButton in players_removeButtons)
                 {
                     PAPIApplication._runningGame.AddPlayer(playerButton.Key);
-                }
-                // TODO
+                }*/
+                // TODO: change to session overview
             }
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void cancel_button_Click(object sender, EventArgs e)
         {
-            WfLogger.Log(this, LogLevel.DEBUG, "Cancel Button was clicked, return to GMStartView");
-            ViewController.startView.Open(this);
+            WfLogger.Log(this, LogLevel.DEBUG, "Cancel Button was clicked, return to GameSelectionView");
+            ViewController.gameSelectionView.Open(this);
+        }
+
+        private void create_and_return_button_Click(object sender, EventArgs e)
+        {
+            if (_cachedGenre != GenreEnum.NOT_VALID)
+            {
+                PAPIApplication.CreateNewGame(_cachedGenre, id_textbox.Text);
+                WfLogger.Log(this, LogLevel.DEBUG, "Create Game and return Button clicked, created a new Game (" + _cachedGenre + ")");
+                ViewController.gameSelectionView.Open(this);
+            }
         }
     }
 }

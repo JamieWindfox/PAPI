@@ -1,5 +1,6 @@
 ﻿
 using PAPI.Logging;
+using PAPI.Settings.Game;
 using System;
 using System.Text.Json.Serialization;
 
@@ -21,20 +22,9 @@ namespace PAPI.Settings
         public Player(string _name, string _id)
         {
             this._name = (_name == null || _name == "") ? "NOT_VALID_FROM_CTOR" : _name;
-            this._id = (_id == null || _id == "") ? GenerateUniqueId() : _id;
+            this._id = (_id == null || _id == "") ? PAPIApplication.GetUniqueId() : _id;
 
             WfLogger.Log(this, LogLevel.DETAILED, "Created new Player " + _name);
-        }
-
-        // --------------------------------------------------------------------------------------------------------------------------------
-
-        private string GenerateUniqueId()
-        {
-            Guid newGuid = Guid.NewGuid();
-            string generatedId = Convert.ToBase64String(newGuid.ToByteArray());
-            generatedId = generatedId.Remove(generatedId.IndexOf("="));
-
-            return generatedId;
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------

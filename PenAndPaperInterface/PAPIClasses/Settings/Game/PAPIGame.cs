@@ -17,6 +17,7 @@ namespace PAPI.Settings
         public DateTime _dateOfCreation { get; private set; }
         public DateTime _dateOfLastSession { get; private set; }
         public List<UniqueRival> _knownNPCs { get; private set; }
+        public string _id { get; private set; }
         
         // TODOs: Vehicles, Buildings, Maps
 
@@ -31,9 +32,10 @@ namespace PAPI.Settings
         /// <param name="_dateOfCreation">the date, when the game was first created, if null, this is set to current time</param>
         /// <param name="_dateOfLastSession">the date when the last session was saved, if null, this is set to current time</param>
         /// <param name="_knownNPCs">a list of all unique npcs, the game master wanted to save, if null, the list is empty</param>
+        /// <param name="_id">The unique id of the game which must be provided of players who want to join the game</param>
         [JsonConstructor]
         public PAPIGame(GenreEnum _genre, Player _gameMaster, Dictionary<Player, PlayerCharacter> _playerParty, DateTime _dateOfCreation, DateTime _dateOfLastSession,
-            List<UniqueRival> _knownNPCs)
+            List<UniqueRival> _knownNPCs, string _id)
         {
             this._gameMaster = (_gameMaster == null) ? PAPIApplication.GetPlayer() : _gameMaster;
             this._genre = _genre;
@@ -42,7 +44,7 @@ namespace PAPI.Settings
             this._dateOfLastSession = (_dateOfLastSession == null) ? DateTime.Now : _dateOfLastSession;
             this._knownNPCs = (_knownNPCs == null) ? new List<UniqueRival>() : _knownNPCs;
 
-            WfLogger.Log(this, LogLevel.DETAILED, "Created new Game (GameMaster " + _gameMaster._name + ", Ganre " + _genre + ")");
+            WfLogger.Log(this, LogLevel.DETAILED, "Created new Game (GameMaster " + _gameMaster._name + ", Genre " + _genre + ")");
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -50,7 +52,7 @@ namespace PAPI.Settings
         /// <summary>
         /// Creates a default game with the current player as game master
         /// </summary>
-        public PAPIGame() : this(GenreEnum.NOT_VALID, null, null, DateTime.Now, DateTime.Now, null)
+        public PAPIGame() : this(GenreEnum.NOT_VALID, null, null, DateTime.Now, DateTime.Now, null, PAPIApplication.GetUniqueId())
         {
             WfLogger.Log(this, LogLevel.DETAILED, "Created new default Game");
         }

@@ -65,9 +65,9 @@ namespace PAPI.Settings.Game
         /// Calls the CTOR of PAPIGame and creates a new game with the given genre and the current player as game master
         /// </summary>
         /// <param name="genre"></param>
-        public static void CreateNewGame(GenreEnum genre)
+        public static void CreateNewGame(GenreEnum genre, string id)
         {
-            _runningGame = new PAPIGame(genre, null, null, DateTime.Now, DateTime.Now, null);
+            _runningGame = new PAPIGame(genre, PAPIApplication.GetPlayer(), null, DateTime.Now, DateTime.Now, null, id);
 
             WfLogger.Log("PAPIApplication.CreateNewGame", LogLevel.DEBUG, "Created new Game");
         }
@@ -147,5 +147,18 @@ namespace PAPI.Settings.Game
             }
             return _settings;
         }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        public static  string GetUniqueId()
+        {
+            Guid newGuid = Guid.NewGuid();
+            string generatedId = Convert.ToBase64String(newGuid.ToByteArray());
+            generatedId = generatedId.Remove(generatedId.IndexOf("="));
+
+            return generatedId;
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

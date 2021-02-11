@@ -66,7 +66,7 @@ namespace PAPIClient.Views
 
         private void AddPlayer(Player player)
         {
-            ((GameCreationView)ViewController.gameCreationView).AddPlayer(player);
+            //((GameCreationView)ViewController.gameCreationView).AddPlayer(player); functionality remove, code kept as refernce
             PendingMessages.waitingPlayers.RemoveAt(0);
             addPlayerButton.Visible = false;
             addPlayerButton.Enabled = false;
