@@ -222,7 +222,7 @@ namespace PAPIClient.Views
             "medievalFantasy",
             "magicWorld",
             "spaceOpera"});
-            this.genreDropdown.Location = new System.Drawing.Point(133, 9);
+            this.genreDropdown.Location = new System.Drawing.Point(133, 6);
             this.genreDropdown.Name = "genreDropdown";
             this.genreDropdown.Size = new System.Drawing.Size(289, 27);
             this.genreDropdown.TabIndex = 3;

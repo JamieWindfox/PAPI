@@ -157,6 +157,7 @@ namespace PAPIClient.Views
                 genreDropdown.Items[2] = TranslatedString(resSet, "GenreEnum_MAGICAL_WORLD");
                 genreDropdown.Items[3] = TranslatedString(resSet, "GenreEnum_SPACE_OPERA");
 
+                _genreDescriptions.Clear();
                 _genreDescriptions.Add(GenreEnum.NUCLEAR_FALLOUT, TranslatedDescription(resSet, "GenreEnum_NUCLEAR_FALLOUT"));
                 _genreDescriptions.Add(GenreEnum.MEDIEVAL_FANTASY, TranslatedDescription(resSet, "GenreEnum_MEDIEVAL_FANTASY"));
                 _genreDescriptions.Add(GenreEnum.MAGICAL_WORLD, TranslatedDescription(resSet, "GenreEnum_MAGICAL_WORLD"));

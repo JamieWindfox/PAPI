@@ -68,6 +68,7 @@ namespace PAPI.Settings.Game
         public static void CreateNewGame(GenreEnum genre, string id)
         {
             _runningGame = new PAPIGame(genre, PAPIApplication.GetPlayer(), null, DateTime.Now, DateTime.Now, null, id);
+            SaveFileManager.Save(_runningGame);
 
             WfLogger.Log("PAPIApplication.CreateNewGame", LogLevel.DEBUG, "Created new Game");
         }
