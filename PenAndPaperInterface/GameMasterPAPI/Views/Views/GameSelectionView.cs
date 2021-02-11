@@ -18,6 +18,7 @@ namespace PAPIClient.Views
     {
         private Dictionary<PAPIGame, Button> _gameButtons = new Dictionary<PAPIGame, Button>();
         private List<PAPIGame> _savedGames = new List<PAPIGame>();
+        private List<PAPIGame> _shownGames = new List<PAPIGame>();
 
         /// <summary>
         /// Loads saved games and adds all components/controls to the view
@@ -47,8 +48,6 @@ namespace PAPIClient.Views
             gameTable.RowCount = 1;
 
             gameTable.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
-
-            ShowSavedGames();
             
             WfLogger.Log(this, LogLevel.DEBUG, "Added all components");
             SetTextToActiveLanguage();
@@ -59,35 +58,41 @@ namespace PAPIClient.Views
         /// <summary>
         /// Puts all saved games to the table
         /// </summary>
-        private void ShowSavedGames()
+        private void ShowSavedGamesTranslation(ResXResourceSet resSet)
         {
             // Show all saved Games
             int rowNr = 1;
             foreach (PAPIGame game in _savedGames)
             {
+                if (_shownGames.Contains(game)) continue;
+
                 WfLogger.Log(this, LogLevel.DEBUG, "Added game to list of saved games: " + game._genre + ", " + game._dateOfLastSession.ToString());
-                gameTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 44));
-                gameTable.RowCount++;
+
+                // Add Genre
+                gameTable.Controls.Add(new Label()
+                {
+                    Text = TranslatedString(resSet, "genre_" + _savedGames[rowNr-1]._genre.ToString().ToLower()),
+                    Anchor = AnchorStyles.Left | AnchorStyles.Top,
+                    Width = 250
+                }, 0, rowNr);
 
                 // Date of creation label
                 gameTable.Controls.Add(new Label()
                 {
-                    Text = game._dateOfCreation.ToString(),
+                    Text = game._dateOfCreation.ToShortDateString(),
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
-                    Width = 200
                 }, 1, rowNr);
 
                 // Date of last save label
                 gameTable.Controls.Add(new Label()
                 {
-                    Text = game._dateOfLastSession.ToString(),
+                    Text = game._dateOfLastSession.ToShortDateString(),
                     Anchor = AnchorStyles.Left | AnchorStyles.Top,
-                    Width = 200
-                }, 1, rowNr);
+                }, 2, rowNr);
 
 
                 // Add show Game Button to current row
-                Button button = new Button()
+                Button showGameBtn = new Button()
                 {
                     Text = "",
                     FlatStyle = FlatStyle.Flat,
@@ -97,11 +102,13 @@ namespace PAPIClient.Views
                 };
                 string imagePath = GameDirectory.GetFilePath_Images(PAPIApplication.GetDesign()) + "\\show.bmp";
                 Image image = Image.FromFile(imagePath);
-                button.Image = (Image)(new Bitmap(image, new Size(40, 40)));
-                gameTable.Controls.Add(button, 3, rowNr);
-                _gameButtons.Add(game, button);
-                gameTable.Controls.Add(button, 2, rowNr++);
-                _buttons.Add(button);
+                showGameBtn.Image = (Image)(new Bitmap(image, new Size(40, 40)));
+                _gameButtons.Add(game, showGameBtn);
+                gameTable.Controls.Add(showGameBtn, 2, rowNr++);
+                _buttons.Add(showGameBtn);
+                _shownGames.Add(game);
+
+
             }
 
             // Set size of each row to same
@@ -164,8 +171,11 @@ namespace PAPIClient.Views
                 Translate(resSet, date_game_creation_label);
                 Translate(resSet, genre_label);
                 Translate(resSet, date_last_save_label);
-                
-                for (int row = 0; row < _savedGames.Count; ++row)
+
+
+                ShowSavedGamesTranslation(resSet);
+
+                /*for (int row = 0; row < _savedGames.Count; ++row)
                 {
                     gameTable.Controls.Add(new Label()
                     {
@@ -173,7 +183,7 @@ namespace PAPIClient.Views
                         Anchor = AnchorStyles.Left | AnchorStyles.Top,
                         Width = 250
                     }, 0, row + 1);
-                }
+                }*/
             }
             WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + PAPIApplication.GetLanguage());
         }
