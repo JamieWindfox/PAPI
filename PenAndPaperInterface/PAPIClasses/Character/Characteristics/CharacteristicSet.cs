@@ -116,12 +116,10 @@ namespace PAPI.Character.Characteristics
             }
             else
             {
-                return false;
+                string excMsg = $"The Characteristic Enum value {characteristicEnum.ToString()} wasn't found in the list of characteristics";
+                WfLogger.Log(this, LogLevel.ERROR, excMsg);
+                throw new EnumNotFoundException(excMsg);
             }
-            string excMsg = "The Characteristic Enum value " + characteristicEnum.ToString() 
-                + " wasn't found in the list of characteristics";
-            WfLogger.Log(this, LogLevel.ERROR, excMsg);
-            throw new EnumNotFoundException(excMsg);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------

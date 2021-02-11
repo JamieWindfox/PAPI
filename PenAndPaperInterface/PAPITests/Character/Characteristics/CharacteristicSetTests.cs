@@ -9,7 +9,6 @@ namespace PAPITests.Character.Characteristics
     [TestClass]
     public class CharacteristicSetTests
     {
-        private static int TEST_COUNT = 5;
 
         // --------------------------------------------------------------------------------------------------------------------------------
         // Constructor Tests

@@ -16,7 +16,6 @@ namespace PAPI.Serialization
         private string _saveFile;
         public List<Type> _saveData;
         private static Object lockObj = new Object();
-        private int errorCountdown = 10;
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
@@ -45,11 +44,10 @@ namespace PAPI.Serialization
             {
                 if (!File.Exists(_saveFile))
                 {
-                    CreateFile(_saveFile);
+                    _ = CreateFile(_saveFile);
                 }
             }
 
-            
             _saveData = new List<Type>();
         }
 
@@ -200,7 +198,7 @@ namespace PAPI.Serialization
             {
                 _saveData = JsonSerializer.Deserialize<List<Type>>(jsonString);
             }
-            catch(JsonException ex)
+            catch(JsonException)
             {
                 WfLogger.Log(this, LogLevel.WARNING, "Json File is empty and there is nothing to obtain.");
             }

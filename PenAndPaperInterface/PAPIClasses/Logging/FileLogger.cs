@@ -99,7 +99,7 @@ namespace PAPI.Logging
             {
                 files = Directory.GetFiles(directoryPath);
             }
-            catch (DirectoryNotFoundException e)
+            catch (DirectoryNotFoundException)
             {
                 Directory.CreateDirectory(directoryPath);
             }
