@@ -13,12 +13,13 @@ namespace PAPIClient.Views
 {
     /// <summary>
     /// This view shows all created games and lets the player chose to create a new game; They also con delete games here
+    /// The table can show up to 10 saved games - the maximum number of games that can be saved per account
     /// </summary>
     public partial class GameSelectionView : PAPIView, ITranslatableView
     {
-        private Dictionary<PAPIGame, Button> _gameButtons = new Dictionary<PAPIGame, Button>();
         private List<PAPIGame> _savedGames = new List<PAPIGame>();
         private List<PAPIGame> _shownGames = new List<PAPIGame>();
+        private string _deleteGameYesNoText = "Translation_DELETE_GAME_QUESTION";
 
         /// <summary>
         /// Loads saved games and adds all components/controls to the view
@@ -38,118 +39,105 @@ namespace PAPIClient.Views
         /// </summary>
         private void AddComponents()
         {
-            gameTable.AutoSize = true;
-            gameTable.ColumnCount = 3;
-            gameTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            gameTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-            gameTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 144F));
-            gameTable.Controls.Add(genre_label, 0, 0);
-            gameTable.Controls.Add(date_game_creation_label, 1, 0);
-            gameTable.RowCount = 1;
 
-            gameTable.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
-            
+            _buttons.Add(game_creator_button);
+            _buttons.Add(return_button);
+            _buttons.Add(load_game_button_1);
+            _buttons.Add(load_game_button_2);
+            _buttons.Add(load_game_button_3);
+            _buttons.Add(load_game_button_4);
+            _buttons.Add(load_game_button_5);
+            _buttons.Add(load_game_button_6);
+            _buttons.Add(load_game_button_7);
+            _buttons.Add(load_game_button_8);
+            _buttons.Add(load_game_button_9);
+            _buttons.Add(load_game_button_10);
+            _buttons.Add(delete_game_button_1);
+            _buttons.Add(delete_game_button_2);
+            _buttons.Add(delete_game_button_3);
+            _buttons.Add(delete_game_button_4);
+            _buttons.Add(delete_game_button_5);
+            _buttons.Add(delete_game_button_6);
+            _buttons.Add(delete_game_button_7);
+            _buttons.Add(delete_game_button_8);
+            _buttons.Add(delete_game_button_9);
+            _buttons.Add(delete_game_button_10);
+
             WfLogger.Log(this, LogLevel.DEBUG, "Added all components");
             SetTextToActiveLanguage();
+        }
+
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Adds a Button to show the given game to the given row of the table
+        /// </summary>
+        /// <param name="rowNr"></param>
+        /// <param name="game"></param>
+        private void AddLoadGameButton(int rowNr, PAPIGame game)
+        {
+            // Add show Game Button to current row
+            Button showGameBtn = new Button()
+            {
+                Text = "",
+                FlatStyle = FlatStyle.Flat,
+                Anchor = AnchorStyles.Right,
+                Dock = DockStyle.None,
+                Size = new Size(40, 40),
+                Name = "load_game_button_" + rowNr
+            };
+            string imagePath = GameDirectory.GetFilePath_Images(PAPIApplication.GetDesign()) + "\\show.bmp";
+            Image image;
+            try
+            {
+                image = Image.FromFile(imagePath);
+                showGameBtn.Image = (Image)(new Bitmap(image, new Size(40, 40)));
+            }
+            catch (Exception e)
+            {
+                WfLogger.Log(this, LogLevel.ERROR, $"An error occured while loading the image: {e.Message}");
+                showGameBtn.Text = "*";
+            }
+            gameTable.Controls.Add(showGameBtn, 3, rowNr);
+            _buttons.Add(showGameBtn);
+
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// Puts all saved games to the table
+        /// Adds a Button to delete the given game to the given row of the table
         /// </summary>
-        private void ShowSavedGamesTranslation(ResXResourceSet resSet)
+        /// <param name="rowNr"></param>
+        /// <param name="game"></param>
+        private void AddDeleteGameButton(int rowNr, PAPIGame game)
         {
-            // Show all saved Games
-            int rowNr = 1;
-            foreach (PAPIGame game in _savedGames)
+            // Add show Game Button to current row
+            Button deleteButton = new Button()
             {
-                if (_shownGames.Contains(game)) continue;
-
-                WfLogger.Log(this, LogLevel.DEBUG, "Added game to list of saved games: " + game._genre + ", " + game._dateOfLastSession.ToString());
-
-                // Add Genre
-                gameTable.Controls.Add(new Label()
-                {
-                    Text = TranslatedString(resSet, "genre_" + _savedGames[rowNr-1]._genre.ToString().ToLower()),
-                    Anchor = AnchorStyles.Left | AnchorStyles.Top,
-                    Width = 250
-                }, 0, rowNr);
-
-                // Date of creation label
-                gameTable.Controls.Add(new Label()
-                {
-                    Text = game._dateOfCreation.ToShortDateString(),
-                    Anchor = AnchorStyles.Left | AnchorStyles.Top,
-                }, 1, rowNr);
-
-                // Date of last save label
-                gameTable.Controls.Add(new Label()
-                {
-                    Text = game._dateOfLastSession.ToShortDateString(),
-                    Anchor = AnchorStyles.Left | AnchorStyles.Top,
-                }, 2, rowNr);
-
-
-                // Add show Game Button to current row
-                Button showGameBtn = new Button()
-                {
-                    Text = "",
-                    FlatStyle = FlatStyle.Flat,
-                    Anchor = AnchorStyles.Right | AnchorStyles.Top,
-                    Size = new Size(40, 40),
-                    Name = "load_game_button_" + rowNr
-                };
-                string imagePath = GameDirectory.GetFilePath_Images(PAPIApplication.GetDesign()) + "\\show.bmp";
-                Image image = Image.FromFile(imagePath);
-                showGameBtn.Image = (Image)(new Bitmap(image, new Size(40, 40)));
-                _gameButtons.Add(game, showGameBtn);
-                gameTable.Controls.Add(showGameBtn, 2, rowNr++);
-                _buttons.Add(showGameBtn);
-                _shownGames.Add(game);
-
-
-            }
-
-            // Set size of each row to same
-            foreach (RowStyle rowStyle in gameTable.RowStyles)
+                Text = "",
+                FlatStyle = FlatStyle.Flat,
+                Dock = DockStyle.None,
+                Anchor = AnchorStyles.Right,
+                Size = new Size(40, 40),
+                Name = "delete_game_button_" + rowNr
+            };
+            string imagePath = GameDirectory.GetFilePath_Images(PAPIApplication.GetDesign()) + "\\delete.bmp";
+            Image image;
+            try
             {
-                rowStyle.SizeType = SizeType.Absolute;
-                rowStyle.Height = 44;
+                image = Image.FromFile(imagePath);
+                deleteButton.Image = (Image)(new Bitmap(image, new Size(40, 40)));
             }
-
-            _buttons.Add(return_button);
-            _buttons.Add(game_creator_button);
-            SetButtonDesign();
-
-            // Add eventhandler for click on every show game button
-            foreach (KeyValuePair<PAPIGame, Button> button in _gameButtons)
+            catch (Exception e)
             {
-                button.Value.Click += Load_Game_Button_Click;
+                WfLogger.Log(this, LogLevel.ERROR, $"An error occured while loading the image: {e.Message}");
+                deleteButton.Text = "X";
             }
-        }
+            gameTable.Controls.Add(deleteButton, 3, rowNr);
+            _buttons.Add(deleteButton);
 
-        // --------------------------------------------------------------------------------------------------------------------------------
-
-
-        private void Load_Game_Button_Click(object sender, EventArgs e)
-        {
-            PAPIGame selectedGame = null;
-            foreach(KeyValuePair<PAPIGame, Button> gameButton in _gameButtons)
-            {
-                if(gameButton.Value == (Button)sender)
-                {
-                    selectedGame = gameButton.Key;
-                    break;
-                }
-            }
-            if(selectedGame == null)
-            {
-                throw new GameNotFoundException("There is no game for the clicked button");
-            }
-            WfLogger.Log(this, LogLevel.DEBUG, "Button 'Load' was clicked, open Popup");
-            PAPIApplication.StartSession(selectedGame);
-            ((ShowGameOverviewView)ViewController.showGameOverviewView).Open(this);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -166,24 +154,14 @@ namespace PAPIClient.Views
             {
                 Translate(resSet, saved_games_label);
                 Translate(resSet, return_button);
-                Translate(resSet, load_game_button);
+                Translate(resSet, load_game_button_1);
                 Translate(resSet, game_creator_button);
                 Translate(resSet, date_game_creation_label);
-                Translate(resSet, genre_label);
+                Translate(resSet, genre_label_1);
                 Translate(resSet, date_last_save_label);
+                TranslatedString(resSet, _deleteGameYesNoText);
 
 
-                ShowSavedGamesTranslation(resSet);
-
-                /*for (int row = 0; row < _savedGames.Count; ++row)
-                {
-                    gameTable.Controls.Add(new Label()
-                    {
-                        Text = TranslatedString(resSet, "genre_" + _savedGames[row]._genre.ToString().ToLower()),
-                        Anchor = AnchorStyles.Left | AnchorStyles.Top,
-                        Width = 250
-                    }, 0, row + 1);
-                }*/
             }
             WfLogger.Log(this, LogLevel.DEBUG, "All text set to " + PAPIApplication.GetLanguage());
         }
@@ -208,26 +186,52 @@ namespace PAPIClient.Views
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
+        // Load Game Button Event Handlers
+        private void load_game_button_1_Click(object sender, EventArgs e) { LoadGame(1); }
+        private void load_game_button_2_Click(object sender, EventArgs e) { LoadGame(2); }
+        private void load_game_button_3_Click(object sender, EventArgs e) { LoadGame(3); }
+        private void load_game_button_4_Click(object sender, EventArgs e) { LoadGame(4); }
+        private void load_game_button_5_Click(object sender, EventArgs e) { LoadGame(5); }
+        private void load_game_button_6_Click(object sender, EventArgs e) { LoadGame(6); }
+        private void load_game_button_7_Click(object sender, EventArgs e) { LoadGame(7); }
+        private void load_game_button_8_Click(object sender, EventArgs e) { LoadGame(8); }
+        private void load_game_button_9_Click(object sender, EventArgs e) { LoadGame(9); }
+        private void load_game_button_10_Click(object sender, EventArgs e) { LoadGame(10); }
 
-        public void DeleteGame(PAPIGame game)
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        private void LoadGame(int number)
         {
-            if (game != null)
+            if(_savedGames.Count >= number && _savedGames[number] != null) // game exists
             {
-                int rowNumber = -1;
-                foreach (Control control in gameTable.Controls)
-                {
-                    if (control.Text == game._dateOfCreation.ToString())
-                    {
-                        rowNumber = gameTable.GetRow(control);
-                        break;
-                    }
-                }
+                WfLogger.Log(this, LogLevel.DEBUG, $"Load game number {number}");
+                // TODO: load game and open StartSessionView
+            }
+        }
 
-                WfLogger.Log(this, LogLevel.DEBUG, "Remove Game " + game._genre + ", "  + game._dateOfCreation 
-                    + " from List (Number " + rowNumber + ")");
-                _savedGames.Remove(game);
+        // --------------------------------------------------------------------------------------------------------------------------------
 
-                TableLayoutHelper.RemoveRowNumber(gameTable, rowNumber);
+        // Delete Game Button Event Handlers
+        private void delete_game_button_1_Click(object sender, EventArgs e) { DeleteGame(1); }
+        private void delete_game_button_2_Click(object sender, EventArgs e) { DeleteGame(2); }
+        private void delete_game_button_3_Click(object sender, EventArgs e) { DeleteGame(3); }
+        private void delete_game_button_4_Click(object sender, EventArgs e) { DeleteGame(4); }
+        private void delete_game_button_5_Click(object sender, EventArgs e) { DeleteGame(5); }
+        private void delete_game_button_6_Click(object sender, EventArgs e) { DeleteGame(6); }
+        private void delete_game_button_7_Click(object sender, EventArgs e) { DeleteGame(7); }
+        private void delete_game_button_8_Click(object sender, EventArgs e) { DeleteGame(8); }
+        private void delete_game_button_9_Click(object sender, EventArgs e) { DeleteGame(9); }
+        private void delete_game_button_10_Click(object sender, EventArgs e) { DeleteGame(10); }
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+
+        public void DeleteGame(int number)
+        {
+            if (_savedGames.Count >= number && _savedGames[number] != null) // game exists
+            {
+                WfLogger.Log(this, LogLevel.DEBUG, $"Delete game number {number}");
+                _savedGames.Remove(_savedGames[number]);
             }
             else
             {
@@ -235,15 +239,16 @@ namespace PAPIClient.Views
             }
         }
 
-        // --------------------------------------------------------------------------------------------------------------------------------
 
+        // --------------------------------------------------------------------------------------------------------------------------------
 
         private void GameSelectionView_Load(object sender, EventArgs e)
         {
             // do nothing
         }
 
-        // --------------------------------------------------------------------------------------------------------------------------------
+        
 
+        // --------------------------------------------------------------------------------------------------------------------------------
     }
 }

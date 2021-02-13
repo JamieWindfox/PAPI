@@ -3184,6 +3184,15 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this game?.
+        /// </summary>
+        internal static string Translation_DELETE_GAME_QUESTION {
+            get {
+                return ResourceManager.GetString("Translation_DELETE_GAME_QUESTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         internal static string Translation_DESCRIPTION_LABEL {

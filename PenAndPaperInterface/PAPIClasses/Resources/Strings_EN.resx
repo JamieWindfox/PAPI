@@ -1158,6 +1158,9 @@
   <data name="Translation_DELETE_GAME_BUTTON" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="Translation_DELETE_GAME_QUESTION" xml:space="preserve">
+    <value>Are you sure you want to delete this game?</value>
+  </data>
   <data name="Translation_DESCRIPTION_LABEL" xml:space="preserve">
     <value>Description</value>
   </data>
