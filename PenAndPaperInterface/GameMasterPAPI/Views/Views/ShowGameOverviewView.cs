@@ -22,7 +22,6 @@ namespace PAPIClient.Views
         private void AddComponents()
         {
             _buttons.Add(cancelButton);
-            _buttons.Add(deleteButton);
             _buttons.Add(startButton);
 
             playerCharacterPanel.AutoSize = true;
@@ -125,11 +124,6 @@ namespace PAPIClient.Views
             Hide();
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
-        {
-            WfLogger.Log(this, LogLevel.DEBUG, "'Delete' Button was clicked, 'Are you sure?' Prompt opens");
-            DeleteGamePromptPopup areYouSurePromt = new DeleteGamePromptPopup();
-            areYouSurePromt.Popup(this);
-        }
+
     }
 }

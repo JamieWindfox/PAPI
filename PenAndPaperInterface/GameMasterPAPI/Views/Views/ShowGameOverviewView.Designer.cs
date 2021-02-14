@@ -36,7 +36,6 @@ namespace PAPIClient.Views
             this.lastSaveLabel = new System.Windows.Forms.Label();
             this.buttonPanel = new System.Windows.Forms.TableLayoutPanel();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.playerCharacterPanel = new System.Windows.Forms.TableLayoutPanel();
             this.playerNameLabel = new System.Windows.Forms.Label();
@@ -121,7 +120,6 @@ namespace PAPIClient.Views
             this.buttonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.buttonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.buttonPanel.Controls.Add(this.cancelButton, 0, 0);
-            this.buttonPanel.Controls.Add(this.deleteButton, 1, 0);
             this.buttonPanel.Controls.Add(this.startButton, 2, 0);
             this.buttonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonPanel.Location = new System.Drawing.Point(23, 383);
@@ -142,18 +140,6 @@ namespace PAPIClient.Views
             this.cancelButton.Text = "cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteButton.Location = new System.Drawing.Point(316, 3);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(120, 38);
-            this.deleteButton.TabIndex = 1;
-            this.deleteButton.Text = "delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // startButton
             // 
@@ -250,7 +236,6 @@ namespace PAPIClient.Views
         private System.Windows.Forms.Label lastSaveLabel;
         private System.Windows.Forms.TableLayoutPanel buttonPanel;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.TableLayoutPanel playerCharacterPanel;
         private System.Windows.Forms.Label playerNameLabel;

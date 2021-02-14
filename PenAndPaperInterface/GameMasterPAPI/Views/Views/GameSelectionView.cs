@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using PAPI.Exception;
 using PAPI.Settings.Game;
 using PAPI.Serialization;
+using GameMasterPAPI.Views.Views.Components;
 
 namespace PAPIClient.Views
 {
@@ -17,6 +18,7 @@ namespace PAPIClient.Views
     /// </summary>
     public partial class GameSelectionView : PAPIView, ITranslatableView
     {
+        public const int MAX_SAVED_GAMES = 10;
         private List<PAPIGame> _savedGames = new List<PAPIGame>();
         private List<PAPIGame> _shownGames = new List<PAPIGame>();
         private string _deleteGameYesNoText = "Translation_DELETE_GAME_QUESTION";
@@ -63,10 +65,23 @@ namespace PAPIClient.Views
             _buttons.Add(delete_game_button_9);
             _buttons.Add(delete_game_button_10);
 
+            ShowSavedGames();
+
             WfLogger.Log(this, LogLevel.DEBUG, "Added all components");
             SetTextToActiveLanguage();
         }
 
+
+        // --------------------------------------------------------------------------------------------------------------------------------
+
+        private void ShowSavedGames()
+        {
+            if(_savedGames.Count >= 1 && _savedGames[0] != null)
+            {
+                GameSelectionTableRow row1 =
+                    new GameSelectionTableRow(genre_label_1, creation_date_label_1, save_date_label_1, load_game_button_1, delete_game_button_1);
+            }
+        }
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
@@ -168,7 +183,6 @@ namespace PAPIClient.Views
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
-
         private void returnButton_Click(object sender, EventArgs e)
         {
             WfLogger.Log(this, LogLevel.DEBUG, "Return Button was clicked, return to " + ViewController.lastView.GetType());
@@ -176,7 +190,6 @@ namespace PAPIClient.Views
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
-
 
         private void newGameButton_Click(object sender, EventArgs e)
         {
