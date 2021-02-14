@@ -39,6 +39,7 @@ namespace PAPIClient.Views
             this.date_game_creation_label = new System.Windows.Forms.Label();
             this.load_game_button = new System.Windows.Forms.Button();
             this.date_last_save_label = new System.Windows.Forms.Label();
+            this.delete_game_button = new System.Windows.Forms.Button();
             this.gameSelectionPanel.SuspendLayout();
             this.bottomButtonPanel.SuspendLayout();
             this.gameTable.SuspendLayout();
@@ -119,28 +120,30 @@ namespace PAPIClient.Views
             // gameTable
             // 
             this.gameTable.AutoScroll = true;
-            this.gameTable.ColumnCount = 4;
-            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.gameTable.ColumnCount = 5;
+            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.gameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.gameTable.Controls.Add(this.genre_label, 0, 0);
             this.gameTable.Controls.Add(this.date_game_creation_label, 1, 0);
             this.gameTable.Controls.Add(this.load_game_button, 3, 0);
             this.gameTable.Controls.Add(this.date_last_save_label, 2, 0);
+            this.gameTable.Controls.Add(this.delete_game_button, 4, 0);
             this.gameTable.Dock = System.Windows.Forms.DockStyle.Top;
             this.gameTable.Location = new System.Drawing.Point(23, 63);
             this.gameTable.Name = "gameTable";
             this.gameTable.RowCount = 1;
-            this.gameTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.gameTable.Size = new System.Drawing.Size(757, 44);
+            this.gameTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.gameTable.Size = new System.Drawing.Size(757, 51);
             this.gameTable.TabIndex = 2;
             // 
             // genre_label
             // 
             this.genre_label.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.genre_label.AutoSize = true;
-            this.genre_label.Location = new System.Drawing.Point(3, 12);
+            this.genre_label.Location = new System.Drawing.Point(3, 16);
             this.genre_label.Name = "genre_label";
             this.genre_label.Size = new System.Drawing.Size(108, 19);
             this.genre_label.TabIndex = 1;
@@ -150,19 +153,19 @@ namespace PAPIClient.Views
             // 
             this.date_game_creation_label.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.date_game_creation_label.AutoSize = true;
-            this.date_game_creation_label.Location = new System.Drawing.Point(253, 12);
+            this.date_game_creation_label.Location = new System.Drawing.Point(359, 6);
             this.date_game_creation_label.Name = "date_game_creation_label";
-            this.date_game_creation_label.Size = new System.Drawing.Size(225, 19);
+            this.date_game_creation_label.Size = new System.Drawing.Size(144, 38);
             this.date_game_creation_label.TabIndex = 3;
             this.date_game_creation_label.Text = "date_game_creation_label";
             // 
             // load_game_button
             // 
-            this.load_game_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.load_game_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.load_game_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.load_game_button.Location = new System.Drawing.Point(715, 3);
+            this.load_game_button.Location = new System.Drawing.Point(663, 5);
             this.load_game_button.Name = "load_game_button";
-            this.load_game_button.Size = new System.Drawing.Size(39, 38);
+            this.load_game_button.Size = new System.Drawing.Size(40, 40);
             this.load_game_button.TabIndex = 0;
             this.load_game_button.UseVisualStyleBackColor = true;
             this.load_game_button.Visible = false;
@@ -171,11 +174,22 @@ namespace PAPIClient.Views
             // 
             this.date_last_save_label.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.date_last_save_label.AutoSize = true;
-            this.date_last_save_label.Location = new System.Drawing.Point(484, 12);
+            this.date_last_save_label.Location = new System.Drawing.Point(509, 6);
             this.date_last_save_label.Name = "date_last_save_label";
-            this.date_last_save_label.Size = new System.Drawing.Size(189, 19);
+            this.date_last_save_label.Size = new System.Drawing.Size(144, 38);
             this.date_last_save_label.TabIndex = 4;
             this.date_last_save_label.Text = "date_last_save_label";
+            // 
+            // delete_game_button
+            // 
+            this.delete_game_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.delete_game_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete_game_button.Location = new System.Drawing.Point(714, 5);
+            this.delete_game_button.Name = "delete_game_button";
+            this.delete_game_button.Size = new System.Drawing.Size(40, 40);
+            this.delete_game_button.TabIndex = 5;
+            this.delete_game_button.UseVisualStyleBackColor = true;
+            this.delete_game_button.Visible = false;
             // 
             // GameSelectionView
             // 
@@ -207,5 +221,6 @@ namespace PAPIClient.Views
         private System.Windows.Forms.Label genre_label;
         private System.Windows.Forms.Label date_game_creation_label;
         private System.Windows.Forms.Label date_last_save_label;
+        private System.Windows.Forms.Button delete_game_button;
     }
 }
