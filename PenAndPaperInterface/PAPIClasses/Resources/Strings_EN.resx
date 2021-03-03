@@ -754,22 +754,19 @@
     <value>other gender</value>
   </data>
   <data name="GenreEnum_MAGICAL_WORLD" xml:space="preserve">
-    <value />
+    <value>Magical World</value>
   </data>
   <data name="GenreEnum_MEDIEVAL_FANTASY" xml:space="preserve">
-    <value />
+    <value>Medieval Fantasy</value>
   </data>
   <data name="GenreEnum_NOT_VALID" xml:space="preserve">
     <value />
   </data>
   <data name="GenreEnum_NUCLEAR_FALLOUT" xml:space="preserve">
-    <value />
-  </data>
-  <data name="GenreEnum_REALMS_OF_TERRINOTH" xml:space="preserve">
-    <value />
+    <value>Nuclear Fallout</value>
   </data>
   <data name="GenreEnum_SPACE_OPERA" xml:space="preserve">
-    <value />
+    <value>Space Opera</value>
   </data>
   <data name="HairLengthEnum_LONG" xml:space="preserve">
     <value />

@@ -209,7 +209,7 @@ namespace PAPIClient.Views
             if (_cachedGenre != GenreEnum.NOT_VALID)
             {
                 PAPIApplication.CreateNewGame(_cachedGenre, id_textbox.Text);
-                WfLogger.Log(this, LogLevel.DEBUG, "Create ans start Game Button clicked, created a new Game (" + _cachedGenre + ")");
+                WfLogger.Log(this, LogLevel.DEBUG, "Create and start Game Button clicked, created a new Game (" + _cachedGenre + ")");
 
                 // Functionality removed, but keeping code for now as a reference
                 /*foreach(KeyValuePair<Player, Button> playerButton in players_removeButtons)

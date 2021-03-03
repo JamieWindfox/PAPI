@@ -13,6 +13,7 @@ namespace PAPIClient.Views
     {
         public LanguageEnum _shownLanguage { get; protected set; } = LanguageEnum.NOT_VALID;
         public List<Button> _buttons { get; protected set; }
+        private bool _isInitialized;
 
         // --------------------------------------------------------------------------------------------------------------------------------
 
@@ -24,6 +25,8 @@ namespace PAPIClient.Views
             _buttons = new List<Button>();
             
             WfLogger.Log(this, LogLevel.DEBUG, "Created new View");
+
+            _isInitialized = false;
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------
@@ -69,7 +72,11 @@ namespace PAPIClient.Views
 
             SetDesign();
             SetButtonDesign();
-            SetTextToActiveLanguage();
+            if(_shownLanguage != PAPIApplication.GetLanguage() || !_isInitialized)
+            {
+                SetTextToActiveLanguage();
+            }
+            _isInitialized = true;
             Show();
             WfLogger.Log(this, LogLevel.DEBUG, "Opened View" + this.GetType().ToString());
         }

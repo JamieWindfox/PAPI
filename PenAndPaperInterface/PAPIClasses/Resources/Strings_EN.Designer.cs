@@ -1969,7 +1969,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Magical World.
         /// </summary>
         internal static string GenreEnum_MAGICAL_WORLD {
             get {
@@ -1978,7 +1978,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Medieval Fantasy.
         /// </summary>
         internal static string GenreEnum_MEDIEVAL_FANTASY {
             get {
@@ -1996,7 +1996,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Nuclear Fallout.
         /// </summary>
         internal static string GenreEnum_NUCLEAR_FALLOUT {
             get {
@@ -2005,16 +2005,7 @@ namespace PAPIClasses.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string GenreEnum_REALMS_OF_TERRINOTH {
-            get {
-                return ResourceManager.GetString("GenreEnum_REALMS_OF_TERRINOTH", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Space Opera.
         /// </summary>
         internal static string GenreEnum_SPACE_OPERA {
             get {

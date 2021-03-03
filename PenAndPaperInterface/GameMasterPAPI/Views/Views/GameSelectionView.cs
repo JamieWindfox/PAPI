@@ -207,6 +207,7 @@ namespace PAPIClient.Views
             {
                 return;
             }
+            _shownLanguage = PAPIApplication.GetLanguage();
 
             using (ResXResourceSet resSet = new ResXResourceSet(GetTranslationFile()))
             {
@@ -224,7 +225,7 @@ namespace PAPIClient.Views
                     gameTable.Controls.Add(new Label()
                     {
                         Name = "genre_label_game_" + row,
-                        Text = TranslatedString(resSet, "genre_" + _savedGames[row]._genre.ToString().ToLower()),
+                        Text = TranslatedEnum(resSet, _savedGames[row]._genre),
                         Anchor = AnchorStyles.Left | AnchorStyles.Top,
                         Width = 250
                     }, 0, row + 1);
